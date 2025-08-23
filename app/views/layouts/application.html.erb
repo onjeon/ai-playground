@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "AI 놀이터 - AI로 즐기는 모든 테스트" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "다양한 AI 기반 심리테스트와 성격테스트를 무료로 즐겨보세요. 소울 동물, 애착 유형, 연애 스타일 등 재미있는 테스트가 가득!" %>">
+    <meta name="keywords" content="AI테스트, 심리테스트, 성격테스트, 소울동물, 애착유형, 연애테스트">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="<%= content_for?(:og_title) ? yield(:og_title) : "AI 놀이터 - AI로 즐기는 모든 테스트" %>">
+    <meta property="og:description" content="<%= content_for?(:og_description) ? yield(:og_description) : "다양한 AI 기반 심리테스트와 성격테스트를 무료로 즐겨보세요." %>">
+    <meta property="og:image" content="<%= asset_url('og-image.png') %>">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= content_for?(:title) ? yield(:title) : "AI 놀이터 - AI로 즐기는 모든 테스트" %>">
+    <meta name="twitter:description" content="<%= content_for?(:description) ? yield(:description) : "다양한 AI 기반 심리테스트와 성격테스트를 무료로 즐겨보세요." %>">
+    <meta name="twitter:image" content="<%= asset_url('og-image.png') %>">
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    
+    <!-- Google Fonts - Pretendard 대신 Inter 사용 (더 안정적) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Analytics 4 -->
+    <% if Rails.env.production? %>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+      </script>
+    <% end %>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      <%= structured_data.html_safe %>
+    </script>
+  </head>
+
+  <body class="font-sans antialiased">
+    <%= yield %>
+  </body>
+</html>

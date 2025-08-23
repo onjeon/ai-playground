@@ -1,0 +1,20 @@
+<div class="w-full max-w-4xl mx-auto px-4 py-6">
+  <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+    <% categories.each do |category| %>
+      <%= link_to root_path(category: category[:value]), 
+          class: button_classes(category[:value]),
+          data: { 
+            turbo_frame: "test_grid",
+            turbo_action: "advance",
+            category_filter: category[:value]
+          } do %>
+        <span class="flex items-center gap-1">
+          <% if category[:emoji].present? %>
+            <span class="text-base"><%= category[:emoji] %></span>
+          <% end %>
+          <span><%= category[:name] %></span>
+        </span>
+      <% end %>
+    <% end %>
+  </div>
+</div>

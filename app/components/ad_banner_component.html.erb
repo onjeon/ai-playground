@@ -1,0 +1,45 @@
+<% if should_show_ad? %>
+  <div class="w-full max-w-4xl mx-auto px-4 py-6">
+    <div class="ad-container bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
+      <% if Rails.env.development? %>
+        <!-- 개발 환경용 플레이스홀더 -->
+        <div class="bg-gradient-to-r from-blue-100 to-purple-100 p-8 text-center">
+          <div class="text-gray-600 text-sm mb-2">광고 영역 (개발 환경)</div>
+          <div class="text-gray-800 font-medium">Google AdSense 배너</div>
+          <div class="text-xs text-gray-500 mt-2">프로덕션에서는 실제 광고가 표시됩니다</div>
+        </div>
+      <% else %>
+        <!-- 프로덕션 환경용 실제 구글 애드센스 -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%= ad_client %>"
+                crossorigin="anonymous"></script>
+        
+        <!-- 반응형 배너 광고 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="<%= ad_client %>"
+             data-ad-slot="<%= ad_slot %>"
+             data-ad-format="<%= ad_format %>"
+             <% if full_width_responsive %>data-full-width-responsive="true"<% end %>></ins>
+        
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+        <!-- 광고 로딩 실패 시 자동 축소 처리 -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const adContainer = document.querySelector('.ad-container');
+            const adElement = adContainer.querySelector('.adsbygoogle');
+            
+            // 광고 로딩 체크 (3초 후)
+            setTimeout(function() {
+              if (adElement && adElement.innerHTML.trim() === '') {
+                adContainer.style.display = 'none';
+              }
+            }, 3000);
+          });
+        </script>
+      <% end %>
+    </div>
+  </div>
+<% end %>

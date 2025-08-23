@@ -1,0 +1,25 @@
+<% if @current_category.present? %>
+  <% content_for :title, "#{@current_category} 테스트 모음 | AI 놀이터" %>
+  <% content_for :description, "#{@current_category} 분야의 다양한 AI 테스트를 즐겨보세요. 재미있고 정확한 결과로 자신을 더 잘 알아가세요." %>
+  <% content_for :keywords, "#{@current_category}, #{@current_category} 테스트" %>
+<% else %>
+  <% content_for :title, "AI 놀이터 - AI로 즐기는 모든 테스트" %>
+  <% content_for :description, "다양한 AI 기반 심리테스트와 성격테스트를 무료로 즐겨보세요. 소울 동물, 애착 유형, 연애 스타일 등 재미있는 테스트가 가득!" %>
+<% end %>
+
+<div class="min-h-screen bg-gray-50">
+  <!-- 헤더 -->
+  <%= render HeaderComponent.new %>
+  
+  <!-- 카테고리 필터 -->
+  <%= render CategoryFilterComponent.new(current_category: @current_category) %>
+  
+  <!-- 테스트 그리드 -->
+  <%= render TestGridComponent.new(tests: @tests) %>
+  
+  <!-- 광고 배너 -->
+  <%= render AdBannerComponent.new %>
+  
+  <!-- 푸터 -->
+  <%= render FooterComponent.new %>
+</div>

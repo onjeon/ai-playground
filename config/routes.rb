@@ -7,4 +7,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
+  
+  # Category filtering route
+  get "category/:category", to: "pages#home", as: :category_filter
+  
+  # Individual test routes (for future implementation)
+  get "tests/:slug", to: "tests#show", as: :test
 end

@@ -1,0 +1,33 @@
+<%= turbo_frame_tag "test_grid" do %>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <% if has_tests? %>
+      <!-- 테스트 개수 표시 -->
+      <div class="mb-6">
+        <p class="text-sm text-gray-600 text-center">
+          총 <span class="font-semibold text-blue-600"><%= tests_count %></span>개의 테스트가 있습니다
+        </p>
+      </div>
+      
+      <!-- 반응형 그리드 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <% tests.each do |test| %>
+          <%= render TestCardComponent.new(test: test) %>
+        <% end %>
+      </div>
+    <% else %>
+      <!-- 테스트가 없을 때 -->
+      <div class="text-center py-16">
+        <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+          <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.5-.935-6.072-2.456M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">테스트가 없습니다</h3>
+        <p class="text-gray-600 mb-4">선택하신 카테고리에 해당하는 테스트가 없습니다.</p>
+        <%= link_to "전체 테스트 보기", root_path, 
+            class: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors",
+            data: { turbo_frame: "test_grid" } %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

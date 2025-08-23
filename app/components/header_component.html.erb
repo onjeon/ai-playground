@@ -1,0 +1,31 @@
+<header class="bg-white shadow-sm border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- 로고 -->
+      <div class="flex-shrink-0">
+        <%= link_to root_path, class: "text-xl md:text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors" do %>
+          AI 놀이터
+        <% end %>
+      </div>
+      
+      <!-- 슬로건 -->
+      <div class="hidden sm:block">
+        <h1 class="text-sm md:text-lg text-gray-600 font-medium">
+          AI로 즐기는 모든 테스트
+        </h1>
+      </div>
+      
+      <!-- 모바일에서는 슬로건을 아래쪽에 표시하기 위한 빈 공간 -->
+      <div class="flex-shrink-0 sm:hidden">
+        <!-- 빈 공간 -->
+      </div>
+    </div>
+    
+    <!-- 모바일에서만 보이는 슬로건 -->
+    <div class="sm:hidden pb-3">
+      <h1 class="text-center text-sm text-gray-600 font-medium">
+        AI로 즐기는 모든 테스트
+      </h1>
+    </div>
+  </div>
+</header>
