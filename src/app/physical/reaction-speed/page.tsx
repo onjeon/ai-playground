@@ -142,7 +142,7 @@ export default function ReactionSpeedTestPage() {
       {/* Game Area */}
       {gameState !== 'finished' ? (
         <div 
-          className={`min-h-[calc(100vh-64px)] flex flex-col items-center justify-center cursor-pointer transition-colors duration-100 ${getBackgroundColor()}`}
+          className={`relative min-h-[calc(100vh-64px)] flex flex-col items-center justify-center cursor-pointer transition-colors duration-100 ${getBackgroundColor()}`}
           onClick={handleClick}
         >
           <div className="text-center select-none">
@@ -155,7 +155,7 @@ export default function ReactionSpeedTestPage() {
           {/* Progress */}
           {currentAttempt > 0 && gameState !== 'idle' && (
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-              <div className="flex gap-2">
+              <div className="flex gap-2 justify-center">
                 {Array.from({ length: maxAttempts }).map((_, i) => (
                   <div 
                     key={i}

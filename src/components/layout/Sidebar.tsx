@@ -33,7 +33,7 @@ export default function Sidebar() {
 
   return (
     <aside className="hidden lg:block w-64 shrink-0">
-      <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto sidebar-scroll space-y-6 pb-4">
+      <div className="sticky top-20 space-y-6">
         {/* Categories */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-4">
           <h3 className="font-bold text-gray-900 dark:text-white mb-4 px-2">카테고리</h3>
