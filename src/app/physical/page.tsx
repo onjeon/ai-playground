@@ -171,47 +171,47 @@ export default function PhysicalTestsPage() {
     <div className="min-h-screen bg-gray-900">
       {/* Header */}
       <div className="bg-gray-800 border-b border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+        <div className="max-w-4xl mx-auto px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between">
+          <Link href="/" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
             ← 홈으로
           </Link>
-          <h1 className="text-lg font-bold text-white">피지컬 테스트</h1>
-          <div className="w-16"></div>
+          <h1 className="text-base sm:text-lg font-bold text-white">피지컬 테스트</h1>
+          <div className="w-12 sm:w-16"></div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-3 sm:px-4 py-5 sm:py-8">
         {/* Hero */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <div className="text-center mb-6 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">
             🎮 피지컬 테스트
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-400 text-sm sm:text-lg">
             당신의 신체 능력과 인지 능력을 테스트해보세요!
           </p>
         </div>
 
         {/* Test Cards */}
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-2 sm:gap-4">
           {physicalTests.map((test) => (
             <Link
               key={test.slug}
               href={`/physical/${test.slug}`}
               className="group block"
             >
-              <div className={`bg-gradient-to-br ${test.color} rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl`}>
-                <div className="flex items-start justify-between mb-4">
-                  <span className="text-5xl">{test.emoji}</span>
-                  <span className="bg-white/20 text-white text-xs px-2 py-1 rounded-full">
+              <div className={`bg-gradient-to-br ${test.color} rounded-xl sm:rounded-2xl p-3 sm:p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl h-full`}>
+                <div className="flex items-start justify-between mb-2 sm:mb-4">
+                  <span className="text-2xl sm:text-5xl">{test.emoji}</span>
+                  <span className="bg-white/20 text-white text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
                     {test.duration}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{test.title}</h3>
-                <p className="text-white/80 text-sm">{test.description}</p>
-                <div className="mt-4 flex items-center text-white/60 text-sm group-hover:text-white transition-colors">
-                  <span>테스트 시작</span>
-                  <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                <h3 className="text-sm sm:text-xl font-bold text-white mb-1 sm:mb-2 line-clamp-1">{test.title}</h3>
+                <p className="text-white/80 text-xs sm:text-sm line-clamp-2">{test.description}</p>
+                <div className="mt-2 sm:mt-4 flex items-center text-white/60 text-xs sm:text-sm group-hover:text-white transition-colors">
+                  <span>시작</span>
+                  <span className="ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </div>
             </Link>
@@ -219,9 +219,9 @@ export default function PhysicalTestsPage() {
         </div>
 
         {/* Info */}
-        <div className="mt-12 bg-gray-800 rounded-xl p-6">
-          <h3 className="text-lg font-bold text-white mb-4">📌 안내</h3>
-          <ul className="space-y-2 text-gray-400 text-sm">
+        <div className="mt-6 sm:mt-12 bg-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-6">
+          <h3 className="text-sm sm:text-lg font-bold text-white mb-2 sm:mb-4">📌 안내</h3>
+          <ul className="space-y-1.5 sm:space-y-2 text-gray-400 text-xs sm:text-sm">
             <li>• 피지컬 테스트는 PC/모바일 모두에서 플레이할 수 있습니다.</li>
             <li>• 정확한 결과를 위해 조용한 환경에서 진행하세요.</li>
             <li>• 클릭 테스트는 마우스보다 터치가 유리할 수 있습니다.</li>

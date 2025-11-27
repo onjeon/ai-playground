@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     default: 'AI 놀이터 - AI 기반 심리/성격 테스트',
     template: '%s | AI 놀이터',
   },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   description: 'AI가 분석하는 심리 테스트, 성격 테스트, MBTI 등 다양한 테스트를 즐겨보세요. 무료 테스트부터 프리미엄 분석까지!',
   keywords: ['심리테스트', '성격테스트', 'MBTI', 'AI테스트', '무료테스트', '에니어그램', 'DISC', '연애테스트', '직업적성검사'],
   authors: [{ name: 'AI 놀이터' }],
@@ -58,12 +63,13 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
-        {/* Google AdSense */}
+        {/* Google AdSense - 승인 후 활성화
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5204107675448262"
           crossOrigin="anonymous"
         />
+        */}
         {/* 구조화 데이터 - 웹사이트 */}
         <script
           type="application/ld+json"

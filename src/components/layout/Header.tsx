@@ -16,8 +16,9 @@ export default function Header() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      router.push(`/?search=${encodeURIComponent(searchQuery.trim())}`);
+      router.push(`/tests?q=${encodeURIComponent(searchQuery.trim())}`);
       setIsSearchOpen(false);
+      setIsMobileMenuOpen(false);
       setSearchQuery('');
     }
   };
@@ -59,13 +60,13 @@ export default function Header() {
               홈
             </Link>
             <Link
-              href="/?sort=popular"
+              href="/tests?sort=popular"
               className="px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors"
             >
               인기
             </Link>
             <Link
-              href="/?sort=new"
+              href="/tests?sort=new"
               className="px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors"
             >
               신규
@@ -138,14 +139,14 @@ export default function Header() {
               홈
             </Link>
             <Link
-              href="/?sort=popular"
+              href="/tests?sort=popular"
               className="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               인기 테스트
             </Link>
             <Link
-              href="/?sort=new"
+              href="/tests?sort=new"
               className="block px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >

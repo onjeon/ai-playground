@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import {
   Brain,
   Heart,
@@ -28,8 +28,9 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export default function Sidebar() {
-  const searchParams = useSearchParams();
-  const currentCategory = searchParams.get('category');
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+  const currentCategorySlug = pathname.startsWith('/category/') ? pathname.split('/')[2] : null;
 
   return (
     <aside className="hidden lg:block w-64 shrink-0">
@@ -39,9 +40,9 @@ export default function Sidebar() {
           <h3 className="font-bold text-gray-900 dark:text-white mb-4 px-2">카테고리</h3>
           <nav className="space-y-1">
             <Link
-              href="/"
+              href="/tests"
               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
-                !currentCategory
+                pathname === '/tests'
                   ? 'bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300'
                   : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
               }`}
@@ -51,12 +52,12 @@ export default function Sidebar() {
             </Link>
             {categories.map((category) => {
               const Icon = iconMap[category.icon] || Brain;
-              const isActive = currentCategory === category.slug;
+              const isActive = currentCategorySlug === category.slug;
 
               return (
                 <Link
                   key={category.id}
-                  href={`/?category=${category.slug}`}
+                  href={`/category/${category.slug}`}
                   className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                     isActive
                       ? 'bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300'
@@ -115,7 +116,7 @@ export default function Sidebar() {
               className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white transition-all"
             >
               <Crown className="w-5 h-5 text-purple-500" />
-              유료 테스트
+              프리미엄 테스트
             </Link>
           </nav>
         </div>

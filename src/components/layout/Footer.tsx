@@ -105,8 +105,16 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Business Info */}
         <div className="mt-10 pt-8 border-t border-gray-100 dark:border-gray-800">
+          <div className="text-xs text-gray-400 dark:text-gray-500 space-y-1">
+            <p><span className="font-medium">상호명:</span> 온전 | <span className="font-medium">대표자:</span> 전의진</p>
+            <p><span className="font-medium">통신판매업 신고번호:</span> 2024-부천원미-1310</p>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-gray-400">
               &copy; {new Date().getFullYear()} AI 놀이터. All rights reserved.

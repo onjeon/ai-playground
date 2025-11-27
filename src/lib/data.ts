@@ -62,7 +62,7 @@ export const tests: Test[] = [
     participantCount: 184520,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '성격', '인기'],
+    tags: ['바이럴', 'MBTI', '성격'],
     createdAt: '2024-01-01',
   },
   {
@@ -94,7 +94,7 @@ export const tests: Test[] = [
     participantCount: 98450,
     isPremium: false,
     price: 0,
-    tags: ['색깔', '심리', '감성'],
+    tags: ['심리', '성격'],
     createdAt: '2024-02-01',
   },
 
@@ -112,7 +112,7 @@ export const tests: Test[] = [
     participantCount: 76890,
     isPremium: false,
     price: 0,
-    tags: ['스트레스', '정신건강', '자가진단'],
+    tags: ['멘탈'],
     createdAt: '2024-01-20',
   },
   {
@@ -128,7 +128,7 @@ export const tests: Test[] = [
     participantCount: 52340,
     isPremium: false,
     price: 0,
-    tags: ['애착', '관계', '심층분석'],
+    tags: ['연애', '관계', '심리'],
     createdAt: '2024-02-10',
   },
 
@@ -146,7 +146,7 @@ export const tests: Test[] = [
     participantCount: 143670,
     isPremium: false,
     price: 0,
-    tags: ['연애', '사랑', '커플'],
+    tags: ['연애', '커플'],
     createdAt: '2024-01-25',
   },
   {
@@ -162,7 +162,7 @@ export const tests: Test[] = [
     participantCount: 167230,
     isPremium: false,
     price: 0,
-    tags: ['이상형', '연애', 'AI'],
+    tags: ['연애'],
     createdAt: '2024-02-05',
   },
   {
@@ -178,7 +178,7 @@ export const tests: Test[] = [
     participantCount: 89560,
     isPremium: false,
     price: 0,
-    tags: ['연애', '성향', '스타일'],
+    tags: ['연애', '성격', '취향'],
     createdAt: '2024-02-20',
   },
   {
@@ -194,7 +194,7 @@ export const tests: Test[] = [
     participantCount: 76890,
     isPremium: false,
     price: 0,
-    tags: ['연애', '매력', '어필'],
+    tags: ['연애'],
     createdAt: '2024-02-22',
   },
   {
@@ -210,7 +210,7 @@ export const tests: Test[] = [
     participantCount: 58340,
     isPremium: false,
     price: 0,
-    tags: ['밀당', '연애', '썸', '바이럴'],
+    tags: ['바이럴', '썸', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -226,7 +226,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['이별', '회복', '연애', '심리'],
+    tags: ['이별', '연애', '심리'],
     createdAt: '2024-11-26',
   },
   {
@@ -242,7 +242,7 @@ export const tests: Test[] = [
     participantCount: 45670,
     isPremium: false,
     price: 0,
-    tags: ['회식', '직장', '유머', '바이럴'],
+    tags: ['바이럴', '직장', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -258,7 +258,7 @@ export const tests: Test[] = [
     participantCount: 78230,
     isPremium: false,
     price: 0,
-    tags: ['드라마', '캐릭터', '유머', '바이럴'],
+    tags: ['바이럴', '취향', '게임', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -274,7 +274,7 @@ export const tests: Test[] = [
     participantCount: 56780,
     isPremium: false,
     price: 0,
-    tags: ['완벽주의', '심리', '자기이해', '바이럴'],
+    tags: ['바이럴', '심리'],
     createdAt: '2024-11-26',
   },
   {
@@ -290,7 +290,7 @@ export const tests: Test[] = [
     participantCount: 63450,
     isPremium: false,
     price: 0,
-    tags: ['공감', '심리', 'EQ', '바이럴'],
+    tags: ['바이럴', 'EQ', '심리'],
     createdAt: '2024-11-26',
   },
 
@@ -308,7 +308,7 @@ export const tests: Test[] = [
     participantCount: 68450,
     isPremium: false,
     price: 0,
-    tags: ['직업', '적성', '진로'],
+    tags: ['커리어'],
     createdAt: '2024-01-30',
   },
   {
@@ -324,7 +324,7 @@ export const tests: Test[] = [
     participantCount: 54320,
     isPremium: false,
     price: 0,
-    tags: ['업무', '직장', '협업'],
+    tags: ['직장'],
     createdAt: '2024-02-15',
   },
   {
@@ -340,7 +340,7 @@ export const tests: Test[] = [
     participantCount: 65430,
     isPremium: false,
     price: 0,
-    tags: ['금전', '재테크', '소비'],
+    tags: ['재테크'],
     createdAt: '2024-02-25',
   },
   {
@@ -356,7 +356,7 @@ export const tests: Test[] = [
     participantCount: 58970,
     isPremium: false,
     price: 0,
-    tags: ['부자', '마인드', '재테크'],
+    tags: ['재테크'],
     createdAt: '2024-02-28',
   },
 
@@ -374,7 +374,7 @@ export const tests: Test[] = [
     participantCount: 195670,
     isPremium: false,
     price: 0,
-    tags: ['전생', '재미', '운세'],
+    tags: ['운세', '재미'],
     createdAt: '2024-01-10',
   },
   {
@@ -390,7 +390,7 @@ export const tests: Test[] = [
     participantCount: 112340,
     isPremium: false,
     price: 0,
-    tags: ['운세', '2025', '새해'],
+    tags: ['운세'],
     createdAt: '2024-12-01',
   },
 
@@ -408,7 +408,7 @@ export const tests: Test[] = [
     participantCount: 87650,
     isPremium: false,
     price: 0,
-    tags: ['IQ', '지능', '두뇌'],
+    tags: ['두뇌'],
     createdAt: '2024-02-01',
   },
   {
@@ -424,7 +424,7 @@ export const tests: Test[] = [
     participantCount: 73450,
     isPremium: false,
     price: 0,
-    tags: ['좌뇌', '우뇌', '두뇌'],
+    tags: ['두뇌'],
     createdAt: '2024-02-08',
   },
   {
@@ -440,7 +440,7 @@ export const tests: Test[] = [
     participantCount: 45670,
     isPremium: false,
     price: 0,
-    tags: ['DISC', '성격', '행동'],
+    tags: ['심리', '성격'],
     createdAt: '2024-03-01',
   },
   {
@@ -456,7 +456,7 @@ export const tests: Test[] = [
     participantCount: 38920,
     isPremium: false,
     price: 0,
-    tags: ['에니어그램', '성격', '자기이해'],
+    tags: ['심리', '성격'],
     createdAt: '2024-03-05',
   },
   {
@@ -472,7 +472,7 @@ export const tests: Test[] = [
     participantCount: 42350,
     isPremium: false,
     price: 0,
-    tags: ['EQ', '감성지능', '공감'],
+    tags: ['EQ'],
     createdAt: '2024-03-10',
   },
   {
@@ -488,7 +488,7 @@ export const tests: Test[] = [
     participantCount: 36780,
     isPremium: false,
     price: 0,
-    tags: ['멘탈', '회복탄력성', '정신건강'],
+    tags: ['멘탈'],
     createdAt: '2024-03-15',
   },
   {
@@ -504,7 +504,7 @@ export const tests: Test[] = [
     participantCount: 31450,
     isPremium: false,
     price: 0,
-    tags: ['번아웃', '직장', '스트레스'],
+    tags: ['멘탈', '직장'],
     createdAt: '2024-03-20',
   },
   {
@@ -520,7 +520,7 @@ export const tests: Test[] = [
     participantCount: 28930,
     isPremium: false,
     price: 0,
-    tags: ['집중력', '두뇌', '생산성'],
+    tags: ['두뇌'],
     createdAt: '2024-03-25',
   },
   {
@@ -536,7 +536,7 @@ export const tests: Test[] = [
     participantCount: 45230,
     isPremium: false,
     price: 0,
-    tags: ['다크 트라이어드', '나르시시즘', '심리', '바이럴'],
+    tags: ['바이럴', '심리'],
     createdAt: '2024-04-01',
   },
   {
@@ -552,7 +552,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['정신연령', '심리', '재미', '바이럴'],
+    tags: ['바이럴', '심리', '재미'],
     createdAt: '2024-04-05',
   },
   {
@@ -568,7 +568,7 @@ export const tests: Test[] = [
     participantCount: 52340,
     isPremium: false,
     price: 0,
-    tags: ['재능', '적성', '잠재력', '바이럴'],
+    tags: ['바이럴', '커리어'],
     createdAt: '2024-04-10',
   },
   {
@@ -584,7 +584,7 @@ export const tests: Test[] = [
     participantCount: 41250,
     isPremium: false,
     price: 0,
-    tags: ['소통', '대화', '관계', '바이럴'],
+    tags: ['바이럴', '소통', '관계'],
     createdAt: '2024-04-12',
   },
   {
@@ -600,7 +600,7 @@ export const tests: Test[] = [
     participantCount: 38920,
     isPremium: false,
     price: 0,
-    tags: ['리더십', '직장', '커리어', '바이럴'],
+    tags: ['바이럴', '직장', '커리어'],
     createdAt: '2024-04-15',
   },
   {
@@ -616,7 +616,7 @@ export const tests: Test[] = [
     participantCount: 45670,
     isPremium: false,
     price: 0,
-    tags: ['창의력', '상상력', '두뇌', '바이럴'],
+    tags: ['바이럴', '두뇌'],
     createdAt: '2024-04-18',
   },
   {
@@ -632,7 +632,7 @@ export const tests: Test[] = [
     participantCount: 34560,
     isPremium: false,
     price: 0,
-    tags: ['내면아이', '심리', '치유', '바이럴'],
+    tags: ['바이럴', '심리', '재미'],
     createdAt: '2024-04-20',
   },
   {
@@ -648,7 +648,7 @@ export const tests: Test[] = [
     participantCount: 56780,
     isPremium: false,
     price: 0,
-    tags: ['플렉스', '소비', '재미', '바이럴'],
+    tags: ['바이럴', '재테크', '재미'],
     createdAt: '2024-04-22',
   },
   {
@@ -664,7 +664,7 @@ export const tests: Test[] = [
     participantCount: 41230,
     isPremium: false,
     price: 0,
-    tags: ['감정', '심리', '자기관리', '바이럴'],
+    tags: ['바이럴', '멘탈', '심리'],
     createdAt: '2024-04-25',
   },
   {
@@ -680,7 +680,7 @@ export const tests: Test[] = [
     participantCount: 89340,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '궁합', '연애', '바이럴'],
+    tags: ['바이럴', 'MBTI', '커플', '연애'],
     createdAt: '2024-04-28',
   },
   {
@@ -696,7 +696,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['질투', '연애', '심리', '바이럴'],
+    tags: ['바이럴', '심리', '연애'],
     createdAt: '2024-04-30',
   },
   {
@@ -712,7 +712,7 @@ export const tests: Test[] = [
     participantCount: 58760,
     isPremium: false,
     price: 0,
-    tags: ['자존감', '심리', '자기이해', '바이럴'],
+    tags: ['바이럴', '심리'],
     createdAt: '2024-05-02',
   },
   {
@@ -728,7 +728,7 @@ export const tests: Test[] = [
     participantCount: 72450,
     isPremium: false,
     price: 0,
-    tags: ['빌런', '히어로', '재미', '바이럴'],
+    tags: ['바이럴', '재미'],
     createdAt: '2024-05-05',
   },
   {
@@ -744,7 +744,7 @@ export const tests: Test[] = [
     participantCount: 63210,
     isPremium: false,
     price: 0,
-    tags: ['썸', '연애', '스타일', '바이럴'],
+    tags: ['바이럴', '썸', '연애', '취향'],
     createdAt: '2024-05-08',
   },
   {
@@ -760,7 +760,7 @@ export const tests: Test[] = [
     participantCount: 81230,
     isPremium: false,
     price: 0,
-    tags: ['전투력', '멘탈', '재미', '바이럴'],
+    tags: ['바이럴', '멘탈', '재미'],
     createdAt: '2024-05-10',
   },
   {
@@ -776,7 +776,7 @@ export const tests: Test[] = [
     participantCount: 74560,
     isPremium: false,
     price: 0,
-    tags: ['소셜배터리', '내향', '외향', '바이럴'],
+    tags: ['바이럴', '성격'],
     createdAt: '2024-05-12',
   },
   {
@@ -792,7 +792,7 @@ export const tests: Test[] = [
     participantCount: 48230,
     isPremium: false,
     price: 0,
-    tags: ['분노', '감정', '심리', '바이럴'],
+    tags: ['바이럴', '멘탈', '심리'],
     createdAt: '2024-05-15',
   },
   {
@@ -808,7 +808,7 @@ export const tests: Test[] = [
     participantCount: 52340,
     isPremium: false,
     price: 0,
-    tags: ['불안', '정신건강', '심리', '바이럴'],
+    tags: ['바이럴', '멘탈', '심리'],
     createdAt: '2024-05-18',
   },
   {
@@ -824,7 +824,7 @@ export const tests: Test[] = [
     participantCount: 39870,
     isPremium: false,
     price: 0,
-    tags: ['갈등', '대인관계', '심리', '바이럴'],
+    tags: ['바이럴', '관계', '심리'],
     createdAt: '2024-05-20',
   },
   {
@@ -840,7 +840,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['전투력', '체력', '재미', '바이럴'],
+    tags: ['바이럴', '재미'],
     createdAt: '2024-05-22',
   },
   {
@@ -856,7 +856,7 @@ export const tests: Test[] = [
     participantCount: 41230,
     isPremium: false,
     price: 0,
-    tags: ['의사결정', '성격', '심리', '바이럴'],
+    tags: ['바이럴', '심리', '성격'],
     createdAt: '2024-05-25',
   },
   {
@@ -872,7 +872,7 @@ export const tests: Test[] = [
     participantCount: 58760,
     isPremium: false,
     price: 0,
-    tags: ['술자리', '유머', '재미', '바이럴'],
+    tags: ['바이럴', '취향', '재미'],
     createdAt: '2024-05-28',
   },
   {
@@ -888,7 +888,7 @@ export const tests: Test[] = [
     participantCount: 45670,
     isPremium: false,
     price: 0,
-    tags: ['첫인상', '이미지', '성격', '바이럴'],
+    tags: ['바이럴', '성격'],
     createdAt: '2024-06-01',
   },
   {
@@ -904,7 +904,7 @@ export const tests: Test[] = [
     participantCount: 39560,
     isPremium: false,
     price: 0,
-    tags: ['우정', '친구', '관계', '바이럴'],
+    tags: ['바이럴', '관계'],
     createdAt: '2024-06-05',
   },
   {
@@ -920,7 +920,7 @@ export const tests: Test[] = [
     participantCount: 43210,
     isPremium: false,
     price: 0,
-    tags: ['가스라이팅', '관계', '심리', '바이럴'],
+    tags: ['바이럴', '관계', '심리'],
     createdAt: '2024-06-08',
   },
   {
@@ -936,7 +936,7 @@ export const tests: Test[] = [
     participantCount: 51230,
     isPremium: false,
     price: 0,
-    tags: ['유머', '개그', '재미', '바이럴'],
+    tags: ['바이럴', '재미'],
     createdAt: '2024-06-10',
   },
   {
@@ -952,7 +952,7 @@ export const tests: Test[] = [
     participantCount: 62340,
     isPremium: false,
     price: 0,
-    tags: ['내향', '외향', '성격', '바이럴'],
+    tags: ['바이럴', '성격'],
     createdAt: '2024-06-12',
   },
   {
@@ -968,7 +968,7 @@ export const tests: Test[] = [
     participantCount: 47890,
     isPremium: false,
     price: 0,
-    tags: ['인생', '운세', '재미', '바이럴'],
+    tags: ['바이럴', '운세', '재미'],
     createdAt: '2024-06-15',
   },
   {
@@ -984,7 +984,7 @@ export const tests: Test[] = [
     participantCount: 38920,
     isPremium: false,
     price: 0,
-    tags: ['연애', '트라우마', '심리', '바이럴'],
+    tags: ['바이럴', '연애', '이별', '심리'],
     createdAt: '2024-06-18',
   },
   {
@@ -1000,7 +1000,7 @@ export const tests: Test[] = [
     participantCount: 42150,
     isPremium: false,
     price: 0,
-    tags: ['피플플리저', '눈치', '심리', '바이럴'],
+    tags: ['바이럴', '심리'],
     createdAt: '2024-06-20',
   },
   {
@@ -1016,7 +1016,7 @@ export const tests: Test[] = [
     participantCount: 53670,
     isPremium: false,
     price: 0,
-    tags: ['이중인격', '페르소나', '성격', '바이럴'],
+    tags: ['바이럴', '성격'],
     createdAt: '2024-06-22',
   },
   {
@@ -1032,7 +1032,7 @@ export const tests: Test[] = [
     participantCount: 61230,
     isPremium: false,
     price: 0,
-    tags: ['미루기', '습관', '심리', '바이럴'],
+    tags: ['바이럴', '라이프', '심리'],
     createdAt: '2024-06-25',
   },
   {
@@ -1048,7 +1048,7 @@ export const tests: Test[] = [
     participantCount: 45670,
     isPremium: false,
     price: 0,
-    tags: ['수면', '건강', '생활', '바이럴'],
+    tags: ['바이럴', '라이프'],
     createdAt: '2024-06-28',
   },
   {
@@ -1064,7 +1064,7 @@ export const tests: Test[] = [
     participantCount: 58920,
     isPremium: false,
     price: 0,
-    tags: ['SNS', '소셜미디어', '재미', '바이럴'],
+    tags: ['바이럴', 'SNS', '재미'],
     createdAt: '2024-07-01',
   },
   {
@@ -1080,7 +1080,7 @@ export const tests: Test[] = [
     participantCount: 47890,
     isPremium: false,
     price: 0,
-    tags: ['소비', '재테크', '돈', '바이럴'],
+    tags: ['바이럴', '재테크'],
     createdAt: '2024-07-05',
   },
   {
@@ -1096,7 +1096,7 @@ export const tests: Test[] = [
     participantCount: 72340,
     isPremium: false,
     price: 0,
-    tags: ['타로', '운세', '재미', '바이럴'],
+    tags: ['바이럴', '운세', '재미'],
     createdAt: '2024-07-08',
   },
   {
@@ -1112,7 +1112,7 @@ export const tests: Test[] = [
     participantCount: 39870,
     isPremium: false,
     price: 0,
-    tags: ['관계', '독성', '심리', '바이럴'],
+    tags: ['바이럴', '관계', '심리'],
     createdAt: '2024-07-10',
   },
   {
@@ -1128,7 +1128,7 @@ export const tests: Test[] = [
     participantCount: 35670,
     isPremium: false,
     price: 0,
-    tags: ['트라우마', '정신건강', '심리', '바이럴'],
+    tags: ['바이럴', '이별', '멘탈', '심리'],
     createdAt: '2024-07-12',
   },
   {
@@ -1144,7 +1144,7 @@ export const tests: Test[] = [
     participantCount: 54320,
     isPremium: false,
     price: 0,
-    tags: ['이별', '미련', '전애인', '연애', '바이럴'],
+    tags: ['바이럴', '이별', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1160,7 +1160,7 @@ export const tests: Test[] = [
     participantCount: 48760,
     isPremium: false,
     price: 0,
-    tags: ['재회', '이별', '연애', '가능성', '바이럴'],
+    tags: ['바이럴', '이별', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1176,7 +1176,7 @@ export const tests: Test[] = [
     participantCount: 52340,
     isPremium: false,
     price: 0,
-    tags: ['연애', '세포', '솔로', '연애준비', '바이럴'],
+    tags: ['바이럴', '연애', '썸'],
     createdAt: '2024-11-26',
   },
   {
@@ -1192,7 +1192,7 @@ export const tests: Test[] = [
     participantCount: 47890,
     isPremium: false,
     price: 0,
-    tags: ['커플', '싸움', '갈등', '연애', '바이럴'],
+    tags: ['바이럴', '커플', '관계', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1208,7 +1208,7 @@ export const tests: Test[] = [
     participantCount: 43560,
     isPremium: false,
     price: 0,
-    tags: ['이별', '원인', '연애', '분석', '바이럴'],
+    tags: ['바이럴', '이별', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1224,7 +1224,7 @@ export const tests: Test[] = [
     participantCount: 45120,
     isPremium: false,
     price: 0,
-    tags: ['새연애', '준비', '회복', '솔로', '바이럴'],
+    tags: ['바이럴', '이별', '썸'],
     createdAt: '2024-11-26',
   },
   {
@@ -1240,7 +1240,7 @@ export const tests: Test[] = [
     participantCount: 58940,
     isPremium: false,
     price: 0,
-    tags: ['커플', '애정', '연애', '온도', '바이럴'],
+    tags: ['바이럴', '커플', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1256,7 +1256,7 @@ export const tests: Test[] = [
     participantCount: 67230,
     isPremium: false,
     price: 0,
-    tags: ['짝사랑', '성공률', '연애', '호감', '바이럴'],
+    tags: ['바이럴', '썸', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1272,7 +1272,7 @@ export const tests: Test[] = [
     participantCount: 72450,
     isPremium: false,
     price: 0,
-    tags: ['레드플래그', '연애', '위험', '감별', '바이럴'],
+    tags: ['바이럴', '관계', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1288,7 +1288,7 @@ export const tests: Test[] = [
     participantCount: 54320,
     isPremium: false,
     price: 0,
-    tags: ['고백', '타이밍', '연애', '썸', '바이럴'],
+    tags: ['바이럴', '썸', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1304,7 +1304,7 @@ export const tests: Test[] = [
     participantCount: 48760,
     isPremium: false,
     price: 0,
-    tags: ['친구', '연인', '연애', '가능성', '바이럴'],
+    tags: ['바이럴', '관계', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1320,7 +1320,7 @@ export const tests: Test[] = [
     participantCount: 52340,
     isPremium: false,
     price: 0,
-    tags: ['결혼', '적합도', '연애', '커플', '바이럴'],
+    tags: ['바이럴', '커플', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1336,7 +1336,7 @@ export const tests: Test[] = [
     participantCount: 45890,
     isPremium: false,
     price: 0,
-    tags: ['커플', '소통', '대화', '연애', '바이럴'],
+    tags: ['바이럴', '커플', '소통', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1352,7 +1352,7 @@ export const tests: Test[] = [
     participantCount: 58940,
     isPremium: false,
     price: 0,
-    tags: ['연애', '패턴', '분석', '심리', '바이럴'],
+    tags: ['바이럴', '연애', '두뇌', '심리'],
     createdAt: '2024-11-26',
   },
   // 자극적/바이럴 특화 테스트 (Batch 4)
@@ -1369,7 +1369,7 @@ export const tests: Test[] = [
     participantCount: 45230,
     isPremium: false,
     price: 0,
-    tags: ['욕망', '무의식', '심리', '자극적', '바이럴'],
+    tags: ['바이럴', '심리'],
     createdAt: '2024-11-26',
   },
   {
@@ -1385,7 +1385,7 @@ export const tests: Test[] = [
     participantCount: 52180,
     isPremium: false,
     price: 0,
-    tags: ['유혹', '매력', '연애', '자극적', '바이럴'],
+    tags: ['바이럴', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1401,7 +1401,7 @@ export const tests: Test[] = [
     participantCount: 48760,
     isPremium: false,
     price: 0,
-    tags: ['본성', '그림자', '심리', '자극적', '바이럴'],
+    tags: ['바이럴', '심리'],
     createdAt: '2024-11-26',
   },
   {
@@ -1417,7 +1417,7 @@ export const tests: Test[] = [
     participantCount: 67340,
     isPremium: false,
     price: 0,
-    tags: ['바람기', '연애', '솔직', '자극적', '바이럴'],
+    tags: ['바이럴', '연애'],
     createdAt: '2024-11-26',
   },
   // Batch 5 - 다양성/트렌드 특화 테스트
@@ -1434,7 +1434,7 @@ export const tests: Test[] = [
     participantCount: 48920,
     isPremium: false,
     price: 0,
-    tags: ['집착', '연애', '심리', '자극적', '바이럴'],
+    tags: ['바이럴', '심리', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1450,7 +1450,7 @@ export const tests: Test[] = [
     participantCount: 52340,
     isPremium: false,
     price: 0,
-    tags: ['젠더', '정체성', '심리', 'MZ', '바이럴'],
+    tags: ['심리', '트렌드'],
     createdAt: '2024-11-26',
   },
   {
@@ -1466,7 +1466,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['유튜버', '크리에이터', '재미', 'MZ', '바이럴'],
+    tags: ['바이럴', 'SNS', '재미', '트렌드'],
     createdAt: '2024-11-26',
   },
   {
@@ -1482,7 +1482,7 @@ export const tests: Test[] = [
     participantCount: 58760,
     isPremium: false,
     price: 0,
-    tags: ['관종', '관심', '재미', '자극적', '바이럴'],
+    tags: ['바이럴', 'SNS', '재미'],
     createdAt: '2024-11-26',
   },
   // Batch 6 - MBTI 확장 및 라이프스타일 테스트
@@ -1499,7 +1499,7 @@ export const tests: Test[] = [
     participantCount: 52340,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '부캐', '그림자', '성격', '바이럴'],
+    tags: ['바이럴', 'MBTI', '심리', '성격'],
     createdAt: '2024-11-26',
   },
   {
@@ -1515,7 +1515,7 @@ export const tests: Test[] = [
     participantCount: 48760,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '스트레스', '성격변화', '심리', '바이럴'],
+    tags: ['MBTI', '멘탈', '성격', '심리'],
     createdAt: '2024-11-26',
   },
   {
@@ -1531,7 +1531,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['알파세대', '트렌드', '신조어', 'MZ', '바이럴'],
+    tags: ['바이럴', '트렌드'],
     createdAt: '2024-11-26',
   },
   {
@@ -1547,7 +1547,7 @@ export const tests: Test[] = [
     participantCount: 54320,
     isPremium: false,
     price: 0,
-    tags: ['디지털', '테크', '적응력', 'MZ', '바이럴'],
+    tags: ['바이럴', 'SNS', '트렌드'],
     createdAt: '2024-11-26',
   },
   {
@@ -1563,7 +1563,7 @@ export const tests: Test[] = [
     participantCount: 58940,
     isPremium: false,
     price: 0,
-    tags: ['야식', '음식', '취향', '재미', '바이럴'],
+    tags: ['취향', '라이프', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1579,7 +1579,7 @@ export const tests: Test[] = [
     participantCount: 62340,
     isPremium: false,
     price: 0,
-    tags: ['여행', '스타일', '취향', '라이프', '바이럴'],
+    tags: ['바이럴', '라이프', '취향'],
     createdAt: '2024-11-26',
   },
   {
@@ -1595,7 +1595,7 @@ export const tests: Test[] = [
     participantCount: 51230,
     isPremium: false,
     price: 0,
-    tags: ['쇼핑', '소비', '스타일', '라이프', '바이럴'],
+    tags: ['바이럴', '재테크', '취향', '라이프'],
     createdAt: '2024-11-26',
   },
   {
@@ -1611,7 +1611,7 @@ export const tests: Test[] = [
     participantCount: 47890,
     isPremium: false,
     price: 0,
-    tags: ['반려동물', '펫', '궁합', '라이프', '바이럴'],
+    tags: ['바이럴', '동물', '라이프'],
     createdAt: '2024-11-26',
   },
   {
@@ -1627,7 +1627,7 @@ export const tests: Test[] = [
     participantCount: 72450,
     isPremium: false,
     price: 0,
-    tags: ['좀비', '서바이벌', '생존', '재미', '바이럴'],
+    tags: ['바이럴', '게임', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1643,7 +1643,7 @@ export const tests: Test[] = [
     participantCount: 68230,
     isPremium: false,
     price: 0,
-    tags: ['무인도', '서바이벌', '생존', '재미', '바이럴'],
+    tags: ['바이럴', '게임', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1659,7 +1659,7 @@ export const tests: Test[] = [
     participantCount: 72340,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '직장', '직장인', '커리어'],
+    tags: ['MBTI', '직장', '커리어'],
     createdAt: '2024-11-26',
   },
   {
@@ -1675,7 +1675,7 @@ export const tests: Test[] = [
     participantCount: 89560,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '연애', '사랑', '데이트'],
+    tags: ['MBTI', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -1691,7 +1691,7 @@ export const tests: Test[] = [
     participantCount: 54230,
     isPremium: false,
     price: 0,
-    tags: ['운전', '드라이브', '성격', '재미'],
+    tags: ['취향', '성격', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1707,7 +1707,7 @@ export const tests: Test[] = [
     participantCount: 61450,
     isPremium: false,
     price: 0,
-    tags: ['노래방', '노래', '재미', '친구'],
+    tags: ['취향', '재미', '관계'],
     createdAt: '2024-11-26',
   },
   {
@@ -1723,7 +1723,7 @@ export const tests: Test[] = [
     participantCount: 78920,
     isPremium: false,
     price: 0,
-    tags: ['패션', '스타일', '옷', '성격'],
+    tags: ['라이프', '취향', '성격'],
     createdAt: '2024-11-26',
   },
   {
@@ -1739,7 +1739,7 @@ export const tests: Test[] = [
     participantCount: 82340,
     isPremium: false,
     price: 0,
-    tags: ['음식', '맛집', '취향', '재미'],
+    tags: ['라이프', '취향', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1755,7 +1755,7 @@ export const tests: Test[] = [
     participantCount: 56780,
     isPremium: false,
     price: 0,
-    tags: ['정리', '청소', '방', '성격'],
+    tags: ['라이프', '성격'],
     createdAt: '2024-11-26',
   },
   {
@@ -1771,7 +1771,7 @@ export const tests: Test[] = [
     participantCount: 71230,
     isPremium: false,
     price: 0,
-    tags: ['취미', '추천', '라이프스타일', '재미'],
+    tags: ['라이프', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1787,7 +1787,7 @@ export const tests: Test[] = [
     participantCount: 64890,
     isPremium: false,
     price: 0,
-    tags: ['아침형', '저녁형', '생체리듬', '수면'],
+    tags: ['라이프'],
     createdAt: '2024-11-26',
   },
   {
@@ -1803,7 +1803,7 @@ export const tests: Test[] = [
     participantCount: 73450,
     isPremium: false,
     price: 0,
-    tags: ['계절', '성격', '봄여름가을겨울', '감성'],
+    tags: ['운세', '성격', '멘탈'],
     createdAt: '2024-11-26',
   },
   {
@@ -1819,7 +1819,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '여행', '스타일', '바이럴'],
+    tags: ['바이럴', 'MBTI', '라이프', '취향'],
     createdAt: '2024-11-26',
   },
   {
@@ -1835,7 +1835,7 @@ export const tests: Test[] = [
     participantCount: 72340,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '술자리', '유머', '바이럴'],
+    tags: ['바이럴', 'MBTI', '취향', '재미'],
     createdAt: '2024-11-26',
   },
   // Batch 8 - 판타지/재미 테스트
@@ -1852,7 +1852,7 @@ export const tests: Test[] = [
     participantCount: 54230,
     isPremium: false,
     price: 0,
-    tags: ['동화', '판타지', '역할', '재미', '바이럴'],
+    tags: ['바이럴', '판타지', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1868,7 +1868,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['마법', '속성', '판타지', '재미', '바이럴'],
+    tags: ['바이럴', '판타지', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1884,7 +1884,7 @@ export const tests: Test[] = [
     participantCount: 72340,
     isPremium: false,
     price: 0,
-    tags: ['게임', '캐릭터', '직업', '재미', '바이럴'],
+    tags: ['바이럴', '게임', '커리어', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1900,7 +1900,7 @@ export const tests: Test[] = [
     participantCount: 81230,
     isPremium: false,
     price: 0,
-    tags: ['초능력', '슈퍼파워', '판타지', '재미', '바이럴'],
+    tags: ['바이럴', '판타지', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1916,7 +1916,7 @@ export const tests: Test[] = [
     participantCount: 89560,
     isPremium: false,
     price: 0,
-    tags: ['해리포터', '호그와트', '판타지', '재미', '바이럴'],
+    tags: ['바이럴', '판타지', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1932,7 +1932,7 @@ export const tests: Test[] = [
     participantCount: 48760,
     isPremium: false,
     price: 0,
-    tags: ['회의', '직장', '커리어', '재미', '바이럴'],
+    tags: ['바이럴', '직장', '커리어', '재미'],
     createdAt: '2024-11-26',
   },
   // Batch 9 - MBTI 확장 및 트렌드/직장 테스트
@@ -1949,7 +1949,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '갈등', '성격', '바이럴'],
+    tags: ['바이럴', 'MBTI', '관계', '성격'],
     createdAt: '2024-11-26',
   },
   {
@@ -1965,7 +1965,7 @@ export const tests: Test[] = [
     participantCount: 71230,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '소비', '돈', '재테크', '바이럴'],
+    tags: ['바이럴', 'MBTI', '재테크'],
     createdAt: '2024-11-26',
   },
   {
@@ -1981,7 +1981,7 @@ export const tests: Test[] = [
     participantCount: 82340,
     isPremium: false,
     price: 0,
-    tags: ['아재', '유머', '세대', '재미', '바이럴'],
+    tags: ['바이럴', '트렌드', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -1997,7 +1997,7 @@ export const tests: Test[] = [
     participantCount: 59870,
     isPremium: false,
     price: 0,
-    tags: ['힙스터', '트렌드', '취향', '재미', '바이럴'],
+    tags: ['바이럴', '트렌드', '취향', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -2013,7 +2013,7 @@ export const tests: Test[] = [
     participantCount: 91230,
     isPremium: false,
     price: 0,
-    tags: ['월요병', '직장', '스트레스', '바이럴'],
+    tags: ['바이럴', '멘탈', '직장'],
     createdAt: '2024-11-26',
   },
   {
@@ -2029,7 +2029,7 @@ export const tests: Test[] = [
     participantCount: 53680,
     isPremium: false,
     price: 0,
-    tags: ['상사', '리더십', '직장', '커리어', '바이럴'],
+    tags: ['바이럴', '직장', '커리어'],
     createdAt: '2024-11-26',
   },
   // 적성/직업 테스트 확장 (Batch 10)
@@ -2046,7 +2046,7 @@ export const tests: Test[] = [
     participantCount: 34560,
     isPremium: false,
     price: 0,
-    tags: ['협상', '비즈니스', '커리어', '소통'],
+    tags: ['소통', '커리어'],
     createdAt: '2024-11-26',
   },
   {
@@ -2062,7 +2062,7 @@ export const tests: Test[] = [
     participantCount: 47890,
     isPremium: false,
     price: 0,
-    tags: ['스타트업', '창업', '커리어', '직장'],
+    tags: ['커리어', '직장'],
     createdAt: '2024-11-26',
   },
   {
@@ -2078,7 +2078,7 @@ export const tests: Test[] = [
     participantCount: 62340,
     isPremium: false,
     price: 0,
-    tags: ['부업', 'N잡', '재테크', '커리어'],
+    tags: ['커리어', '재테크'],
     createdAt: '2024-11-26',
   },
   {
@@ -2094,7 +2094,7 @@ export const tests: Test[] = [
     participantCount: 54320,
     isPremium: false,
     price: 0,
-    tags: ['재택근무', '리모트', '워라밸', '직장'],
+    tags: ['직장'],
     createdAt: '2024-11-26',
   },
   {
@@ -2110,7 +2110,7 @@ export const tests: Test[] = [
     participantCount: 41230,
     isPremium: false,
     price: 0,
-    tags: ['팀워크', '협업', '커리어', '직장'],
+    tags: ['직장', '커리어'],
     createdAt: '2024-11-26',
   },
   {
@@ -2126,7 +2126,7 @@ export const tests: Test[] = [
     participantCount: 58760,
     isPremium: false,
     price: 0,
-    tags: ['면접', '취업', '커리어', '자기소개'],
+    tags: ['커리어'],
     createdAt: '2024-11-26',
   },
   // IQ/두뇌 테스트 확장 (Batch 11)
@@ -2143,7 +2143,7 @@ export const tests: Test[] = [
     participantCount: 45670,
     isPremium: false,
     price: 0,
-    tags: ['논리', '추론', '두뇌', 'IQ'],
+    tags: ['두뇌'],
     createdAt: '2024-11-26',
   },
   {
@@ -2159,7 +2159,7 @@ export const tests: Test[] = [
     participantCount: 52340,
     isPremium: false,
     price: 0,
-    tags: ['기억력', '두뇌', '암기', 'IQ'],
+    tags: ['두뇌'],
     createdAt: '2024-11-26',
   },
   {
@@ -2175,7 +2175,7 @@ export const tests: Test[] = [
     participantCount: 38920,
     isPremium: false,
     price: 0,
-    tags: ['언어', '어휘', '두뇌', 'IQ'],
+    tags: ['두뇌'],
     createdAt: '2024-11-26',
   },
   {
@@ -2191,7 +2191,7 @@ export const tests: Test[] = [
     participantCount: 41230,
     isPremium: false,
     price: 0,
-    tags: ['수학', '수리', '두뇌', 'IQ'],
+    tags: ['두뇌'],
     createdAt: '2024-11-26',
   },
   {
@@ -2207,7 +2207,7 @@ export const tests: Test[] = [
     participantCount: 35670,
     isPremium: false,
     price: 0,
-    tags: ['공간', '지각', '두뇌', 'IQ'],
+    tags: ['두뇌'],
     createdAt: '2024-11-26',
   },
   {
@@ -2223,7 +2223,7 @@ export const tests: Test[] = [
     participantCount: 47890,
     isPremium: false,
     price: 0,
-    tags: ['추론', '패턴', '두뇌', 'IQ'],
+    tags: ['두뇌'],
     createdAt: '2024-11-26',
   },
   // 성격/심리 테스트 확장 (Batch 12)
@@ -2240,7 +2240,7 @@ export const tests: Test[] = [
     participantCount: 42340,
     isPremium: false,
     price: 0,
-    tags: ['직관', '육감', '심리', '감각'],
+    tags: ['심리'],
     createdAt: '2024-11-26',
   },
   {
@@ -2256,7 +2256,7 @@ export const tests: Test[] = [
     participantCount: 56780,
     isPremium: false,
     price: 0,
-    tags: ['예민함', 'HSP', '감각', '심리'],
+    tags: ['심리'],
     createdAt: '2024-11-26',
   },
   {
@@ -2272,7 +2272,7 @@ export const tests: Test[] = [
     participantCount: 38920,
     isPremium: false,
     price: 0,
-    tags: ['결단력', '의사결정', '심리', '리더십'],
+    tags: ['심리', '직장'],
     createdAt: '2024-11-26',
   },
   {
@@ -2288,7 +2288,7 @@ export const tests: Test[] = [
     participantCount: 47890,
     isPremium: false,
     price: 0,
-    tags: ['호기심', '탐구심', '학습', '심리'],
+    tags: ['심리', '두뇌'],
     createdAt: '2024-11-26',
   },
   {
@@ -2304,7 +2304,7 @@ export const tests: Test[] = [
     participantCount: 52340,
     isPremium: false,
     price: 0,
-    tags: ['낙관', '비관', '긍정', '심리'],
+    tags: ['심리'],
     createdAt: '2024-11-26',
   },
   {
@@ -2320,7 +2320,7 @@ export const tests: Test[] = [
     participantCount: 41230,
     isPremium: false,
     price: 0,
-    tags: ['독립', '자립', '의존', '심리'],
+    tags: ['심리'],
     createdAt: '2024-11-26',
   },
   // 재미/운세 테스트 확장 (Batch 13)
@@ -2337,7 +2337,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['영화', '인생', '재미', '장르'],
+    tags: ['취향', '운세', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -2353,7 +2353,7 @@ export const tests: Test[] = [
     participantCount: 72340,
     isPremium: false,
     price: 0,
-    tags: ['전생', '직업', '재미', '운세'],
+    tags: ['운세', '커리어', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -2369,7 +2369,7 @@ export const tests: Test[] = [
     participantCount: 58940,
     isPremium: false,
     price: 0,
-    tags: ['오라', '에너지', '색깔', '신비'],
+    tags: ['운세', '판타지'],
     createdAt: '2024-11-26',
   },
   {
@@ -2385,7 +2385,7 @@ export const tests: Test[] = [
     participantCount: 65430,
     isPremium: false,
     price: 0,
-    tags: ['신화', '판타지', '재미', '동물'],
+    tags: ['판타지', '재미', '동물'],
     createdAt: '2024-11-26',
   },
   {
@@ -2401,7 +2401,7 @@ export const tests: Test[] = [
     participantCount: 54320,
     isPremium: false,
     price: 0,
-    tags: ['종말', '서바이벌', '역할', '재미'],
+    tags: ['게임', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -2417,7 +2417,7 @@ export const tests: Test[] = [
     participantCount: 61230,
     isPremium: false,
     price: 0,
-    tags: ['시간여행', '역사', '재미', '판타지'],
+    tags: ['운세', '재미', '판타지'],
     createdAt: '2024-11-26',
   },
   // 추가 테스트 (Batch 14)
@@ -2434,7 +2434,7 @@ export const tests: Test[] = [
     participantCount: 89560,
     isPremium: false,
     price: 0,
-    tags: ['영어이름', '이름', '재미', '추천'],
+    tags: ['재미', '바이럴', '트렌드'],
     createdAt: '2024-11-26',
   },
   {
@@ -2450,7 +2450,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['카리스마', '매력', '리더십', '성격'],
+    tags: ['성격', '연애', '직장'],
     createdAt: '2024-11-26',
   },
   {
@@ -2466,7 +2466,7 @@ export const tests: Test[] = [
     participantCount: 124560,
     isPremium: false,
     price: 0,
-    tags: ['아이돌', 'K-POP', '재미', '포지션'],
+    tags: ['게임', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -2482,7 +2482,7 @@ export const tests: Test[] = [
     participantCount: 78230,
     isPremium: false,
     price: 0,
-    tags: ['학교', '캐릭터', '추억', '재미'],
+    tags: ['게임', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -2498,7 +2498,7 @@ export const tests: Test[] = [
     participantCount: 56780,
     isPremium: false,
     price: 0,
-    tags: ['회사', '직장', '커리어', '취업'],
+    tags: ['직장', '커리어'],
     createdAt: '2024-11-26',
   },
   {
@@ -2514,7 +2514,7 @@ export const tests: Test[] = [
     participantCount: 72340,
     isPremium: false,
     price: 0,
-    tags: ['연애', '마인드셋', '가치관', '사랑'],
+    tags: ['연애', '심리'],
     createdAt: '2024-11-26',
   },
   // 추가 테스트 (Batch 15)
@@ -2531,7 +2531,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['카페', '취향', '라이프스타일', '재미'],
+    tags: ['취향', '라이프', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -2547,7 +2547,7 @@ export const tests: Test[] = [
     participantCount: 89560,
     isPremium: false,
     price: 0,
-    tags: ['꼰대', '세대', '유머', '바이럴'],
+    tags: ['바이럴', '트렌드', '재미'],
     createdAt: '2024-11-26',
   },
   {
@@ -2563,7 +2563,7 @@ export const tests: Test[] = [
     participantCount: 72340,
     isPremium: false,
     price: 0,
-    tags: ['MZ', '트렌드', '세대', '바이럴'],
+    tags: ['바이럴', '트렌드'],
     createdAt: '2024-11-26',
   },
   {
@@ -2579,7 +2579,7 @@ export const tests: Test[] = [
     participantCount: 98760,
     isPremium: false,
     price: 0,
-    tags: ['퇴사', '직장', '커리어', '바이럴'],
+    tags: ['바이럴', '직장', '커리어'],
     createdAt: '2024-11-26',
   },
   {
@@ -2595,7 +2595,7 @@ export const tests: Test[] = [
     participantCount: 84230,
     isPremium: false,
     price: 0,
-    tags: ['집순이', '집돌이', '홈바디', '라이프'],
+    tags: ['라이프'],
     createdAt: '2024-11-26',
   },
   {
@@ -2611,7 +2611,7 @@ export const tests: Test[] = [
     participantCount: 76890,
     isPremium: false,
     price: 0,
-    tags: ['커피', '카페', '취향', '재미'],
+    tags: ['취향', '재미'],
     createdAt: '2024-11-26',
   },
   // 추가 테스트 (Batch 16)
@@ -2628,7 +2628,7 @@ export const tests: Test[] = [
     participantCount: 82340,
     isPremium: false,
     price: 0,
-    tags: ['세대', '격차', '트렌드', '바이럴'],
+    tags: ['바이럴', '트렌드'],
     createdAt: '2024-11-26',
   },
   {
@@ -2644,7 +2644,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['소개팅', '앱', '연애', '매칭'],
+    tags: ['썸', 'SNS', '연애'],
     createdAt: '2024-11-26',
   },
   {
@@ -2660,7 +2660,7 @@ export const tests: Test[] = [
     participantCount: 91230,
     isPremium: false,
     price: 0,
-    tags: ['반려동물', '성격', '펫', '취향'],
+    tags: ['동물', '성격', '취향'],
     createdAt: '2024-11-26',
   },
   {
@@ -2676,7 +2676,7 @@ export const tests: Test[] = [
     participantCount: 78560,
     isPremium: false,
     price: 0,
-    tags: ['음악', '취향', '플레이리스트', '성격'],
+    tags: ['취향', '성격'],
     createdAt: '2024-11-26',
   },
   {
@@ -2692,7 +2692,7 @@ export const tests: Test[] = [
     participantCount: 85670,
     isPremium: false,
     price: 0,
-    tags: ['영화', '장르', '넷플릭스', '취향'],
+    tags: ['취향'],
     createdAt: '2024-11-26',
   },
   {
@@ -2708,7 +2708,7 @@ export const tests: Test[] = [
     participantCount: 72340,
     isPremium: false,
     price: 0,
-    tags: ['주말', '라이프스타일', '취미', '휴식'],
+    tags: ['라이프'],
     createdAt: '2024-11-26',
   },
   // 추가 테스트 (Batch 17)
@@ -2725,7 +2725,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['재택근무', '워라밸', '직장', '라이프'],
+    tags: ['직장', '라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -2741,7 +2741,7 @@ export const tests: Test[] = [
     participantCount: 82340,
     isPremium: false,
     price: 0,
-    tags: ['SNS', '디톡스', '중독', '디지털'],
+    tags: ['SNS'],
     createdAt: '2024-11-27',
   },
   {
@@ -2757,7 +2757,7 @@ export const tests: Test[] = [
     participantCount: 75680,
     isPremium: false,
     price: 0,
-    tags: ['돈', '재테크', '성격', '금전'],
+    tags: ['재테크', '성격'],
     createdAt: '2024-11-27',
   },
   {
@@ -2773,7 +2773,7 @@ export const tests: Test[] = [
     participantCount: 68920,
     isPremium: false,
     price: 0,
-    tags: ['수면', '건강', '생활', '휴식'],
+    tags: ['라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -2789,7 +2789,7 @@ export const tests: Test[] = [
     participantCount: 71230,
     isPremium: false,
     price: 0,
-    tags: ['요리', '음식', '라이프', '취향'],
+    tags: ['취향', '라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -2805,7 +2805,7 @@ export const tests: Test[] = [
     participantCount: 58760,
     isPremium: false,
     price: 0,
-    tags: ['선물', '관계', '사랑', '센스'],
+    tags: ['라이프', '관계', '연애', '소통'],
     createdAt: '2024-11-27',
   },
   // 추가 테스트 (Batch 18)
@@ -2822,7 +2822,7 @@ export const tests: Test[] = [
     participantCount: 78340,
     isPremium: false,
     price: 0,
-    tags: ['문자', '카톡', '소통', '관계'],
+    tags: ['SNS', '소통', '관계'],
     createdAt: '2024-11-27',
   },
   {
@@ -2838,7 +2838,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['점심', '직장', '음식', '라이프'],
+    tags: ['직장', '라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -2854,7 +2854,7 @@ export const tests: Test[] = [
     participantCount: 54320,
     isPremium: false,
     price: 0,
-    tags: ['논쟁', '갈등', '소통', '관계'],
+    tags: ['두뇌', '관계', '소통'],
     createdAt: '2024-11-27',
   },
   {
@@ -2870,7 +2870,7 @@ export const tests: Test[] = [
     participantCount: 72340,
     isPremium: false,
     price: 0,
-    tags: ['영화', '간식', '재미', '취향'],
+    tags: ['취향', '재미'],
     createdAt: '2024-11-27',
   },
   {
@@ -2886,7 +2886,7 @@ export const tests: Test[] = [
     participantCount: 65430,
     isPremium: false,
     price: 0,
-    tags: ['휴가', '여행', '계획', '라이프'],
+    tags: ['라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -2902,7 +2902,7 @@ export const tests: Test[] = [
     participantCount: 81230,
     isPremium: false,
     price: 0,
-    tags: ['스마트폰', '습관', '디지털', '라이프'],
+    tags: ['SNS', '라이프'],
     createdAt: '2024-11-27',
   },
   // 추가 테스트 (Batch 19)
@@ -2919,7 +2919,7 @@ export const tests: Test[] = [
     participantCount: 48760,
     isPremium: false,
     price: 0,
-    tags: ['사과', '관계', '소통', '갈등'],
+    tags: ['소통', '관계'],
     createdAt: '2024-11-27',
   },
   {
@@ -2935,7 +2935,7 @@ export const tests: Test[] = [
     participantCount: 52340,
     isPremium: false,
     price: 0,
-    tags: ['칭찬', '관계', '소통', '표현'],
+    tags: ['소통', '관계'],
     createdAt: '2024-11-27',
   },
   {
@@ -2951,7 +2951,7 @@ export const tests: Test[] = [
     participantCount: 45670,
     isPremium: false,
     price: 0,
-    tags: ['기다림', '인내심', '성격', '습관'],
+    tags: ['심리', '성격', '라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -2967,7 +2967,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['아침', '루틴', '습관', '라이프'],
+    tags: ['라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -2983,7 +2983,7 @@ export const tests: Test[] = [
     participantCount: 43560,
     isPremium: false,
     price: 0,
-    tags: ['뉴스', '미디어', '정보', '습관'],
+    tags: ['SNS', '라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -2999,7 +2999,7 @@ export const tests: Test[] = [
     participantCount: 71230,
     isPremium: false,
     price: 0,
-    tags: ['사진', '셀카', 'SNS', '취향'],
+    tags: ['SNS', '취향'],
     createdAt: '2024-11-27',
   },
   // 추가 테스트 (Batch 20)
@@ -3016,7 +3016,7 @@ export const tests: Test[] = [
     participantCount: 54320,
     isPremium: false,
     price: 0,
-    tags: ['이메일', '업무', '소통', '직장'],
+    tags: ['SNS', '직장', '소통'],
     createdAt: '2024-11-27',
   },
   {
@@ -3032,7 +3032,7 @@ export const tests: Test[] = [
     participantCount: 48760,
     isPremium: false,
     price: 0,
-    tags: ['줄서기', '성격', '인내심', '재미'],
+    tags: ['성격', '심리', '재미'],
     createdAt: '2024-11-27',
   },
   {
@@ -3048,7 +3048,7 @@ export const tests: Test[] = [
     participantCount: 39870,
     isPremium: false,
     price: 0,
-    tags: ['소음', '민감도', '환경', '심리'],
+    tags: ['심리'],
     createdAt: '2024-11-27',
   },
   {
@@ -3064,7 +3064,7 @@ export const tests: Test[] = [
     participantCount: 56780,
     isPremium: false,
     price: 0,
-    tags: ['청소', '정리', '습관', '라이프'],
+    tags: ['라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -3080,7 +3080,7 @@ export const tests: Test[] = [
     participantCount: 62340,
     isPremium: false,
     price: 0,
-    tags: ['비밀', '신뢰', '관계', '성격'],
+    tags: ['관계', '성격'],
     createdAt: '2024-11-27',
   },
   {
@@ -3096,7 +3096,7 @@ export const tests: Test[] = [
     participantCount: 73450,
     isPremium: false,
     price: 0,
-    tags: ['음식', '위로', '힐링', '취향'],
+    tags: ['라이프', '재미', '취향'],
     createdAt: '2024-11-27',
   },
   // 추가 테스트 (Batch 21) - 200개 달성
@@ -3113,7 +3113,7 @@ export const tests: Test[] = [
     participantCount: 51230,
     isPremium: false,
     price: 0,
-    tags: ['행동', '성격', '재미', '일상'],
+    tags: ['성격', '재미', '라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -3129,7 +3129,7 @@ export const tests: Test[] = [
     participantCount: 64890,
     isPremium: false,
     price: 0,
-    tags: ['지각', '약속', '성격', '시간'],
+    tags: ['성격', '라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -3145,7 +3145,7 @@ export const tests: Test[] = [
     participantCount: 58940,
     isPremium: false,
     price: 0,
-    tags: ['비', '날씨', '감성', '라이프'],
+    tags: ['운세', '멘탈', '라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -3161,7 +3161,7 @@ export const tests: Test[] = [
     participantCount: 42350,
     isPremium: false,
     price: 0,
-    tags: ['북마크', '습관', '정리', '디지털'],
+    tags: ['SNS', '라이프'],
     createdAt: '2024-11-27',
   },
   {
@@ -3177,7 +3177,7 @@ export const tests: Test[] = [
     participantCount: 47890,
     isPremium: false,
     price: 0,
-    tags: ['비밀번호', '보안', '습관', '디지털'],
+    tags: ['SNS', '라이프'],
     createdAt: '2024-11-27',
   },
   // 시즌별 테스트 (Phase 3)
@@ -3194,7 +3194,7 @@ export const tests: Test[] = [
     participantCount: 45230,
     isPremium: false,
     price: 0,
-    tags: ['크리스마스', '시즌', '연말', '재미', '바이럴'],
+    tags: ['운세', '재미'],
     createdAt: '2024-11-27',
   },
   {
@@ -3210,7 +3210,7 @@ export const tests: Test[] = [
     participantCount: 52340,
     isPremium: false,
     price: 0,
-    tags: ['연말', '결산', '새해', '시즌', '바이럴'],
+    tags: ['운세'],
     createdAt: '2024-11-27',
   },
   {
@@ -3226,7 +3226,7 @@ export const tests: Test[] = [
     participantCount: 38920,
     isPremium: false,
     price: 0,
-    tags: ['겨울', '감성', '시즌', '힐링', '바이럴'],
+    tags: ['운세', '멘탈', '재미'],
     createdAt: '2024-11-27',
   },
   // MBTI 궁합 시리즈 (Phase 3)
@@ -3243,7 +3243,7 @@ export const tests: Test[] = [
     participantCount: 67890,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '궁합', '친구', '우정', '바이럴'],
+    tags: ['바이럴', 'MBTI', '커플', '관계'],
     createdAt: '2024-11-27',
   },
   {
@@ -3259,7 +3259,7 @@ export const tests: Test[] = [
     participantCount: 54320,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '궁합', '직장', '동료', '협업', '바이럴'],
+    tags: ['MBTI', '관계', '직장'],
     createdAt: '2024-11-27',
   },
   {
@@ -3275,7 +3275,7 @@ export const tests: Test[] = [
     participantCount: 48760,
     isPremium: false,
     price: 0,
-    tags: ['MBTI', '궁합', '룸메이트', '동거', '바이럴'],
+    tags: ['MBTI', '관계'],
     createdAt: '2024-11-27',
   },
   // 트렌드 테스트 (Phase 3)
@@ -3292,7 +3292,7 @@ export const tests: Test[] = [
     participantCount: 72340,
     isPremium: false,
     price: 0,
-    tags: ['SNS', '페르소나', '인스타', '트렌드', '바이럴'],
+    tags: ['바이럴', 'SNS', '성격', '트렌드'],
     createdAt: '2024-11-27',
   },
   {
@@ -3308,7 +3308,7 @@ export const tests: Test[] = [
     participantCount: 65430,
     isPremium: false,
     price: 0,
-    tags: ['밈', '유머', '인터넷', '트렌드', '바이럴'],
+    tags: ['SNS', '재미', '트렌드'],
     createdAt: '2024-11-27',
   },
   {
@@ -3324,7 +3324,202 @@ export const tests: Test[] = [
     participantCount: 58920,
     isPremium: false,
     price: 0,
-    tags: ['바이럴', 'SNS', '콘텐츠', '트렌드', '인플루언서'],
+    tags: ['바이럴', 'SNS', '취향', '트렌드'],
+    createdAt: '2024-11-27',
+  },
+
+  // 프리미엄 테스트
+  {
+    id: 'fortune-2025',
+    title: '2025 신년운세',
+    slug: 'fortune-2025',
+    description: '을사년 푸른 뱀의 해, 당신의 2025년을 미리 만나보세요! 띠별 총운, 월별 운세, 분야별 상세 분석까지 한눈에 확인하세요.',
+    shortDescription: '🐍 2025년 띠별 신년운세',
+    categoryId: 'fun',
+    thumbnailUrl: '/images/tests/fortune-2025.png',
+    questionCount: 1,
+    estimatedTime: 1,
+    participantCount: 32450,
+    isPremium: true,
+    price: 900,
+    tags: ['운세', '신년', '띠', '2025', '프리미엄', '인기'],
+    createdAt: '2024-11-27',
+  },
+  {
+    id: 'zodiac-fortune',
+    title: '2025 별자리 운세',
+    slug: 'zodiac-fortune',
+    description: '서양 점성술로 보는 2025년! 12별자리별 총운, 월별 운세, 5대 분야별 상세 분석과 행운의 요소까지 확인하세요.',
+    shortDescription: '⭐ 2025년 별자리별 운세',
+    categoryId: 'fun',
+    thumbnailUrl: '/images/tests/zodiac-fortune.png',
+    questionCount: 1,
+    estimatedTime: 1,
+    participantCount: 28920,
+    isPremium: true,
+    price: 900,
+    tags: ['운세', '신년', '별자리', '2025', '프리미엄', '점성술'],
+    createdAt: '2024-11-27',
+  },
+  {
+    id: 'compatibility',
+    title: '궁합 운세',
+    slug: 'compatibility',
+    description: '동양 사주학(띠)과 서양 점성술(별자리)을 결합한 궁합 분석! 두 사람의 연애 궁합, 소통 방식, 갈등 해결법까지 상세하게 알려드려요.',
+    shortDescription: '💕 띠+별자리 궁합 분석',
+    categoryId: 'relationship',
+    thumbnailUrl: '/images/tests/compatibility.png',
+    questionCount: 2,
+    estimatedTime: 1,
+    participantCount: 24680,
+    isPremium: true,
+    price: 900,
+    tags: ['궁합', '연애', '띠', '별자리', '프리미엄', '커플'],
+    createdAt: '2024-11-27',
+  },
+  {
+    id: 'name-analysis',
+    title: '이름 풀이',
+    slug: 'name-analysis',
+    description: '전통 성명학을 기반으로 당신의 이름에 담긴 의미를 분석합니다. 81수리, 음양오행, 원형이정 4격 분석으로 성격, 적성, 운세를 알아보세요.',
+    shortDescription: '📜 한글 이름 획수 분석',
+    categoryId: 'fun',
+    thumbnailUrl: '/images/tests/name-analysis.png',
+    questionCount: 1,
+    estimatedTime: 1,
+    participantCount: 21350,
+    isPremium: true,
+    price: 900,
+    tags: ['이름', '성명학', '획수', '오행', '프리미엄', '운세'],
+    createdAt: '2024-11-27',
+  },
+  {
+    id: 'daily-fortune',
+    title: '오늘의 운세',
+    slug: 'daily-fortune',
+    description: '매일 새롭게 바뀌는 나만의 운세! 생년월일 기반으로 총운, 연애운, 직장운, 금전운, 건강운과 행운의 요소까지 상세하게 알려드려요.',
+    shortDescription: '☀️ 매일 바뀌는 맞춤 운세',
+    categoryId: 'fun',
+    thumbnailUrl: '/images/tests/daily-fortune.png',
+    questionCount: 1,
+    estimatedTime: 1,
+    participantCount: 45230,
+    isPremium: true,
+    price: 900,
+    tags: ['오늘', '운세', '일일', '매일', '프리미엄', '총운'],
+    createdAt: '2024-11-27',
+  },
+  // 타로 카드 프리미엄 서비스
+  {
+    id: 'tarot-daily',
+    title: '데일리 타로',
+    slug: 'tarot-daily',
+    description: '매일 새롭게 뽑는 오늘의 타로! 총운, 연애운, 금전운 중 원하는 운세를 타로 카드로 확인하세요. 하루에 한 번 무료로 즐길 수 있습니다.',
+    shortDescription: '🎴 오늘의 타로 카드 뽑기',
+    categoryId: 'fun',
+    thumbnailUrl: '/images/tests/tarot-daily.png',
+    questionCount: 1,
+    estimatedTime: 1,
+    participantCount: 38920,
+    isPremium: false,
+    price: 0,
+    tags: ['타로', '운세', '무료', '일일'],
+    createdAt: '2024-11-27',
+  },
+  {
+    id: 'tarot-timeline',
+    title: '과거-현재-미래 타로',
+    slug: 'tarot-timeline',
+    description: '시간의 흐름 속에서 상황의 원인과 발전 방향을 3장의 카드로 살펴봅니다. 과거가 현재에 어떤 영향을 주고, 미래는 어떻게 펼쳐질지 알아보세요.',
+    shortDescription: '⏳ 3카드 타임라인 스프레드',
+    categoryId: 'fun',
+    thumbnailUrl: '/images/tests/tarot-timeline.png',
+    questionCount: 1,
+    estimatedTime: 2,
+    participantCount: 24680,
+    isPremium: true,
+    price: 900,
+    tags: ['타로', '운세', '프리미엄', '3카드'],
+    createdAt: '2024-11-27',
+  },
+  {
+    id: 'tarot-relationship',
+    title: '연인관계 분석 타로',
+    slug: 'tarot-relationship',
+    description: '나와 상대의 마음, 관계의 장애물과 조언을 4장의 카드로 심층 분석합니다. 두 사람의 관계를 깊이 있게 들여다보세요.',
+    shortDescription: '💑 4카드 관계 분석 스프레드',
+    categoryId: 'relationship',
+    thumbnailUrl: '/images/tests/tarot-relationship.png',
+    questionCount: 1,
+    estimatedTime: 2,
+    participantCount: 21350,
+    isPremium: true,
+    price: 900,
+    tags: ['타로', '연애', '관계', '프리미엄', '4카드'],
+    createdAt: '2024-11-27',
+  },
+  {
+    id: 'tarot-choice',
+    title: '선택의 기로 타로',
+    slug: 'tarot-choice',
+    description: '고민 중인 두 가지 선택지를 입력하세요. 타로가 각 선택의 결과와 현재 상황을 분석하여 최선의 방향을 알려드립니다.',
+    shortDescription: '🔮 A vs B 선택 타로 리딩',
+    categoryId: 'fun',
+    thumbnailUrl: '/images/tests/tarot-choice.png',
+    questionCount: 1,
+    estimatedTime: 2,
+    participantCount: 18920,
+    isPremium: true,
+    price: 900,
+    tags: ['타로', '선택', '결정', '프리미엄', '3카드'],
+    createdAt: '2024-11-27',
+  },
+  {
+    id: 'tojeong',
+    title: '2025 토정비결',
+    slug: 'tojeong',
+    description: '조선시대부터 이어온 전통 운세, 토정비결! 생년월일 기반 괘(卦) 산출로 2025년 을사년 총운, 계절별 운세, 분야별 상세 분석, 월별 키워드까지 확인하세요.',
+    shortDescription: '📜 전통 토정비결 운세',
+    categoryId: 'fun',
+    thumbnailUrl: '/images/tests/tojeong.png',
+    questionCount: 1,
+    estimatedTime: 1,
+    participantCount: 15680,
+    isPremium: true,
+    price: 900,
+    tags: ['운세', '토정비결', '전통', '2025', '프리미엄', '신년'],
+    createdAt: '2024-11-27',
+  },
+  {
+    id: 'dream',
+    title: '꿈해몽',
+    slug: 'dream',
+    description: '간밤에 꾼 꿈이 궁금하신가요? 동양 전통 해몽학을 기반으로 꿈에 나온 상징들을 분석합니다. 재물운, 연애운, 직장운, 건강운까지 종합 해석해 드려요.',
+    shortDescription: '🌙 꿈 속 상징 해석',
+    categoryId: 'fun',
+    thumbnailUrl: '/images/tests/dream.png',
+    questionCount: 1,
+    estimatedTime: 2,
+    participantCount: 12450,
+    isPremium: false,
+    price: 0,
+    tags: ['꿈', '해몽', '운세', '무료'],
+    createdAt: '2024-11-27',
+  },
+  {
+    id: 'face-reading',
+    title: '관상 분석',
+    slug: 'face-reading',
+    description: '거울을 보며 14개 질문에 답하면 당신의 관상을 분석해 드립니다. 얼굴형, 이마, 눈썹, 눈, 코, 입, 턱, 귀까지 동양 전통 관상학 기반 종합 분석!',
+    shortDescription: '🎭 얼굴로 보는 운세',
+    categoryId: 'fun',
+    thumbnailUrl: '/images/tests/face-reading.png',
+    questionCount: 14,
+    estimatedTime: 3,
+    participantCount: 9870,
+    isPremium: false,
+    price: 0,
+    tags: ['관상', '운세', '무료', '전통'],
     createdAt: '2024-11-27',
   },
 ];

@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { RotateCcw, Home, Heart, Check, AlertCircle, Briefcase, Users, Clock, Sparkles, BookOpen, Star, Flame, Zap, AlertTriangle, ThumbsUp, X, Lightbulb, Activity, Brain, Trophy, Wine, Coffee, MessageCircle, Smile, TrendingUp, History, Moon, Sun, Smartphone, Edit3, RefreshCw, Wallet, DollarSign, FileText, Shield, Wrench, Phone, Music, Utensils } from 'lucide-react';
 import ShareButtons from '@/components/ShareButtons';
-import { AdBanner } from '@/components/ui';
+// AdSense 승인 후 활성화
+// import { AdBanner, AdInterstitial } from '@/components/ads';
 import { getTestBySlug, getSimilarTests } from '@/lib/data';
 import { calculateResult as calculateSoulAnimalResult, SoulAnimalResult } from '@/tests/soul-animal/data';
 import { calculateResult as calculateColorResult, ColorResult } from '@/tests/color-personality/data';
@@ -636,6 +637,14 @@ export default function TestResultPage() {
   const test = getTestBySlug(slug);
 
   const [result, setResult] = useState<TestResult | null>(null);
+  const [showInterstitial, setShowInterstitial] = useState(true);
+  const [showResult, setShowResult] = useState(false);
+
+  // 인터스티셜 광고 닫기 처리
+  const handleAdClose = () => {
+    setShowInterstitial(false);
+    setShowResult(true);
+  };
 
   useEffect(() => {
     const answersParam = searchParams.get('answers');
@@ -1910,6 +1919,14 @@ export default function TestResultPage() {
 
   return (
     <div className="max-w-2xl mx-auto">
+      {/* Interstitial Ad - AdSense 승인 후 활성화
+      <AdInterstitial
+        isOpen={showInterstitial && !!result}
+        onClose={handleAdClose}
+        countdownSeconds={5}
+      />
+      */}
+
       {/* Result Card */}
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
         {/* Hero */}
@@ -12809,8 +12826,8 @@ export default function TestResultPage() {
         </div>
       </div>
 
-      {/* Ad Banner */}
-      <AdBanner className="mt-6" variant="horizontal" />
+      {/* Ad Banner - AdSense 승인 후 활성화 */}
+      {/* <AdBanner className="mt-6" /> */}
 
       {/* Similar Tests Recommendation */}
       <div className="mt-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">

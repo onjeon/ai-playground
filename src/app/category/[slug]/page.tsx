@@ -88,18 +88,23 @@ export default function CategoryPage() {
         </div>
       </section>
 
-      {/* Other Categories */}
-      <section className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4">
-        {categories.filter(c => c.slug !== slug).map((cat) => {
+      {/* Category Tabs - 모바일 3x2 그리드, 데스크탑 6열 */}
+      <section className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+        {categories.map((cat) => {
           const CatIcon = iconMap[cat.icon] || Brain;
+          const isActive = cat.slug === slug;
           return (
             <Link
               key={cat.id}
               href={`/category/${cat.slug}`}
-              className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+              className={`flex items-center justify-center gap-1.5 px-2 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all ${
+                isActive
+                  ? 'bg-indigo-600 text-white shadow-lg'
+                  : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-105'
+              }`}
             >
               <CatIcon className="w-4 h-4" />
-              {cat.name}
+              <span className="truncate">{cat.name}</span>
             </Link>
           );
         })}
@@ -110,6 +115,8 @@ export default function CategoryPage() {
         <TestGrid 
           tests={categoryTests} 
           emptyMessage="이 카테고리에는 아직 테스트가 없습니다."
+          showAds={true}
+          adInterval={8}
         />
       </section>
 
