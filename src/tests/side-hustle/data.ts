@@ -183,7 +183,7 @@ export const results: SideHustleResult[] = [
       '해외직구: 아마존 -> 쿠팡 차익',
       '처음엔 작게 시작해서 검증 후 확대',
     ],
-    famousPeople: '',
+    famousPeople: '쿠팡 김범석, 무신사 조만호',
   },
   {
     type: 'service',
@@ -200,7 +200,7 @@ export const results: SideHustleResult[] = [
       '니치한 전문 분야를 파세요',
       '시간당 단가를 점점 높여가세요',
     ],
-    famousPeople: '',
+    famousPeople: '조승연 작가, 설민석 강사',
   },
   {
     type: 'invest',

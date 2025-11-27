@@ -202,7 +202,7 @@ export const results: Record<DatingStyleType, DatingStyleResult> = {
     datingTips: ['나만의 시간과 취미도 가지세요', '상대에게 숨 쉴 공간을 주세요', '사랑도 중요하지만 나 자신도 사랑하세요'],
     bestMatch: '안정형 연애 (stable)',
     worstMatch: '독립형 연애 (independent)',
-    celebExample: '드라마 속 여주인공 스타일',
+    celebExample: '송혜교-송중기 (연애 시절), 현빈-손예진',
   },
   push_pull: {
     type: 'push_pull',
@@ -219,7 +219,7 @@ export const results: Record<DatingStyleType, DatingStyleResult> = {
     datingTips: ['때로는 솔직하게 마음을 표현하세요', '밀당에도 한계가 있어요', '진심을 숨기다 후회하지 마세요'],
     bestMatch: '로맨틱형 연애 (romantic)',
     worstMatch: '올인형 연애 (allin)',
-    celebExample: '도도한 매력의 연예인 스타일',
+    celebExample: '전지현, 김태희, 한지민',
   },
   friend: {
     type: 'friend',
@@ -236,7 +236,7 @@ export const results: Record<DatingStyleType, DatingStyleResult> = {
     datingTips: ['가끔은 특별한 데이트도 해보세요', '연인으로서의 설렘도 필요해요', '친구와 연인의 밸런스를 맞추세요'],
     bestMatch: '안정형 연애 (stable)',
     worstMatch: '로맨틱형 연애 (romantic)',
-    celebExample: '개그맨 커플, 절친에서 연인 된 케이스',
+    celebExample: '유재석-나경은, 이효리-이상순',
   },
   independent: {
     type: 'independent',
@@ -253,7 +253,7 @@ export const results: Record<DatingStyleType, DatingStyleResult> = {
     datingTips: ['가끔은 먼저 연락하고 관심 표현하세요', '상대의 애정 욕구도 채워주세요', '혼자가 아닌 함께라는 것을 기억하세요'],
     bestMatch: '독립형 연애 (independent)',
     worstMatch: '올인형 연애 (allin)',
-    celebExample: '각자 커리어 열심히 하는 연예인 커플',
+    celebExample: '원빈-이나영, 비-김태희',
   },
   romantic: {
     type: 'romantic',
@@ -270,7 +270,7 @@ export const results: Record<DatingStyleType, DatingStyleResult> = {
     datingTips: ['일상의 소소한 행복도 찾아보세요', '기대치를 조절하세요', '완벽한 연애는 없다는 걸 기억하세요'],
     bestMatch: '밀당형 연애 (push_pull)',
     worstMatch: '친구형 연애 (friend)',
-    celebExample: '로맨스 영화 주인공 스타일',
+    celebExample: '정우성, 공유, 조인성',
   },
   stable: {
     type: 'stable',
@@ -287,7 +287,7 @@ export const results: Record<DatingStyleType, DatingStyleResult> = {
     datingTips: ['가끔은 새로운 시도를 해보세요', '설렘을 유지하려는 노력도 필요해요', '안정 속에서도 변화를 주세요'],
     bestMatch: '올인형 연애 (allin)',
     worstMatch: '밀당형 연애 (push_pull)',
-    celebExample: '오래 만난 후 결혼한 연예인 커플',
+    celebExample: '장동건-고소영, 권상우-손태영',
   },
 };
 

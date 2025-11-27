@@ -284,7 +284,7 @@ const resultTemplates = {
     characteristics: ['일반적인 문제 해결', '실생활 적응', '균형 잡힌 능력', '실용성'],
     brainType: '실용적이고 균형 잡힌 사고',
     recommendedActivities: ['다양한 경험', '독서', '게임', '사교 활동'],
-    famousPeople: '',
+    famousPeople: '무하마드 알리 (복싱 천재), 포레스트 검프 (영화 속 성공 인물)',
     advice: 'IQ가 성공의 전부는 아닙니다. 노력, 끈기, 사회성이 더 중요할 수 있습니다.',
   },
   below_average: {
@@ -296,7 +296,7 @@ const resultTemplates = {
     characteristics: ['실용적 접근', '경험 기반 학습', '창의적 해결', '대인 관계'],
     brainType: '실용적이고 경험적인 사고',
     recommendedActivities: ['두뇌 훈련 게임', '독서', '새로운 것 배우기', '명상'],
-    famousPeople: '',
+    famousPeople: '토마스 에디슨 (학교 성적 불량), 리처드 브랜슨 (난독증 극복)',
     advice: 'IQ 테스트가 모든 지능을 측정하지는 않습니다. 다양한 분야에서 자신의 강점을 찾아보세요.',
   },
 };

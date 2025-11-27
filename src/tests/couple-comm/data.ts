@@ -159,7 +159,10 @@ export const results: Record<CoupleCommType, CoupleCommResult> = {
     score: 20,
     grade: 'F',
     description: '솔직히 말하면, 소통에 심각한 문제가 있어요. 제대로 된 대화가 이루어지지 않고, 서로의 마음을 몰라서 오해와 갈등이 쌓이고 있을 거예요. 지금 바로 소통 방식을 바꿔야 해요.',
-    strengths: [],
+    strengths: [
+      '관계를 유지하려는 의지는 있음',
+      '문제를 인식하고 있음',
+    ],
     weaknesses: [
       '대화 자체가 부족함',
       '감정 표현이 안 됨',
@@ -267,7 +270,9 @@ export const results: Record<CoupleCommType, CoupleCommResult> = {
       '갈등을 건강하게 해결',
       '애정 표현도 잘 함',
     ],
-    weaknesses: [],
+    weaknesses: [
+      '가끔 너무 편해서 대화가 줄 수 있음',
+    ],
     communicationStyle: '공감형 대화 - 서로를 이해하고 공감하는 소통',
     improvementTips: [
       '지금처럼 계속하세요!',
@@ -301,7 +306,9 @@ export const results: Record<CoupleCommType, CoupleCommResult> = {
       '갈등도 성장의 기회로',
       '풍부한 애정 표현',
     ],
-    weaknesses: [],
+    weaknesses: [
+      '주변 커플들이 부러워할 수 있음 😄',
+    ],
     communicationStyle: '텔레파시급 소통 - 말하지 않아도 서로를 이해',
     improvementTips: [
       '지금 그대로 유지하세요!',

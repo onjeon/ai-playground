@@ -198,7 +198,7 @@ const resultTypes: Record<string, DecisionStyleResult> = {
     bestFor: ['급하지 않은 결정', '위험한 결정 피하기'],
     worstFor: ['대부분의 결정', '리더십 필요시', '기회 포착'],
     improvementTips: ['작은 결정부터 연습', '완벽보다 완료', '실패해도 괜찮다', '타이머 설정'],
-    famousExample: '',
+    famousExample: '햄릿 (셰익스피어), 우유부단한 캐릭터들',
   },
 };
 

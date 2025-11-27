@@ -25,6 +25,62 @@ const games: Game[] = [
     description: '어색한 분위기를 깨는 대화 주제 카드! 소개팅, 회식, 커플용까지.',
     color: 'from-emerald-500 to-teal-600',
   },
+  {
+    slug: 'random-menu',
+    title: '오늘 뭐 먹지?',
+    emoji: '🍽️',
+    description: '메뉴 선택이 어려울 때! 점심, 저녁, 야식까지 랜덤 추천',
+    color: 'from-yellow-500 to-orange-500',
+  },
+  {
+    slug: 'number-picker',
+    title: '랜덤 뽑기',
+    emoji: '🎲',
+    description: '숫자 뽑기, 순서 정하기, 제비뽑기까지! 공정한 랜덤 추첨',
+    color: 'from-blue-500 to-indigo-500',
+  },
+  {
+    slug: 'team-divider',
+    title: '팀 나누기',
+    emoji: '👥',
+    description: '인원수와 팀 수만 입력하면 공정하게 팀을 나눠드려요!',
+    color: 'from-cyan-500 to-teal-500',
+  },
+  {
+    slug: 'penalty-picker',
+    title: '벌칙 뽑기',
+    emoji: '🎰',
+    description: '라이트부터 하드코어까지! 재밌는 벌칙을 뽑아보세요',
+    color: 'from-red-500 to-rose-500',
+  },
+  {
+    slug: 'role-picker',
+    title: '역할 뽑기',
+    emoji: '🎭',
+    description: '마피아, 스파이, 늑대인간! 게임 역할을 랜덤으로 배정',
+    color: 'from-purple-500 to-violet-600',
+  },
+  {
+    slug: 'would-you-rather',
+    title: '이것 vs 저것',
+    emoji: '🤔',
+    description: '둘 중 하나만 선택해야 한다면? 친구들과 토론해보세요!',
+    color: 'from-amber-500 to-orange-500',
+  },
+  {
+    slug: 'ice-breaker',
+    title: '아이스브레이킹',
+    emoji: '🎰',
+    description: '어색한 분위기를 깨는 마법의 질문 룰렛!',
+    color: 'from-teal-500 to-cyan-500',
+  },
+  {
+    slug: 'couple-quiz',
+    title: '커플 테스트',
+    emoji: '💑',
+    description: '상대방에 대해 얼마나 알고 있나요? 커플 궁합 테스트!',
+    color: 'from-pink-500 to-rose-500',
+  },
 ];
 
 export default function GamesPage() {

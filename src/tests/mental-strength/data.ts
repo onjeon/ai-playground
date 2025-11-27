@@ -217,7 +217,7 @@ export function calculateResult(answers: number[]): MentalStrengthResult {
       copingStrategies: ['깊은 호흡', '신뢰할 수 있는 사람과 대화', '운동', '충분한 휴식'],
       growthTips: ['작은 불편함부터 견디는 연습을 하세요', '실패를 배움으로 재해석하세요', '명상이나 요가를 시작하세요', '멘탈 관련 책을 읽어보세요'],
       dailyHabits: ['5분 명상', '감사한 것 3가지 적기', '작은 도전 하나 하기', '7시간 이상 수면'],
-      famousPeople: '',
+      famousPeople: '대부분의 사람들, 꾸준히 성장하는 직장인',
     };
   } else if (percentage >= 35) {
     return {
@@ -253,7 +253,7 @@ export function calculateResult(answers: number[]): MentalStrengthResult {
       copingStrategies: ['전문 상담 강력 권장', '가까운 사람의 지지', '자기 돌봄 최우선', '작은 것부터 시작'],
       growthTips: ['심리 상담을 받아보세요', '자기 비난을 멈추세요', '아주 작은 성공부터 시작하세요', '자신에게 친절하세요'],
       dailyHabits: ['자기 칭찬 하나', '좋아하는 것 하나 하기', '깊은 호흡 3번', '충분한 휴식'],
-      famousPeople: '',
+      famousPeople: '버지니아 울프 (작가), 빈센트 반 고흐 (예술가)',
     };
   }
 }

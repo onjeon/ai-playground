@@ -159,7 +159,10 @@ export const results: Record<MarriageFitType, MarriageFitResult> = {
     percentage: 25,
     verdict: '지금 당장 결혼은 신중히 생각해주세요',
     description: '현재 관계에서 결혼을 위해 해결해야 할 문제들이 많아 보여요. 결혼은 인생에서 가장 중요한 결정 중 하나예요. 서두르지 말고 충분히 대화하고, 문제를 해결한 후에 결정해도 늦지 않아요.',
-    strengths: [],
+    strengths: [
+      '결혼에 대해 진지하게 고민 중',
+      '문제를 인식하려는 노력',
+    ],
     concerns: [
       '가치관 차이가 큼',
       '갈등 해결이 어려움',
@@ -273,7 +276,9 @@ export const results: Record<MarriageFitType, MarriageFitResult> = {
       '건강한 소통 방식',
       '미래 계획이 일치',
     ],
-    concerns: [],
+    concerns: [
+      '결혼 후에도 노력이 필요해요 (모든 부부가 그렇듯!)',
+    ],
     compatibility: '매우 높은 결혼 적합도!',
     advice: [
       '이 소중한 관계를 잘 유지하세요',
@@ -308,7 +313,9 @@ export const results: Record<MarriageFitType, MarriageFitResult> = {
       '함께하는 미래가 명확',
       '깊은 친밀감',
     ],
-    concerns: [],
+    concerns: [
+      '지금의 사랑을 당연하게 여기지 않기!',
+    ],
     compatibility: '완벽한 결혼 적합도! 💯',
     advice: [
       '이 사랑을 평생 지켜가세요',

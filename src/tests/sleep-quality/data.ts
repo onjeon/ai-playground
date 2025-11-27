@@ -1,0 +1,170 @@
+// 수면의 질 테스트 데이터
+export const sleepQualityTest = {
+  id: 'sleep-quality',
+  title: '수면의 질 테스트',
+  description: '당신의 수면의 질은 어떤가요? 수면 패턴을 분석하고 더 나은 수면을 위한 조언을 드립니다!',
+  questions: [
+    {
+      id: 1,
+      text: '잠드는 데 걸리는 시간은?',
+      options: [
+        { id: 'a', text: '10분 이내', score: { quality: 4 } },
+        { id: 'b', text: '10-30분', score: { quality: 3 } },
+        { id: 'c', text: '30분-1시간', score: { quality: 1 } },
+        { id: 'd', text: '1시간 이상', score: { quality: 0 } },
+      ],
+    },
+    {
+      id: 2,
+      text: '밤에 깨는 횟수는?',
+      options: [
+        { id: 'a', text: '안 깬다', score: { quality: 4 } },
+        { id: 'b', text: '1-2번', score: { quality: 3 } },
+        { id: 'c', text: '3-4번', score: { quality: 1 } },
+        { id: 'd', text: '자주 깬다', score: { quality: 0 } },
+      ],
+    },
+    {
+      id: 3,
+      text: '아침 기상 시 컨디션은?',
+      options: [
+        { id: 'a', text: '상쾌하다', score: { quality: 4 } },
+        { id: 'b', text: '괜찮은 편', score: { quality: 3 } },
+        { id: 'c', text: '피곤하다', score: { quality: 1 } },
+        { id: 'd', text: '매우 피곤하다', score: { quality: 0 } },
+      ],
+    },
+    {
+      id: 4,
+      text: '하루 평균 수면 시간은?',
+      options: [
+        { id: 'a', text: '7-8시간', score: { quality: 4 } },
+        { id: 'b', text: '6-7시간', score: { quality: 3 } },
+        { id: 'c', text: '5-6시간', score: { quality: 1 } },
+        { id: 'd', text: '5시간 미만', score: { quality: 0 } },
+      ],
+    },
+    {
+      id: 5,
+      text: '취침 시간이 규칙적인가요?',
+      options: [
+        { id: 'a', text: '매우 규칙적', score: { quality: 4 } },
+        { id: 'b', text: '대체로 규칙적', score: { quality: 3 } },
+        { id: 'c', text: '불규칙한 편', score: { quality: 1 } },
+        { id: 'd', text: '매우 불규칙', score: { quality: 0 } },
+      ],
+    },
+    {
+      id: 6,
+      text: '잠들기 전 스마트폰 사용은?',
+      options: [
+        { id: 'a', text: '안 쓴다', score: { quality: 4 } },
+        { id: 'b', text: '30분 미만', score: { quality: 3 } },
+        { id: 'c', text: '30분-1시간', score: { quality: 1 } },
+        { id: 'd', text: '1시간 이상', score: { quality: 0 } },
+      ],
+    },
+    {
+      id: 7,
+      text: '낮에 졸린 경우가 있나요?',
+      options: [
+        { id: 'a', text: '거의 없다', score: { quality: 4 } },
+        { id: 'b', text: '가끔 있다', score: { quality: 3 } },
+        { id: 'c', text: '자주 있다', score: { quality: 1 } },
+        { id: 'd', text: '매일 졸리다', score: { quality: 0 } },
+      ],
+    },
+    {
+      id: 8,
+      text: '꿈을 자주 꾸나요?',
+      options: [
+        { id: 'a', text: '거의 안 꾼다', score: { quality: 4 } },
+        { id: 'b', text: '가끔 꾼다', score: { quality: 3 } },
+        { id: 'c', text: '자주 꾼다', score: { quality: 2 } },
+        { id: 'd', text: '악몽을 자주 꾼다', score: { quality: 0 } },
+      ],
+    },
+    {
+      id: 9,
+      text: '수면 환경은 어떤가요?',
+      options: [
+        { id: 'a', text: '어둡고 조용하다', score: { quality: 4 } },
+        { id: 'b', text: '대체로 좋다', score: { quality: 3 } },
+        { id: 'c', text: '약간 방해 요소 있음', score: { quality: 1 } },
+        { id: 'd', text: '시끄럽고 밝다', score: { quality: 0 } },
+      ],
+    },
+    {
+      id: 10,
+      text: '카페인 섭취는?',
+      options: [
+        { id: 'a', text: '안 마시거나 오전만', score: { quality: 4 } },
+        { id: 'b', text: '오후 3시까지', score: { quality: 3 } },
+        { id: 'c', text: '저녁에도 마심', score: { quality: 1 } },
+        { id: 'd', text: '밤에도 마심', score: { quality: 0 } },
+      ],
+    },
+    {
+      id: 11,
+      text: '취침 전 활동은?',
+      options: [
+        { id: 'a', text: '독서나 명상', score: { quality: 4 } },
+        { id: 'b', text: 'TV 시청', score: { quality: 2 } },
+        { id: 'c', text: '운동', score: { quality: 1 } },
+        { id: 'd', text: '일/공부', score: { quality: 0 } },
+      ],
+    },
+    {
+      id: 12,
+      text: '주말 수면 패턴은?',
+      options: [
+        { id: 'a', text: '평일과 비슷', score: { quality: 4 } },
+        { id: 'b', text: '1-2시간 더 잠', score: { quality: 3 } },
+        { id: 'c', text: '3시간 이상 더 잠', score: { quality: 1 } },
+        { id: 'd', text: '완전히 다름', score: { quality: 0 } },
+      ],
+    },
+  ],
+  results: {
+    level1: {
+      id: 'level1',
+      title: '꿀잠 마스터',
+      minScore: 40,
+      maxScore: 48,
+      description: '축하합니다! 수면의 질이 매우 좋습니다. 건강한 수면 습관을 유지하고 계시네요.',
+      traits: ['숙면', '규칙적', '상쾌한 아침', '건강한 습관'],
+      emoji: '😴',
+      color: '#27AE60',
+    },
+    level2: {
+      id: 'level2',
+      title: '양호한 수면',
+      minScore: 28,
+      maxScore: 39,
+      description: '수면의 질이 대체로 좋은 편입니다. 약간의 개선으로 더 좋은 수면을 취할 수 있어요.',
+      traits: ['적절한 수면', '약간의 개선 필요', '안정적', '관리 가능'],
+      emoji: '🌙',
+      color: '#3498DB',
+    },
+    level3: {
+      id: 'level3',
+      title: '개선 필요',
+      minScore: 16,
+      maxScore: 27,
+      description: '수면의 질이 좋지 않은 편입니다. 수면 습관을 개선하면 삶의 질이 높아질 수 있어요.',
+      traits: ['불규칙', '피로 누적', '습관 개선 필요', '수면 위생'],
+      emoji: '😪',
+      color: '#F39C12',
+    },
+    level4: {
+      id: 'level4',
+      title: '심각한 수면 문제',
+      minScore: 0,
+      maxScore: 15,
+      description: '수면의 질이 매우 좋지 않습니다. 전문가 상담을 권장하며, 수면 습관을 점검해보세요.',
+      traits: ['수면 부족', '만성 피로', '전문 상담 권장', '생활 패턴 점검'],
+      emoji: '😵',
+      color: '#E74C3C',
+    },
+  },
+};

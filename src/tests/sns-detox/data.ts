@@ -1,0 +1,170 @@
+// SNS 중독 레벨 테스트 데이터
+export const snsDetoxTest = {
+  id: 'sns-detox',
+  title: 'SNS 중독 레벨 테스트',
+  description: '당신의 SNS 중독 레벨은? 건강한 사용자부터 디톡스가 필요한 수준까지, 당신의 SNS 의존도를 측정합니다!',
+  questions: [
+    {
+      id: 1,
+      text: '아침에 눈 뜨면 가장 먼저 하는 것은?',
+      options: [
+        { id: 'a', text: 'SNS 확인', score: { addiction: 4 } },
+        { id: 'b', text: '알람 끄고 좀 더 누워있기', score: { addiction: 2 } },
+        { id: 'c', text: '기상해서 씻기', score: { addiction: 1 } },
+        { id: 'd', text: '스트레칭이나 운동', score: { addiction: 0 } },
+      ],
+    },
+    {
+      id: 2,
+      text: 'SNS 없이 하루를 보낼 수 있나요?',
+      options: [
+        { id: 'a', text: '절대 불가능', score: { addiction: 4 } },
+        { id: 'b', text: '많이 불편할 것 같다', score: { addiction: 3 } },
+        { id: 'c', text: '좀 심심하겠지만 가능', score: { addiction: 1 } },
+        { id: 'd', text: '전혀 문제없다', score: { addiction: 0 } },
+      ],
+    },
+    {
+      id: 3,
+      text: '하루 평균 SNS 사용 시간은?',
+      options: [
+        { id: 'a', text: '4시간 이상', score: { addiction: 4 } },
+        { id: 'b', text: '2-4시간', score: { addiction: 3 } },
+        { id: 'c', text: '1-2시간', score: { addiction: 1 } },
+        { id: 'd', text: '1시간 미만', score: { addiction: 0 } },
+      ],
+    },
+    {
+      id: 4,
+      text: '밥 먹을 때 SNS를 보나요?',
+      options: [
+        { id: 'a', text: '항상 본다', score: { addiction: 4 } },
+        { id: 'b', text: '자주 본다', score: { addiction: 3 } },
+        { id: 'c', text: '가끔 본다', score: { addiction: 1 } },
+        { id: 'd', text: '안 본다', score: { addiction: 0 } },
+      ],
+    },
+    {
+      id: 5,
+      text: '새 알림이 오면?',
+      options: [
+        { id: 'a', text: '즉시 확인해야 함', score: { addiction: 4 } },
+        { id: 'b', text: '빨리 확인하고 싶음', score: { addiction: 3 } },
+        { id: 'c', text: '나중에 확인해도 됨', score: { addiction: 1 } },
+        { id: 'd', text: '알림을 꺼놨음', score: { addiction: 0 } },
+      ],
+    },
+    {
+      id: 6,
+      text: 'SNS를 안 보면 불안해지나요?',
+      options: [
+        { id: 'a', text: '매우 불안하다', score: { addiction: 4 } },
+        { id: 'b', text: '약간 불안하다', score: { addiction: 3 } },
+        { id: 'c', text: '별로 안 그렇다', score: { addiction: 1 } },
+        { id: 'd', text: '전혀 안 그렇다', score: { addiction: 0 } },
+      ],
+    },
+    {
+      id: 7,
+      text: '중요한 일을 하다가 SNS를 확인한 적 있나요?',
+      options: [
+        { id: 'a', text: '자주 그렇다', score: { addiction: 4 } },
+        { id: 'b', text: '종종 그렇다', score: { addiction: 3 } },
+        { id: 'c', text: '가끔 그렇다', score: { addiction: 1 } },
+        { id: 'd', text: '거의 안 그렇다', score: { addiction: 0 } },
+      ],
+    },
+    {
+      id: 8,
+      text: '잠들기 전 SNS를 얼마나 보나요?',
+      options: [
+        { id: 'a', text: '1시간 이상', score: { addiction: 4 } },
+        { id: 'b', text: '30분-1시간', score: { addiction: 3 } },
+        { id: 'c', text: '30분 미만', score: { addiction: 1 } },
+        { id: 'd', text: '안 본다', score: { addiction: 0 } },
+      ],
+    },
+    {
+      id: 9,
+      text: 'SNS 때문에 해야 할 일을 미룬 적 있나요?',
+      options: [
+        { id: 'a', text: '자주 있다', score: { addiction: 4 } },
+        { id: 'b', text: '종종 있다', score: { addiction: 3 } },
+        { id: 'c', text: '가끔 있다', score: { addiction: 1 } },
+        { id: 'd', text: '거의 없다', score: { addiction: 0 } },
+      ],
+    },
+    {
+      id: 10,
+      text: '좋아요/팔로워 수에 신경 쓰나요?',
+      options: [
+        { id: 'a', text: '매우 신경 쓴다', score: { addiction: 4 } },
+        { id: 'b', text: '꽤 신경 쓴다', score: { addiction: 3 } },
+        { id: 'c', text: '약간 신경 쓴다', score: { addiction: 1 } },
+        { id: 'd', text: '전혀 안 쓴다', score: { addiction: 0 } },
+      ],
+    },
+    {
+      id: 11,
+      text: 'SNS를 줄이려고 시도해본 적 있나요?',
+      options: [
+        { id: 'a', text: '시도했지만 실패', score: { addiction: 4 } },
+        { id: 'b', text: '생각만 해봤다', score: { addiction: 3 } },
+        { id: 'c', text: '성공적으로 줄임', score: { addiction: 1 } },
+        { id: 'd', text: '줄일 필요 없음', score: { addiction: 0 } },
+      ],
+    },
+    {
+      id: 12,
+      text: 'SNS 비교로 우울해진 적 있나요?',
+      options: [
+        { id: 'a', text: '자주 있다', score: { addiction: 4 } },
+        { id: 'b', text: '가끔 있다', score: { addiction: 3 } },
+        { id: 'c', text: '드물게 있다', score: { addiction: 1 } },
+        { id: 'd', text: '전혀 없다', score: { addiction: 0 } },
+      ],
+    },
+  ],
+  results: {
+    level1: {
+      id: 'level1',
+      title: '디지털 미니멀리스트',
+      minScore: 0,
+      maxScore: 12,
+      description: '축하합니다! SNS를 건강하게 사용하고 있습니다. 디지털 환경과 균형 잡힌 관계를 유지하고 있어요.',
+      traits: ['균형 잡힌', '자기 통제력', '현실 중심', '건강한 사용'],
+      emoji: '🌱',
+      color: '#27AE60',
+    },
+    level2: {
+      id: 'level2',
+      title: '일반 사용자',
+      minScore: 13,
+      maxScore: 24,
+      description: 'SNS를 적당히 사용하는 편입니다. 약간의 의존성이 있지만 일상에 큰 지장은 없어요.',
+      traits: ['적당한 사용', '관리 가능', '인지 있음', '조절 가능'],
+      emoji: '📱',
+      color: '#3498DB',
+    },
+    level3: {
+      id: 'level3',
+      title: '주의 필요',
+      minScore: 25,
+      maxScore: 36,
+      description: 'SNS 사용이 다소 많은 편입니다. 디지털 웰빙을 위해 사용 시간을 줄여보는 것을 권장합니다.',
+      traits: ['높은 의존', '시간 소비', '디톡스 권장', '인식 필요'],
+      emoji: '⚠️',
+      color: '#F39C12',
+    },
+    level4: {
+      id: 'level4',
+      title: '디톡스 필요',
+      minScore: 37,
+      maxScore: 48,
+      description: 'SNS 의존도가 매우 높습니다. 일상생활에 영향을 줄 수 있으니 디지털 디톡스를 강력히 권장합니다.',
+      traits: ['높은 중독성', '생활 지장', '디톡스 필수', '전문 도움'],
+      emoji: '🆘',
+      color: '#E74C3C',
+    },
+  },
+};

@@ -213,7 +213,7 @@ export const results: NegotiationResult[] = [
       '작은 협상부터 연습을 시작해보세요',
       '당신의 가치와 의견도 중요합니다!',
     ],
-    famousPeople: '',
+    famousPeople: '간디 (비폭력 저항), 틱낫한 스님',
   },
 ];
 

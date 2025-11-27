@@ -187,7 +187,7 @@ const resultTypes: Record<string, JealousyTypeResult> = {
     triggers: ['무관심', '다른 이성에 대한 언급', '약속 변경'],
     copingTips: ['작은 것도 표현하기', '감정 일기 쓰기', '터지기 전 말하기', '자기 감정 인정'],
     partnerAdvice: '연인이 먼저 물어봐 주면 말하기 쉬워요. 섬세한 관심이 필요합니다.',
-    famousPeople: '',
+    famousPeople: '드라마 속 츤데레 캐릭터들, 차은우 (조용한 스타일)',
   },
   chill: {
     type: 'chill',

@@ -183,7 +183,7 @@ export const results: StartupResult[] = [
       '대표의 비전과 실행력을 검증하세요',
       '성장할 수 있는 환경인지 확인하세요',
     ],
-    famousPeople: '',
+    famousPeople: '토스 초기 멤버들, 배민 초기 직원들',
   },
   {
     type: 'growth',
@@ -200,7 +200,7 @@ export const results: StartupResult[] = [
       '조직 문화와 팀 분위기를 파악하세요',
       '커리어 성장 경로를 확인하세요',
     ],
-    famousPeople: '',
+    famousPeople: '쿠팡 성장기 합류 직원들, 카카오 중기 합류자',
   },
   {
     type: 'corporate',
@@ -217,7 +217,7 @@ export const results: StartupResult[] = [
       '스타트업은 신중하게 선택하세요',
       '안정성과 성장 사이의 균형을 찾으세요',
     ],
-    famousPeople: '',
+    famousPeople: '삼성전자 임원들, 현대차 연구원',
   },
 ];
 

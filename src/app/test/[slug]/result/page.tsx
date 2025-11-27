@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { RotateCcw, Home, Heart, Check, AlertCircle, Briefcase, Users, Clock, Sparkles, BookOpen, Star, Flame, Zap, AlertTriangle, ThumbsUp, X, Lightbulb, Activity, Brain, Trophy, Wine, Coffee, MessageCircle, Smile, TrendingUp, History, Moon, Sun, Smartphone, Edit3, RefreshCw, Wallet, DollarSign, FileText, Shield, Wrench, Phone, Music, Utensils } from 'lucide-react';
 import ShareButtons from '@/components/ShareButtons';
-import { getTestBySlug } from '@/lib/data';
+import { AdBanner } from '@/components/ui';
+import { getTestBySlug, getSimilarTests } from '@/lib/data';
 import { calculateResult as calculateSoulAnimalResult, SoulAnimalResult } from '@/tests/soul-animal/data';
 import { calculateResult as calculateColorResult, ColorResult } from '@/tests/color-personality/data';
 import { calculateResult as calculateMBTIResult, MBTIResult } from '@/tests/mbti-basic/data';
@@ -1925,6 +1926,21 @@ export default function TestResultPage() {
           {isMBTI && (
             <p className="text-lg text-white/80 mt-1">{result.title}</p>
           )}
+        </div>
+
+        {/* Viral Share Section */}
+        <div className="px-6 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 border-b border-gray-100 dark:border-gray-700">
+          <p className="text-center text-sm text-gray-600 dark:text-gray-300 mb-3">
+            📸 결과 스크린샷 찍어서 친구에게 공유해보세요!
+          </p>
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm">
+            <p className="text-lg font-bold text-gray-900 dark:text-white">
+              {shareText}
+            </p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+              #{test?.tags?.slice(0, 3).join(' #')} #AI놀이터
+            </p>
+          </div>
         </div>
 
         {/* Content */}
@@ -12793,217 +12809,34 @@ export default function TestResultPage() {
         </div>
       </div>
 
-      {/* Other Tests Suggestion */}
+      {/* Ad Banner */}
+      <AdBanner className="mt-6" variant="horizontal" />
+
+      {/* Similar Tests Recommendation */}
       <div className="mt-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-        <h2 className="font-bold text-gray-900 dark:text-white mb-4">이런 테스트는 어때요?</h2>
+        <h2 className="font-bold text-gray-900 dark:text-white mb-4">🎯 비슷한 테스트 추천</h2>
         <div className="grid grid-cols-2 gap-3">
-          {slug !== 'soul-animal' && (
+          {getSimilarTests(slug, 4).map((similarTest) => (
             <Link
-              href="/test/soul-animal"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+              key={similarTest.slug}
+              href={`/test/${similarTest.slug}`}
+              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors group"
             >
-              <div className="text-2xl mb-1">🐺</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">소울 애니멀</div>
+              <div className="font-medium text-sm text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 line-clamp-2">
+                {similarTest.title}
+              </div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                {similarTest.shortDescription}
+              </div>
+              <div className="flex flex-wrap gap-1 mt-2">
+                {similarTest.tags.slice(0, 2).map((tag) => (
+                  <span key={tag} className="text-xs px-1.5 py-0.5 bg-gray-200 dark:bg-gray-600 rounded text-gray-600 dark:text-gray-300">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
             </Link>
-          )}
-          {slug !== 'color-personality' && (
-            <Link
-              href="/test/color-personality"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">🎨</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">컬러 성격 테스트</div>
-            </Link>
-          )}
-          {slug !== 'mbti-basic' && (
-            <Link
-              href="/test/mbti-basic"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">🧠</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">MBTI 테스트</div>
-            </Link>
-          )}
-          {slug !== 'past-life' && (
-            <Link
-              href="/test/past-life"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">🔮</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">전생 테스트</div>
-            </Link>
-          )}
-          {slug !== 'ideal-type' && (
-            <Link
-              href="/test/ideal-type"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">💕</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">이상형 테스트</div>
-            </Link>
-          )}
-          {slug !== 'love-language' && (
-            <Link
-              href="/test/love-language"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">💬</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">사랑의 언어</div>
-            </Link>
-          )}
-          {slug !== 'luck-2025' && (
-            <Link
-              href="/test/luck-2025"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">🌟</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">2025 운세</div>
-            </Link>
-          )}
-          {slug !== 'brain-type' && (
-            <Link
-              href="/test/brain-type"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">🧠</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">좌뇌우뇌 테스트</div>
-            </Link>
-          )}
-          {slug !== 'stress-level' && (
-            <Link
-              href="/test/stress-level"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">😰</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">스트레스 지수</div>
-            </Link>
-          )}
-          {slug !== 'attachment-style' && (
-            <Link
-              href="/test/attachment-style"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">💜</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">애착 유형</div>
-            </Link>
-          )}
-          {slug !== 'career-aptitude' && (
-            <Link
-              href="/test/career-aptitude"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">💼</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">직업 적성</div>
-            </Link>
-          )}
-          {slug !== 'work-style' && (
-            <Link
-              href="/test/work-style"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">👔</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">업무 스타일</div>
-            </Link>
-          )}
-          {slug !== 'iq-test' && (
-            <Link
-              href="/test/iq-test"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">🧩</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">IQ 테스트</div>
-            </Link>
-          )}
-          {slug !== 'dating-style' && (
-            <Link
-              href="/test/dating-style"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">💑</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">연애 성향</div>
-            </Link>
-          )}
-          {slug !== 'love-charm' && (
-            <Link
-              href="/test/love-charm"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">💋</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">연애 매력 포인트</div>
-            </Link>
-          )}
-          {slug !== 'money-sense' && (
-            <Link
-              href="/test/money-sense"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">💰</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">금전 감각</div>
-            </Link>
-          )}
-          {slug !== 'rich-mindset' && (
-            <Link
-              href="/test/rich-mindset"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">🤑</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">부자 마인드</div>
-            </Link>
-          )}
-          {slug !== 'disc-personality' && (
-            <Link
-              href="/test/disc-personality"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">🎯</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">DISC 성격 유형</div>
-            </Link>
-          )}
-          {slug !== 'enneagram' && (
-            <Link
-              href="/test/enneagram"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">🔢</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">에니어그램</div>
-            </Link>
-          )}
-          {slug !== 'eq-test' && (
-            <Link
-              href="/test/eq-test"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">💗</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">EQ 감성지능</div>
-            </Link>
-          )}
-          {slug !== 'mental-strength' && (
-            <Link
-              href="/test/mental-strength"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">💪</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">멘탈 강도</div>
-            </Link>
-          )}
-          {slug !== 'burnout-level' && (
-            <Link
-              href="/test/burnout-level"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">🔥</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">번아웃 지수</div>
-            </Link>
-          )}
-          {slug !== 'focus-test' && (
-            <Link
-              href="/test/focus-test"
-              className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-            >
-              <div className="text-2xl mb-1">🎯</div>
-              <div className="font-medium text-sm text-gray-900 dark:text-white">집중력 테스트</div>
-            </Link>
-          )}
+          ))}
         </div>
       </div>
 

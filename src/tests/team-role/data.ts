@@ -200,7 +200,7 @@ export const results: TeamRoleResult[] = [
       '장기적 관점도 키워보세요',
       '충분한 휴식도 생산성입니다',
     ],
-    famousPeople: '',
+    famousPeople: '손흥민, 류현진, 김연아',
   },
   {
     type: 'supporter',
@@ -217,7 +217,7 @@ export const results: TeamRoleResult[] = [
       '모든 사람을 만족시킬 순 없어요',
       '자신의 성과도 어필하세요',
     ],
-    famousPeople: '',
+    famousPeople: '유재석, 신동엽, 조세호',
   },
 ];
 

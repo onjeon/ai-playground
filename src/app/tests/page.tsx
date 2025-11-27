@@ -1,19 +1,52 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { Search, ArrowLeft, Grid3X3, Flame, Clock, Sparkles } from 'lucide-react';
+import { Search, ArrowLeft, Grid3X3, Flame, Clock, Sparkles, Tag, X } from 'lucide-react';
 import { TestGrid } from '@/components/test';
-import { tests, categories } from '@/lib/data';
+import { tests, categories, getAllTags } from '@/lib/data';
 
 type SortType = 'popular' | 'new' | 'name';
 type FilterType = 'all' | 'free' | 'premium';
 
-export default function TestsPage() {
+// 인기 태그 (상위 15개) - 태그 문자열만 추출
+const popularTags = getAllTags().slice(0, 15).map(t => t.tag);
+
+function TestsContent() {
+  const searchParams = useSearchParams();
+  
+  // URL 파라미터에서 초기값 읽기
+  const initialSort = (searchParams.get('sort') as SortType) || 'popular';
+  const initialFilter = (searchParams.get('filter') as FilterType) || 'all';
+  
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState<SortType>('popular');
-  const [filterBy, setFilterBy] = useState<FilterType>('all');
+  const [sortBy, setSortBy] = useState<SortType>(initialSort);
+  const [filterBy, setFilterBy] = useState<FilterType>(initialFilter);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  
+  // URL 변경 시 상태 업데이트
+  useEffect(() => {
+    const sort = searchParams.get('sort') as SortType;
+    const filter = searchParams.get('filter') as FilterType;
+    if (sort && ['popular', 'new', 'name'].includes(sort)) {
+      setSortBy(sort);
+    }
+    if (filter && ['all', 'free', 'premium'].includes(filter)) {
+      setFilterBy(filter);
+    }
+  }, [searchParams]);
+
+  const toggleTag = (tag: string) => {
+    setSelectedTags(prev => 
+      prev.includes(tag) 
+        ? prev.filter(t => t !== tag)
+        : [...prev, tag]
+    );
+  };
+
+  const clearTags = () => setSelectedTags([]);
 
   const filteredTests = useMemo(() => {
     let result = [...tests];
@@ -21,6 +54,13 @@ export default function TestsPage() {
     // 카테고리 필터
     if (selectedCategory !== 'all') {
       result = result.filter(test => test.categoryId === selectedCategory);
+    }
+
+    // 태그 필터
+    if (selectedTags.length > 0) {
+      result = result.filter(test =>
+        selectedTags.some(tag => test.tags.includes(tag))
+      );
     }
 
     // 검색 필터
@@ -50,7 +90,7 @@ export default function TestsPage() {
     }
 
     return result;
-  }, [searchQuery, sortBy, filterBy, selectedCategory]);
+  }, [searchQuery, sortBy, filterBy, selectedCategory, selectedTags]);
 
   return (
     <div className="space-y-6">
@@ -160,10 +200,41 @@ export default function TestsPage() {
             </button>
           </div>
         </div>
+        {/* Tag Filter */}
+        <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
+          <div className="flex items-center gap-2 mb-2">
+            <Tag className="w-4 h-4 text-gray-500" />
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">인기 태그</span>
+            {selectedTags.length > 0 && (
+              <button
+                onClick={clearTags}
+                className="ml-auto flex items-center gap-1 text-xs text-gray-500 hover:text-red-500 transition-colors"
+              >
+                <X className="w-3 h-3" />
+                초기화
+              </button>
+            )}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {popularTags.map(tag => (
+              <button
+                key={tag}
+                onClick={() => toggleTag(tag)}
+                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                  selectedTags.includes(tag)
+                    ? 'bg-indigo-600 text-white shadow-md'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 hover:text-indigo-600 dark:hover:text-indigo-400'
+                }`}
+              >
+                #{tag}
+              </button>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Results Count */}
-      {(searchQuery || selectedCategory !== 'all' || filterBy !== 'all') && (
+      {(searchQuery || selectedCategory !== 'all' || filterBy !== 'all' || selectedTags.length > 0) && (
         <div className="text-sm text-gray-500 dark:text-gray-400">
           {filteredTests.length}개의 테스트를 찾았습니다
         </div>
@@ -177,5 +248,17 @@ export default function TestsPage() {
         />
       </section>
     </div>
+  );
+}
+
+export default function TestsPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="text-gray-400">로딩 중...</div>
+      </div>
+    }>
+      <TestsContent />
+    </Suspense>
   );
 }

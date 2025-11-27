@@ -97,21 +97,21 @@ export default function Sidebar() {
           <h3 className="font-bold text-gray-900 dark:text-white mb-4 px-2">바로가기</h3>
           <nav className="space-y-1">
             <Link
-              href="/?sort=popular"
+              href="/tests?sort=popular"
               className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white transition-all"
             >
               <TrendingUp className="w-5 h-5 text-orange-500" />
               인기 테스트
             </Link>
             <Link
-              href="/?filter=free"
+              href="/tests?filter=free"
               className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white transition-all"
             >
               <Star className="w-5 h-5 text-yellow-500" />
               무료 테스트
             </Link>
             <Link
-              href="/?filter=premium"
+              href="/tests?filter=premium"
               className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white transition-all"
             >
               <Crown className="w-5 h-5 text-purple-500" />
@@ -138,7 +138,7 @@ export default function Sidebar() {
             더 정밀한 AI 분석과 상세한 결과를 원하시나요?
           </p>
           <Link
-            href="/?filter=premium"
+            href="/tests?filter=premium"
             className="inline-block w-full text-center px-4 py-2 bg-white text-indigo-600 rounded-lg text-sm font-semibold hover:bg-white/90 transition-colors"
           >
             프리미엄 보기
