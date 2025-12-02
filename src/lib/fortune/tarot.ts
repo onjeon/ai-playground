@@ -1,5 +1,5 @@
 // 타로 카드 리더 로직
-import tarotData from '@/data/premium/tarot/cards.json';
+import tarotData from '@/data/fortune/tarot/cards.json';
 
 export interface TarotCard {
   id: string;

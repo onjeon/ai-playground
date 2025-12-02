@@ -19,8 +19,6 @@ export interface Test {
   questionCount: number;
   estimatedTime: number; // 분 단위
   participantCount: number;
-  isPremium: boolean;
-  price: number; // 0이면 무료
   tags: string[];
   createdAt: string;
 }

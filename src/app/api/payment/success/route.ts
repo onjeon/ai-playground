@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
     }
 
     // 결제 성공 - 프리미엄 페이지로 이동
-    return NextResponse.redirect(`${request.nextUrl.origin}/premium/${premiumType}?paid=true&orderId=${orderId}&amount=${amount}`);
+    return NextResponse.redirect(`${request.nextUrl.origin}/fortune/${premiumType}?paid=true&orderId=${orderId}&amount=${amount}`);
 
   } catch (error) {
     console.error('결제 처리 중 오류:', error);

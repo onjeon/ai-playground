@@ -15,6 +15,8 @@ import {
   Crown,
   Zap,
   Gamepad2,
+  Sun,
+  Battery,
 } from 'lucide-react';
 import { categories } from '@/lib/data';
 
@@ -29,7 +31,6 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const isHome = pathname === '/';
   const currentCategorySlug = pathname.startsWith('/category/') ? pathname.split('/')[2] : null;
 
   return (
@@ -69,6 +70,45 @@ export default function Sidebar() {
                 </Link>
               );
             })}
+          </nav>
+        </div>
+
+        {/* Daily */}
+        <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-2xl shadow-sm border border-amber-100 dark:border-amber-800/50 p-4">
+          <h3 className="font-bold text-gray-900 dark:text-white mb-4 px-2 flex items-center gap-2">
+            <Sun className="w-4 h-4 text-amber-500" />
+            데일리
+          </h3>
+          <nav className="space-y-1">
+            <Link
+              href="/daily"
+              className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                pathname === '/daily'
+                  ? 'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300'
+                  : 'text-gray-600 dark:text-gray-400 hover:bg-amber-100/50 dark:hover:bg-amber-900/30 hover:text-gray-900 dark:hover:text-white'
+              }`}
+            >
+              <Sun className="w-5 h-5 text-amber-500" />
+              데일리 허브
+            </Link>
+            <Link
+              href="/daily/condition"
+              className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                pathname === '/daily/condition'
+                  ? 'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300'
+                  : 'text-gray-600 dark:text-gray-400 hover:bg-amber-100/50 dark:hover:bg-amber-900/30 hover:text-gray-900 dark:hover:text-white'
+              }`}
+            >
+              <Battery className="w-5 h-5 text-emerald-500" />
+              컨디션 체크
+            </Link>
+            <Link
+              href="/fortune/daily-fortune"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-amber-100/50 dark:hover:bg-amber-900/30 hover:text-gray-900 dark:hover:text-white transition-all"
+            >
+              <span className="text-lg">🔮</span>
+              오늘의 운세
+            </Link>
           </nav>
         </div>
 
