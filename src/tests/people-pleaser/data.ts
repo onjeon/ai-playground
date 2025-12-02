@@ -1,222 +1,164 @@
-// 피플플리저 테스트 - 나는 남의 눈치를 얼마나 볼까?
-
+// people-pleaser 테스트 데이터
 export const questions = [
   {
     id: 1,
-    question: "부탁을 거절하는 것은?",
+    text: '부탁을 받으면 어떻게 하나요?',
     options: [
-      { text: "필요하면 거절한다", type: "healthy", score: 0 },
-      { text: "좀 어렵다", type: "mild", score: 2 },
-      { text: "거의 못한다", type: "moderate", score: 4 },
-      { text: "절대 못한다", type: "severe", score: 5 },
+      { text: '거절하기 어려워서 대부분 수락', type: 'high' },
+      { text: '상황 봐서 거절하기도 함', type: 'moderate' },
+      { text: '내 상황 먼저 고려 후 결정', type: 'low' },
+      { text: '필요하면 바로 거절함', type: 'none' },
     ],
   },
   {
     id: 2,
-    question: "남들이 나를 어떻게 생각할까 신경 쓰는 정도는?",
+    text: '대화할 때 상대방 반응을 얼마나 신경 쓰나요?',
     options: [
-      { text: "별로 안 신경 씀", type: "healthy", score: 0 },
-      { text: "약간 신경 씀", type: "mild", score: 2 },
-      { text: "많이 신경 씀", type: "moderate", score: 4 },
-      { text: "항상 신경 씀", type: "severe", score: 5 },
+      { text: '말할 때마다 표정/반응 체크함', type: 'high' },
+      { text: '어느 정도 신경 씀', type: 'moderate' },
+      { text: '크게 신경 안 쓰는 편', type: 'low' },
+      { text: '내 할 말 하는 게 중요함', type: 'none' },
     ],
   },
   {
     id: 3,
-    question: "갈등 상황에서 나는?",
+    text: '누군가 기분 나빠 보이면?',
     options: [
-      { text: "내 의견을 말한다", type: "healthy", score: 0 },
-      { text: "상황 봐서 결정", type: "mild", score: 2 },
-      { text: "대체로 양보한다", type: "moderate", score: 4 },
-      { text: "항상 내가 물러난다", type: "severe", score: 5 },
+      { text: '"내가 뭐 잘못했나?" 바로 생각남', type: 'high' },
+      { text: '좀 신경 쓰이긴 함', type: 'moderate' },
+      { text: '그 사람 사정이 있겠지', type: 'low' },
+      { text: '내 일 아니면 관심 없음', type: 'none' },
     ],
   },
   {
     id: 4,
-    question: "'착하다'는 말을 들으면?",
+    text: '친구들 사이에서 의견이 다를 때?',
     options: [
-      { text: "그냥 그런가 보다", type: "healthy", score: 0 },
-      { text: "나쁘지 않다", type: "mild", score: 1 },
-      { text: "기분 좋다", type: "moderate", score: 3 },
-      { text: "매우 중요하다", type: "severe", score: 5 },
+      { text: '다수 의견에 맞춤', type: 'high' },
+      { text: '내 의견 말하지만 강하게 안 밀어붙임', type: 'moderate' },
+      { text: '소신껏 내 의견 주장', type: 'low' },
+      { text: '논쟁해서라도 관철시킴', type: 'none' },
     ],
   },
   {
     id: 5,
-    question: "내 감정보다 남의 감정이 우선인 적이?",
+    text: '칭찬을 받으면?',
     options: [
-      { text: "거의 없다", type: "healthy", score: 0 },
-      { text: "가끔 있다", type: "mild", score: 2 },
-      { text: "자주 있다", type: "moderate", score: 4 },
-      { text: "항상 그렇다", type: "severe", score: 5 },
+      { text: '"아니에요~" 부정하며 겸손 떨기', type: 'high' },
+      { text: '좋지만 어색해서 대충 넘김', type: 'moderate' },
+      { text: '"감사합니다" 자연스럽게 받음', type: 'low' },
+      { text: '"당연하죠" 자신있게 인정', type: 'none' },
     ],
   },
   {
     id: 6,
-    question: "누군가 실망하면?",
+    text: '누군가 나를 싫어하는 것 같으면?',
     options: [
-      { text: "그럴 수 있다 생각", type: "healthy", score: 0 },
-      { text: "약간 신경 쓰인다", type: "mild", score: 2 },
-      { text: "죄책감을 느낀다", type: "moderate", score: 4 },
-      { text: "매우 괴롭다", type: "severe", score: 5 },
+      { text: '밤새 고민하고 어떻게든 좋게 보이려 함', type: 'high' },
+      { text: '신경 쓰이지만 티 안 냄', type: 'moderate' },
+      { text: '나도 그 사람 안 좋아하면 그만', type: 'low' },
+      { text: '신경 안 씀, 모두에게 사랑받을 필요 없음', type: 'none' },
     ],
   },
   {
     id: 7,
-    question: "칭찬받기 위해 행동한 적이?",
+    text: '식당에서 음식이 잘못 나오면?',
     options: [
-      { text: "거의 없다", type: "healthy", score: 0 },
-      { text: "가끔", type: "mild", score: 2 },
-      { text: "자주", type: "moderate", score: 4 },
-      { text: "늘 그렇다", type: "severe", score: 5 },
+      { text: '그냥 먹음 (말하기 불편)', type: 'high' },
+      { text: '고민하다가 용기내서 말함', type: 'moderate' },
+      { text: '바로 말하고 바꿔달라고 함', type: 'low' },
+      { text: '당당하게 컴플레인', type: 'none' },
     ],
   },
   {
     id: 8,
-    question: "내 진짜 의견을 말하는 것은?",
+    text: '"너 착하다"는 말을 들으면?',
     options: [
-      { text: "자연스럽다", type: "healthy", score: 0 },
-      { text: "좀 어렵다", type: "mild", score: 2 },
-      { text: "매우 어렵다", type: "moderate", score: 4 },
-      { text: "거의 못한다", type: "severe", score: 5 },
+      { text: '자주 듣고, 사실 좀 지침', type: 'high' },
+      { text: '가끔 듣고, 나쁘진 않음', type: 'moderate' },
+      { text: '별로 안 들음', type: 'low' },
+      { text: '착한 게 아니라 합리적인 거임', type: 'none' },
     ],
   },
   {
     id: 9,
-    question: "남이 화내면 내 탓인 것 같은 생각이?",
+    text: '갈등 상황에서 나는?',
     options: [
-      { text: "안 든다", type: "healthy", score: 0 },
-      { text: "가끔 든다", type: "mild", score: 2 },
-      { text: "자주 든다", type: "moderate", score: 4 },
-      { text: "항상 내 탓 같다", type: "severe", score: 5 },
+      { text: '내가 양보해서 해결함', type: 'high' },
+      { text: '서로 타협점을 찾으려 함', type: 'moderate' },
+      { text: '내 입장 분명히 전달함', type: 'low' },
+      { text: '필요하면 싸움도 감수', type: 'none' },
     ],
   },
   {
     id: 10,
-    question: "싫은 일도 하게 되는 이유는?",
+    text: '하루 중 가장 피곤한 순간은?',
     options: [
-      { text: "안 한다", type: "healthy", score: 0 },
-      { text: "가끔 인간관계 때문에", type: "mild", score: 2 },
-      { text: "미움받을까봐", type: "moderate", score: 4 },
-      { text: "거절 자체가 안 됨", type: "severe", score: 5 },
-    ],
-  },
-  {
-    id: 11,
-    question: "나를 위한 시간은?",
-    options: [
-      { text: "충분히 가진다", type: "healthy", score: 0 },
-      { text: "노력 중이다", type: "mild", score: 2 },
-      { text: "부족하다", type: "moderate", score: 4 },
-      { text: "거의 없다", type: "severe", score: 5 },
-    ],
-  },
-  {
-    id: 12,
-    question: "남들 기대에 맞추느라 지친 적이?",
-    options: [
-      { text: "거의 없다", type: "healthy", score: 0 },
-      { text: "가끔 있다", type: "mild", score: 2 },
-      { text: "자주 있다", type: "moderate", score: 4 },
-      { text: "늘 지쳐있다", type: "severe", score: 5 },
+      { text: '사람들 눈치 보느라 지칠 때', type: 'high' },
+      { text: '인간관계 후 혼자 충전할 때', type: 'moderate' },
+      { text: '할 일이 많을 때', type: 'low' },
+      { text: '특별히 피곤하지 않음', type: 'none' },
     ],
   },
 ];
 
-export interface PeoplePleserResult {
-  level: string;
+export const results: Record<string, {
   title: string;
   emoji: string;
-  pleaseScore: number;
+  level: string;
   description: string;
-  characteristics: string[];
-  causes: string[];
-  effects: string[];
-  recoverySteps: string[];
-  boundaryTips: string[];
-  selfCareAdvice: string[];
-  affirmation: string;
-}
-
-const resultTypes: Record<string, PeoplePleserResult> = {
-  healthy: {
-    level: 'healthy',
-    title: '건강한 경계',
-    emoji: '💪',
-    pleaseScore: 15,
-    description: '당신은 건강한 경계를 유지하고 있어요! 남의 눈치를 과도하게 보지 않고, 자신의 의견과 감정을 존중합니다. 이 균형을 유지하세요.',
-    characteristics: ['건강한 자기 주장', '적절한 경계', '자기 존중'],
-    causes: [],
-    effects: ['건강한 관계', '자존감 유지', '스트레스 관리'],
-    recoverySteps: ['현재 상태 유지'],
-    boundaryTips: ['일관된 경계 유지', '필요시 거절하기'],
-    selfCareAdvice: ['자기 돌봄 지속', '균형 잡힌 관계 유지'],
-    affirmation: '당신은 자신을 존중하면서 타인도 배려하는 좋은 균형을 가지고 있어요!',
-  },
-  mild: {
-    level: 'mild',
-    title: '가벼운 피플플리저',
-    emoji: '🙂',
-    pleaseScore: 40,
-    description: '약간의 피플플리저 성향이 있지만 관리 가능한 수준입니다. 가끔 남의 눈치를 보지만, 중요한 상황에서는 자기 의견을 말할 수 있어요.',
-    characteristics: ['배려심', '때때로 눈치 봄', '갈등 회피 경향'],
-    causes: ['사회적 기대', '좋은 관계 유지 욕구'],
-    effects: ['가끔 피로감', '경계 흐릿'],
-    recoverySteps: ['작은 거절 연습', '내 감정 확인하기'],
-    boundaryTips: ['거절 연습하기', '"생각해볼게" 활용'],
-    selfCareAdvice: ['나만의 시간 확보', '감정 일기'],
-    affirmation: '배려하는 마음은 장점이에요. 나 자신도 그만큼 배려해주세요.',
+  symptoms: string[];
+  recovery: string;
+}> = {
+  high: {
+    title: '풀타임 피플플리저',
+    emoji: '😰',
+    level: '눈치력 MAX',
+    description: '상대방의 기분과 반응에 극도로 민감하고, 거절하지 못하며, 남들에게 잘 보이기 위해 자신을 희생하는 경향이 있습니다.',
+    symptoms: ['거절 불가능', '눈치 과잉', '자기 의견 숨김', '칭찬 거부', '갈등 회피'],
+    recovery: '당신의 의견과 감정도 소중해요. "NO"라고 말하는 연습부터 시작해보세요. 모두를 만족시킬 필요 없습니다.',
   },
   moderate: {
-    level: 'moderate',
-    title: '피플플리저',
-    emoji: '😓',
-    pleaseScore: 65,
-    description: '남의 눈치를 많이 보는 편이에요. 거절이 어렵고, 남의 기대에 맞추느라 지칠 때가 많습니다. 자신의 경계를 세우는 연습이 필요해요.',
-    characteristics: ['거절 어려움', '과도한 눈치', '자기 희생', '갈등 회피'],
-    causes: ['인정 욕구', '버림받음의 두려움', '낮은 자존감', '어린 시절 경험'],
-    effects: ['번아웃', '분노 억압', '자존감 하락', '피로감'],
-    recoverySteps: ['거절 연습', '경계 세우기', '자기 감정 인정', '작은 것부터 시작'],
-    boundaryTips: ['NO라고 말하기 연습', '즉답 피하기', '내 필요 먼저 체크'],
-    selfCareAdvice: ['나만의 시간 필수', '자기 돌봄', '감정 표현'],
-    affirmation: '모두를 만족시킬 수는 없어요. 당신의 행복도 중요합니다.',
+    title: '상황적 피플플리저',
+    emoji: '🤔',
+    level: '눈치력 중상',
+    description: '대체로 눈치를 보지만, 필요할 때는 자기 의견도 낼 수 있는 타입. 균형을 맞추려 노력하지만 가끔 피곤합니다.',
+    symptoms: ['때에 따라 눈치', '거절은 어렵지만 할 수 있음', '갈등 시 스트레스'],
+    recovery: '지금도 괜찮지만, 조금 더 자신의 욕구를 우선시해도 돼요. 진짜 친구는 당신의 거절도 이해합니다.',
   },
-  severe: {
-    level: 'severe',
-    title: '심한 피플플리저',
-    emoji: '😔',
-    pleaseScore: 90,
-    description: '남의 눈치를 과도하게 보고 있어요. 자신을 희생하며 남을 기쁘게 하려다 지쳐있을 거예요. 전문가의 도움을 받는 것도 좋은 방법입니다.',
-    characteristics: ['극도의 거절 어려움', '자기 희생', '자기 상실', '항상 남 우선'],
-    causes: ['깊은 인정 욕구', '버림받음 트라우마', '어린 시절 상처', '낮은 자존감'],
-    effects: ['심한 번아웃', '우울감', '분노 폭발', '관계 문제', '자기 상실'],
-    recoverySteps: ['전문 상담 권장', '작은 거절부터', '자기 감정 인정', '지지 시스템'],
-    boundaryTips: ['전문가와 함께', '아주 작은 것부터', '무리하지 않기'],
-    selfCareAdvice: ['전문 상담 고려', '자기 돌봄 우선', '충분한 휴식'],
-    affirmation: '당신은 있는 그대로 사랑받을 자격이 있어요. 남을 기쁘게 해야만 사랑받는 게 아니에요.',
+  low: {
+    title: '균형잡힌 소통러',
+    emoji: '⚖️',
+    level: '눈치력 적정',
+    description: '상대방을 배려하면서도 자신의 의견을 잘 표현하는 건강한 소통 스타일! 눈치와 자기주장의 균형을 잘 맞춥니다.',
+    symptoms: ['합리적 거절', '자기 의견 표현', '적절한 배려'],
+    recovery: '지금 상태를 잘 유지하세요! 당신은 이미 건강한 관계를 맺고 있어요.',
+  },
+  none: {
+    title: '나만의 길 걷기형',
+    emoji: '🦅',
+    level: '눈치력 최소',
+    description: '남의 눈치를 거의 보지 않고 자기 소신대로 사는 타입! 자기주장이 강하고 독립적이지만, 가끔 무심해 보일 수 있어요.',
+    symptoms: ['눈치 안 봄', '소신 강함', '갈등 두려움 없음', '독립적'],
+    recovery: '자기 주장도 좋지만, 가끔은 상대방의 감정을 읽어주는 것도 관계에 도움이 돼요.',
   },
 };
 
-export function calculatePeoplePleserResult(answers: number[]): PeoplePleserResult {
-  let totalScore = 0;
+export function calculateResult(answers: number[]): string {
+  const scores: Record<string, number> = {
+    high: 0,
+    moderate: 0,
+    low: 0,
+    none: 0,
+  };
 
   answers.forEach((answerIndex, questionIndex) => {
     const question = questions[questionIndex];
     if (question && question.options[answerIndex]) {
-      totalScore += question.options[answerIndex].score;
+      const type = question.options[answerIndex].type;
+      scores[type]++;
     }
   });
 
-  const maxScore = questions.length * 5;
-  const percentage = (totalScore / maxScore) * 100;
-
-  if (percentage < 25) {
-    return { ...resultTypes.healthy, pleaseScore: Math.round(percentage) };
-  } else if (percentage < 50) {
-    return { ...resultTypes.mild, pleaseScore: Math.round(percentage) };
-  } else if (percentage < 75) {
-    return { ...resultTypes.moderate, pleaseScore: Math.round(percentage) };
-  } else {
-    return { ...resultTypes.severe, pleaseScore: Math.round(percentage) };
-  }
+  return Object.entries(scores).reduce((a, b) => (b[1] > a[1] ? b : a))[0];
 }
