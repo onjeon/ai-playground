@@ -1,5 +1,6 @@
 // 테스트 데이터 동적 로더
 // 번들 사이즈 최적화를 위해 필요한 테스트만 동적으로 로드
+// locale별 테스트 지원
 
 export interface BaseTestResult {
   type: string;
@@ -12,14 +13,34 @@ export interface BaseTestResult {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type TestModule = Record<string, any>;
 
-// 테스트 모듈 동적 로드
-export async function loadTestModule(slug: string): Promise<TestModule | null> {
+// locale별 테스트 폴더 매핑
+const localeTestFolders: Record<string, string> = {
+  ko: 'tests',      // 한국어: src/tests/
+  ja: 'tests-ja',   // 일본어: src/tests-ja/
+  // 추후 다른 locale 추가 가능
+};
+
+// 테스트 모듈 동적 로드 (locale 지원)
+export async function loadTestModule(slug: string, locale: string = 'ko'): Promise<TestModule | null> {
   try {
-    // Next.js의 동적 임포트를 사용하여 테스트 데이터 로드
+    // locale에 따른 테스트 폴더 결정
+    const testFolder = localeTestFolders[locale] || localeTestFolders['ko'];
+    
+    // 해당 locale 폴더에서 먼저 시도
+    try {
+      if (testFolder === 'tests-ja') {
+        const module = await import(`@/tests-ja/${slug}/data`);
+        return module as TestModule;
+      }
+    } catch {
+      // locale 폴더에 없으면 기본(ko) 폴더에서 로드
+    }
+    
+    // 기본 테스트 폴더에서 로드
     const module = await import(`@/tests/${slug}/data`);
     return module as TestModule;
   } catch (error) {
-    console.error(`Failed to load test module: ${slug}`, error);
+    console.error(`Failed to load test module: ${slug} (locale: ${locale})`, error);
     return null;
   }
 }
