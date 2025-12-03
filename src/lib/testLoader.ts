@@ -18,6 +18,7 @@ const localeTestFolders: Record<string, string> = {
   ko: 'tests',        // 한국어: src/tests/
   ja: 'tests-ja',     // 일본어: src/tests-ja/
   'zh-TW': 'tests-zh-TW',  // 대만 중국어: src/tests-zh-TW/
+  th: 'tests-th',     // 태국어: src/tests-th/
 };
 
 // 테스트 모듈 동적 로드 (locale 지원)
@@ -33,6 +34,9 @@ export async function loadTestModule(slug: string, locale: string = 'ko'): Promi
         return module as TestModule;
       } else if (testFolder === 'tests-zh-TW') {
         const module = await import(`@/tests-zh-TW/${slug}/data`);
+        return module as TestModule;
+      } else if (testFolder === 'tests-th') {
+        const module = await import(`@/tests-th/${slug}/data`);
         return module as TestModule;
       }
     } catch {
