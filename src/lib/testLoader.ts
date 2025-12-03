@@ -15,9 +15,9 @@ export type TestModule = Record<string, any>;
 
 // locale별 테스트 폴더 매핑
 const localeTestFolders: Record<string, string> = {
-  ko: 'tests',      // 한국어: src/tests/
-  ja: 'tests-ja',   // 일본어: src/tests-ja/
-  // 추후 다른 locale 추가 가능
+  ko: 'tests',        // 한국어: src/tests/
+  ja: 'tests-ja',     // 일본어: src/tests-ja/
+  'zh-TW': 'tests-zh-TW',  // 대만 중국어: src/tests-zh-TW/
 };
 
 // 테스트 모듈 동적 로드 (locale 지원)
@@ -30,6 +30,9 @@ export async function loadTestModule(slug: string, locale: string = 'ko'): Promi
     try {
       if (testFolder === 'tests-ja') {
         const module = await import(`@/tests-ja/${slug}/data`);
+        return module as TestModule;
+      } else if (testFolder === 'tests-zh-TW') {
+        const module = await import(`@/tests-zh-TW/${slug}/data`);
         return module as TestModule;
       }
     } catch {
