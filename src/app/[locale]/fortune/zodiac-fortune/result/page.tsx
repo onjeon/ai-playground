@@ -41,6 +41,7 @@ function ZodiacFortuneResult() {
   // 공유 함수
   const handleShare = async () => {
     const shareText = `${constellationInfo.symbol} 2025 ${constellationInfo.name} 운세\n\n올해의 키워드: ${fortune.keywords.join(', ')}\n행운지수: ${'★'.repeat(fortune.luckyScore)}${'☆'.repeat(5 - fortune.luckyScore)}\n\n나도 별자리 운세 보기`;
+    const fullText = shareText + '\n' + window.location.origin + '/fortune/zodiac-fortune';
     
     if (navigator.share) {
       try {
@@ -49,12 +50,34 @@ function ZodiacFortuneResult() {
           text: shareText,
           url: window.location.href,
         });
+        return;
       } catch {
-        // 공유 취소
+        // fallback
       }
-    } else {
-      await navigator.clipboard.writeText(shareText + '\n' + window.location.origin + '/fortune/zodiac-fortune');
+    }
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(fullText);
+        alert('클립보드에 복사되었습니다!');
+        return;
+      } catch {
+        // fallback
+      }
+    }
+    
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = fullText;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
       alert('클립보드에 복사되었습니다!');
+    } catch {
+      alert('공유 기능을 사용할 수 없습니다.');
     }
   };
 

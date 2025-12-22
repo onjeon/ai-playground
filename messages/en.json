@@ -1,0 +1,522 @@
+{
+  "common": {
+    "siteName": "AI Playground",
+    "siteDescription": "Discover yourself with AI-powered psychology tests, personality tests, MBTI and more.",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "notFound": "Page not found",
+    "back": "Go back",
+    "home": "Home",
+    "share": "Share",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "retry": "Try again",
+    "start": "Start",
+    "result": "Result",
+    "next": "Next",
+    "prev": "Previous",
+    "submit": "Submit",
+    "close": "Close",
+    "more": "More",
+    "all": "All",
+    "free": "Free",
+    "participants": "participants",
+    "minutes": "min",
+    "questions": "questions",
+    "viewAll": "View all",
+    "dailyUpdate": "Updated daily",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "Home",
+    "tests": "All Tests",
+    "categories": "Categories",
+    "fortune": "Fortune",
+    "games": "Games",
+    "physical": "Physical",
+    "daily": "Daily"
+  },
+  "categories": {
+    "personality": "Personality",
+    "psychology": "Psychology",
+    "relationship": "Relationship",
+    "career": "Career",
+    "fun": "Fun/Entertainment",
+    "iq": "IQ/Brain"
+  },
+  "home": {
+    "heroTitle": "Time to discover yourself,",
+    "heroHighlight": "AI Playground",
+    "heroDescription": "Psychology tests, personality analysis, MBTI and more!\nDiscover the real you with AI-powered tests.",
+    "aiBased": "AI-Powered",
+    "startTest": "Start Personality Test",
+    "viewAll": "View All Tests",
+    "stats": {
+      "participants": "Participants",
+      "participantsCount": "500K+",
+      "tests": "Tests",
+      "shares": "Shares",
+      "sharesCount": "20K+"
+    },
+    "sections": {
+      "popular": "Popular Tests",
+      "new": "New Tests",
+      "todayPicks": "Today's Picks",
+      "daily": "Daily",
+      "dailyHub": "Daily Hub",
+      "physicalGames": "Physical & Games",
+      "category": "Categories",
+      "fortune": "Fortune & Horoscope"
+    },
+    "quickButtons": {
+      "popular": "Popular",
+      "new": "New",
+      "tarot": "Tarot",
+      "fortune": "Daily Fortune"
+    },
+    "daily": {
+      "todayFortune": "Daily Fortune",
+      "fortuneDesc": "Based on your birthday",
+      "condition": "Condition Check",
+      "conditionDesc": "Quick 3-question check",
+      "luckyColor": "Lucky Color",
+      "luckyColorDesc": "Today's color & number"
+    },
+    "fortune": {
+      "title": "Fortune & Horoscope",
+      "description": "Tarot, daily fortune, compatibility, horoscope",
+      "tarot": "Tarot",
+      "dailyFortune": "Daily Fortune",
+      "compatibility": "Compatibility",
+      "saju": "Horoscope"
+    },
+    "physical": {
+      "title": "Physical Tests",
+      "description": "Reaction time, click speed, memory",
+      "reaction": "Reaction",
+      "click": "Click Speed",
+      "color": "Color Vision",
+      "memory": "Memory"
+    },
+    "games": {
+      "title": "Games & Cards",
+      "description": "Balance game, conversation cards",
+      "balance": "Balance Game",
+      "cards": "Conversation Cards"
+    },
+    "cta": {
+      "title": "Looking for more tests?",
+      "description": "{count} tests are waiting for you!",
+      "viewAll": "View All Tests",
+      "funTests": "Fun Tests"
+    }
+  },
+  "sidebar": {
+    "categories": "Categories",
+    "allTests": "All Tests",
+    "daily": "Daily",
+    "dailyHub": "Daily Hub",
+    "condition": "Condition Check",
+    "fortune": "Fortune",
+    "physicalGames": "Physical & Games",
+    "physical": "Physical Tests",
+    "games": "Games",
+    "quickLinks": "Quick Links",
+    "popularTests": "Popular Tests",
+    "newTests": "New Tests"
+  },
+  "test": {
+    "startTest": "Start Test",
+    "questionCount": "{count} questions",
+    "estimatedTime": "About {minutes} min",
+    "participants": "{count} participants",
+    "loading": "Preparing test...",
+    "loadError": "Failed to load test",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "View Result",
+    "shareResult": "Share Result",
+    "retryTest": "Try Again",
+    "otherTests": "Other Tests",
+    "resultTitle": "Your result is...",
+    "tags": "Tags",
+    "backHome": "Home",
+    "questionInfo": "{count} questions · {time} min",
+    "participation": "{count} participated",
+    "questions": "Questions",
+    "questionsCount": "{count}",
+    "testGuide": "Test Guide",
+    "guideNoAnswer": "There are no wrong answers. Please answer honestly.",
+    "guideInstantResult": "Results are available immediately after completing the test.",
+    "guideShare": "Share and compare your results with friends!",
+    "addFavorite": "Add to favorites",
+    "removeFavorite": "Remove from favorites",
+    "share": "Share",
+    "previous": "Previous",
+    "next": "Next",
+    "noResponseData": "No response data.",
+    "cannotLoadTest": "Cannot load test data.",
+    "cannotFindQuestions": "Cannot find questions.",
+    "errorLoadingQuestions": "Error loading questions.",
+    "analyzing": "Analyzing results...",
+    "cannotCalculate": "Cannot calculate results.",
+    "errorLoadingResult": "Error loading results.",
+    "cannotLoadResult": "Cannot load results",
+    "retryTestAgain": "Please try the test again.",
+    "goBack": "Go Back",
+    "jumpToQuestion": "Jump to question",
+    "yourResult": "Your result is",
+    "screenshotShare": "Take a screenshot and share with friends!",
+    "myResultIs": "My {testTitle} result is {emoji} {title}!",
+    "analysisResult": "Analysis Result",
+    "mainTraits": "Main Traits",
+    "strengths": "Strengths",
+    "cautions": "Cautions",
+    "advice": "Advice",
+    "goodMatch": "Good Match",
+    "cautionMatch": "Challenging Match"
+  },
+  "share": {
+    "title": "Share",
+    "kakao": "KakaoTalk",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "Copy Link",
+    "linkCopied": "Link copied!",
+    "nativeShare": "Share"
+  },
+  "footer": {
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "contact": "Contact",
+    "copyright": "© {year} AI Playground. All rights reserved."
+  },
+  "error": {
+    "404": {
+      "title": "Page not found",
+      "description": "The page you requested does not exist or has been moved.",
+      "backHome": "Go to Home"
+    },
+    "500": {
+      "title": "Server Error",
+      "description": "A temporary error occurred. Please try again later.",
+      "retry": "Try Again"
+    }
+  },
+  "meta": {
+    "siteName": "AI Playground",
+    "categoryNotFound": "Category not found",
+    "categoryTitle": "{category} - {count} Tests | AI Playground",
+    "categoryDescription": "Enjoy {count} free tests in the {category} category!"
+  },
+  "categoryPage": {
+    "totalTests": "{count} tests",
+    "noTests": "No tests in this category yet.",
+    "viewOtherTests": "View other tests"
+  },
+  "testsPage": {
+    "title": "All Tests",
+    "searchPlaceholder": "Search tests...",
+    "allCategories": "All Categories",
+    "popular": "Popular",
+    "new": "New",
+    "tagFilter": "Tag Filter",
+    "tags": "Tags",
+    "popularTags": "Popular Tags",
+    "reset": "Reset",
+    "noSearchResults": "No results found for \"{query}\".",
+    "noResults": "No tests match your criteria."
+  },
+  "physical": {
+    "pageTitle": "Physical Tests",
+    "pageDescription": "Test your physical and cognitive abilities!",
+    "info": {
+      "title": "Info",
+      "tip1": "Physical tests work on both PC and mobile.",
+      "tip2": "For accurate results, test in a quiet environment.",
+      "tip3": "Click tests may be easier with touch than mouse.",
+      "tip4": "Results are just for fun!"
+    },
+    "tests": {
+      "reaction-speed": { "title": "Reaction Speed Test", "description": "Click as fast as you can when it turns green! What's your reaction time?", "duration": "1 min" },
+      "click-speed": { "title": "Click Speed Test", "description": "How fast can you click in 10 seconds?", "duration": "10 sec" },
+      "color-blind": { "title": "Color Vision Test", "description": "Find the different color! Test your color discrimination ability.", "duration": "2 min" },
+      "memory-test": { "title": "Short-term Memory Test", "description": "Remember the sequence and repeat! Challenge your memory limits.", "duration": "3 min" },
+      "eye-tracking": { "title": "Eye Exercise", "description": "Eye stretching for healthy eyes! Relieve your eye fatigue.", "duration": "2 min" },
+      "typing-speed": { "title": "Typing Speed Test", "description": "How fast can you type in 60 seconds? Measure your WPM!", "duration": "1 min" },
+      "number-memory": { "title": "Number Memory Test", "description": "Remember increasingly longer numbers! Challenge your memory limits.", "duration": "Unlimited" },
+      "aim-trainer": { "title": "Aim Trainer", "description": "Click the targets quickly and accurately!", "duration": "2 min" },
+      "hearing-test": { "title": "Hearing Test", "description": "Test if you can hear various frequencies!", "duration": "3 min" },
+      "stroop-test": { "title": "Stroop Test", "description": "Match the color, not the word! Test your brain's processing ability.", "duration": "2 min" },
+      "time-perception": { "title": "Time Perception Test", "description": "Estimate time accurately without a clock! Measure your internal clock.", "duration": "3 min" },
+      "peripheral-vision": { "title": "Peripheral Vision Test", "description": "Detect objects appearing at the edge of the screen!", "duration": "2 min" },
+      "pattern-recognition": { "title": "Pattern Recognition Test", "description": "Find the one different color! Measure your pattern recognition ability.", "duration": "2 min" },
+      "steady-hand": { "title": "Steady Hand Test", "description": "Navigate through narrow paths with your mouse! Measure hand stability.", "duration": "2 min" },
+      "multitasking": { "title": "Multitasking Test", "description": "Solve math problems while clicking! Measure your multitasking ability.", "duration": "2 min" },
+      "rhythm-test": { "title": "Rhythm Test", "description": "Tap to the beat! Measure your sense of rhythm.", "duration": "2 min" },
+      "color-sequence": { "title": "Color Memory Test", "description": "Simon game! Remember and repeat the color sequence.", "duration": "Unlimited" },
+      "word-memory": { "title": "Word Memory Test", "description": "Remember and type all the words! Measure your verbal memory.", "duration": "3 min" },
+      "direction-sense": { "title": "Direction Sense Test", "description": "Find the right direction after rotation! Measure your sense of direction.", "duration": "2 min" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "Games & Cards",
+    "pageDescription": "Fun games to enjoy with friends!",
+    "backHome": "Home",
+    "games": "Games",
+    "startGame": "Start Game",
+    "start": "Start",
+    "moreComingSoon": "More games coming soon!",
+    "gameList": {
+      "worldcup": { "title": "Ideal Type World Cup", "description": "Ramen, desserts, dogs and more! Find your preferences" },
+      "balance": { "title": "Balance Game", "description": "If you had to choose one? Dating, work, extreme situations!" },
+      "cards": { "title": "Conversation Cards", "description": "Ice-breaking conversation topics! For dates, parties, couples." },
+      "random-menu": { "title": "What to Eat Today?", "description": "Can't decide what to eat? Random menu picker!" },
+      "number-picker": { "title": "Random Picker", "description": "Number picker, order decider, fair random draws!" },
+      "team-divider": { "title": "Team Divider", "description": "Enter the number of people and teams for fair division!" },
+      "penalty-picker": { "title": "Penalty Picker", "description": "From light to hardcore! Pick fun penalties" },
+      "role-picker": { "title": "Role Picker", "description": "Mafia, Spy, Werewolf! Randomly assign game roles" },
+      "would-you-rather": { "title": "This vs That", "description": "If you had to choose one? Debate with friends!" },
+      "ice-breaker": { "title": "Ice Breaker", "description": "Magic question roulette to break the ice!" },
+      "couple-quiz": { "title": "Couple Quiz", "description": "How well do you know your partner? Couple compatibility test!" }
+    }
+  },
+  "dailyPage": {
+    "daily": "Daily",
+    "greetingMorning": "Good morning!",
+    "greetingAfternoon": "Good afternoon!",
+    "greetingEvening": "Good evening!",
+    "todayColor": "Today's Color",
+    "todayNumber": "Today's Number",
+    "luckyNumberMeaning": "Your lucky number",
+    "todayContent": "Today's Content",
+    "dailyFortune": "Daily Fortune",
+    "dailyFortuneDesc": "Today's fortune based on your birthday",
+    "dailyTarot": "Daily Tarot",
+    "dailyTarotDesc": "A tarot card to start your day",
+    "todayCondition": "Today's Condition",
+    "todayConditionDesc": "Quick 3-question condition check",
+    "recommendedTests": "Recommended Tests Today",
+    "backHome": "Back to Home",
+    "tests": {
+      "stressLevel": { "title": "Stress Level", "desc": "Check today's stress" },
+      "socialBattery": { "title": "Social Battery", "desc": "Today's energy level" },
+      "burnoutLevel": { "title": "Burnout Level", "desc": "How am I doing?" },
+      "mentalStrength": { "title": "Mental Strength", "desc": "Today's mental check" }
+    },
+    "colors": {
+      "red": { "name": "Red", "meaning": "A day full of passion and energy" },
+      "orange": { "name": "Orange", "meaning": "A day of creativity and sociability" },
+      "yellow": { "name": "Yellow", "meaning": "A day filled with bright energy and luck" },
+      "green": { "name": "Green", "meaning": "A day of stability and growth" },
+      "blue": { "name": "Blue", "meaning": "A peaceful and focused day" },
+      "purple": { "name": "Purple", "meaning": "A day full of intuition and inspiration" },
+      "pink": { "name": "Pink", "meaning": "A day filled with love and happiness" },
+      "mint": { "name": "Mint", "meaning": "A day of new beginnings" },
+      "gold": { "name": "Gold", "meaning": "A day of abundance and success" },
+      "silver": { "name": "Silver", "meaning": "A calm and wise day" }
+    }
+  },
+  "fortunePage": {
+    "pageTitle": "Fortune & Horoscope",
+    "pageSubtitle": "From Eastern traditions to Western astrology",
+    "backHome": "Back to Home",
+    "category": "Fortune/Horoscope",
+    "newYear": "2025 New Year",
+    "allServices": "All Fortune Services",
+    "candidates": "candidates",
+    "participated": "participated",
+    "services": {
+      "fortune-2025": {
+        "title": "2025 New Year Fortune",
+        "description": "Year of the Snake fortune by zodiac, monthly, and category"
+      },
+      "tojeong": {
+        "title": "Tojeong Bigyeol",
+        "description": "Traditional Korean fortune telling since Joseon dynasty"
+      },
+      "zodiac-fortune": {
+        "title": "Zodiac Horoscope",
+        "description": "2025 horoscope for 12 zodiac signs by Western astrology"
+      },
+      "compatibility": {
+        "title": "Compatibility",
+        "description": "Analyze compatibility with Chinese zodiac + constellation"
+      },
+      "tarot": {
+        "title": "Tarot",
+        "description": "Today's fortune and future through tarot cards"
+      },
+      "daily-fortune": {
+        "title": "Daily Fortune",
+        "description": "Daily personalized fortune based on birthdate"
+      },
+      "dream": {
+        "title": "Dream Interpretation",
+        "description": "Interpret dream symbols based on Eastern tradition"
+      },
+      "name-analysis": {
+        "title": "Name Analysis",
+        "description": "Traditional numerology based name stroke analysis"
+      },
+      "face-reading": {
+        "title": "Face Reading",
+        "description": "Eastern traditional physiognomy based face analysis"
+      }
+    },
+    "tarot": {
+      "pageTitle": "Tarot Reading",
+      "selectType": "Select Reading Type",
+      "timeline": {
+        "title": "Past-Present-Future",
+        "description": "3 card spread reading for timeline"
+      },
+      "daily": {
+        "title": "Daily Card",
+        "description": "One card for today's guidance"
+      },
+      "choice": {
+        "title": "Yes or No",
+        "description": "Get an answer to your question"
+      },
+      "relationship": {
+        "title": "Relationship Reading",
+        "description": "Insight into your relationships"
+      },
+      "positions": {
+        "past": "Past",
+        "present": "Present",
+        "future": "Future"
+      },
+      "positionDesc": {
+        "past": "Background and cause of the situation",
+        "present": "Your current situation",
+        "future": "Possibilities ahead"
+      },
+      "readingTypes": {
+        "general": "General",
+        "love": "Love/Relationships",
+        "career": "Career/Work"
+      },
+      "upright": "Upright",
+      "reversed": "Reversed",
+      "advice": "Advice",
+      "drawCards": "Draw Cards",
+      "newReading": "New Reading",
+      "interpretation": "Interpretation"
+    },
+    "zodiac": {
+      "selectSign": "Select Your Zodiac Sign",
+      "luckyScore": "Lucky Score",
+      "keywords": "Keywords",
+      "overview": "Overview",
+      "categories": {
+        "career": "Career",
+        "wealth": "Wealth",
+        "love": "Love",
+        "health": "Health",
+        "study": "Study"
+      },
+      "monthly": "Monthly Fortune",
+      "lucky": {
+        "title": "Lucky Elements",
+        "numbers": "Lucky Numbers",
+        "colors": "Lucky Colors",
+        "day": "Lucky Day",
+        "direction": "Lucky Direction"
+      },
+      "advice": {
+        "do": "Do This Year",
+        "dont": "Avoid This Year"
+      }
+    },
+    "daily": {
+      "enterBirthdate": "Enter your birthdate",
+      "year": "Year",
+      "month": "Month",
+      "day": "Day",
+      "getResult": "Get Fortune",
+      "overall": "Overall",
+      "categories": {
+        "love": "Love",
+        "work": "Work",
+        "money": "Money",
+        "health": "Health"
+      },
+      "lucky": {
+        "color": "Lucky Color",
+        "number": "Lucky Number",
+        "direction": "Lucky Direction",
+        "time": "Lucky Time"
+      },
+      "warning": "Caution",
+      "advice": "Advice"
+    },
+    "compatibility": {
+      "person1": "Person 1",
+      "person2": "Person 2",
+      "birthdate": "Birthdate",
+      "checkCompatibility": "Check Compatibility",
+      "score": "Compatibility Score",
+      "analysis": "Analysis",
+      "strengths": "Strengths",
+      "challenges": "Challenges",
+      "advice": "Advice"
+    },
+    "dream": {
+      "pageTitle": "Dream Interpretation",
+      "searchPlaceholder": "What appeared in your dream?",
+      "categories": {
+        "animal": "Animals",
+        "nature": "Nature",
+        "people": "People",
+        "object": "Objects",
+        "action": "Actions",
+        "place": "Places"
+      },
+      "meaning": "Meaning",
+      "luckyNumber": "Lucky Number"
+    },
+    "nameAnalysis": {
+      "pageTitle": "Name Analysis",
+      "lastName": "Last Name",
+      "firstName": "First Name",
+      "analyze": "Analyze",
+      "totalStrokes": "Total Strokes",
+      "groundLuck": "Ground Luck",
+      "humanLuck": "Human Luck",
+      "outerLuck": "Outer Luck",
+      "heavenLuck": "Heaven Luck",
+      "overall": "Overall Analysis"
+    },
+    "faceReading": {
+      "pageTitle": "Face Reading",
+      "uploadPhoto": "Upload Photo",
+      "takePhoto": "Take Photo",
+      "analyzing": "Analyzing...",
+      "features": {
+        "forehead": "Forehead",
+        "eyes": "Eyes",
+        "nose": "Nose",
+        "mouth": "Mouth",
+        "chin": "Chin"
+      },
+      "overall": "Overall Reading"
+    }
+  },
+  "worldcup": {
+    "pageTitle": "Ideal Type World Cup",
+    "pageDescription": "Find your preferences!",
+    "backToGames": "Back to games",
+    "candidates": "candidates",
+    "participated": "participated",
+    "round": "Round of {round}",
+    "final": "Final",
+    "winner": "Winner!",
+    "yourChoice": "Your choice is",
+    "playAgain": "Play Again",
+    "share": "Share Result"
+  }
+}

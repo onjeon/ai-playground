@@ -42,6 +42,7 @@ function CompatibilityResult() {
   // 공유 함수
   const handleShare = async () => {
     const shareText = `💕 궁합 운세 결과\n\n${result.zodiac.person1.emoji}${result.zodiac.person1.name} + ${result.zodiac.person2.emoji}${result.zodiac.person2.name}\n${result.constellation.person1.symbol}${result.constellation.person1.name} + ${result.constellation.person2.symbol}${result.constellation.person2.name}\n\n종합 궁합: ${result.overall.score}점 ${getScoreEmoji(result.overall.score)}\n${result.overall.grade}\n\n나도 궁합 보기`;
+    const fullText = shareText + '\n' + window.location.origin + '/fortune/compatibility';
     
     if (navigator.share) {
       try {
@@ -50,12 +51,36 @@ function CompatibilityResult() {
           text: shareText,
           url: window.location.href,
         });
+        return;
       } catch {
-        // 공유 취소
+        // 공유 취소 또는 실패 시 클립보드로 fallback
       }
-    } else {
-      await navigator.clipboard.writeText(shareText + '\n' + window.location.origin + '/fortune/compatibility');
+    }
+    
+    // 클립보드 복사 (HTTPS 또는 localhost에서만 작동)
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(fullText);
+        alert('클립보드에 복사되었습니다!');
+        return;
+      } catch {
+        // 클립보드 API 실패 시 fallback
+      }
+    }
+    
+    // Fallback: execCommand 사용
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = fullText;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
       alert('클립보드에 복사되었습니다!');
+    } catch {
+      alert('공유 기능을 사용할 수 없습니다. URL을 직접 복사해주세요.');
     }
   };
 

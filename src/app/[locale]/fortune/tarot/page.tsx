@@ -122,8 +122,6 @@ export default function TarotIndexPage() {
                     <p className="text-purple-300/70 text-sm mb-2">{item.desc}</p>
                     <div className="flex items-center gap-2 text-xs text-purple-400/60">
                       <span>🎴 {item.cards}장</span>
-                      <span>•</span>
-                      <span>하루 1회</span>
                     </div>
                   </div>
                 </div>

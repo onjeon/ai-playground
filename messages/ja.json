@@ -1,0 +1,522 @@
+{
+  "common": {
+    "siteName": "AI プレイグラウンド",
+    "siteDescription": "AIが分析する心理テスト、性格テスト、MBTIなど様々なテストをお楽しみください。",
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "notFound": "ページが見つかりません",
+    "back": "戻る",
+    "home": "ホーム",
+    "share": "シェア",
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "retry": "もう一度",
+    "start": "スタート",
+    "result": "結果",
+    "next": "次へ",
+    "prev": "前へ",
+    "submit": "送信",
+    "close": "閉じる",
+    "more": "もっと見る",
+    "all": "すべて",
+    "free": "無料",
+    "participants": "人参加",
+    "minutes": "分",
+    "questions": "問",
+    "viewAll": "すべて見る",
+    "dailyUpdate": "毎日更新",
+    "count": "{count}個"
+  },
+  "nav": {
+    "home": "ホーム",
+    "tests": "全テスト",
+    "categories": "カテゴリー",
+    "fortune": "占い",
+    "games": "ゲーム",
+    "physical": "フィジカル",
+    "daily": "デイリー"
+  },
+  "categories": {
+    "personality": "性格テスト",
+    "psychology": "心理テスト",
+    "relationship": "恋愛/人間関係",
+    "career": "適性/職業",
+    "fun": "おもしろ/エンタメ",
+    "iq": "IQ/脳トレ"
+  },
+  "home": {
+    "heroTitle": "自分を知る時間、",
+    "heroHighlight": "AI プレイグラウンド",
+    "heroDescription": "心理テスト、性格分析、MBTIまで！\nAIが分析する様々なテストで本当の自分を発見しよう。",
+    "aiBased": "AI分析",
+    "startTest": "性格テスト開始",
+    "viewAll": "全テストを見る",
+    "stats": {
+      "participants": "参加者",
+      "participantsCount": "50万+",
+      "tests": "テスト",
+      "shares": "シェア",
+      "sharesCount": "2万+"
+    },
+    "sections": {
+      "popular": "人気テスト",
+      "new": "新着テスト",
+      "todayPicks": "今日のおすすめ",
+      "daily": "デイリー",
+      "dailyHub": "デイリーハブ",
+      "physicalGames": "フィジカル & ゲーム",
+      "category": "カテゴリー",
+      "fortune": "占い"
+    },
+    "quickButtons": {
+      "popular": "人気",
+      "new": "新着",
+      "tarot": "タロット",
+      "fortune": "今日の運勢"
+    },
+    "daily": {
+      "todayFortune": "今日の運勢",
+      "fortuneDesc": "生年月日で占う",
+      "condition": "コンディション",
+      "conditionDesc": "3問クイックチェック",
+      "luckyColor": "ラッキーカラー",
+      "luckyColorDesc": "今日の色 & 数字"
+    },
+    "fortune": {
+      "title": "占い",
+      "description": "タロット、今日の運勢、相性、星座占い",
+      "tarot": "タロット",
+      "dailyFortune": "今日の運勢",
+      "compatibility": "相性",
+      "saju": "星座占い"
+    },
+    "physical": {
+      "title": "フィジカルテスト",
+      "description": "反応速度、クリック速度、記憶力",
+      "reaction": "反応速度",
+      "click": "クリック速度",
+      "color": "色覚",
+      "memory": "記憶力"
+    },
+    "games": {
+      "title": "ゲーム & カード",
+      "description": "バランスゲーム、会話カード",
+      "balance": "バランスゲーム",
+      "cards": "会話カード"
+    },
+    "cta": {
+      "title": "もっとテストを探していますか？",
+      "description": "{count}個のテストがあなたを待っています！",
+      "viewAll": "全テストを見る",
+      "funTests": "おもしろテスト"
+    }
+  },
+  "sidebar": {
+    "categories": "カテゴリー",
+    "allTests": "全テスト",
+    "daily": "デイリー",
+    "dailyHub": "デイリーハブ",
+    "condition": "コンディション",
+    "fortune": "占い",
+    "physicalGames": "フィジカル & ゲーム",
+    "physical": "フィジカルテスト",
+    "games": "ゲーム",
+    "quickLinks": "クイックリンク",
+    "popularTests": "人気テスト",
+    "newTests": "新着テスト"
+  },
+  "test": {
+    "startTest": "テストを開始",
+    "questionCount": "{count}問",
+    "estimatedTime": "約{minutes}分",
+    "participants": "{count}人参加",
+    "loading": "テスト準備中...",
+    "loadError": "テストを読み込めません",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "結果を見る",
+    "shareResult": "結果を共有",
+    "retryTest": "もう一度テスト",
+    "otherTests": "他のテストを見る",
+    "resultTitle": "あなたの結果は...",
+    "tags": "タグ",
+    "backHome": "ホームへ",
+    "questionInfo": "{count}問 · {time}分",
+    "participation": "{count}人参加",
+    "questions": "質問",
+    "questionsCount": "{count}問",
+    "testGuide": "テストガイド",
+    "guideNoAnswer": "正解のないテストです。気楽に正直に答えてください。",
+    "guideInstantResult": "結果はテスト完了後すぐに確認できます。",
+    "guideShare": "結果を友達と共有して比較しましょう！",
+    "addFavorite": "お気に入りに追加",
+    "removeFavorite": "お気に入りから削除",
+    "share": "共有",
+    "previous": "前へ",
+    "next": "次へ",
+    "noResponseData": "回答データがありません。",
+    "cannotLoadTest": "テストデータを読み込めません。",
+    "cannotFindQuestions": "質問が見つかりません。",
+    "errorLoadingQuestions": "質問の読み込み中にエラーが発生しました。",
+    "analyzing": "結果を分析中...",
+    "cannotCalculate": "結果を計算できません。",
+    "errorLoadingResult": "結果の読み込み中にエラーが発生しました。",
+    "cannotLoadResult": "結果を読み込めません",
+    "retryTestAgain": "テストをもう一度行ってください。",
+    "goBack": "戻る",
+    "jumpToQuestion": "質問へジャンプ",
+    "yourResult": "あなたの結果は",
+    "screenshotShare": "スクリーンショットを撮って友達にシェアしよう！",
+    "myResultIs": "私の{testTitle}の結果は{emoji} {title}！",
+    "analysisResult": "分析結果",
+    "mainTraits": "主な特性",
+    "strengths": "強み",
+    "cautions": "注意点",
+    "advice": "アドバイス",
+    "goodMatch": "相性の良いタイプ",
+    "cautionMatch": "注意が必要なタイプ"
+  },
+  "share": {
+    "title": "シェア",
+    "kakao": "カカオトーク",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "リンクをコピー",
+    "linkCopied": "リンクがコピーされました！",
+    "nativeShare": "シェア"
+  },
+  "footer": {
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "contact": "お問い合わせ",
+    "copyright": "© {year} AI プレイグラウンド. All rights reserved."
+  },
+  "error": {
+    "404": {
+      "title": "ページが見つかりません",
+      "description": "お探しのページは存在しないか、移動されました。",
+      "backHome": "ホームに戻る"
+    },
+    "500": {
+      "title": "サーバーエラー",
+      "description": "一時的なエラーが発生しました。しばらくしてからもう一度お試しください。",
+      "retry": "もう一度試す"
+    }
+  },
+  "meta": {
+    "siteName": "AI プレイグラウンド",
+    "categoryNotFound": "カテゴリーが見つかりません",
+    "categoryTitle": "{category} - {count}個のテスト | AI プレイグラウンド",
+    "categoryDescription": "{category}カテゴリーの{count}個の無料テストをお楽しみください！"
+  },
+  "categoryPage": {
+    "totalTests": "全{count}個のテスト",
+    "noTests": "このカテゴリーにはまだテストがありません。",
+    "viewOtherTests": "他のテストを見る"
+  },
+  "testsPage": {
+    "title": "全テスト",
+    "searchPlaceholder": "テストを検索...",
+    "allCategories": "全カテゴリー",
+    "popular": "人気",
+    "new": "新着",
+    "tagFilter": "タグフィルター",
+    "tags": "タグ",
+    "popularTags": "人気タグ",
+    "reset": "リセット",
+    "noSearchResults": "「{query}」の検索結果はありません。",
+    "noResults": "条件に合うテストがありません。"
+  },
+  "physical": {
+    "pageTitle": "フィジカルテスト",
+    "pageDescription": "身体能力と認知能力をテストしよう！",
+    "info": {
+      "title": "ご案内",
+      "tip1": "フィジカルテストはPC・スマホ両方で遊べます。",
+      "tip2": "正確な結果のため、静かな環境でお試しください。",
+      "tip3": "クリックテストはマウスよりタッチが有利かもしれません。",
+      "tip4": "結果はお楽しみ程度にご参考ください！"
+    },
+    "tests": {
+      "reaction-speed": { "title": "反応速度テスト", "description": "緑になったらすぐクリック！あなたの反応速度は？", "duration": "1分" },
+      "click-speed": { "title": "クリック速度テスト", "description": "10秒間でどれだけ速くクリックできる？", "duration": "10秒" },
+      "color-blind": { "title": "色覚テスト", "description": "違う色を見つけろ！色識別能力テスト", "duration": "2分" },
+      "memory-test": { "title": "瞬間記憶力テスト", "description": "順番を覚えて繰り返そう！記憶力の限界に挑戦", "duration": "3分" },
+      "eye-tracking": { "title": "眼球運動", "description": "目の健康のためのストレッチ！目の疲れを解消しよう", "duration": "2分" },
+      "typing-speed": { "title": "タイピング速度テスト", "description": "60秒間でどれだけ速くタイピングできる？WPM測定！", "duration": "1分" },
+      "number-memory": { "title": "数字記憶力テスト", "description": "どんどん長くなる数字を覚えよう！記憶力の限界に挑戦", "duration": "無制限" },
+      "aim-trainer": { "title": "エイムトレーナー", "description": "ターゲットを素早く正確にクリックしよう！", "duration": "2分" },
+      "hearing-test": { "title": "聴力テスト", "description": "様々な周波数の音が聞こえるかテストしよう！", "duration": "3分" },
+      "stroop-test": { "title": "ストループテスト", "description": "文字ではなく色を当てよう！脳の情報処理能力テスト", "duration": "2分" },
+      "time-perception": { "title": "時間感覚テスト", "description": "時計なしで正確に時間を当てよう！体内時計の精度測定", "duration": "3分" },
+      "peripheral-vision": { "title": "周辺視野テスト", "description": "画面の端に現れる物体を検出しよう！", "duration": "2分" },
+      "pattern-recognition": { "title": "パターン認識テスト", "description": "違う色を1つ見つけろ！パターン認識能力測定", "duration": "2分" },
+      "steady-hand": { "title": "手の安定性テスト", "description": "狭い通路をマウスで通過しよう！手の安定性測定", "duration": "2分" },
+      "multitasking": { "title": "マルチタスクテスト", "description": "計算問題とクリックを同時に！マルチタスク能力測定", "duration": "2分" },
+      "rhythm-test": { "title": "リズム感テスト", "description": "ビートに合わせてタップしよう！リズム感測定", "duration": "2分" },
+      "color-sequence": { "title": "色記憶力テスト", "description": "サイモンゲーム！色の順番を覚えて繰り返そう", "duration": "無制限" },
+      "word-memory": { "title": "単語記憶力テスト", "description": "単語を覚えて全部入力しよう！言語記憶力測定", "duration": "3分" },
+      "direction-sense": { "title": "方向感覚テスト", "description": "回転後に正しい方向を見つけよう！方向感覚測定", "duration": "2分" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "ゲーム & カード",
+    "pageDescription": "みんなで楽しめる様々なゲーム！",
+    "backHome": "ホームへ",
+    "games": "ゲーム",
+    "startGame": "ゲーム開始",
+    "start": "スタート",
+    "moreComingSoon": "もっと多くのゲームを準備中です！",
+    "gameList": {
+      "worldcup": { "title": "理想のタイプワールドカップ", "description": "ラーメン、デザート、犬など様々なワールドカップ！あなたの好みを見つけよう" },
+      "balance": { "title": "バランスゲーム", "description": "二択で選ぶなら？恋愛、仕事、極限状況まで！" },
+      "cards": { "title": "会話カード", "description": "気まずい雰囲気を打破する会話トピック！デート、飲み会、カップル向け" },
+      "random-menu": { "title": "今日何食べる？", "description": "メニュー選びに困ったら！ランチ、ディナー、夜食までランダム推薦" },
+      "number-picker": { "title": "ランダム抽選", "description": "数字抽選、順番決め、くじ引きまで！公平なランダム抽選" },
+      "team-divider": { "title": "チーム分け", "description": "人数とチーム数を入力するだけで公平にチーム分け！" },
+      "penalty-picker": { "title": "罰ゲーム抽選", "description": "ライトからハードコアまで！面白い罰ゲームを引こう" },
+      "role-picker": { "title": "役割抽選", "description": "マフィア、スパイ、人狼！ゲームの役割をランダムに割り当て" },
+      "would-you-rather": { "title": "これ vs あれ", "description": "どちらか選ぶなら？友達と議論しよう！" },
+      "ice-breaker": { "title": "アイスブレイク", "description": "気まずい雰囲気を打破する魔法の質問ルーレット！" },
+      "couple-quiz": { "title": "カップルクイズ", "description": "相手のことをどれくらい知ってる？カップル相性テスト！" }
+    }
+  },
+  "dailyPage": {
+    "daily": "デイリー",
+    "greetingMorning": "おはようございます！",
+    "greetingAfternoon": "こんにちは！",
+    "greetingEvening": "こんばんは！",
+    "todayColor": "今日のカラー",
+    "todayNumber": "今日の数字",
+    "luckyNumberMeaning": "幸運をもたらす数字",
+    "todayContent": "今日のコンテンツ",
+    "dailyFortune": "今日の運勢",
+    "dailyFortuneDesc": "生年月日で見る今日の運勢",
+    "dailyTarot": "今日のタロット",
+    "dailyTarotDesc": "一日を始めるタロットカード一枚",
+    "todayCondition": "今日のコンディション",
+    "todayConditionDesc": "3問でチェックする今日の状態",
+    "recommendedTests": "今日のおすすめテスト",
+    "backHome": "ホームに戻る",
+    "tests": {
+      "stressLevel": { "title": "ストレス指数", "desc": "今日のストレスチェック" },
+      "socialBattery": { "title": "ソーシャルバッテリー", "desc": "今日のエネルギーレベル" },
+      "burnoutLevel": { "title": "バーンアウト指数", "desc": "今の私の状態は？" },
+      "mentalStrength": { "title": "メンタル強度", "desc": "今日のメンタルチェック" }
+    },
+    "colors": {
+      "red": { "name": "レッド", "meaning": "情熱とエネルギーに満ちた一日" },
+      "orange": { "name": "オレンジ", "meaning": "創造力と社交性が輝く一日" },
+      "yellow": { "name": "イエロー", "meaning": "明るいエネルギーと幸運に満ちた一日" },
+      "green": { "name": "グリーン", "meaning": "安定と成長のエネルギーがある一日" },
+      "blue": { "name": "ブルー", "meaning": "平和で集中力のある一日" },
+      "purple": { "name": "パープル", "meaning": "直感力とインスピレーションに満ちた一日" },
+      "pink": { "name": "ピンク", "meaning": "愛と幸せに満ちた一日" },
+      "mint": { "name": "ミント", "meaning": "新しい始まりのエネルギーがある一日" },
+      "gold": { "name": "ゴールド", "meaning": "豊かさと成功のエネルギーがある一日" },
+      "silver": { "name": "シルバー", "meaning": "穏やかで知恵ある一日" }
+    }
+  },
+  "fortunePage": {
+    "pageTitle": "占い & 運勢",
+    "pageSubtitle": "東洋の伝統占いから西洋占星術まで",
+    "backHome": "ホームに戻る",
+    "category": "占い/運勢",
+    "newYear": "2025年新年運勢",
+    "allServices": "占いサービス",
+    "candidates": "個の候補",
+    "participated": "人が参加",
+    "services": {
+      "fortune-2025": {
+        "title": "2025新年運勢",
+        "description": "巳年の干支別総運、月別運勢、分野別詳細分析"
+      },
+      "tojeong": {
+        "title": "土亭秘訣",
+        "description": "朝鮮時代から続く伝統占い"
+      },
+      "zodiac-fortune": {
+        "title": "星座占い",
+        "description": "西洋占星術で見る2025年12星座運勢"
+      },
+      "compatibility": {
+        "title": "相性占い",
+        "description": "干支+星座で分析する二人の相性"
+      },
+      "tarot": {
+        "title": "タロット",
+        "description": "タロットカードで見る今日の運勢と未来"
+      },
+      "daily-fortune": {
+        "title": "今日の運勢",
+        "description": "毎日変わる生年月日ベースのオーダーメイド運勢"
+      },
+      "dream": {
+        "title": "夢占い",
+        "description": "東洋伝統の夢判断に基づく夢のシンボル解釈"
+      },
+      "name-analysis": {
+        "title": "姓名判断",
+        "description": "伝統姓名学に基づく名前の画数分析"
+      },
+      "face-reading": {
+        "title": "人相占い",
+        "description": "東洋伝統の人相学に基づく顔分析"
+      }
+    },
+    "tarot": {
+      "pageTitle": "タロットリーディング",
+      "selectType": "リーディングタイプを選択",
+      "timeline": {
+        "title": "過去-現在-未来",
+        "description": "3枚カードスプレッドリーディング"
+      },
+      "daily": {
+        "title": "今日のカード",
+        "description": "今日のためのカード1枚"
+      },
+      "choice": {
+        "title": "はい/いいえ",
+        "description": "質問への答えを得る"
+      },
+      "relationship": {
+        "title": "関係リーディング",
+        "description": "人間関係への洞察"
+      },
+      "positions": {
+        "past": "過去",
+        "present": "現在",
+        "future": "未来"
+      },
+      "positionDesc": {
+        "past": "この状況の背景と原因",
+        "present": "現在あなたが置かれている状況",
+        "future": "これから展開される可能性"
+      },
+      "readingTypes": {
+        "general": "総合運勢",
+        "love": "恋愛/関係",
+        "career": "仕事/キャリア"
+      },
+      "upright": "正位置",
+      "reversed": "逆位置",
+      "advice": "アドバイス",
+      "drawCards": "カードを引く",
+      "newReading": "もう一度引く",
+      "interpretation": "解釈"
+    },
+    "zodiac": {
+      "selectSign": "星座を選択してください",
+      "luckyScore": "ラッキー指数",
+      "keywords": "キーワード",
+      "overview": "総運",
+      "categories": {
+        "career": "仕事/事業運",
+        "wealth": "金運",
+        "love": "恋愛/結婚運",
+        "health": "健康運",
+        "study": "学業/自己啓発運"
+      },
+      "monthly": "月別運勢",
+      "lucky": {
+        "title": "ラッキー要素",
+        "numbers": "ラッキーナンバー",
+        "colors": "ラッキーカラー",
+        "day": "ラッキーデー",
+        "direction": "ラッキー方角"
+      },
+      "advice": {
+        "do": "今年必ずやるべきこと",
+        "dont": "今年避けるべきこと"
+      }
+    },
+    "daily": {
+      "enterBirthdate": "生年月日を入力してください",
+      "year": "年",
+      "month": "月",
+      "day": "日",
+      "getResult": "運勢を見る",
+      "overall": "総運",
+      "categories": {
+        "love": "恋愛運",
+        "work": "仕事運",
+        "money": "金運",
+        "health": "健康運"
+      },
+      "lucky": {
+        "color": "ラッキーカラー",
+        "number": "ラッキーナンバー",
+        "direction": "ラッキー方角",
+        "time": "ラッキータイム"
+      },
+      "warning": "注意事項",
+      "advice": "アドバイス"
+    },
+    "compatibility": {
+      "person1": "1人目",
+      "person2": "2人目",
+      "birthdate": "生年月日",
+      "checkCompatibility": "相性を見る",
+      "score": "相性スコア",
+      "analysis": "分析",
+      "strengths": "強み",
+      "challenges": "注意点",
+      "advice": "アドバイス"
+    },
+    "dream": {
+      "pageTitle": "夢占い",
+      "searchPlaceholder": "夢に何が出ましたか？",
+      "categories": {
+        "animal": "動物",
+        "nature": "自然",
+        "people": "人",
+        "object": "物",
+        "action": "行動",
+        "place": "場所"
+      },
+      "meaning": "意味",
+      "luckyNumber": "ラッキーナンバー"
+    },
+    "nameAnalysis": {
+      "pageTitle": "姓名判断",
+      "lastName": "姓",
+      "firstName": "名",
+      "analyze": "分析する",
+      "totalStrokes": "総画",
+      "groundLuck": "地格",
+      "humanLuck": "人格",
+      "outerLuck": "外格",
+      "heavenLuck": "天格",
+      "overall": "総合分析"
+    },
+    "faceReading": {
+      "pageTitle": "人相占い",
+      "uploadPhoto": "写真をアップロード",
+      "takePhoto": "写真を撮る",
+      "analyzing": "分析中...",
+      "features": {
+        "forehead": "額",
+        "eyes": "目",
+        "nose": "鼻",
+        "mouth": "口",
+        "chin": "顎"
+      },
+      "overall": "総合分析"
+    }
+  },
+  "worldcup": {
+    "pageTitle": "理想タイプワールドカップ",
+    "pageDescription": "あなたの好みを見つけよう！",
+    "backToGames": "ゲーム一覧へ",
+    "candidates": "個の候補",
+    "participated": "人が参加",
+    "round": "{round}強",
+    "final": "決勝",
+    "winner": "優勝！",
+    "yourChoice": "あなたの選択は",
+    "playAgain": "もう一度",
+    "share": "結果をシェア"
+  }
+}

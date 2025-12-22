@@ -1,0 +1,522 @@
+{
+  "common": {
+    "siteName": "Sân chơi AI",
+    "siteDescription": "Khám phá bản thân với các bài trắc nghiệm tâm lý, tính cách, MBTI và nhiều hơn nữa được hỗ trợ bởi AI.",
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "notFound": "Không tìm thấy trang",
+    "back": "Quay lại",
+    "home": "Trang chủ",
+    "share": "Chia sẻ",
+    "copy": "Sao chép",
+    "copied": "Đã sao chép!",
+    "retry": "Thử lại",
+    "start": "Bắt đầu",
+    "result": "Kết quả",
+    "next": "Tiếp theo",
+    "prev": "Trước đó",
+    "submit": "Gửi",
+    "close": "Đóng",
+    "more": "Thêm",
+    "all": "Tất cả",
+    "free": "Miễn phí",
+    "participants": "người tham gia",
+    "minutes": "phút",
+    "questions": "câu hỏi",
+    "viewAll": "Xem tất cả",
+    "dailyUpdate": "Cập nhật hàng ngày",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "tests": "Tất cả bài test",
+    "categories": "Danh mục",
+    "fortune": "Vận mệnh",
+    "games": "Trò chơi",
+    "physical": "Thể chất",
+    "daily": "Hàng ngày"
+  },
+  "categories": {
+    "personality": "Tính cách",
+    "psychology": "Tâm lý",
+    "relationship": "Tình cảm",
+    "career": "Nghề nghiệp",
+    "fun": "Vui/Giải trí",
+    "iq": "IQ/Trí não"
+  },
+  "home": {
+    "heroTitle": "Đã đến lúc khám phá bản thân,",
+    "heroHighlight": "Sân chơi AI",
+    "heroDescription": "Trắc nghiệm tâm lý, phân tích tính cách, MBTI và nhiều hơn nữa!\nKhám phá con người thật của bạn với các bài test được hỗ trợ bởi AI.",
+    "aiBased": "Hỗ trợ bởi AI",
+    "startTest": "Bắt đầu test tính cách",
+    "viewAll": "Xem tất cả bài test",
+    "stats": {
+      "participants": "Người tham gia",
+      "participantsCount": "500K+",
+      "tests": "Bài test",
+      "shares": "Lượt chia sẻ",
+      "sharesCount": "20K+"
+    },
+    "sections": {
+      "popular": "Bài test phổ biến",
+      "new": "Bài test mới",
+      "todayPicks": "Lựa chọn hôm nay",
+      "daily": "Hàng ngày",
+      "dailyHub": "Trung tâm hàng ngày",
+      "physicalGames": "Thể chất & Trò chơi",
+      "category": "Danh mục",
+      "fortune": "Vận mệnh & Cung hoàng đạo"
+    },
+    "quickButtons": {
+      "popular": "Phổ biến",
+      "new": "Mới",
+      "tarot": "Tarot",
+      "fortune": "Vận mệnh hàng ngày"
+    },
+    "daily": {
+      "todayFortune": "Vận mệnh hôm nay",
+      "fortuneDesc": "Dựa trên ngày sinh của bạn",
+      "condition": "Kiểm tra trạng thái",
+      "conditionDesc": "Kiểm tra nhanh 3 câu hỏi",
+      "luckyColor": "Màu may mắn",
+      "luckyColorDesc": "Màu sắc và con số hôm nay"
+    },
+    "fortune": {
+      "title": "Vận mệnh & Cung hoàng đạo",
+      "description": "Tarot, vận mệnh hàng ngày, độ hợp, cung hoàng đạo",
+      "tarot": "Tarot",
+      "dailyFortune": "Vận mệnh hàng ngày",
+      "compatibility": "Độ hợp",
+      "saju": "Cung hoàng đạo"
+    },
+    "physical": {
+      "title": "Bài test thể chất",
+      "description": "Thời gian phản xạ, tốc độ click, trí nhớ",
+      "reaction": "Phản xạ",
+      "click": "Tốc độ click",
+      "color": "Thị giác màu sắc",
+      "memory": "Trí nhớ"
+    },
+    "games": {
+      "title": "Trò chơi & Thẻ bài",
+      "description": "Trò chơi cân bằng, thẻ trò chuyện",
+      "balance": "Trò chơi cân bằng",
+      "cards": "Thẻ trò chuyện"
+    },
+    "cta": {
+      "title": "Bạn đang tìm thêm bài test?",
+      "description": "{count} bài test đang chờ bạn!",
+      "viewAll": "Xem tất cả bài test",
+      "funTests": "Bài test vui"
+    }
+  },
+  "sidebar": {
+    "categories": "Danh mục",
+    "allTests": "Tất cả bài test",
+    "daily": "Hàng ngày",
+    "dailyHub": "Trung tâm hàng ngày",
+    "condition": "Kiểm tra trạng thái",
+    "fortune": "Vận mệnh",
+    "physicalGames": "Thể chất & Trò chơi",
+    "physical": "Bài test thể chất",
+    "games": "Trò chơi",
+    "quickLinks": "Liên kết nhanh",
+    "popularTests": "Bài test phổ biến",
+    "newTests": "Bài test mới"
+  },
+  "test": {
+    "startTest": "Bắt đầu test",
+    "questionCount": "{count} câu hỏi",
+    "estimatedTime": "Khoảng {minutes} phút",
+    "participants": "{count} người tham gia",
+    "loading": "Đang chuẩn bị bài test...",
+    "loadError": "Không thể tải bài test",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "Xem kết quả",
+    "shareResult": "Chia sẻ kết quả",
+    "retryTest": "Thử lại",
+    "otherTests": "Bài test khác",
+    "resultTitle": "Kết quả của bạn là...",
+    "tags": "Thẻ",
+    "backHome": "Trang chủ",
+    "questionInfo": "{count} câu hỏi · {time} phút",
+    "participation": "{count} người tham gia",
+    "questions": "Câu hỏi",
+    "questionsCount": "{count}",
+    "testGuide": "Hướng dẫn",
+    "guideNoAnswer": "Không có câu trả lời sai. Hãy trả lời thành thật.",
+    "guideInstantResult": "Kết quả có ngay sau khi hoàn thành bài test.",
+    "guideShare": "Chia sẻ và so sánh kết quả với bạn bè!",
+    "addFavorite": "Thêm vào yêu thích",
+    "removeFavorite": "Xóa khỏi yêu thích",
+    "share": "Chia sẻ",
+    "previous": "Trước",
+    "next": "Tiếp",
+    "noResponseData": "Không có dữ liệu trả lời.",
+    "cannotLoadTest": "Không thể tải dữ liệu bài test.",
+    "cannotFindQuestions": "Không tìm thấy câu hỏi.",
+    "errorLoadingQuestions": "Lỗi khi tải câu hỏi.",
+    "analyzing": "Đang phân tích kết quả...",
+    "cannotCalculate": "Không thể tính kết quả.",
+    "errorLoadingResult": "Lỗi khi tải kết quả.",
+    "cannotLoadResult": "Không thể tải kết quả",
+    "retryTestAgain": "Vui lòng thử lại bài test.",
+    "goBack": "Quay lại",
+    "jumpToQuestion": "Đến câu hỏi",
+    "yourResult": "Kết quả của bạn là",
+    "screenshotShare": "Chụp màn hình và chia sẻ với bạn bè!",
+    "myResultIs": "Kết quả {testTitle} của tôi là {emoji} {title}!",
+    "analysisResult": "Kết quả phân tích",
+    "mainTraits": "Đặc điểm chính",
+    "strengths": "Điểm mạnh",
+    "cautions": "Lưu ý",
+    "advice": "Lời khuyên",
+    "goodMatch": "Hợp nhau",
+    "cautionMatch": "Cần chú ý"
+  },
+  "share": {
+    "title": "Chia sẻ",
+    "kakao": "KakaoTalk",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "Sao chép liên kết",
+    "linkCopied": "Đã sao chép liên kết!",
+    "nativeShare": "Chia sẻ"
+  },
+  "footer": {
+    "terms": "Điều khoản dịch vụ",
+    "privacy": "Chính sách bảo mật",
+    "contact": "Liên hệ",
+    "copyright": "© {year} Sân chơi AI. Bảo lưu mọi quyền."
+  },
+  "error": {
+    "404": {
+      "title": "Không tìm thấy trang",
+      "description": "Trang bạn yêu cầu không tồn tại hoặc đã được di chuyển.",
+      "backHome": "Về trang chủ"
+    },
+    "500": {
+      "title": "Lỗi máy chủ",
+      "description": "Đã xảy ra lỗi tạm thời. Vui lòng thử lại sau.",
+      "retry": "Thử lại"
+    }
+  },
+  "meta": {
+    "siteName": "Sân chơi AI",
+    "categoryNotFound": "Không tìm thấy danh mục",
+    "categoryTitle": "{category} - {count} Bài kiểm tra | Sân chơi AI",
+    "categoryDescription": "Tận hưởng {count} bài kiểm tra miễn phí trong danh mục {category}!"
+  },
+  "categoryPage": {
+    "totalTests": "{count} bài kiểm tra",
+    "noTests": "Chưa có bài kiểm tra trong danh mục này.",
+    "viewOtherTests": "Xem các bài kiểm tra khác"
+  },
+  "testsPage": {
+    "title": "Tất cả Bài kiểm tra",
+    "searchPlaceholder": "Tìm kiếm bài kiểm tra...",
+    "allCategories": "Tất cả Danh mục",
+    "popular": "Phổ biến",
+    "new": "Mới",
+    "tagFilter": "Lọc theo thẻ",
+    "tags": "Thẻ",
+    "popularTags": "Thẻ phổ biến",
+    "reset": "Đặt lại",
+    "noSearchResults": "Không có kết quả cho \"{query}\".",
+    "noResults": "Không có bài kiểm tra nào phù hợp với tiêu chí của bạn."
+  },
+  "physical": {
+    "pageTitle": "Bài test Thể chất",
+    "pageDescription": "Kiểm tra khả năng thể chất và nhận thức của bạn!",
+    "info": {
+      "title": "Thông tin",
+      "tip1": "Bài test thể chất hoạt động trên cả PC và điện thoại.",
+      "tip2": "Để có kết quả chính xác, hãy test trong môi trường yên tĩnh.",
+      "tip3": "Bài test click có thể dễ hơn với cảm ứng so với chuột.",
+      "tip4": "Kết quả chỉ để giải trí!"
+    },
+    "tests": {
+      "reaction-speed": { "title": "Test Thời gian Phản xạ", "description": "Click nhanh nhất có thể khi chuyển sang màu xanh! Thời gian phản xạ của bạn là bao nhiêu?", "duration": "1 phút" },
+      "click-speed": { "title": "Test Tốc độ Click", "description": "Bạn có thể click nhanh thế nào trong 10 giây?", "duration": "10 giây" },
+      "color-blind": { "title": "Test Thị giác Màu", "description": "Tìm màu khác biệt! Kiểm tra khả năng phân biệt màu của bạn.", "duration": "2 phút" },
+      "memory-test": { "title": "Test Trí nhớ Ngắn hạn", "description": "Nhớ thứ tự và lặp lại! Thử thách giới hạn trí nhớ của bạn.", "duration": "3 phút" },
+      "eye-tracking": { "title": "Bài tập Mắt", "description": "Kéo giãn mắt cho đôi mắt khỏe! Giảm mỏi mắt.", "duration": "2 phút" },
+      "typing-speed": { "title": "Test Tốc độ Gõ phím", "description": "Bạn có thể gõ nhanh thế nào trong 60 giây? Đo WPM của bạn!", "duration": "1 phút" },
+      "number-memory": { "title": "Test Trí nhớ Số", "description": "Nhớ các số ngày càng dài! Thử thách giới hạn trí nhớ của bạn.", "duration": "Không giới hạn" },
+      "aim-trainer": { "title": "Huấn luyện Ngắm", "description": "Click vào mục tiêu nhanh và chính xác!", "duration": "2 phút" },
+      "hearing-test": { "title": "Test Thính giác", "description": "Kiểm tra xem bạn có thể nghe các tần số khác nhau không!", "duration": "3 phút" },
+      "stroop-test": { "title": "Test Stroop", "description": "Khớp màu, không phải chữ! Kiểm tra khả năng xử lý của não.", "duration": "2 phút" },
+      "time-perception": { "title": "Test Cảm nhận Thời gian", "description": "Ước tính thời gian chính xác không cần đồng hồ! Đo đồng hồ nội tại của bạn.", "duration": "3 phút" },
+      "peripheral-vision": { "title": "Test Thị giác Ngoại vi", "description": "Phát hiện vật thể xuất hiện ở rìa màn hình!", "duration": "2 phút" },
+      "pattern-recognition": { "title": "Test Nhận dạng Mẫu", "description": "Tìm một màu khác biệt! Đo khả năng nhận dạng mẫu của bạn.", "duration": "2 phút" },
+      "steady-hand": { "title": "Test Tay Vững", "description": "Di chuyển qua đường hẹp bằng chuột! Đo độ ổn định của tay.", "duration": "2 phút" },
+      "multitasking": { "title": "Test Đa nhiệm", "description": "Giải toán trong khi click! Đo khả năng đa nhiệm của bạn.", "duration": "2 phút" },
+      "rhythm-test": { "title": "Test Nhịp điệu", "description": "Gõ theo nhịp! Đo cảm nhận nhịp điệu của bạn.", "duration": "2 phút" },
+      "color-sequence": { "title": "Test Trí nhớ Màu", "description": "Trò chơi Simon! Nhớ và lặp lại thứ tự màu.", "duration": "Không giới hạn" },
+      "word-memory": { "title": "Test Trí nhớ Từ", "description": "Nhớ và gõ tất cả các từ! Đo trí nhớ ngôn ngữ của bạn.", "duration": "3 phút" },
+      "direction-sense": { "title": "Test Cảm nhận Hướng", "description": "Tìm hướng đúng sau khi xoay! Đo cảm nhận hướng của bạn.", "duration": "2 phút" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "Trò chơi & Thẻ bài",
+    "pageDescription": "Trò chơi vui để chơi cùng bạn bè!",
+    "backHome": "Trang chủ",
+    "games": "Trò chơi",
+    "startGame": "Bắt đầu trò chơi",
+    "start": "Bắt đầu",
+    "moreComingSoon": "Thêm trò chơi sắp ra mắt!",
+    "gameList": {
+      "worldcup": { "title": "World Cup Mẫu Người Lý Tưởng", "description": "Mì ramen, tráng miệng, chó và nhiều hơn! Khám phá sở thích của bạn" },
+      "balance": { "title": "Trò chơi Cân bằng", "description": "Nếu phải chọn một? Tình yêu, công việc, tình huống cực đoan!" },
+      "cards": { "title": "Thẻ Trò chuyện", "description": "Chủ đề phá băng! Cho hẹn hò, tiệc tùng, các cặp đôi." },
+      "random-menu": { "title": "Hôm nay ăn gì?", "description": "Không quyết định được? Chọn menu ngẫu nhiên!" },
+      "number-picker": { "title": "Chọn Ngẫu nhiên", "description": "Số, thứ tự, rút thăm công bằng!" },
+      "team-divider": { "title": "Chia Đội", "description": "Nhập số người và đội để chia công bằng!" },
+      "penalty-picker": { "title": "Rút Hình phạt", "description": "Từ nhẹ đến nặng! Rút hình phạt vui vẻ" },
+      "role-picker": { "title": "Rút Vai", "description": "Mafia, Gián điệp, Người sói! Phân vai trò ngẫu nhiên" },
+      "would-you-rather": { "title": "Cái này vs Cái kia", "description": "Nếu phải chọn? Tranh luận với bạn bè!" },
+      "ice-breaker": { "title": "Phá Băng", "description": "Vòng quay câu hỏi thần kỳ để phá băng!" },
+      "couple-quiz": { "title": "Quiz Cặp đôi", "description": "Bạn hiểu người ấy bao nhiêu? Kiểm tra độ hợp!" }
+    }
+  },
+  "dailyPage": {
+    "daily": "Hàng ngày",
+    "greetingMorning": "Chào buổi sáng!",
+    "greetingAfternoon": "Chào buổi chiều!",
+    "greetingEvening": "Chào buổi tối!",
+    "todayColor": "Màu của ngày",
+    "todayNumber": "Số của ngày",
+    "luckyNumberMeaning": "Con số may mắn của bạn",
+    "todayContent": "Nội dung hôm nay",
+    "dailyFortune": "Vận mệnh hàng ngày",
+    "dailyFortuneDesc": "Vận mệnh hôm nay dựa trên ngày sinh của bạn",
+    "dailyTarot": "Tarot hàng ngày",
+    "dailyTarotDesc": "Một lá bài tarot để bắt đầu ngày mới",
+    "todayCondition": "Trạng thái hôm nay",
+    "todayConditionDesc": "Kiểm tra nhanh 3 câu hỏi",
+    "recommendedTests": "Bài test được đề xuất hôm nay",
+    "backHome": "Quay lại trang chủ",
+    "tests": {
+      "stressLevel": { "title": "Mức độ căng thẳng", "desc": "Kiểm tra căng thẳng hôm nay" },
+      "socialBattery": { "title": "Pin xã hội", "desc": "Mức năng lượng hôm nay" },
+      "burnoutLevel": { "title": "Mức độ kiệt sức", "desc": "Tôi thế nào?" },
+      "mentalStrength": { "title": "Sức mạnh tinh thần", "desc": "Kiểm tra tinh thần hôm nay" }
+    },
+    "colors": {
+      "red": { "name": "Đỏ", "meaning": "Ngày đầy đam mê và năng lượng" },
+      "orange": { "name": "Cam", "meaning": "Ngày sáng tạo và hòa đồng" },
+      "yellow": { "name": "Vàng", "meaning": "Ngày đầy năng lượng tươi sáng và may mắn" },
+      "green": { "name": "Xanh lá", "meaning": "Ngày ổn định và phát triển" },
+      "blue": { "name": "Xanh dương", "meaning": "Ngày yên bình và tập trung" },
+      "purple": { "name": "Tím", "meaning": "Ngày đầy trực giác và cảm hứng" },
+      "pink": { "name": "Hồng", "meaning": "Ngày đầy tình yêu và hạnh phúc" },
+      "mint": { "name": "Bạc hà", "meaning": "Ngày cho những khởi đầu mới" },
+      "gold": { "name": "Vàng kim", "meaning": "Ngày thịnh vượng và thành công" },
+      "silver": { "name": "Bạc", "meaning": "Ngày bình lặng và khôn ngoan" }
+    }
+  },
+  "fortunePage": {
+    "pageTitle": "Tử Vi & Bói Toán",
+    "pageSubtitle": "Từ truyền thống phương Đông đến chiêm tinh phương Tây",
+    "backHome": "Về trang chủ",
+    "category": "Tử vi/Bói toán",
+    "newYear": "Tử vi năm mới 2025",
+    "allServices": "Dịch vụ tử vi",
+    "candidates": "lựa chọn",
+    "participated": "người tham gia",
+    "services": {
+      "fortune-2025": {
+        "title": "Tử Vi Năm Mới 2025",
+        "description": "Tử vi năm Tỵ theo tuổi, tháng, lĩnh vực"
+      },
+      "tojeong": {
+        "title": "Tojeong Bigyeol",
+        "description": "Bói toán truyền thống từ thời Joseon"
+      },
+      "zodiac-fortune": {
+        "title": "Cung Hoàng Đạo",
+        "description": "Tử vi 12 cung hoàng đạo 2025 theo chiêm tinh phương Tây"
+      },
+      "compatibility": {
+        "title": "Hợp Tuổi",
+        "description": "Phân tích độ hợp bằng con giáp + cung hoàng đạo"
+      },
+      "tarot": {
+        "title": "Tarot",
+        "description": "Xem vận mệnh hôm nay và tương lai qua bài Tarot"
+      },
+      "daily-fortune": {
+        "title": "Tử Vi Hàng Ngày",
+        "description": "Tử vi cá nhân hàng ngày theo ngày sinh"
+      },
+      "dream": {
+        "title": "Giải Mộng",
+        "description": "Giải mã biểu tượng trong giấc mơ theo truyền thống phương Đông"
+      },
+      "name-analysis": {
+        "title": "Phân Tích Tên",
+        "description": "Phân tích nét chữ theo thuật số học truyền thống"
+      },
+      "face-reading": {
+        "title": "Xem Tướng",
+        "description": "Phân tích khuôn mặt theo nhân tướng học phương Đông"
+      }
+    },
+    "tarot": {
+      "pageTitle": "Bói Bài Tarot",
+      "selectType": "Chọn loại bói",
+      "timeline": {
+        "title": "Quá khứ-Hiện tại-Tương lai",
+        "description": "Bói 3 lá bài"
+      },
+      "daily": {
+        "title": "Lá Bài Hôm Nay",
+        "description": "Một lá bài cho hôm nay"
+      },
+      "choice": {
+        "title": "Có Hoặc Không",
+        "description": "Nhận câu trả lời cho câu hỏi"
+      },
+      "relationship": {
+        "title": "Bói Tình Duyên",
+        "description": "Hiểu rõ mối quan hệ"
+      },
+      "positions": {
+        "past": "Quá khứ",
+        "present": "Hiện tại",
+        "future": "Tương lai"
+      },
+      "positionDesc": {
+        "past": "Bối cảnh và nguyên nhân",
+        "present": "Tình huống hiện tại",
+        "future": "Khả năng phía trước"
+      },
+      "readingTypes": {
+        "general": "Tổng quan",
+        "love": "Tình yêu",
+        "career": "Sự nghiệp"
+      },
+      "upright": "Xuôi",
+      "reversed": "Ngược",
+      "advice": "Lời khuyên",
+      "drawCards": "Rút bài",
+      "newReading": "Rút lại",
+      "interpretation": "Giải nghĩa"
+    },
+    "zodiac": {
+      "selectSign": "Chọn cung hoàng đạo",
+      "luckyScore": "Điểm may mắn",
+      "keywords": "Từ khóa",
+      "overview": "Tổng quan",
+      "categories": {
+        "career": "Sự nghiệp",
+        "wealth": "Tài chính",
+        "love": "Tình yêu",
+        "health": "Sức khỏe",
+        "study": "Học tập"
+      },
+      "monthly": "Tử vi tháng",
+      "lucky": {
+        "title": "Yếu tố may mắn",
+        "numbers": "Số may mắn",
+        "colors": "Màu may mắn",
+        "day": "Ngày may mắn",
+        "direction": "Hướng may mắn"
+      },
+      "advice": {
+        "do": "Nên làm năm nay",
+        "dont": "Nên tránh năm nay"
+      }
+    },
+    "daily": {
+      "enterBirthdate": "Nhập ngày sinh",
+      "year": "Năm",
+      "month": "Tháng",
+      "day": "Ngày",
+      "getResult": "Xem tử vi",
+      "overall": "Tổng quan",
+      "categories": {
+        "love": "Tình yêu",
+        "work": "Công việc",
+        "money": "Tài chính",
+        "health": "Sức khỏe"
+      },
+      "lucky": {
+        "color": "Màu may mắn",
+        "number": "Số may mắn",
+        "direction": "Hướng may mắn",
+        "time": "Giờ may mắn"
+      },
+      "warning": "Lưu ý",
+      "advice": "Lời khuyên"
+    },
+    "compatibility": {
+      "person1": "Người 1",
+      "person2": "Người 2",
+      "birthdate": "Ngày sinh",
+      "checkCompatibility": "Xem hợp tuổi",
+      "score": "Điểm hợp",
+      "analysis": "Phân tích",
+      "strengths": "Điểm mạnh",
+      "challenges": "Thách thức",
+      "advice": "Lời khuyên"
+    },
+    "dream": {
+      "pageTitle": "Giải Mộng",
+      "searchPlaceholder": "Mơ thấy gì?",
+      "categories": {
+        "animal": "Động vật",
+        "nature": "Thiên nhiên",
+        "people": "Con người",
+        "object": "Đồ vật",
+        "action": "Hành động",
+        "place": "Địa điểm"
+      },
+      "meaning": "Ý nghĩa",
+      "luckyNumber": "Số may mắn"
+    },
+    "nameAnalysis": {
+      "pageTitle": "Phân Tích Tên",
+      "lastName": "Họ",
+      "firstName": "Tên",
+      "analyze": "Phân tích",
+      "totalStrokes": "Tổng nét",
+      "groundLuck": "Địa cách",
+      "humanLuck": "Nhân cách",
+      "outerLuck": "Ngoại cách",
+      "heavenLuck": "Thiên cách",
+      "overall": "Phân tích tổng hợp"
+    },
+    "faceReading": {
+      "pageTitle": "Xem Tướng",
+      "uploadPhoto": "Tải ảnh lên",
+      "takePhoto": "Chụp ảnh",
+      "analyzing": "Đang phân tích...",
+      "features": {
+        "forehead": "Trán",
+        "eyes": "Mắt",
+        "nose": "Mũi",
+        "mouth": "Miệng",
+        "chin": "Cằm"
+      },
+      "overall": "Phân tích tổng hợp"
+    }
+  },
+  "worldcup": {
+    "pageTitle": "World Cup Lý Tưởng",
+    "pageDescription": "Tìm ra sở thích của bạn!",
+    "backToGames": "Quay lại game",
+    "candidates": "lựa chọn",
+    "participated": "người tham gia",
+    "round": "Vòng {round}",
+    "final": "Chung kết",
+    "winner": "Chiến thắng!",
+    "yourChoice": "Lựa chọn của bạn là",
+    "playAgain": "Chơi lại",
+    "share": "Chia sẻ kết quả"
+  }
+}

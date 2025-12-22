@@ -32,6 +32,7 @@ function DailyFortuneResult() {
   // 공유 함수
   const handleShare = async () => {
     const shareText = `☀️ 오늘의 운세 (${fortune.date})\n\n총운: ${fortune.overall.score}점\n연애: ${fortune.categories.love.score}점\n직장: ${fortune.categories.work.score}점\n금전: ${fortune.categories.money.score}점\n건강: ${fortune.categories.health.score}점\n\n행운의 색: ${fortune.lucky.color}\n행운의 숫자: ${fortune.lucky.number}\n\n나도 오늘의 운세 보기`;
+    const fullText = shareText + '\n' + window.location.origin + '/fortune/daily-fortune';
     
     if (navigator.share) {
       try {
@@ -40,12 +41,36 @@ function DailyFortuneResult() {
           text: shareText,
           url: window.location.href,
         });
+        return;
       } catch {
-        // 공유 취소
+        // 공유 취소 또는 실패 시 클립보드로 fallback
       }
-    } else {
-      await navigator.clipboard.writeText(shareText + '\n' + window.location.origin + '/fortune/daily-fortune');
+    }
+    
+    // 클립보드 복사
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(fullText);
+        alert('클립보드에 복사되었습니다!');
+        return;
+      } catch {
+        // 클립보드 API 실패 시 fallback
+      }
+    }
+    
+    // Fallback
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = fullText;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
       alert('클립보드에 복사되었습니다!');
+    } catch {
+      alert('공유 기능을 사용할 수 없습니다.');
     }
   };
 

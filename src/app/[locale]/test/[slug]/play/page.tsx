@@ -2,6 +2,7 @@
 
 import { useParams, useRouter } from 'next/navigation';
 import { useState, useEffect, Suspense } from 'react';
+import { useTranslations } from 'next-intl';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { getTestBySlug } from '@/lib/data';
 import { loadTestModule, getTestQuestions } from '@/lib/testLoader';
@@ -52,6 +53,7 @@ function normalizeQuestions(rawQuestions: unknown[]): Question[] {
 function TestPlayContent() {
   const params = useParams();
   const router = useRouter();
+  const t = useTranslations('test');
   const slug = params.slug as string;
   const test = getTestBySlug(slug);
 
@@ -59,7 +61,7 @@ function TestPlayContent() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [errorKey, setErrorKey] = useState<string | null>(null);
 
   // 질문 로드
   useEffect(() => {
@@ -67,14 +69,14 @@ function TestPlayContent() {
       try {
         const module = await loadTestModule(slug);
         if (!module) {
-          setError('테스트 데이터를 불러올 수 없습니다.');
+          setErrorKey('cannotLoadTest');
           setLoading(false);
           return;
         }
 
         const rawQuestions = getTestQuestions(module);
         if (!rawQuestions || rawQuestions.length === 0) {
-          setError('질문을 찾을 수 없습니다.');
+          setErrorKey('cannotFindQuestions');
           setLoading(false);
           return;
         }
@@ -85,7 +87,7 @@ function TestPlayContent() {
         setLoading(false);
       } catch (err) {
         console.error('Error loading questions:', err);
-        setError('질문을 불러오는 중 오류가 발생했습니다.');
+        setErrorKey('errorLoadingQuestions');
         setLoading(false);
       }
     }
@@ -158,23 +160,23 @@ function TestPlayContent() {
     return (
       <div className="max-w-2xl mx-auto text-center py-20">
         <div className="text-6xl mb-4 animate-bounce">📝</div>
-        <p className="text-gray-600 dark:text-gray-300">테스트 준비 중...</p>
+        <p className="text-gray-600 dark:text-gray-300">{t('loading')}</p>
       </div>
     );
   }
 
   // 에러
-  if (error || !test || questions.length === 0) {
+  if (errorKey || !test || questions.length === 0) {
     return (
       <div className="max-w-2xl mx-auto text-center py-20">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          {error || '테스트를 불러올 수 없습니다'}
+          {errorKey ? t(errorKey) : t('cannotLoadTest')}
         </h1>
         <button
           onClick={() => router.back()}
           className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
         >
-          돌아가기
+          {t('goBack')}
         </button>
       </div>
     );
@@ -244,7 +246,7 @@ function TestPlayContent() {
           }`}
         >
           <ArrowLeft className="w-4 h-4" />
-          이전
+          {t('previous')}
         </button>
 
         {isLastQuestion ? (
@@ -257,7 +259,7 @@ function TestPlayContent() {
                 : 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
             }`}
           >
-            결과 보기
+            {t('viewResult')}
           </button>
         ) : (
           <button
@@ -269,7 +271,7 @@ function TestPlayContent() {
                 : 'text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
             }`}
           >
-            다음
+            {t('next')}
             <ArrowRight className="w-4 h-4" />
           </button>
         )}
@@ -277,7 +279,7 @@ function TestPlayContent() {
 
       {/* Quick Jump (for answered questions) */}
       <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-        <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">질문 바로가기</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">{t('jumpToQuestion')}</p>
         <div className="flex flex-wrap gap-2">
           {questions.map((_, index) => (
             <button
@@ -300,14 +302,19 @@ function TestPlayContent() {
   );
 }
 
+function LoadingFallback() {
+  const t = useTranslations('test');
+  return (
+    <div className="max-w-2xl mx-auto text-center py-20">
+      <div className="text-6xl mb-4 animate-bounce">📝</div>
+      <p className="text-gray-600 dark:text-gray-300">{t('loading')}</p>
+    </div>
+  );
+}
+
 export default function TestPlayPage() {
   return (
-    <Suspense fallback={
-      <div className="max-w-2xl mx-auto text-center py-20">
-        <div className="text-6xl mb-4 animate-bounce">📝</div>
-        <p className="text-gray-600 dark:text-gray-300">테스트 준비 중...</p>
-      </div>
-    }>
+    <Suspense fallback={<LoadingFallback />}>
       <TestPlayContent />
     </Suspense>
   );

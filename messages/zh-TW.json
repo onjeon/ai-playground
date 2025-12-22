@@ -1,0 +1,522 @@
+{
+  "common": {
+    "siteName": "AI 遊樂場",
+    "siteDescription": "透過 AI 驅動的心理測驗、性格測試、MBTI 等來探索真正的自己。",
+    "loading": "載入中...",
+    "error": "發生錯誤",
+    "notFound": "找不到頁面",
+    "back": "返回",
+    "home": "首頁",
+    "share": "分享",
+    "copy": "複製",
+    "copied": "已複製！",
+    "retry": "再試一次",
+    "start": "開始",
+    "result": "結果",
+    "next": "下一題",
+    "prev": "上一題",
+    "submit": "提交",
+    "close": "關閉",
+    "more": "更多",
+    "all": "全部",
+    "free": "免費",
+    "participants": "參與者",
+    "minutes": "分鐘",
+    "questions": "題",
+    "viewAll": "查看全部",
+    "dailyUpdate": "每日更新",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "首頁",
+    "tests": "所有測驗",
+    "categories": "分類",
+    "fortune": "運勢",
+    "games": "遊戲",
+    "physical": "體能測試",
+    "daily": "每日"
+  },
+  "categories": {
+    "personality": "性格",
+    "psychology": "心理",
+    "relationship": "感情",
+    "career": "職業",
+    "fun": "趣味/娛樂",
+    "iq": "智力/腦力"
+  },
+  "home": {
+    "heroTitle": "探索真正的自己，",
+    "heroHighlight": "AI 遊樂場",
+    "heroDescription": "心理測驗、性格分析、MBTI 等！\n透過 AI 驅動的測驗發現真正的你。",
+    "aiBased": "AI 驅動",
+    "startTest": "開始性格測驗",
+    "viewAll": "查看所有測驗",
+    "stats": {
+      "participants": "參與者",
+      "participantsCount": "50萬+",
+      "tests": "測驗數量",
+      "shares": "分享次數",
+      "sharesCount": "2萬+"
+    },
+    "sections": {
+      "popular": "熱門測驗",
+      "new": "最新測驗",
+      "todayPicks": "今日精選",
+      "daily": "每日",
+      "dailyHub": "每日專區",
+      "physicalGames": "體能測試與遊戲",
+      "category": "分類",
+      "fortune": "運勢與星座"
+    },
+    "quickButtons": {
+      "popular": "熱門",
+      "new": "最新",
+      "tarot": "塔羅牌",
+      "fortune": "每日運勢"
+    },
+    "daily": {
+      "todayFortune": "今日運勢",
+      "fortuneDesc": "根據您的生日",
+      "condition": "狀態檢測",
+      "conditionDesc": "快速 3 題檢測",
+      "luckyColor": "幸運色",
+      "luckyColorDesc": "今日顏色與數字"
+    },
+    "fortune": {
+      "title": "運勢與星座",
+      "description": "塔羅牌、每日運勢、配對、星座運勢",
+      "tarot": "塔羅牌",
+      "dailyFortune": "每日運勢",
+      "compatibility": "配對測試",
+      "saju": "星座運勢"
+    },
+    "physical": {
+      "title": "體能測試",
+      "description": "反應時間、點擊速度、記憶力",
+      "reaction": "反應力",
+      "click": "點擊速度",
+      "color": "色彩視覺",
+      "memory": "記憶力"
+    },
+    "games": {
+      "title": "遊戲與卡牌",
+      "description": "平衡遊戲、對話卡牌",
+      "balance": "平衡遊戲",
+      "cards": "對話卡牌"
+    },
+    "cta": {
+      "title": "想要更多測驗？",
+      "description": "{count} 個測驗等著你！",
+      "viewAll": "查看所有測驗",
+      "funTests": "趣味測驗"
+    }
+  },
+  "sidebar": {
+    "categories": "分類",
+    "allTests": "所有測驗",
+    "daily": "每日",
+    "dailyHub": "每日專區",
+    "condition": "狀態檢測",
+    "fortune": "運勢",
+    "physicalGames": "體能測試與遊戲",
+    "physical": "體能測試",
+    "games": "遊戲",
+    "quickLinks": "快速連結",
+    "popularTests": "熱門測驗",
+    "newTests": "最新測驗"
+  },
+  "test": {
+    "startTest": "開始測試",
+    "questionCount": "{count}題",
+    "estimatedTime": "約{minutes}分鐘",
+    "participants": "{count}人參與",
+    "loading": "測試準備中...",
+    "loadError": "無法載入測試",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "查看結果",
+    "shareResult": "分享結果",
+    "retryTest": "再測一次",
+    "otherTests": "其他測試",
+    "resultTitle": "你的結果是...",
+    "tags": "標籤",
+    "backHome": "返回首頁",
+    "questionInfo": "{count}題 · {time}分鐘",
+    "participation": "{count}人參與",
+    "questions": "問題",
+    "questionsCount": "{count}題",
+    "testGuide": "測試指南",
+    "guideNoAnswer": "這是沒有標準答案的測試，請輕鬆誠實地回答。",
+    "guideInstantResult": "測試完成後可立即查看結果。",
+    "guideShare": "與朋友分享並比較你的結果！",
+    "addFavorite": "加入收藏",
+    "removeFavorite": "取消收藏",
+    "share": "分享",
+    "previous": "上一題",
+    "next": "下一題",
+    "noResponseData": "沒有回答資料。",
+    "cannotLoadTest": "無法載入測試資料。",
+    "cannotFindQuestions": "找不到問題。",
+    "errorLoadingQuestions": "載入問題時發生錯誤。",
+    "analyzing": "正在分析結果...",
+    "cannotCalculate": "無法計算結果。",
+    "errorLoadingResult": "載入結果時發生錯誤。",
+    "cannotLoadResult": "無法載入結果",
+    "retryTestAgain": "請重新進行測試。",
+    "goBack": "返回",
+    "jumpToQuestion": "跳至問題",
+    "yourResult": "你的結果是",
+    "screenshotShare": "截圖分享給朋友！",
+    "myResultIs": "我的{testTitle}結果是{emoji} {title}！",
+    "analysisResult": "分析結果",
+    "mainTraits": "主要特質",
+    "strengths": "優點",
+    "cautions": "注意事項",
+    "advice": "建議",
+    "goodMatch": "適合的類型",
+    "cautionMatch": "需注意的類型"
+  },
+  "share": {
+    "title": "分享",
+    "kakao": "KakaoTalk",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "複製連結",
+    "linkCopied": "已複製連結！",
+    "nativeShare": "分享"
+  },
+  "footer": {
+    "terms": "服務條款",
+    "privacy": "隱私權政策",
+    "contact": "聯絡我們",
+    "copyright": "© {year} AI 遊樂場。保留所有權利。"
+  },
+  "error": {
+    "404": {
+      "title": "找不到頁面",
+      "description": "您請求的頁面不存在或已被移除。",
+      "backHome": "返回首頁"
+    },
+    "500": {
+      "title": "伺服器錯誤",
+      "description": "發生暫時性錯誤，請稍後再試。",
+      "retry": "再試一次"
+    }
+  },
+  "meta": {
+    "siteName": "AI 遊樂場",
+    "categoryNotFound": "找不到分類",
+    "categoryTitle": "{category} - {count} 個測驗 | AI 遊樂場",
+    "categoryDescription": "享受 {category} 分類的 {count} 個免費測驗！"
+  },
+  "categoryPage": {
+    "totalTests": "共 {count} 個測驗",
+    "noTests": "此分類目前沒有測驗。",
+    "viewOtherTests": "查看其他測驗"
+  },
+  "testsPage": {
+    "title": "所有測驗",
+    "searchPlaceholder": "搜尋測驗...",
+    "allCategories": "所有分類",
+    "popular": "熱門",
+    "new": "最新",
+    "tagFilter": "標籤篩選",
+    "tags": "標籤",
+    "popularTags": "熱門標籤",
+    "reset": "重置",
+    "noSearchResults": "找不到「{query}」的搜尋結果。",
+    "noResults": "沒有符合條件的測驗。"
+  },
+  "physical": {
+    "pageTitle": "體能測試",
+    "pageDescription": "測試你的身體和認知能力！",
+    "info": {
+      "title": "說明",
+      "tip1": "體能測試可在電腦和手機上進行。",
+      "tip2": "為了獲得準確結果，請在安靜的環境中進行測試。",
+      "tip3": "點擊測試使用觸控可能比滑鼠更有優勢。",
+      "tip4": "結果僅供娛樂參考！"
+    },
+    "tests": {
+      "reaction-speed": { "title": "反應速度測試", "description": "變綠時立即點擊！你的反應速度有多快？", "duration": "1分鐘" },
+      "click-speed": { "title": "點擊速度測試", "description": "10秒內你能點擊多快？", "duration": "10秒" },
+      "color-blind": { "title": "色覺測試", "description": "找出不同的顏色！測試你的色彩辨別能力。", "duration": "2分鐘" },
+      "memory-test": { "title": "短期記憶測試", "description": "記住順序並重複！挑戰你的記憶極限。", "duration": "3分鐘" },
+      "eye-tracking": { "title": "眼球運動", "description": "眼睛保健伸展運動！舒緩眼睛疲勞。", "duration": "2分鐘" },
+      "typing-speed": { "title": "打字速度測試", "description": "60秒內你能打多快？測量你的WPM！", "duration": "1分鐘" },
+      "number-memory": { "title": "數字記憶測試", "description": "記住越來越長的數字！挑戰你的記憶極限。", "duration": "無限制" },
+      "aim-trainer": { "title": "瞄準訓練", "description": "快速準確地點擊目標！", "duration": "2分鐘" },
+      "hearing-test": { "title": "聽力測試", "description": "測試你能否聽到各種頻率的聲音！", "duration": "3分鐘" },
+      "stroop-test": { "title": "斯特魯普測試", "description": "匹配顏色而非文字！測試大腦處理能力。", "duration": "2分鐘" },
+      "time-perception": { "title": "時間感知測試", "description": "不看時鐘準確估計時間！測量你的內部時鐘。", "duration": "3分鐘" },
+      "peripheral-vision": { "title": "周邊視覺測試", "description": "偵測螢幕邊緣出現的物體！", "duration": "2分鐘" },
+      "pattern-recognition": { "title": "模式識別測試", "description": "找出一個不同的顏色！測量模式識別能力。", "duration": "2分鐘" },
+      "steady-hand": { "title": "手穩定性測試", "description": "用滑鼠通過狹窄的通道！測量手的穩定性。", "duration": "2分鐘" },
+      "multitasking": { "title": "多工處理測試", "description": "同時解決數學問題和點擊！測量多工處理能力。", "duration": "2分鐘" },
+      "rhythm-test": { "title": "節奏感測試", "description": "跟著節拍點擊！測量你的節奏感。", "duration": "2分鐘" },
+      "color-sequence": { "title": "顏色記憶測試", "description": "西蒙遊戲！記住並重複顏色順序。", "duration": "無限制" },
+      "word-memory": { "title": "單詞記憶測試", "description": "記住並輸入所有單詞！測量語言記憶力。", "duration": "3分鐘" },
+      "direction-sense": { "title": "方向感測試", "description": "旋轉後找到正確的方向！測量你的方向感。", "duration": "2分鐘" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "遊戲與卡牌",
+    "pageDescription": "和朋友們一起享受的各種遊戲！",
+    "backHome": "返回首頁",
+    "games": "遊戲",
+    "startGame": "開始遊戲",
+    "start": "開始",
+    "moreComingSoon": "更多遊戲即將推出！",
+    "gameList": {
+      "worldcup": { "title": "理想型世界盃", "description": "拉麵、甜點、狗狗等各種世界盃！找出你的喜好" },
+      "balance": { "title": "平衡遊戲", "description": "二選一的話？戀愛、工作、極端情況都有！" },
+      "cards": { "title": "對話卡牌", "description": "打破尷尬氣氛的對話主題！約會、聚會、情侶都適用" },
+      "random-menu": { "title": "今天吃什麼？", "description": "選不出要吃什麼？隨機選單推薦！" },
+      "number-picker": { "title": "隨機抽籤", "description": "數字抽籤、決定順序、抽籤！公平的隨機抽選" },
+      "team-divider": { "title": "分組", "description": "輸入人數和組數就能公平分組！" },
+      "penalty-picker": { "title": "懲罰抽籤", "description": "從輕度到重度！抽個有趣的懲罰" },
+      "role-picker": { "title": "角色抽籤", "description": "黑手黨、間諜、狼人！隨機分配遊戲角色" },
+      "would-you-rather": { "title": "這個 vs 那個", "description": "只能選一個的話？和朋友們討論一下！" },
+      "ice-breaker": { "title": "破冰遊戲", "description": "打破尷尬氣氛的神奇問題輪盤！" },
+      "couple-quiz": { "title": "情侶測驗", "description": "你有多了解另一半？情侶默契測試！" }
+    }
+  },
+  "dailyPage": {
+    "daily": "每日",
+    "greetingMorning": "早安！",
+    "greetingAfternoon": "午安！",
+    "greetingEvening": "晚安！",
+    "todayColor": "今日顏色",
+    "todayNumber": "今日數字",
+    "luckyNumberMeaning": "帶來好運的數字",
+    "todayContent": "今日內容",
+    "dailyFortune": "今日運勢",
+    "dailyFortuneDesc": "根據生日看今日運勢",
+    "dailyTarot": "今日塔羅",
+    "dailyTarotDesc": "開啟一天的塔羅牌",
+    "todayCondition": "今日狀態",
+    "todayConditionDesc": "3題快速檢測今日狀態",
+    "recommendedTests": "今日推薦測驗",
+    "backHome": "返回首頁",
+    "tests": {
+      "stressLevel": { "title": "壓力指數", "desc": "檢測今日壓力" },
+      "socialBattery": { "title": "社交電量", "desc": "今日能量等級" },
+      "burnoutLevel": { "title": "倦怠指數", "desc": "現在的我狀態如何？" },
+      "mentalStrength": { "title": "心理強度", "desc": "今日心理檢測" }
+    },
+    "colors": {
+      "red": { "name": "紅色", "meaning": "充滿熱情與能量的一天" },
+      "orange": { "name": "橙色", "meaning": "創造力與社交能力閃耀的一天" },
+      "yellow": { "name": "黃色", "meaning": "充滿光明能量與好運的一天" },
+      "green": { "name": "綠色", "meaning": "穩定與成長能量的一天" },
+      "blue": { "name": "藍色", "meaning": "平靜且專注的一天" },
+      "purple": { "name": "紫色", "meaning": "充滿直覺與靈感的一天" },
+      "pink": { "name": "粉色", "meaning": "充滿愛與幸福的一天" },
+      "mint": { "name": "薄荷色", "meaning": "新開始能量的一天" },
+      "gold": { "name": "金色", "meaning": "富足與成功能量的一天" },
+      "silver": { "name": "銀色", "meaning": "平靜且智慧的一天" }
+    }
+  },
+  "fortunePage": {
+    "pageTitle": "運勢 & 命理",
+    "pageSubtitle": "從東方傳統到西方占星術",
+    "backHome": "返回首頁",
+    "category": "運勢/命理",
+    "newYear": "2025年新年運勢",
+    "allServices": "運勢服務",
+    "candidates": "個選項",
+    "participated": "人參與",
+    "services": {
+      "fortune-2025": {
+        "title": "2025新年運勢",
+        "description": "蛇年生肖運勢、月運、各領域詳細分析"
+      },
+      "tojeong": {
+        "title": "土亭秘訣",
+        "description": "朝鮮時代傳承的傳統運勢"
+      },
+      "zodiac-fortune": {
+        "title": "星座運勢",
+        "description": "西方占星術看2025年12星座運勢"
+      },
+      "compatibility": {
+        "title": "合盤運勢",
+        "description": "生肖+星座分析兩人緣分"
+      },
+      "tarot": {
+        "title": "塔羅牌",
+        "description": "塔羅牌看今日運勢與未來"
+      },
+      "daily-fortune": {
+        "title": "今日運勢",
+        "description": "每日更新的生日運勢"
+      },
+      "dream": {
+        "title": "解夢",
+        "description": "東方傳統解夢學象徵解讀"
+      },
+      "name-analysis": {
+        "title": "姓名學",
+        "description": "傳統姓名學筆劃分析"
+      },
+      "face-reading": {
+        "title": "面相分析",
+        "description": "東方傳統面相學面部分析"
+      }
+    },
+    "tarot": {
+      "pageTitle": "塔羅占卜",
+      "selectType": "選擇占卜類型",
+      "timeline": {
+        "title": "過去-現在-未來",
+        "description": "三張牌陣占卜"
+      },
+      "daily": {
+        "title": "今日一卡",
+        "description": "今天的指引卡"
+      },
+      "choice": {
+        "title": "是或否",
+        "description": "獲得問題的答案"
+      },
+      "relationship": {
+        "title": "感情占卜",
+        "description": "感情關係的洞察"
+      },
+      "positions": {
+        "past": "過去",
+        "present": "現在",
+        "future": "未來"
+      },
+      "positionDesc": {
+        "past": "情況的背景和原因",
+        "present": "你目前的處境",
+        "future": "未來的可能性"
+      },
+      "readingTypes": {
+        "general": "整體運勢",
+        "love": "愛情/關係",
+        "career": "事業/工作"
+      },
+      "upright": "正位",
+      "reversed": "逆位",
+      "advice": "建議",
+      "drawCards": "抽牌",
+      "newReading": "重新抽牌",
+      "interpretation": "解讀"
+    },
+    "zodiac": {
+      "selectSign": "選擇你的星座",
+      "luckyScore": "幸運指數",
+      "keywords": "關鍵詞",
+      "overview": "總運",
+      "categories": {
+        "career": "事業運",
+        "wealth": "財運",
+        "love": "愛情運",
+        "health": "健康運",
+        "study": "學業運"
+      },
+      "monthly": "月運勢",
+      "lucky": {
+        "title": "幸運元素",
+        "numbers": "幸運數字",
+        "colors": "幸運顏色",
+        "day": "幸運日",
+        "direction": "幸運方位"
+      },
+      "advice": {
+        "do": "今年該做的事",
+        "dont": "今年該避免的事"
+      }
+    },
+    "daily": {
+      "enterBirthdate": "請輸入出生日期",
+      "year": "年",
+      "month": "月",
+      "day": "日",
+      "getResult": "查看運勢",
+      "overall": "總運",
+      "categories": {
+        "love": "愛情運",
+        "work": "工作運",
+        "money": "財運",
+        "health": "健康運"
+      },
+      "lucky": {
+        "color": "幸運顏色",
+        "number": "幸運數字",
+        "direction": "幸運方位",
+        "time": "幸運時間"
+      },
+      "warning": "注意事項",
+      "advice": "建議"
+    },
+    "compatibility": {
+      "person1": "第一人",
+      "person2": "第二人",
+      "birthdate": "出生日期",
+      "checkCompatibility": "查看合盤",
+      "score": "契合度",
+      "analysis": "分析",
+      "strengths": "優勢",
+      "challenges": "挑戰",
+      "advice": "建議"
+    },
+    "dream": {
+      "pageTitle": "解夢",
+      "searchPlaceholder": "夢到了什麼？",
+      "categories": {
+        "animal": "動物",
+        "nature": "自然",
+        "people": "人物",
+        "object": "物品",
+        "action": "行為",
+        "place": "場所"
+      },
+      "meaning": "含義",
+      "luckyNumber": "幸運數字"
+    },
+    "nameAnalysis": {
+      "pageTitle": "姓名學",
+      "lastName": "姓",
+      "firstName": "名",
+      "analyze": "分析",
+      "totalStrokes": "總筆劃",
+      "groundLuck": "地格",
+      "humanLuck": "人格",
+      "outerLuck": "外格",
+      "heavenLuck": "天格",
+      "overall": "綜合分析"
+    },
+    "faceReading": {
+      "pageTitle": "面相分析",
+      "uploadPhoto": "上傳照片",
+      "takePhoto": "拍照",
+      "analyzing": "分析中...",
+      "features": {
+        "forehead": "額頭",
+        "eyes": "眼睛",
+        "nose": "鼻子",
+        "mouth": "嘴巴",
+        "chin": "下巴"
+      },
+      "overall": "綜合分析"
+    }
+  },
+  "worldcup": {
+    "pageTitle": "理想型世界盃",
+    "pageDescription": "找出你的喜好！",
+    "backToGames": "返回遊戲",
+    "candidates": "個選項",
+    "participated": "人參與",
+    "round": "{round}強",
+    "final": "決賽",
+    "winner": "冠軍！",
+    "yourChoice": "你的選擇是",
+    "playAgain": "再玩一次",
+    "share": "分享結果"
+  }
+}

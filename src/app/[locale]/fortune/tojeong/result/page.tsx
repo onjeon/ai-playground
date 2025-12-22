@@ -67,6 +67,7 @@ function TojeongResultContent() {
 
   const handleShare = async () => {
     const shareText = `2025 토정비결 결과\n\n${result.zodiac} (${birthYear}년생)\n괘: ${result.gwaeName}\n총운: ${result.overallRating}점\n\n나도 토정비결 보러가기`;
+    const fullText = shareText + '\n' + window.location.origin + '/fortune/tojeong';
     
     if (navigator.share) {
       try {
@@ -75,12 +76,34 @@ function TojeongResultContent() {
           text: shareText,
           url: window.location.origin + '/fortune/tojeong',
         });
-      } catch (err) {
-        console.log('Share cancelled');
+        return;
+      } catch {
+        // fallback
       }
-    } else {
-      navigator.clipboard.writeText(shareText + '\n' + window.location.origin + '/fortune/tojeong');
+    }
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(fullText);
+        alert('링크가 복사되었습니다!');
+        return;
+      } catch {
+        // fallback
+      }
+    }
+    
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = fullText;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
       alert('링크가 복사되었습니다!');
+    } catch {
+      alert('공유 기능을 사용할 수 없습니다.');
     }
   };
 

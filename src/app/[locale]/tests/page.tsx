@@ -3,17 +3,29 @@
 import { useState, useMemo, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 import { Search, ArrowLeft, Flame, Clock, Tag, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { TestGrid } from '@/components/test';
-import { tests, categories, getAllTags } from '@/lib/data';
+import { 
+  getTestsForLocale, 
+  getCategoriesForLocale, 
+  getAllTagsForLocale 
+} from '@/lib/data-loader';
 
 type SortType = 'popular' | 'new' | 'name';
 
-// 인기 태그 (상위 15개) - 태그 문자열만 추출
-const popularTags = getAllTags().slice(0, 15).map(t => t.tag);
-
 function TestsContent() {
   const searchParams = useSearchParams();
+  const t = useTranslations('testsPage');
+  const tCommon = useTranslations('common');
+  const tCategories = useTranslations('categories');
+  const locale = useLocale();
+  
+  // 로케일별 데이터 가져오기
+  const tests = getTestsForLocale(locale);
+  const categories = getCategoriesForLocale(locale);
+  const allTags = getAllTagsForLocale(locale);
+  const popularTags = allTags.slice(0, 15);
   
   // URL 파라미터에서 초기값 읽기
   const initialSort = (searchParams.get('sort') as SortType) || 'popular';
@@ -96,9 +108,9 @@ function TestsContent() {
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <h1 className="text-lg font-bold text-gray-900 dark:text-white flex-1">
-            전체 테스트
+            {t('title')}
           </h1>
-          <span className="text-sm text-gray-400">{filteredTests.length}개</span>
+          <span className="text-sm text-gray-400">{tCommon('count', { count: filteredTests.length })}</span>
         </div>
 
         {/* 검색 */}
@@ -106,7 +118,7 @@ function TestsContent() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
           <input
             type="text"
-            placeholder="테스트 검색..."
+            placeholder={t('searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-9 pr-4 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -122,9 +134,9 @@ function TestsContent() {
               onChange={(e) => setSelectedCategory(e.target.value)}
               className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border-0 rounded-lg text-xs font-medium text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
-              <option value="all">전체 카테고리</option>
+              <option value="all">{t('allCategories')}</option>
               {categories.map(cat => (
-                <option key={cat.id} value={cat.id}>{cat.name}</option>
+                <option key={cat.id} value={cat.id}>{tCategories(cat.slug)}</option>
               ))}
             </select>
 
@@ -138,7 +150,7 @@ function TestsContent() {
                 }`}
               >
                 <Flame className="w-3.5 h-3.5" />
-                인기
+                {t('popular')}
               </button>
               <button
                 onClick={() => setSortBy('new')}
@@ -149,7 +161,7 @@ function TestsContent() {
                 }`}
               >
                 <Clock className="w-3.5 h-3.5" />
-                최신
+                {t('new')}
               </button>
             </div>
           </div>
@@ -164,7 +176,7 @@ function TestsContent() {
             }`}
           >
             <Tag className="w-3.5 h-3.5" />
-            태그 필터
+            {t('tagFilter')}
             {selectedTags.length > 0 && (
               <span className="px-1 bg-indigo-600 text-white rounded text-[10px]">
                 {selectedTags.length}
@@ -181,9 +193,9 @@ function TestsContent() {
             onChange={(e) => setSelectedCategory(e.target.value)}
             className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 border-0 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
-            <option value="all">전체</option>
+            <option value="all">{tCommon('all')}</option>
             {categories.map(cat => (
-              <option key={cat.id} value={cat.id}>{cat.name}</option>
+              <option key={cat.id} value={cat.id}>{tCategories(cat.slug)}</option>
             ))}
           </select>
 
@@ -198,7 +210,7 @@ function TestsContent() {
               }`}
             >
               <Flame className="w-3.5 h-3.5" />
-              인기
+              {t('popular')}
             </button>
             <button
               onClick={() => setSortBy('new')}
@@ -209,7 +221,7 @@ function TestsContent() {
               }`}
             >
               <Clock className="w-3.5 h-3.5" />
-              최신
+              {t('new')}
             </button>
           </div>
 
@@ -223,7 +235,7 @@ function TestsContent() {
             }`}
           >
             <Tag className="w-3.5 h-3.5" />
-            태그
+            {t('tags')}
             {selectedTags.length > 0 && (
               <span className="px-1.5 py-0.5 bg-indigo-600 text-white rounded-full text-[10px]">
                 {selectedTags.length}
@@ -237,14 +249,14 @@ function TestsContent() {
         {showFilters && (
           <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-medium text-gray-500 dark:text-gray-400">인기 태그</span>
+              <span className="text-xs font-medium text-gray-500 dark:text-gray-400">{t('popularTags')}</span>
               {selectedTags.length > 0 && (
                 <button
                   onClick={clearTags}
                   className="flex items-center gap-1 text-xs text-gray-400 hover:text-red-500"
                 >
                   <X className="w-3 h-3" />
-                  초기화
+                  {t('reset')}
                 </button>
               )}
             </div>
@@ -271,7 +283,7 @@ function TestsContent() {
       <section>
         <TestGrid 
           tests={filteredTests} 
-          emptyMessage={searchQuery ? `"${searchQuery}"에 대한 검색 결과가 없습니다.` : "조건에 맞는 테스트가 없습니다."}
+          emptyMessage={searchQuery ? t('noSearchResults', { query: searchQuery }) : t('noResults')}
           showAds={true}
           adInterval={8}
         />
@@ -281,10 +293,12 @@ function TestsContent() {
 }
 
 export default function TestsPage() {
+  const tCommon = useTranslations('common');
+  
   return (
     <Suspense fallback={
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-gray-400">로딩 중...</div>
+        <div className="text-gray-400">{tCommon('loading')}</div>
       </div>
     }>
       <TestsContent />

@@ -19,6 +19,12 @@ const localeTestFolders: Record<string, string> = {
   ja: 'tests-ja',     // 일본어: src/tests-ja/
   'zh-TW': 'tests-zh-TW',  // 대만 중국어: src/tests-zh-TW/
   th: 'tests-th',     // 태국어: src/tests-th/
+  id: 'tests-id',     // 인도네시아어: src/tests-id/
+  vi: 'tests-vi',     // 베트남어: src/tests-vi/
+  fil: 'tests-fil',   // 필리핀어: src/tests-fil/
+  ms: 'tests-ms',     // 말레이어: src/tests-ms/
+  hi: 'tests-hi',     // 힌디어: src/tests-hi/
+  'pt-BR': 'tests-pt-BR',  // 브라질 포르투갈어: src/tests-pt-BR/
 };
 
 // 테스트 모듈 동적 로드 (locale 지원)
@@ -28,20 +34,38 @@ export async function loadTestModule(slug: string, locale: string = 'ko'): Promi
     const testFolder = localeTestFolders[locale] || localeTestFolders['ko'];
     
     // 해당 locale 폴더에서 먼저 시도
-    try {
-      if (testFolder === 'tests-ja') {
-        const module = await import(`@/tests-ja/${slug}/data`);
-        return module as TestModule;
-      } else if (testFolder === 'tests-zh-TW') {
-        const module = await import(`@/tests-zh-TW/${slug}/data`);
-        return module as TestModule;
-      } else if (testFolder === 'tests-th') {
-        const module = await import(`@/tests-th/${slug}/data`);
-        return module as TestModule;
+      try {
+        if (testFolder === 'tests-ja') {
+          const module = await import(`@/tests-ja/${slug}/data`);
+          return module as TestModule;
+        } else if (testFolder === 'tests-zh-TW') {
+          const module = await import(`@/tests-zh-TW/${slug}/data`);
+          return module as TestModule;
+        } else if (testFolder === 'tests-th') {
+          const module = await import(`@/tests-th/${slug}/data`);
+          return module as TestModule;
+        } else if (testFolder === 'tests-id') {
+          const module = await import(`@/tests-id/${slug}/data`);
+          return module as TestModule;
+        } else if (testFolder === 'tests-vi') {
+          const module = await import(`@/tests-vi/${slug}/data`);
+          return module as TestModule;
+        } else if (testFolder === 'tests-fil') {
+          const module = await import(`@/tests-fil/${slug}/data`);
+          return module as TestModule;
+        } else if (testFolder === 'tests-ms') {
+          const module = await import(`@/tests-ms/${slug}/data`);
+          return module as TestModule;
+        } else if (testFolder === 'tests-hi') {
+          const module = await import(`@/tests-hi/${slug}/index`);
+          return module as TestModule;
+        } else if (testFolder === 'tests-pt-BR') {
+          const module = await import(`@/tests-pt-BR/${slug}/data`);
+          return module as TestModule;
+        }
+      } catch {
+        // locale 폴더에 없으면 기본(ko) 폴더에서 로드
       }
-    } catch {
-      // locale 폴더에 없으면 기본(ko) 폴더에서 로드
-    }
     
     // 기본 테스트 폴더에서 로드
     const module = await import(`@/tests/${slug}/data`);

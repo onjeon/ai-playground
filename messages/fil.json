@@ -1,0 +1,522 @@
+{
+  "common": {
+    "siteName": "AI Playground",
+    "siteDescription": "Tuklasin ang sarili mo gamit ang mga AI-powered na psychology test, personality test, MBTI at marami pa.",
+    "loading": "Naglo-load...",
+    "error": "May naganap na error",
+    "notFound": "Hindi nahanap ang pahina",
+    "back": "Bumalik",
+    "home": "Home",
+    "share": "I-share",
+    "copy": "Kopyahin",
+    "copied": "Nakopya na!",
+    "retry": "Subukan muli",
+    "start": "Simulan",
+    "result": "Resulta",
+    "next": "Susunod",
+    "prev": "Nakaraan",
+    "submit": "I-submit",
+    "close": "Isara",
+    "more": "Higit pa",
+    "all": "Lahat",
+    "free": "Libre",
+    "participants": "kalahok",
+    "minutes": "minuto",
+    "questions": "tanong",
+    "viewAll": "Tingnan lahat",
+    "dailyUpdate": "Ina-update araw-araw",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "Home",
+    "tests": "Lahat ng Test",
+    "categories": "Mga Kategorya",
+    "fortune": "Kapalaran",
+    "games": "Laro",
+    "physical": "Pisikal",
+    "daily": "Araw-araw"
+  },
+  "categories": {
+    "personality": "Personalidad",
+    "psychology": "Sikolohiya",
+    "relationship": "Relasyon",
+    "career": "Karera",
+    "fun": "Masaya/Entertainment",
+    "iq": "IQ/Utak"
+  },
+  "home": {
+    "heroTitle": "Panahon na para tuklasin ang sarili mo,",
+    "heroHighlight": "AI Playground",
+    "heroDescription": "Psychology test, personality analysis, MBTI at marami pa!\nTuklasin ang tunay mong sarili gamit ang AI-powered na mga test.",
+    "aiBased": "AI-Powered",
+    "startTest": "Simulan ang Personality Test",
+    "viewAll": "Tingnan Lahat ng Test",
+    "stats": {
+      "participants": "Kalahok",
+      "participantsCount": "500K+",
+      "tests": "Test",
+      "shares": "Share",
+      "sharesCount": "20K+"
+    },
+    "sections": {
+      "popular": "Mga Sikat na Test",
+      "new": "Mga Bagong Test",
+      "todayPicks": "Mga Pili Ngayong Araw",
+      "daily": "Araw-araw",
+      "dailyHub": "Daily Hub",
+      "physicalGames": "Pisikal at Laro",
+      "category": "Mga Kategorya",
+      "fortune": "Kapalaran at Horoscope"
+    },
+    "quickButtons": {
+      "popular": "Sikat",
+      "new": "Bago",
+      "tarot": "Tarot",
+      "fortune": "Daily Fortune"
+    },
+    "daily": {
+      "todayFortune": "Daily Fortune",
+      "fortuneDesc": "Batay sa iyong kaarawan",
+      "condition": "Condition Check",
+      "conditionDesc": "Mabilis na 3-tanong na check",
+      "luckyColor": "Lucky Color",
+      "luckyColorDesc": "Kulay at numero ngayong araw"
+    },
+    "fortune": {
+      "title": "Kapalaran at Horoscope",
+      "description": "Tarot, daily fortune, compatibility, horoscope",
+      "tarot": "Tarot",
+      "dailyFortune": "Daily Fortune",
+      "compatibility": "Compatibility",
+      "saju": "Horoscope"
+    },
+    "physical": {
+      "title": "Mga Physical Test",
+      "description": "Reaction time, click speed, memory",
+      "reaction": "Reaction",
+      "click": "Click Speed",
+      "color": "Color Vision",
+      "memory": "Memory"
+    },
+    "games": {
+      "title": "Laro at Cards",
+      "description": "Balance game, conversation cards",
+      "balance": "Balance Game",
+      "cards": "Conversation Cards"
+    },
+    "cta": {
+      "title": "Naghahanap ng iba pang test?",
+      "description": "{count} test ang naghihintay sa iyo!",
+      "viewAll": "Tingnan Lahat ng Test",
+      "funTests": "Mga Masayang Test"
+    }
+  },
+  "sidebar": {
+    "categories": "Mga Kategorya",
+    "allTests": "Lahat ng Test",
+    "daily": "Araw-araw",
+    "dailyHub": "Daily Hub",
+    "condition": "Condition Check",
+    "fortune": "Kapalaran",
+    "physicalGames": "Pisikal at Laro",
+    "physical": "Mga Physical Test",
+    "games": "Laro",
+    "quickLinks": "Mga Quick Link",
+    "popularTests": "Mga Sikat na Test",
+    "newTests": "Mga Bagong Test"
+  },
+  "test": {
+    "startTest": "Simulan ang Test",
+    "questionCount": "{count} tanong",
+    "estimatedTime": "Mga {minutes} minuto",
+    "participants": "{count} kalahok",
+    "loading": "Inihahanda ang test...",
+    "loadError": "Hindi na-load ang test",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "Tingnan ang Resulta",
+    "shareResult": "I-share ang Resulta",
+    "retryTest": "Subukan Muli",
+    "otherTests": "Iba Pang Test",
+    "resultTitle": "Ang resulta mo ay...",
+    "tags": "Mga Tag",
+    "backHome": "Home",
+    "questionInfo": "{count} tanong · {time} minuto",
+    "participation": "{count} kalahok",
+    "questions": "Mga Tanong",
+    "questionsCount": "{count}",
+    "testGuide": "Gabay sa Test",
+    "guideNoAnswer": "Walang maling sagot. Sumagot ng tapat.",
+    "guideInstantResult": "Makikita agad ang resulta pagkatapos ng test.",
+    "guideShare": "I-share at ikumpara ang iyong resulta sa mga kaibigan!",
+    "addFavorite": "Idagdag sa favorites",
+    "removeFavorite": "Alisin sa favorites",
+    "share": "I-share",
+    "previous": "Nakaraan",
+    "next": "Susunod",
+    "noResponseData": "Walang data ng sagot.",
+    "cannotLoadTest": "Hindi ma-load ang test data.",
+    "cannotFindQuestions": "Hindi nakita ang mga tanong.",
+    "errorLoadingQuestions": "Error sa pag-load ng mga tanong.",
+    "analyzing": "Sinusuri ang mga resulta...",
+    "cannotCalculate": "Hindi ma-calculate ang mga resulta.",
+    "errorLoadingResult": "Error sa pag-load ng mga resulta.",
+    "cannotLoadResult": "Hindi ma-load ang mga resulta",
+    "retryTestAgain": "Pakisubukan muli ang test.",
+    "goBack": "Bumalik",
+    "jumpToQuestion": "Pumunta sa tanong",
+    "yourResult": "Ang resulta mo ay",
+    "screenshotShare": "Mag-screenshot at i-share sa mga kaibigan!",
+    "myResultIs": "Ang resulta ko sa {testTitle} ay {emoji} {title}!",
+    "analysisResult": "Resulta ng Pagsusuri",
+    "mainTraits": "Mga Pangunahing Katangian",
+    "strengths": "Mga Lakas",
+    "cautions": "Mga Paalala",
+    "advice": "Payo",
+    "goodMatch": "Magandang Match",
+    "cautionMatch": "Mapanganib na Match"
+  },
+  "share": {
+    "title": "I-share",
+    "kakao": "KakaoTalk",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "Kopyahin ang Link",
+    "linkCopied": "Nakopya na ang link!",
+    "nativeShare": "I-share"
+  },
+  "footer": {
+    "terms": "Mga Tuntunin ng Serbisyo",
+    "privacy": "Patakaran sa Privacy",
+    "contact": "Makipag-ugnayan",
+    "copyright": "© {year} AI Playground. Nakalaan ang lahat ng karapatan."
+  },
+  "error": {
+    "404": {
+      "title": "Hindi nahanap ang pahina",
+      "description": "Ang pahinang hiniling mo ay hindi umiiral o inilipat na.",
+      "backHome": "Pumunta sa Home"
+    },
+    "500": {
+      "title": "Server Error",
+      "description": "May pansamantalang error na naganap. Pakisubukan muli mamaya.",
+      "retry": "Subukan Muli"
+    }
+  },
+  "meta": {
+    "siteName": "AI Playground",
+    "categoryNotFound": "Hindi nahanap ang kategorya",
+    "categoryTitle": "{category} - {count} Pagsusulit | AI Playground",
+    "categoryDescription": "Mag-enjoy ng {count} libreng pagsusulit sa kategoryang {category}!"
+  },
+  "categoryPage": {
+    "totalTests": "{count} pagsusulit",
+    "noTests": "Wala pang pagsusulit sa kategoryang ito.",
+    "viewOtherTests": "Tingnan ang ibang pagsusulit"
+  },
+  "testsPage": {
+    "title": "Lahat ng Pagsusulit",
+    "searchPlaceholder": "Maghanap ng pagsusulit...",
+    "allCategories": "Lahat ng Kategorya",
+    "popular": "Sikat",
+    "new": "Bago",
+    "tagFilter": "Filter ng Tag",
+    "tags": "Mga Tag",
+    "popularTags": "Mga Sikat na Tag",
+    "reset": "I-reset",
+    "noSearchResults": "Walang resulta para sa \"{query}\".",
+    "noResults": "Walang pagsusulit na tumutugma sa iyong mga pamantayan."
+  },
+  "physical": {
+    "pageTitle": "Physical Tests",
+    "pageDescription": "Subukan ang iyong pisikal at cognitive abilities!",
+    "info": {
+      "title": "Info",
+      "tip1": "Gumagana ang physical tests sa PC at mobile.",
+      "tip2": "Para sa tumpak na resulta, mag-test sa tahimik na kapaligiran.",
+      "tip3": "Maaaring mas madali ang click tests gamit ang touch kaysa mouse.",
+      "tip4": "Ang mga resulta ay para lang sa kasiyahan!"
+    },
+    "tests": {
+      "reaction-speed": { "title": "Reaction Time Test", "description": "I-click agad kapag naging berde! Ano ang iyong reaction time?", "duration": "1 minuto" },
+      "click-speed": { "title": "Click Speed Test", "description": "Gaano kabilis ka mag-click sa loob ng 10 segundo?", "duration": "10 segundo" },
+      "color-blind": { "title": "Color Vision Test", "description": "Hanapin ang ibang kulay! Subukan ang iyong color discrimination ability.", "duration": "2 minuto" },
+      "memory-test": { "title": "Short-term Memory Test", "description": "Tandaan ang sequence at ulitin! Hamunin ang hangganan ng iyong memorya.", "duration": "3 minuto" },
+      "eye-tracking": { "title": "Eye Exercise", "description": "Eye stretching para sa malusog na mga mata! Pawiin ang pagkapagod ng mata.", "duration": "2 minuto" },
+      "typing-speed": { "title": "Typing Speed Test", "description": "Gaano kabilis ka mag-type sa loob ng 60 segundo? Sukatin ang iyong WPM!", "duration": "1 minuto" },
+      "number-memory": { "title": "Number Memory Test", "description": "Tandaan ang pahabang numero! Hamunin ang hangganan ng iyong memorya.", "duration": "Walang limit" },
+      "aim-trainer": { "title": "Aim Trainer", "description": "I-click ang mga target ng mabilis at tumpak!", "duration": "2 minuto" },
+      "hearing-test": { "title": "Hearing Test", "description": "Subukan kung naririnig mo ang iba't ibang frequency!", "duration": "3 minuto" },
+      "stroop-test": { "title": "Stroop Test", "description": "Itugma ang kulay, hindi ang salita! Subukan ang processing ability ng iyong utak.", "duration": "2 minuto" },
+      "time-perception": { "title": "Time Perception Test", "description": "Tukuyin ang oras ng tama nang walang orasan! Sukatin ang iyong internal clock.", "duration": "3 minuto" },
+      "peripheral-vision": { "title": "Peripheral Vision Test", "description": "Matukoy ang mga bagay na lumalabas sa gilid ng screen!", "duration": "2 minuto" },
+      "pattern-recognition": { "title": "Pattern Recognition Test", "description": "Hanapin ang isang ibang kulay! Sukatin ang iyong pattern recognition ability.", "duration": "2 minuto" },
+      "steady-hand": { "title": "Steady Hand Test", "description": "Mag-navigate sa makitid na daan gamit ang mouse! Sukatin ang stability ng iyong kamay.", "duration": "2 minuto" },
+      "multitasking": { "title": "Multitasking Test", "description": "Lutasin ang math problems habang nagki-click! Sukatin ang iyong multitasking ability.", "duration": "2 minuto" },
+      "rhythm-test": { "title": "Rhythm Test", "description": "Mag-tap sa beat! Sukatin ang iyong sense of rhythm.", "duration": "2 minuto" },
+      "color-sequence": { "title": "Color Memory Test", "description": "Simon game! Tandaan at ulitin ang color sequence.", "duration": "Walang limit" },
+      "word-memory": { "title": "Word Memory Test", "description": "Tandaan at i-type lahat ng salita! Sukatin ang iyong verbal memory.", "duration": "3 minuto" },
+      "direction-sense": { "title": "Direction Sense Test", "description": "Hanapin ang tamang direksyon pagkatapos mag-rotate! Sukatin ang iyong sense of direction.", "duration": "2 minuto" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "Laro at Cards",
+    "pageDescription": "Mga masayang laro para laruin kasama ang mga kaibigan!",
+    "backHome": "Home",
+    "games": "Laro",
+    "startGame": "Simulan ang laro",
+    "start": "Simulan",
+    "moreComingSoon": "Marami pang laro ang darating!",
+    "gameList": {
+      "worldcup": { "title": "Ideal Type World Cup", "description": "Ramen, dessert, aso at marami pa! Hanapin ang iyong mga preference" },
+      "balance": { "title": "Balance Game", "description": "Kung pipili lang ng isa? Pag-ibig, trabaho, extreme situations!" },
+      "cards": { "title": "Conversation Cards", "description": "Mga ice-breaking topics! Para sa date, party, couples." },
+      "random-menu": { "title": "Ano kakainin ngayon?", "description": "Hindi makapagdesisyon? Random menu picker!" },
+      "number-picker": { "title": "Random Picker", "description": "Numero, order, patas na mga draw!" },
+      "team-divider": { "title": "Team Divider", "description": "Ilagay ang bilang ng tao at team para sa patas na paghahati!" },
+      "penalty-picker": { "title": "Penalty Picker", "description": "Mula magaan hanggang hardcore! Pumili ng masayang penalty" },
+      "role-picker": { "title": "Role Picker", "description": "Mafia, Spy, Werewolf! Random na mag-assign ng game roles" },
+      "would-you-rather": { "title": "Ito vs Iyan", "description": "Kung pipili lang? Debate kasama ang mga kaibigan!" },
+      "ice-breaker": { "title": "Ice Breaker", "description": "Magic question roulette para sirain ang awkwardness!" },
+      "couple-quiz": { "title": "Couple Quiz", "description": "Gaano mo kilala ang partner mo? Compatibility test!" }
+    }
+  },
+  "dailyPage": {
+    "daily": "Araw-araw",
+    "greetingMorning": "Magandang umaga!",
+    "greetingAfternoon": "Magandang hapon!",
+    "greetingEvening": "Magandang gabi!",
+    "todayColor": "Kulay ngayong araw",
+    "todayNumber": "Numero ngayong araw",
+    "luckyNumberMeaning": "Ang iyong lucky number",
+    "todayContent": "Nilalaman ngayong araw",
+    "dailyFortune": "Daily fortune",
+    "dailyFortuneDesc": "Kapalaran ngayong araw batay sa iyong kaarawan",
+    "dailyTarot": "Daily tarot",
+    "dailyTarotDesc": "Isang tarot card para simulan ang iyong araw",
+    "todayCondition": "Kondisyon ngayong araw",
+    "todayConditionDesc": "Mabilis na 3-tanong na check",
+    "recommendedTests": "Mga inirerekomendang test ngayon",
+    "backHome": "Bumalik sa home",
+    "tests": {
+      "stressLevel": { "title": "Stress level", "desc": "I-check ang stress ngayon" },
+      "socialBattery": { "title": "Social battery", "desc": "Energy level ngayong araw" },
+      "burnoutLevel": { "title": "Burnout level", "desc": "Kamusta ako?" },
+      "mentalStrength": { "title": "Mental strength", "desc": "Mental check ngayong araw" }
+    },
+    "colors": {
+      "red": { "name": "Pula", "meaning": "Araw na puno ng pasyon at energy" },
+      "orange": { "name": "Kahel", "meaning": "Araw ng creativity at pakikisama" },
+      "yellow": { "name": "Dilaw", "meaning": "Araw na puno ng maliwanag na energy at swerte" },
+      "green": { "name": "Berde", "meaning": "Araw ng stability at paglago" },
+      "blue": { "name": "Asul", "meaning": "Mapayapa at nakatutok na araw" },
+      "purple": { "name": "Lila", "meaning": "Araw na puno ng intuition at inspirasyon" },
+      "pink": { "name": "Pink", "meaning": "Araw na puno ng pagmamahal at kaligayahan" },
+      "mint": { "name": "Mint", "meaning": "Araw para sa bagong simula" },
+      "gold": { "name": "Ginto", "meaning": "Araw ng kasaganaan at tagumpay" },
+      "silver": { "name": "Pilak", "meaning": "Tahimik at matalinong araw" }
+    }
+  },
+  "fortunePage": {
+    "pageTitle": "Kapalaran & Horoscope",
+    "pageSubtitle": "Mula sa tradisyon ng Silangan hanggang astrolohiya ng Kanluran",
+    "backHome": "Bumalik sa home",
+    "category": "Kapalaran/Horoscope",
+    "newYear": "2025 Bagong Taon Kapalaran",
+    "allServices": "Mga Serbisyo ng Kapalaran",
+    "candidates": "pagpipilian",
+    "participated": "lumahok",
+    "services": {
+      "fortune-2025": {
+        "title": "2025 Kapalaran sa Bagong Taon",
+        "description": "Kapalaran ng Taon ng Ahas, buwanan, at detalyadong pagsusuri"
+      },
+      "tojeong": {
+        "title": "Tojeong Bigyeol",
+        "description": "Tradisyonal na paghuhula mula sa panahon ng Joseon"
+      },
+      "zodiac-fortune": {
+        "title": "Zodiac Horoscope",
+        "description": "2025 horoscope para sa 12 zodiac signs"
+      },
+      "compatibility": {
+        "title": "Compatibility",
+        "description": "Suriin ang compatibility gamit ang Chinese zodiac + constellation"
+      },
+      "tarot": {
+        "title": "Tarot",
+        "description": "Kapalaran ngayon at kinabukasan sa pamamagitan ng tarot cards"
+      },
+      "daily-fortune": {
+        "title": "Araw-araw na Kapalaran",
+        "description": "Personal na kapalaran araw-araw base sa birthday"
+      },
+      "dream": {
+        "title": "Kahulugan ng Panaginip",
+        "description": "Bigyang kahulugan ang mga simbolo sa panaginip"
+      },
+      "name-analysis": {
+        "title": "Pagsusuri ng Pangalan",
+        "description": "Pagsusuri ng stroke ng pangalan base sa numerology"
+      },
+      "face-reading": {
+        "title": "Pagbasa ng Mukha",
+        "description": "Pagsusuri ng mukha base sa tradisyonal na physiognomy"
+      }
+    },
+    "tarot": {
+      "pageTitle": "Tarot Reading",
+      "selectType": "Pumili ng uri ng pagbasa",
+      "timeline": {
+        "title": "Nakaraan-Kasalukuyan-Kinabukasan",
+        "description": "3 card spread reading"
+      },
+      "daily": {
+        "title": "Card Ngayon",
+        "description": "Isang card para sa araw na ito"
+      },
+      "choice": {
+        "title": "Oo o Hindi",
+        "description": "Kumuha ng sagot sa iyong tanong"
+      },
+      "relationship": {
+        "title": "Relationship Reading",
+        "description": "Kaalaman sa iyong mga relasyon"
+      },
+      "positions": {
+        "past": "Nakaraan",
+        "present": "Kasalukuyan",
+        "future": "Kinabukasan"
+      },
+      "positionDesc": {
+        "past": "Background at dahilan ng sitwasyon",
+        "present": "Kasalukuyang sitwasyon mo",
+        "future": "Mga posibilidad sa hinaharap"
+      },
+      "readingTypes": {
+        "general": "Pangkalahatan",
+        "love": "Pag-ibig/Relasyon",
+        "career": "Karera/Trabaho"
+      },
+      "upright": "Upright",
+      "reversed": "Reversed",
+      "advice": "Payo",
+      "drawCards": "Kumuha ng Cards",
+      "newReading": "Bagong Reading",
+      "interpretation": "Interpretasyon"
+    },
+    "zodiac": {
+      "selectSign": "Piliin ang iyong Zodiac Sign",
+      "luckyScore": "Lucky Score",
+      "keywords": "Keywords",
+      "overview": "Pangkalahatang-ideya",
+      "categories": {
+        "career": "Karera",
+        "wealth": "Kayamanan",
+        "love": "Pag-ibig",
+        "health": "Kalusugan",
+        "study": "Pag-aaral"
+      },
+      "monthly": "Buwanang Kapalaran",
+      "lucky": {
+        "title": "Lucky Elements",
+        "numbers": "Lucky Numbers",
+        "colors": "Lucky Colors",
+        "day": "Lucky Day",
+        "direction": "Lucky Direction"
+      },
+      "advice": {
+        "do": "Gawin Ngayong Taon",
+        "dont": "Iwasan Ngayong Taon"
+      }
+    },
+    "daily": {
+      "enterBirthdate": "Ilagay ang iyong birthday",
+      "year": "Taon",
+      "month": "Buwan",
+      "day": "Araw",
+      "getResult": "Tingnan ang Kapalaran",
+      "overall": "Pangkalahatan",
+      "categories": {
+        "love": "Pag-ibig",
+        "work": "Trabaho",
+        "money": "Pera",
+        "health": "Kalusugan"
+      },
+      "lucky": {
+        "color": "Lucky Color",
+        "number": "Lucky Number",
+        "direction": "Lucky Direction",
+        "time": "Lucky Time"
+      },
+      "warning": "Pag-iingat",
+      "advice": "Payo"
+    },
+    "compatibility": {
+      "person1": "Tao 1",
+      "person2": "Tao 2",
+      "birthdate": "Birthday",
+      "checkCompatibility": "Tingnan ang Compatibility",
+      "score": "Compatibility Score",
+      "analysis": "Pagsusuri",
+      "strengths": "Kalakasan",
+      "challenges": "Hamon",
+      "advice": "Payo"
+    },
+    "dream": {
+      "pageTitle": "Kahulugan ng Panaginip",
+      "searchPlaceholder": "Ano ang lumabas sa panaginip mo?",
+      "categories": {
+        "animal": "Hayop",
+        "nature": "Kalikasan",
+        "people": "Tao",
+        "object": "Bagay",
+        "action": "Aksyon",
+        "place": "Lugar"
+      },
+      "meaning": "Kahulugan",
+      "luckyNumber": "Lucky Number"
+    },
+    "nameAnalysis": {
+      "pageTitle": "Pagsusuri ng Pangalan",
+      "lastName": "Apelyido",
+      "firstName": "Pangalan",
+      "analyze": "Suriin",
+      "totalStrokes": "Kabuuang Strokes",
+      "groundLuck": "Ground Luck",
+      "humanLuck": "Human Luck",
+      "outerLuck": "Outer Luck",
+      "heavenLuck": "Heaven Luck",
+      "overall": "Pangkalahatang Pagsusuri"
+    },
+    "faceReading": {
+      "pageTitle": "Pagbasa ng Mukha",
+      "uploadPhoto": "Mag-upload ng Larawan",
+      "takePhoto": "Kumuha ng Larawan",
+      "analyzing": "Sinusuri...",
+      "features": {
+        "forehead": "Noo",
+        "eyes": "Mata",
+        "nose": "Ilong",
+        "mouth": "Bibig",
+        "chin": "Baba"
+      },
+      "overall": "Pangkalahatang Pagbasa"
+    }
+  },
+  "worldcup": {
+    "pageTitle": "Ideal Type World Cup",
+    "pageDescription": "Hanapin ang iyong mga kagustuhan!",
+    "backToGames": "Bumalik sa games",
+    "candidates": "pagpipilian",
+    "participated": "lumahok",
+    "round": "Round ng {round}",
+    "final": "Final",
+    "winner": "Panalo!",
+    "yourChoice": "Ang pinili mo ay",
+    "playAgain": "Maglaro Ulit",
+    "share": "I-share ang Resulta"
+  }
+}

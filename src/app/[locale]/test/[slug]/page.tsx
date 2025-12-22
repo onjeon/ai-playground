@@ -1,17 +1,33 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getTestBySlug, categories, tests } from '@/lib/data';
+import { 
+  getTestBySlugForLocale, 
+  getCategoriesForLocale, 
+  getTestsForLocale 
+} from '@/lib/data-loader';
+import { locales } from '@/i18n/config';
+import { getTranslations } from 'next-intl/server';
 import TestDetailClient from './TestDetailClient';
 
-// 빌드 시 모든 테스트 페이지를 정적 생성
+// 빌드 시 모든 로케일의 테스트 페이지를 정적 생성
 export async function generateStaticParams() {
-  return tests.map((test) => ({
-    slug: test.slug,
-  }));
+  const params: { locale: string; slug: string }[] = [];
+  
+  for (const locale of locales) {
+    const tests = getTestsForLocale(locale);
+    for (const test of tests) {
+      params.push({
+        locale,
+        slug: test.slug,
+      });
+    }
+  }
+  
+  return params;
 }
 
 interface Props {
-  params: { slug: string };
+  params: { slug: string; locale: string };
 }
 
 const baseUrl = 'https://ai-playground.vercel.app';
@@ -38,24 +54,24 @@ const categoryIdToSlug: Record<string, string> = {
 
 // 동적 메타데이터 생성
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const test = getTestBySlug(params.slug);
+  const { locale, slug } = params;
+  const test = getTestBySlugForLocale(locale, slug);
+  const tMeta = await getTranslations({ locale, namespace: 'meta' });
   
   if (!test) {
     return {
-      title: '테스트를 찾을 수 없습니다 | AI 놀이터',
+      title: tMeta('testNotFound'),
     };
   }
 
+  const categories = getCategoriesForLocale(locale);
   const category = categories.find((c) => c.id === test.categoryId);
   const categorySlug = category?.slug || categoryIdToSlug[test.categoryId] || 'default';
   const emoji = categoryEmojis[categorySlug] || '🧠';
-  const participantText = test.participantCount >= 10000 
-    ? `${Math.floor(test.participantCount / 10000)}만명 이상 참여` 
-    : `${test.participantCount.toLocaleString()}명 참여`;
 
   // SEO 최적화된 타이틀과 설명
-  const seoTitle = `${test.title} - 무료 테스트 | AI 놀이터`;
-  const seoDescription = `${test.shortDescription} ${participantText}한 인기 테스트! 지금 바로 무료로 테스트해보세요.`;
+  const seoTitle = `${test.title} | ${tMeta('siteName')}`;
+  const seoDescription = test.shortDescription;
 
   // 동적 OG 이미지 URL 생성
   const ogImageUrl = `${baseUrl}/api/og?title=${encodeURIComponent(test.title)}&emoji=${encodeURIComponent(emoji)}&category=${categorySlug}&participants=${test.participantCount.toLocaleString()}`;
@@ -67,20 +83,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       test.title,
       ...test.tags, 
       category?.name || '', 
-      'AI 테스트', 
-      '심리테스트',
-      '무료 테스트',
-      '성격 테스트',
-      'MBTI',
     ].filter(Boolean),
-    authors: [{ name: 'AI 놀이터' }],
+    authors: [{ name: tMeta('siteName') }],
     openGraph: {
       title: test.title,
       description: seoDescription,
       type: 'website',
-      locale: 'ko_KR',
-      siteName: 'AI 놀이터',
-      url: `${baseUrl}/test/${test.slug}`,
+      locale: locale.replace('-', '_'),
+      siteName: tMeta('siteName'),
+      url: `${baseUrl}/${locale}/test/${test.slug}`,
       images: [
         {
           url: ogImageUrl,
@@ -97,7 +108,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [ogImageUrl],
     },
     alternates: {
-      canonical: `${baseUrl}/test/${test.slug}`,
+      canonical: `${baseUrl}/${locale}/test/${test.slug}`,
     },
     robots: {
       index: true,
@@ -114,10 +125,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // 구조화 데이터 (JSON-LD) 생성
-function generateStructuredData(test: ReturnType<typeof getTestBySlug>) {
+function generateStructuredData(test: any, locale: string, categories: any[]) {
   if (!test) return null;
   
   const category = categories.find((c) => c.id === test.categoryId);
+  const langCode = locale.split('-')[0];
   
   // Quiz 스키마
   const quizSchema = {
@@ -125,17 +137,17 @@ function generateStructuredData(test: ReturnType<typeof getTestBySlug>) {
     '@type': 'Quiz',
     name: test.title,
     description: test.description,
-    url: `${baseUrl}/test/${test.slug}`,
+    url: `${baseUrl}/${locale}/test/${test.slug}`,
     provider: {
       '@type': 'Organization',
-      name: 'AI 놀이터',
+      name: 'AI Playground',
       url: baseUrl,
     },
     educationalLevel: 'beginner',
     learningResourceType: 'Quiz',
     interactivityType: 'active',
     isAccessibleForFree: true,
-    inLanguage: 'ko',
+    inLanguage: langCode,
     datePublished: test.createdAt,
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -146,7 +158,7 @@ function generateStructuredData(test: ReturnType<typeof getTestBySlug>) {
     },
     author: {
       '@type': 'Organization',
-      name: 'AI 놀이터',
+      name: 'AI Playground',
     },
   };
 
@@ -158,67 +170,37 @@ function generateStructuredData(test: ReturnType<typeof getTestBySlug>) {
       {
         '@type': 'ListItem',
         position: 1,
-        name: '홈',
-        item: baseUrl,
+        name: 'Home',
+        item: `${baseUrl}/${locale}`,
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: category?.name || '테스트',
-        item: category ? `${baseUrl}/category/${category.slug}` : `${baseUrl}/tests`,
+        name: category?.name || 'Tests',
+        item: category ? `${baseUrl}/${locale}/category/${category.slug}` : `${baseUrl}/${locale}/tests`,
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: test.title,
-        item: `${baseUrl}/test/${test.slug}`,
+        item: `${baseUrl}/${locale}/test/${test.slug}`,
       },
     ],
   };
 
-  // FAQPage 스키마 (테스트 관련 자주 묻는 질문)
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: `${test.title}은(는) 무료인가요?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: '네, 이 테스트는 완전히 무료입니다. 회원가입 없이 바로 테스트를 시작할 수 있습니다.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: '테스트 결과는 정확한가요?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: '이 테스트는 심리학적 연구를 바탕으로 제작되었으며, 재미와 자기 이해를 위한 목적으로 설계되었습니다. 전문적인 심리 진단을 대체하지는 않습니다.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: '테스트 소요 시간은 얼마나 되나요?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: '이 테스트는 약 3-5분 정도 소요됩니다.',
-        },
-      },
-    ],
-  };
-
-  return [quizSchema, breadcrumbSchema, faqSchema];
+  return [quizSchema, breadcrumbSchema];
 }
 
 export default function TestDetailPage({ params }: Props) {
-  const test = getTestBySlug(params.slug);
+  const { locale, slug } = params;
+  const test = getTestBySlugForLocale(locale, slug);
+  const categories = getCategoriesForLocale(locale);
 
   if (!test) {
     notFound();
   }
 
-  const structuredDataArray = generateStructuredData(test);
+  const structuredDataArray = generateStructuredData(test, locale, categories);
 
   return (
     <>
@@ -230,7 +212,7 @@ export default function TestDetailPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
-      <TestDetailClient slug={params.slug} />
+      <TestDetailClient slug={slug} locale={locale} />
     </>
   );
 }

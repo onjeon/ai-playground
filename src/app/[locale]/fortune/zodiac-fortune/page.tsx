@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Calendar, Star, Sparkles, ChevronRight, Gift } from 'lucide-react';
+import { Calendar, Star, Sparkles, ChevronRight } from 'lucide-react';
 import { getConstellationByDate, getConstellationInfo } from '@/lib/fortune/constellation';
 
 export default function ZodiacFortunePage() {
@@ -11,8 +11,10 @@ export default function ZodiacFortunePage() {
   const [isValid, setIsValid] = useState(false);
   const [previewConstellation, setPreviewConstellation] = useState<string | null>(null);
 
-  const handleInputChange = (field: 'year' | 'month' | 'day', value: string) => {
-    const newBirthDate = { ...birthDate, [field]: value };
+  const handleInputChange = (field: 'year' | 'month' | 'day', value: string, maxLength: number) => {
+    // 숫자만 허용
+    const numericValue = value.replace(/[^0-9]/g, '').slice(0, maxLength);
+    const newBirthDate = { ...birthDate, [field]: numericValue };
     setBirthDate(newBirthDate);
     
     // 유효성 검사
@@ -116,37 +118,40 @@ export default function ZodiacFortunePage() {
             <div className="flex gap-3 justify-center">
               <div className="flex-1 max-w-[100px]">
                 <input
-                  type="number"
-                  placeholder="년도"
+                  type="tel"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  placeholder="1990"
                   value={birthDate.year}
-                  onChange={(e) => handleInputChange('year', e.target.value)}
+                  onChange={(e) => handleInputChange('year', e.target.value, 4)}
                   className="w-full px-3 py-3 bg-slate-800/80 border border-blue-500/30 rounded-xl text-white text-center focus:outline-none focus:border-blue-400 transition-colors"
-                  min="1940"
-                  max="2024"
+                  maxLength={4}
                 />
                 <div className="text-blue-300/50 text-xs text-center mt-1">YYYY</div>
               </div>
               <div className="flex-1 max-w-[80px]">
                 <input
-                  type="number"
-                  placeholder="월"
+                  type="tel"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  placeholder="01"
                   value={birthDate.month}
-                  onChange={(e) => handleInputChange('month', e.target.value)}
+                  onChange={(e) => handleInputChange('month', e.target.value, 2)}
                   className="w-full px-3 py-3 bg-slate-800/80 border border-blue-500/30 rounded-xl text-white text-center focus:outline-none focus:border-blue-400 transition-colors"
-                  min="1"
-                  max="12"
+                  maxLength={2}
                 />
                 <div className="text-blue-300/50 text-xs text-center mt-1">MM</div>
               </div>
               <div className="flex-1 max-w-[80px]">
                 <input
-                  type="number"
-                  placeholder="일"
+                  type="tel"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  placeholder="01"
                   value={birthDate.day}
-                  onChange={(e) => handleInputChange('day', e.target.value)}
+                  onChange={(e) => handleInputChange('day', e.target.value, 2)}
                   className="w-full px-3 py-3 bg-slate-800/80 border border-blue-500/30 rounded-xl text-white text-center focus:outline-none focus:border-blue-400 transition-colors"
-                  min="1"
-                  max="31"
+                  maxLength={2}
                 />
                 <div className="text-blue-300/50 text-xs text-center mt-1">DD</div>
               </div>
@@ -160,16 +165,6 @@ export default function ZodiacFortunePage() {
                 </span>
               </div>
             )}
-          </div>
-
-          {/* 가격 */}
-          <div className="text-center mb-6">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-6 py-3 rounded-2xl border border-blue-500/30">
-              <Gift className="w-5 h-5 text-blue-400" />
-              <span className="text-blue-300 font-bold text-xl">900</span>
-              <span className="text-blue-300/60 text-sm line-through">3,000</span>
-            </div>
-            <p className="text-blue-300/60 text-xs mt-2">신년 특별가 한정 기간</p>
           </div>
 
           {/* 시작 버튼 */}

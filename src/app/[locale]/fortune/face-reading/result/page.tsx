@@ -26,6 +26,7 @@ function FaceReadingResultContent() {
 
   const handleShare = async () => {
     const shareText = `관상 분석 결과\n\n${result.overallType}\n성격: ${result.personality.slice(0, 2).join(', ')}\n\n나도 관상 분석 받기`;
+    const fullText = shareText + '\n' + window.location.origin + '/fortune/face-reading';
     
     if (navigator.share) {
       try {
@@ -34,12 +35,34 @@ function FaceReadingResultContent() {
           text: shareText,
           url: window.location.origin + '/fortune/face-reading',
         });
-      } catch (err) {
-        console.log('Share cancelled');
+        return;
+      } catch {
+        // fallback
       }
-    } else {
-      navigator.clipboard.writeText(shareText + '\n' + window.location.origin + '/fortune/face-reading');
+    }
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(fullText);
+        alert('링크가 복사되었습니다!');
+        return;
+      } catch {
+        // fallback
+      }
+    }
+    
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = fullText;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
       alert('링크가 복사되었습니다!');
+    } catch {
+      alert('공유 기능을 사용할 수 없습니다.');
     }
   };
 

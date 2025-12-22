@@ -2,8 +2,13 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { ArrowLeft, Clock, Users, Play, Share2, Heart } from 'lucide-react';
-import { getTestBySlug, formatParticipantCount, categories } from '@/lib/data';
+import { 
+  getTestBySlugForLocale, 
+  getCategoriesForLocale, 
+  formatParticipantCount 
+} from '@/lib/data-loader';
 import { Button, Badge } from '@/components/ui';
 import ShareButtons from '@/components/ShareButtons';
 
@@ -67,10 +72,17 @@ function toggleFavorite(slug: string): boolean {
 
 interface Props {
   slug: string;
+  locale: string;
 }
 
-export default function TestDetailClient({ slug }: Props) {
-  const test = getTestBySlug(slug);
+export default function TestDetailClient({ slug, locale }: Props) {
+  const t = useTranslations('test');
+  const tCommon = useTranslations('common');
+  const tCategories = useTranslations('categories');
+  
+  const test = getTestBySlugForLocale(locale, slug);
+  const categories = getCategoriesForLocale(locale);
+  
   const [isFavorite, setIsFavorite] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
 
@@ -109,9 +121,9 @@ export default function TestDetailClient({ slug }: Props) {
   if (!test) {
     return (
       <div className="text-center py-20">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">테스트를 찾을 수 없습니다</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('loadError')}</h1>
         <Link href="/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
-          홈으로 돌아가기
+          {tCommon('home')}
         </Link>
       </div>
     );
@@ -190,7 +202,7 @@ export default function TestDetailClient({ slug }: Props) {
         className="flex items-center gap-2 text-sm sm:text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-4 sm:mb-6 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
-        홈으로
+        {t('backHome')}
       </Link>
 
       {/* Main Card */}
@@ -215,7 +227,7 @@ export default function TestDetailClient({ slug }: Props) {
                 {categoryEmoji[test.categoryId] || '🎯'}
               </span>
               <div className="text-white">
-                <p className="text-xs sm:text-sm opacity-80">{test.questionCount}문항 · {test.estimatedTime}분 소요</p>
+                <p className="text-xs sm:text-sm opacity-80">{t('questionInfo', { count: test.questionCount, time: test.estimatedTime })}</p>
               </div>
             </div>
           </div>
@@ -249,15 +261,15 @@ export default function TestDetailClient({ slug }: Props) {
           <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-gray-100 dark:border-gray-700">
             <div className="flex items-center gap-1 sm:gap-1.5">
               <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              <span>약 {test.estimatedTime}분</span>
+              <span>{t('estimatedTime', { minutes: test.estimatedTime })}</span>
             </div>
             <div className="flex items-center gap-1 sm:gap-1.5">
               <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              <span>{formatParticipantCount(test.participantCount)} 참여</span>
+              <span>{t('participation', { count: formatParticipantCount(test.participantCount) })}</span>
             </div>
             <div className="flex items-center gap-1 sm:gap-1.5">
-              <span className="text-gray-400">질문</span>
-              <span>{test.questionCount}개</span>
+              <span className="text-gray-400">{t('questions')}</span>
+              <span>{t('questionsCount', { count: test.questionCount })}</span>
             </div>
           </div>
 
@@ -266,7 +278,7 @@ export default function TestDetailClient({ slug }: Props) {
             <Link href={`/test/${slug}/play`} className="flex-1">
               <Button className="w-full py-2.5 sm:py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg sm:rounded-xl font-semibold flex items-center justify-center gap-2 text-sm sm:text-base">
                 <Play className="w-4 h-4 sm:w-5 sm:h-5" />
-                테스트 시작하기
+                {t('startTest')}
               </Button>
             </Link>
             <button 
@@ -276,14 +288,14 @@ export default function TestDetailClient({ slug }: Props) {
                   ? 'border-red-300 bg-red-50 dark:border-red-700 dark:bg-red-900/30' 
                   : 'border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'
               }`}
-              aria-label={isFavorite ? '즐겨찾기 해제' : '즐겨찾기 추가'}
+              aria-label={isFavorite ? t('removeFavorite') : t('addFavorite')}
             >
               <Heart className={`w-4 h-4 sm:w-5 sm:h-5 ${isFavorite ? 'text-red-500 fill-red-500' : 'text-gray-400'}`} />
             </button>
             <button 
               onClick={() => setShowShareModal(!showShareModal)}
               className="p-2.5 sm:p-3 border border-gray-200 dark:border-gray-600 rounded-lg sm:rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-              aria-label="공유하기"
+              aria-label={t('share')}
             >
               <Share2 className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
             </button>
@@ -292,7 +304,7 @@ export default function TestDetailClient({ slug }: Props) {
           {/* Share Modal */}
           {showShareModal && (
             <div className="mt-3 sm:mt-4 p-3 sm:p-4 bg-gray-50 dark:bg-gray-700 rounded-lg sm:rounded-xl">
-              <h3 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-white mb-2 sm:mb-3">공유하기</h3>
+              <h3 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-white mb-2 sm:mb-3">{t('share')}</h3>
               <ShareButtons 
                 title={test.title}
                 description={test.shortDescription}
@@ -306,19 +318,19 @@ export default function TestDetailClient({ slug }: Props) {
 
       {/* Info Section */}
       <div className="mt-4 sm:mt-6 bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-4 sm:p-6">
-        <h2 className="font-bold text-sm sm:text-base text-gray-900 dark:text-white mb-3 sm:mb-4">테스트 안내</h2>
+        <h2 className="font-bold text-sm sm:text-base text-gray-900 dark:text-white mb-3 sm:mb-4">{t('testGuide')}</h2>
         <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
           <li className="flex items-start gap-2">
             <span className="text-indigo-500 mt-0.5">•</span>
-            <span>정답이 없는 테스트입니다. 편하게 솔직하게 답변해주세요.</span>
+            <span>{t('guideNoAnswer')}</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-indigo-500 mt-0.5">•</span>
-            <span>결과는 테스트 완료 후 바로 확인할 수 있습니다.</span>
+            <span>{t('guideInstantResult')}</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-indigo-500 mt-0.5">•</span>
-            <span>결과를 친구들과 공유하고 비교해보세요!</span>
+            <span>{t('guideShare')}</span>
           </li>
         </ul>
       </div>

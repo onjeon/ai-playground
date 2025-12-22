@@ -7,8 +7,6 @@ import Image from 'next/image';
 import { ArrowLeft, Share2, Sparkles } from 'lucide-react';
 import { 
   generateTarotReading, 
-  checkDailyLimit, 
-  recordDailyReading,
   getSpreadInfo,
   SpreadType,
   TarotReading 
@@ -26,9 +24,8 @@ function DailyTarotContent() {
   const spreadInfo = getSpreadInfo(type);
 
   useEffect(() => {
-    // 오늘 이미 읽었는지 확인
-    const canRead = checkDailyLimit(type);
-    setHasReadToday(!canRead);
+    // 제한 없이 항상 가능하게 설정
+    setHasReadToday(false);
   }, [type]);
 
   const handleDraw = async () => {
@@ -41,8 +38,6 @@ function DailyTarotContent() {
     
     const result = generateTarotReading(type);
     setReading(result);
-    recordDailyReading(type);
-    setHasReadToday(true);
     setIsDrawing(false);
     setStep('result');
   };
@@ -275,7 +270,7 @@ function DailyTarotContent() {
 
           {/* 안내 */}
           <p className="text-center text-purple-300/50 text-xs mt-6">
-            🕰️ {spreadInfo.title}은 하루에 한 번만 확인할 수 있습니다
+            🔮 타로는 재미를 위한 콘텐츠입니다
           </p>
         </div>
       </div>

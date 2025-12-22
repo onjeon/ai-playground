@@ -1,0 +1,522 @@
+{
+  "common": {
+    "siteName": "AI Playground",
+    "siteDescription": "Temukan dirimu dengan tes psikologi berbasis AI, tes kepribadian, MBTI dan lainnya.",
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "notFound": "Halaman tidak ditemukan",
+    "back": "Kembali",
+    "home": "Beranda",
+    "share": "Bagikan",
+    "copy": "Salin",
+    "copied": "Tersalin!",
+    "retry": "Coba lagi",
+    "start": "Mulai",
+    "result": "Hasil",
+    "next": "Selanjutnya",
+    "prev": "Sebelumnya",
+    "submit": "Kirim",
+    "close": "Tutup",
+    "more": "Lainnya",
+    "all": "Semua",
+    "free": "Gratis",
+    "participants": "peserta",
+    "minutes": "menit",
+    "questions": "pertanyaan",
+    "viewAll": "Lihat semua",
+    "dailyUpdate": "Diperbarui setiap hari",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "Beranda",
+    "tests": "Semua Tes",
+    "categories": "Kategori",
+    "fortune": "Ramalan",
+    "games": "Permainan",
+    "physical": "Fisik",
+    "daily": "Harian"
+  },
+  "categories": {
+    "personality": "Kepribadian",
+    "psychology": "Psikologi",
+    "relationship": "Hubungan",
+    "career": "Karier",
+    "fun": "Seru/Hiburan",
+    "iq": "IQ/Otak"
+  },
+  "home": {
+    "heroTitle": "Saatnya temukan dirimu,",
+    "heroHighlight": "AI Playground",
+    "heroDescription": "Tes psikologi, analisis kepribadian, MBTI dan lainnya!\nTemukan dirimu yang sebenarnya dengan tes berbasis AI.",
+    "aiBased": "Berbasis AI",
+    "startTest": "Mulai Tes Kepribadian",
+    "viewAll": "Lihat Semua Tes",
+    "stats": {
+      "participants": "Peserta",
+      "participantsCount": "500K+",
+      "tests": "Tes",
+      "shares": "Dibagikan",
+      "sharesCount": "20K+"
+    },
+    "sections": {
+      "popular": "Tes Populer",
+      "new": "Tes Baru",
+      "todayPicks": "Pilihan Hari Ini",
+      "daily": "Harian",
+      "dailyHub": "Hub Harian",
+      "physicalGames": "Fisik & Permainan",
+      "category": "Kategori",
+      "fortune": "Ramalan & Horoskop"
+    },
+    "quickButtons": {
+      "popular": "Populer",
+      "new": "Baru",
+      "tarot": "Tarot",
+      "fortune": "Ramalan Harian"
+    },
+    "daily": {
+      "todayFortune": "Ramalan Hari Ini",
+      "fortuneDesc": "Berdasarkan tanggal lahirmu",
+      "condition": "Cek Kondisi",
+      "conditionDesc": "Cek cepat 3 pertanyaan",
+      "luckyColor": "Warna Keberuntungan",
+      "luckyColorDesc": "Warna & angka hari ini"
+    },
+    "fortune": {
+      "title": "Ramalan & Horoskop",
+      "description": "Tarot, ramalan harian, kecocokan, horoskop",
+      "tarot": "Tarot",
+      "dailyFortune": "Ramalan Harian",
+      "compatibility": "Kecocokan",
+      "saju": "Horoskop"
+    },
+    "physical": {
+      "title": "Tes Fisik",
+      "description": "Waktu reaksi, kecepatan klik, memori",
+      "reaction": "Reaksi",
+      "click": "Kecepatan Klik",
+      "color": "Penglihatan Warna",
+      "memory": "Memori"
+    },
+    "games": {
+      "title": "Permainan & Kartu",
+      "description": "Permainan keseimbangan, kartu percakapan",
+      "balance": "Permainan Keseimbangan",
+      "cards": "Kartu Percakapan"
+    },
+    "cta": {
+      "title": "Mencari tes lainnya?",
+      "description": "{count} tes menantimu!",
+      "viewAll": "Lihat Semua Tes",
+      "funTests": "Tes Seru"
+    }
+  },
+  "sidebar": {
+    "categories": "Kategori",
+    "allTests": "Semua Tes",
+    "daily": "Harian",
+    "dailyHub": "Hub Harian",
+    "condition": "Cek Kondisi",
+    "fortune": "Ramalan",
+    "physicalGames": "Fisik & Permainan",
+    "physical": "Tes Fisik",
+    "games": "Permainan",
+    "quickLinks": "Tautan Cepat",
+    "popularTests": "Tes Populer",
+    "newTests": "Tes Baru"
+  },
+  "test": {
+    "startTest": "Mulai Tes",
+    "questionCount": "{count} pertanyaan",
+    "estimatedTime": "Sekitar {minutes} menit",
+    "participants": "{count} peserta",
+    "loading": "Menyiapkan tes...",
+    "loadError": "Gagal memuat tes",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "Lihat Hasil",
+    "shareResult": "Bagikan Hasil",
+    "retryTest": "Coba Lagi",
+    "otherTests": "Tes Lainnya",
+    "resultTitle": "Hasilmu adalah...",
+    "tags": "Tag",
+    "backHome": "Beranda",
+    "questionInfo": "{count} pertanyaan · {time} menit",
+    "participation": "{count} peserta",
+    "questions": "Pertanyaan",
+    "questionsCount": "{count}",
+    "testGuide": "Panduan Tes",
+    "guideNoAnswer": "Tidak ada jawaban yang salah. Jawab dengan jujur.",
+    "guideInstantResult": "Hasil tersedia langsung setelah tes.",
+    "guideShare": "Bagikan dan bandingkan hasilmu dengan teman!",
+    "addFavorite": "Tambah ke favorit",
+    "removeFavorite": "Hapus dari favorit",
+    "share": "Bagikan",
+    "previous": "Sebelumnya",
+    "next": "Selanjutnya",
+    "noResponseData": "Tidak ada data jawaban.",
+    "cannotLoadTest": "Tidak dapat memuat data tes.",
+    "cannotFindQuestions": "Pertanyaan tidak ditemukan.",
+    "errorLoadingQuestions": "Error memuat pertanyaan.",
+    "analyzing": "Menganalisis hasil...",
+    "cannotCalculate": "Tidak dapat menghitung hasil.",
+    "errorLoadingResult": "Error memuat hasil.",
+    "cannotLoadResult": "Tidak dapat memuat hasil",
+    "retryTestAgain": "Silakan coba tes lagi.",
+    "goBack": "Kembali",
+    "jumpToQuestion": "Lompat ke pertanyaan",
+    "yourResult": "Hasilmu adalah",
+    "screenshotShare": "Ambil screenshot dan bagikan ke teman!",
+    "myResultIs": "Hasil {testTitle} saya adalah {emoji} {title}!",
+    "analysisResult": "Hasil Analisis",
+    "mainTraits": "Ciri Utama",
+    "strengths": "Kekuatan",
+    "cautions": "Perhatian",
+    "advice": "Saran",
+    "goodMatch": "Kecocokan Baik",
+    "cautionMatch": "Kecocokan Menantang"
+  },
+  "share": {
+    "title": "Bagikan",
+    "kakao": "KakaoTalk",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "Salin Tautan",
+    "linkCopied": "Tautan tersalin!",
+    "nativeShare": "Bagikan"
+  },
+  "footer": {
+    "terms": "Syarat Layanan",
+    "privacy": "Kebijakan Privasi",
+    "contact": "Kontak",
+    "copyright": "© {year} AI Playground. Hak cipta dilindungi."
+  },
+  "error": {
+    "404": {
+      "title": "Halaman tidak ditemukan",
+      "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
+      "backHome": "Ke Beranda"
+    },
+    "500": {
+      "title": "Kesalahan Server",
+      "description": "Terjadi kesalahan sementara. Silakan coba lagi nanti.",
+      "retry": "Coba Lagi"
+    }
+  },
+  "meta": {
+    "siteName": "AI Playground",
+    "categoryNotFound": "Kategori tidak ditemukan",
+    "categoryTitle": "{category} - {count} Tes | AI Playground",
+    "categoryDescription": "Nikmati {count} tes gratis di kategori {category}!"
+  },
+  "categoryPage": {
+    "totalTests": "{count} tes",
+    "noTests": "Belum ada tes di kategori ini.",
+    "viewOtherTests": "Lihat tes lainnya"
+  },
+  "testsPage": {
+    "title": "Semua Tes",
+    "searchPlaceholder": "Cari tes...",
+    "allCategories": "Semua Kategori",
+    "popular": "Populer",
+    "new": "Baru",
+    "tagFilter": "Filter Tag",
+    "tags": "Tag",
+    "popularTags": "Tag Populer",
+    "reset": "Atur Ulang",
+    "noSearchResults": "Tidak ada hasil untuk \"{query}\".",
+    "noResults": "Tidak ada tes yang sesuai dengan kriteria Anda."
+  },
+  "physical": {
+    "pageTitle": "Tes Fisik",
+    "pageDescription": "Uji kemampuan fisik dan kognitifmu!",
+    "info": {
+      "title": "Info",
+      "tip1": "Tes fisik berfungsi di PC dan seluler.",
+      "tip2": "Untuk hasil akurat, lakukan tes di lingkungan yang tenang.",
+      "tip3": "Tes klik mungkin lebih mudah dengan sentuhan daripada mouse.",
+      "tip4": "Hasilnya hanya untuk bersenang-senang!"
+    },
+    "tests": {
+      "reaction-speed": { "title": "Tes Waktu Reaksi", "description": "Klik secepat mungkin saat berubah hijau! Berapa waktu reaksimu?", "duration": "1 menit" },
+      "click-speed": { "title": "Tes Kecepatan Klik", "description": "Seberapa cepat kamu bisa klik dalam 10 detik?", "duration": "10 detik" },
+      "color-blind": { "title": "Tes Penglihatan Warna", "description": "Temukan warna yang berbeda! Uji kemampuan diskriminasi warnamu.", "duration": "2 menit" },
+      "memory-test": { "title": "Tes Memori Jangka Pendek", "description": "Ingat urutan dan ulangi! Tantang batas memorimu.", "duration": "3 menit" },
+      "eye-tracking": { "title": "Latihan Mata", "description": "Peregangan mata untuk mata sehat! Redakan kelelahan mata.", "duration": "2 menit" },
+      "typing-speed": { "title": "Tes Kecepatan Mengetik", "description": "Seberapa cepat kamu bisa mengetik dalam 60 detik? Ukur WPM-mu!", "duration": "1 menit" },
+      "number-memory": { "title": "Tes Memori Angka", "description": "Ingat angka yang semakin panjang! Tantang batas memorimu.", "duration": "Tanpa batas" },
+      "aim-trainer": { "title": "Pelatih Bidikan", "description": "Klik target dengan cepat dan akurat!", "duration": "2 menit" },
+      "hearing-test": { "title": "Tes Pendengaran", "description": "Uji apakah kamu bisa mendengar berbagai frekuensi!", "duration": "3 menit" },
+      "stroop-test": { "title": "Tes Stroop", "description": "Cocokkan warna, bukan kata! Uji kemampuan pemrosesan otakmu.", "duration": "2 menit" },
+      "time-perception": { "title": "Tes Persepsi Waktu", "description": "Perkirakan waktu dengan akurat tanpa jam! Ukur jam internalmu.", "duration": "3 menit" },
+      "peripheral-vision": { "title": "Tes Penglihatan Periferal", "description": "Deteksi objek yang muncul di tepi layar!", "duration": "2 menit" },
+      "pattern-recognition": { "title": "Tes Pengenalan Pola", "description": "Temukan satu warna berbeda! Ukur kemampuan pengenalan polamu.", "duration": "2 menit" },
+      "steady-hand": { "title": "Tes Tangan Stabil", "description": "Navigasi jalur sempit dengan mouse! Ukur stabilitas tanganmu.", "duration": "2 menit" },
+      "multitasking": { "title": "Tes Multitasking", "description": "Selesaikan soal matematika sambil mengklik! Ukur kemampuan multitaskingmu.", "duration": "2 menit" },
+      "rhythm-test": { "title": "Tes Ritme", "description": "Ketuk sesuai irama! Ukur rasa ritmemu.", "duration": "2 menit" },
+      "color-sequence": { "title": "Tes Memori Warna", "description": "Permainan Simon! Ingat dan ulangi urutan warna.", "duration": "Tanpa batas" },
+      "word-memory": { "title": "Tes Memori Kata", "description": "Ingat dan ketik semua kata! Ukur memori verbalmu.", "duration": "3 menit" },
+      "direction-sense": { "title": "Tes Indra Arah", "description": "Temukan arah yang benar setelah berputar! Ukur indra arahmu.", "duration": "2 menit" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "Permainan & Kartu",
+    "pageDescription": "Permainan seru untuk dimainkan bersama teman!",
+    "backHome": "Beranda",
+    "games": "Permainan",
+    "startGame": "Mulai permainan",
+    "start": "Mulai",
+    "moreComingSoon": "Lebih banyak permainan segera hadir!",
+    "gameList": {
+      "worldcup": { "title": "Piala Dunia Tipe Ideal", "description": "Ramen, dessert, anjing dan lainnya! Temukan preferensimu" },
+      "balance": { "title": "Permainan Keseimbangan", "description": "Jika harus memilih satu? Cinta, pekerjaan, situasi ekstrem!" },
+      "cards": { "title": "Kartu Percakapan", "description": "Topik pemecah kebekuan! Untuk kencan, pesta, pasangan." },
+      "random-menu": { "title": "Makan apa hari ini?", "description": "Tidak bisa memutuskan? Pemilih menu acak!" },
+      "number-picker": { "title": "Pemilih Acak", "description": "Angka, urutan, undian yang adil!" },
+      "team-divider": { "title": "Pembagi Tim", "description": "Masukkan jumlah orang dan tim untuk pembagian yang adil!" },
+      "penalty-picker": { "title": "Pemilih Hukuman", "description": "Dari ringan hingga hardcore! Ambil hukuman yang seru" },
+      "role-picker": { "title": "Pemilih Peran", "description": "Mafia, Spy, Werewolf! Tetapkan peran permainan secara acak" },
+      "would-you-rather": { "title": "Ini vs Itu", "description": "Jika harus memilih? Debat dengan teman!" },
+      "ice-breaker": { "title": "Pemecah Kebekuan", "description": "Roda pertanyaan ajaib untuk memecah kebekuan!" },
+      "couple-quiz": { "title": "Kuis Pasangan", "description": "Seberapa kenal dengan pasanganmu? Tes kecocokan!" }
+    }
+  },
+  "dailyPage": {
+    "daily": "Harian",
+    "greetingMorning": "Selamat pagi!",
+    "greetingAfternoon": "Selamat siang!",
+    "greetingEvening": "Selamat malam!",
+    "todayColor": "Warna hari ini",
+    "todayNumber": "Angka hari ini",
+    "luckyNumberMeaning": "Angka keberuntunganmu",
+    "todayContent": "Konten hari ini",
+    "dailyFortune": "Ramalan harian",
+    "dailyFortuneDesc": "Ramalan hari ini berdasarkan tanggal lahirmu",
+    "dailyTarot": "Tarot harian",
+    "dailyTarotDesc": "Kartu tarot untuk memulai harimu",
+    "todayCondition": "Kondisi hari ini",
+    "todayConditionDesc": "Cek cepat 3 pertanyaan",
+    "recommendedTests": "Tes yang direkomendasikan hari ini",
+    "backHome": "Kembali ke beranda",
+    "tests": {
+      "stressLevel": { "title": "Tingkat stres", "desc": "Cek stres hari ini" },
+      "socialBattery": { "title": "Baterai sosial", "desc": "Tingkat energi hari ini" },
+      "burnoutLevel": { "title": "Tingkat burnout", "desc": "Bagaimana keadaanku?" },
+      "mentalStrength": { "title": "Kekuatan mental", "desc": "Cek mental hari ini" }
+    },
+    "colors": {
+      "red": { "name": "Merah", "meaning": "Hari penuh gairah dan energi" },
+      "orange": { "name": "Oranye", "meaning": "Hari kreativitas dan keramahan" },
+      "yellow": { "name": "Kuning", "meaning": "Hari penuh energi cerah dan keberuntungan" },
+      "green": { "name": "Hijau", "meaning": "Hari stabilitas dan pertumbuhan" },
+      "blue": { "name": "Biru", "meaning": "Hari yang tenang dan fokus" },
+      "purple": { "name": "Ungu", "meaning": "Hari penuh intuisi dan inspirasi" },
+      "pink": { "name": "Pink", "meaning": "Hari penuh cinta dan kebahagiaan" },
+      "mint": { "name": "Mint", "meaning": "Hari untuk awal yang baru" },
+      "gold": { "name": "Emas", "meaning": "Hari kelimpahan dan kesuksesan" },
+      "silver": { "name": "Perak", "meaning": "Hari yang tenang dan bijaksana" }
+    }
+  },
+  "fortunePage": {
+    "pageTitle": "Ramalan & Horoskop",
+    "pageSubtitle": "Dari tradisi Timur hingga astrologi Barat",
+    "backHome": "Kembali ke beranda",
+    "category": "Ramalan/Horoskop",
+    "newYear": "Ramalan Tahun Baru 2025",
+    "allServices": "Layanan Ramalan",
+    "candidates": "pilihan",
+    "participated": "orang berpartisipasi",
+    "services": {
+      "fortune-2025": {
+        "title": "Ramalan Tahun Baru 2025",
+        "description": "Ramalan shio ular, bulanan, dan per kategori"
+      },
+      "tojeong": {
+        "title": "Tojeong Bigyeol",
+        "description": "Ramalan tradisional dari dinasti Joseon"
+      },
+      "zodiac-fortune": {
+        "title": "Ramalan Zodiak",
+        "description": "Horoskop 12 zodiak 2025 menurut astrologi Barat"
+      },
+      "compatibility": {
+        "title": "Kecocokan",
+        "description": "Analisis kecocokan dengan shio + zodiak"
+      },
+      "tarot": {
+        "title": "Tarot",
+        "description": "Ramalan hari ini dan masa depan melalui kartu tarot"
+      },
+      "daily-fortune": {
+        "title": "Ramalan Harian",
+        "description": "Ramalan personal harian berdasarkan tanggal lahir"
+      },
+      "dream": {
+        "title": "Tafsir Mimpi",
+        "description": "Interpretasi simbol mimpi berdasarkan tradisi Timur"
+      },
+      "name-analysis": {
+        "title": "Analisis Nama",
+        "description": "Analisis goresan nama berdasarkan numerologi tradisional"
+      },
+      "face-reading": {
+        "title": "Baca Wajah",
+        "description": "Analisis wajah berdasarkan fisiognomi Timur"
+      }
+    },
+    "tarot": {
+      "pageTitle": "Pembacaan Tarot",
+      "selectType": "Pilih jenis pembacaan",
+      "timeline": {
+        "title": "Masa Lalu-Sekarang-Masa Depan",
+        "description": "Pembacaan 3 kartu"
+      },
+      "daily": {
+        "title": "Kartu Hari Ini",
+        "description": "Satu kartu untuk hari ini"
+      },
+      "choice": {
+        "title": "Ya atau Tidak",
+        "description": "Dapatkan jawaban untuk pertanyaan"
+      },
+      "relationship": {
+        "title": "Pembacaan Hubungan",
+        "description": "Wawasan tentang hubungan"
+      },
+      "positions": {
+        "past": "Masa Lalu",
+        "present": "Sekarang",
+        "future": "Masa Depan"
+      },
+      "positionDesc": {
+        "past": "Latar belakang dan penyebab",
+        "present": "Situasi saat ini",
+        "future": "Kemungkinan di depan"
+      },
+      "readingTypes": {
+        "general": "Umum",
+        "love": "Cinta/Hubungan",
+        "career": "Karir/Pekerjaan"
+      },
+      "upright": "Tegak",
+      "reversed": "Terbalik",
+      "advice": "Saran",
+      "drawCards": "Ambil kartu",
+      "newReading": "Ambil ulang",
+      "interpretation": "Interpretasi"
+    },
+    "zodiac": {
+      "selectSign": "Pilih zodiak Anda",
+      "luckyScore": "Skor keberuntungan",
+      "keywords": "Kata kunci",
+      "overview": "Gambaran",
+      "categories": {
+        "career": "Karir",
+        "wealth": "Keuangan",
+        "love": "Cinta",
+        "health": "Kesehatan",
+        "study": "Pendidikan"
+      },
+      "monthly": "Ramalan bulanan",
+      "lucky": {
+        "title": "Elemen keberuntungan",
+        "numbers": "Angka keberuntungan",
+        "colors": "Warna keberuntungan",
+        "day": "Hari keberuntungan",
+        "direction": "Arah keberuntungan"
+      },
+      "advice": {
+        "do": "Yang harus dilakukan tahun ini",
+        "dont": "Yang harus dihindari tahun ini"
+      }
+    },
+    "daily": {
+      "enterBirthdate": "Masukkan tanggal lahir",
+      "year": "Tahun",
+      "month": "Bulan",
+      "day": "Tanggal",
+      "getResult": "Lihat ramalan",
+      "overall": "Gambaran",
+      "categories": {
+        "love": "Cinta",
+        "work": "Pekerjaan",
+        "money": "Keuangan",
+        "health": "Kesehatan"
+      },
+      "lucky": {
+        "color": "Warna keberuntungan",
+        "number": "Angka keberuntungan",
+        "direction": "Arah keberuntungan",
+        "time": "Waktu keberuntungan"
+      },
+      "warning": "Peringatan",
+      "advice": "Saran"
+    },
+    "compatibility": {
+      "person1": "Orang 1",
+      "person2": "Orang 2",
+      "birthdate": "Tanggal lahir",
+      "checkCompatibility": "Cek kecocokan",
+      "score": "Skor kecocokan",
+      "analysis": "Analisis",
+      "strengths": "Kekuatan",
+      "challenges": "Tantangan",
+      "advice": "Saran"
+    },
+    "dream": {
+      "pageTitle": "Tafsir Mimpi",
+      "searchPlaceholder": "Mimpi apa?",
+      "categories": {
+        "animal": "Hewan",
+        "nature": "Alam",
+        "people": "Orang",
+        "object": "Benda",
+        "action": "Tindakan",
+        "place": "Tempat"
+      },
+      "meaning": "Arti",
+      "luckyNumber": "Angka keberuntungan"
+    },
+    "nameAnalysis": {
+      "pageTitle": "Analisis Nama",
+      "lastName": "Nama belakang",
+      "firstName": "Nama depan",
+      "analyze": "Analisis",
+      "totalStrokes": "Total goresan",
+      "groundLuck": "Keberuntungan tanah",
+      "humanLuck": "Keberuntungan manusia",
+      "outerLuck": "Keberuntungan luar",
+      "heavenLuck": "Keberuntungan langit",
+      "overall": "Analisis keseluruhan"
+    },
+    "faceReading": {
+      "pageTitle": "Baca Wajah",
+      "uploadPhoto": "Unggah foto",
+      "takePhoto": "Ambil foto",
+      "analyzing": "Menganalisis...",
+      "features": {
+        "forehead": "Dahi",
+        "eyes": "Mata",
+        "nose": "Hidung",
+        "mouth": "Mulut",
+        "chin": "Dagu"
+      },
+      "overall": "Analisis keseluruhan"
+    }
+  },
+  "worldcup": {
+    "pageTitle": "Piala Dunia Tipe Ideal",
+    "pageDescription": "Temukan preferensi Anda!",
+    "backToGames": "Kembali ke game",
+    "candidates": "pilihan",
+    "participated": "orang berpartisipasi",
+    "round": "Babak {round}",
+    "final": "Final",
+    "winner": "Pemenang!",
+    "yourChoice": "Pilihan Anda adalah",
+    "playAgain": "Main lagi",
+    "share": "Bagikan hasil"
+  }
+}

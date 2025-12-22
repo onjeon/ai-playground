@@ -49,6 +49,7 @@ function FortuneResultContent() {
 
   const handleShare = async () => {
     const shareText = `🐍 2025 신년운세 결과\n\n${zodiacInfo.emoji} ${zodiacInfo.name} (${birthYear}년생)\n올해의 키워드: ${fortune.keywords.join(', ')}\n\n나도 2025년 운세 보러가기 👇`;
+    const fullText = shareText + '\n' + window.location.origin + '/fortune/fortune-2025';
     
     if (navigator.share) {
       try {
@@ -57,12 +58,36 @@ function FortuneResultContent() {
           text: shareText,
           url: window.location.origin + '/fortune/fortune-2025',
         });
-      } catch (err) {
-        console.log('Share cancelled');
+        return;
+      } catch {
+        // 공유 취소 또는 실패 시 클립보드로 fallback
       }
-    } else {
-      navigator.clipboard.writeText(shareText + '\n' + window.location.origin + '/fortune/fortune-2025');
+    }
+    
+    // 클립보드 복사 (HTTPS 또는 localhost에서만 작동)
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(fullText);
+        alert('링크가 복사되었습니다!');
+        return;
+      } catch {
+        // 클립보드 API 실패 시 fallback
+      }
+    }
+    
+    // Fallback: execCommand 사용
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = fullText;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
       alert('링크가 복사되었습니다!');
+    } catch {
+      alert('공유 기능을 사용할 수 없습니다. URL을 직접 복사해주세요.');
     }
   };
 

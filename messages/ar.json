@@ -1,0 +1,322 @@
+{
+  "common": {
+    "siteName": "AI Playground",
+    "siteDescription": "اكتشف نفسك من خلال اختبارات علم النفس واختبارات الشخصية وMBTI والمزيد، جميعها مدعومة بالذكاء الاصطناعي.",
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ",
+    "notFound": "الصفحة غير موجودة",
+    "back": "رجوع",
+    "home": "الرئيسية",
+    "share": "مشاركة",
+    "copy": "نسخ",
+    "copied": "تم النسخ!",
+    "retry": "حاول مرة أخرى",
+    "start": "ابدأ",
+    "result": "النتيجة",
+    "next": "التالي",
+    "prev": "السابق",
+    "submit": "إرسال",
+    "close": "إغلاق",
+    "more": "المزيد",
+    "all": "الكل",
+    "free": "مجاني",
+    "participants": "مشاركين",
+    "minutes": "دقيقة",
+    "questions": "أسئلة",
+    "viewAll": "عرض الكل",
+    "dailyUpdate": "يتم التحديث يومياً",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "tests": "جميع الاختبارات",
+    "categories": "الفئات",
+    "fortune": "الحظ",
+    "games": "الألعاب",
+    "physical": "الجسدية",
+    "daily": "اليومي"
+  },
+  "categories": {
+    "personality": "الشخصية",
+    "psychology": "علم النفس",
+    "relationship": "العلاقات",
+    "career": "المهنة",
+    "fun": "مرح/ترفيه",
+    "iq": "الذكاء/العقل"
+  },
+  "home": {
+    "heroTitle": "حان وقت اكتشاف نفسك،",
+    "heroHighlight": "AI Playground",
+    "heroDescription": "اختبارات نفسية، تحليل الشخصية، MBTI والمزيد!\nاكتشف ذاتك الحقيقية مع اختبارات مدعومة بالذكاء الاصطناعي.",
+    "aiBased": "مدعوم بالذكاء الاصطناعي",
+    "startTest": "ابدأ اختبار الشخصية",
+    "viewAll": "عرض جميع الاختبارات",
+    "stats": {
+      "participants": "المشاركون",
+      "participantsCount": "+500 ألف",
+      "tests": "اختبارات",
+      "shares": "مشاركات",
+      "sharesCount": "+20 ألف"
+    },
+    "sections": {
+      "popular": "الاختبارات الشائعة",
+      "new": "اختبارات جديدة",
+      "todayPicks": "اختيارات اليوم",
+      "daily": "يومي",
+      "dailyHub": "المركز اليومي",
+      "physicalGames": "الجسدية والألعاب",
+      "category": "الفئات",
+      "fortune": "الحظ والأبراج"
+    },
+    "quickButtons": {
+      "popular": "شائع",
+      "new": "جديد",
+      "tarot": "تاروت",
+      "fortune": "حظ اليوم"
+    },
+    "daily": {
+      "todayFortune": "حظ اليوم",
+      "fortuneDesc": "بناءً على تاريخ ميلادك",
+      "condition": "فحص الحالة",
+      "conditionDesc": "فحص سريع من 3 أسئلة",
+      "luckyColor": "اللون المحظوظ",
+      "luckyColorDesc": "لون ورقم اليوم"
+    },
+    "fortune": {
+      "title": "الحظ والأبراج",
+      "description": "تاروت، حظ يومي، التوافق، الأبراج",
+      "tarot": "تاروت",
+      "dailyFortune": "الحظ اليومي",
+      "compatibility": "التوافق",
+      "saju": "الأبراج"
+    },
+    "physical": {
+      "title": "الاختبارات الجسدية",
+      "description": "وقت رد الفعل، سرعة النقر، الذاكرة",
+      "reaction": "رد الفعل",
+      "click": "سرعة النقر",
+      "color": "رؤية الألوان",
+      "memory": "الذاكرة"
+    },
+    "games": {
+      "title": "ألعاب وبطاقات",
+      "description": "لعبة التوازن، بطاقات المحادثة",
+      "balance": "لعبة التوازن",
+      "cards": "بطاقات المحادثة"
+    },
+    "cta": {
+      "title": "تبحث عن المزيد من الاختبارات؟",
+      "description": "{count} اختبار في انتظارك!",
+      "viewAll": "عرض جميع الاختبارات",
+      "funTests": "اختبارات ممتعة"
+    }
+  },
+  "sidebar": {
+    "categories": "الفئات",
+    "allTests": "جميع الاختبارات",
+    "daily": "يومي",
+    "dailyHub": "المركز اليومي",
+    "condition": "فحص الحالة",
+    "fortune": "الحظ",
+    "physicalGames": "الجسدية والألعاب",
+    "physical": "اختبارات جسدية",
+    "games": "ألعاب",
+    "quickLinks": "روابط سريعة",
+    "popularTests": "اختبارات شائعة",
+    "newTests": "اختبارات جديدة"
+  },
+  "test": {
+    "startTest": "ابدأ الاختبار",
+    "questionCount": "{count} أسئلة",
+    "estimatedTime": "حوالي {minutes} دقيقة",
+    "participants": "{count} مشارك",
+    "loading": "جاري تحضير الاختبار...",
+    "loadError": "فشل تحميل الاختبار",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "عرض النتيجة",
+    "shareResult": "مشاركة النتيجة",
+    "retryTest": "حاول مرة أخرى",
+    "otherTests": "اختبارات أخرى",
+    "resultTitle": "نتيجتك هي...",
+    "tags": "الوسوم",
+    "backHome": "الرئيسية",
+    "questionInfo": "{count} أسئلة · {time} دقيقة",
+    "participation": "{count} مشارك",
+    "questions": "الأسئلة",
+    "questionsCount": "{count}",
+    "testGuide": "دليل الاختبار",
+    "guideNoAnswer": "لا توجد إجابات خاطئة. أجب بصدق.",
+    "guideInstantResult": "النتائج متاحة فوراً بعد الاختبار.",
+    "guideShare": "شارك وقارن نتائجك مع الأصدقاء!",
+    "addFavorite": "إضافة للمفضلة",
+    "removeFavorite": "إزالة من المفضلة",
+    "share": "مشاركة",
+    "previous": "السابق",
+    "next": "التالي",
+    "noResponseData": "لا توجد بيانات إجابة.",
+    "cannotLoadTest": "لا يمكن تحميل بيانات الاختبار.",
+    "cannotFindQuestions": "لم يتم العثور على الأسئلة.",
+    "errorLoadingQuestions": "خطأ في تحميل الأسئلة.",
+    "analyzing": "جاري تحليل النتائج...",
+    "cannotCalculate": "لا يمكن حساب النتائج.",
+    "errorLoadingResult": "خطأ في تحميل النتائج.",
+    "cannotLoadResult": "لا يمكن تحميل النتائج",
+    "retryTestAgain": "يرجى إعادة الاختبار.",
+    "goBack": "رجوع",
+    "jumpToQuestion": "انتقل للسؤال",
+    "yourResult": "نتيجتك هي",
+    "screenshotShare": "التقط صورة للشاشة وشاركها مع الأصدقاء!",
+    "myResultIs": "نتيجتي في {testTitle} هي {emoji} {title}!",
+    "analysisResult": "نتيجة التحليل",
+    "mainTraits": "السمات الرئيسية",
+    "strengths": "نقاط القوة",
+    "cautions": "تحذيرات",
+    "advice": "نصيحة",
+    "goodMatch": "توافق جيد",
+    "cautionMatch": "توافق صعب"
+  },
+  "share": {
+    "title": "مشاركة",
+    "kakao": "كاكاو توك",
+    "facebook": "فيسبوك",
+    "twitter": "تويتر",
+    "line": "لاين",
+    "whatsapp": "واتساب",
+    "telegram": "تيليجرام",
+    "copyLink": "نسخ الرابط",
+    "linkCopied": "تم نسخ الرابط!",
+    "nativeShare": "مشاركة"
+  },
+  "footer": {
+    "terms": "شروط الخدمة",
+    "privacy": "سياسة الخصوصية",
+    "contact": "اتصل بنا",
+    "copyright": "© {year} AI Playground. جميع الحقوق محفوظة."
+  },
+  "error": {
+    "404": {
+      "title": "الصفحة غير موجودة",
+      "description": "الصفحة التي طلبتها غير موجودة أو تم نقلها.",
+      "backHome": "العودة للرئيسية"
+    },
+    "500": {
+      "title": "خطأ في الخادم",
+      "description": "حدث خطأ مؤقت. يرجى المحاولة مرة أخرى لاحقاً.",
+      "retry": "حاول مرة أخرى"
+    }
+  },
+  "meta": {
+    "siteName": "AI Playground",
+    "categoryNotFound": "الفئة غير موجودة",
+    "categoryTitle": "{category} - {count} اختبار | AI Playground",
+    "categoryDescription": "استمتع بـ {count} اختبار مجاني في فئة {category}!"
+  },
+  "categoryPage": {
+    "totalTests": "{count} اختبار",
+    "noTests": "لا توجد اختبارات في هذه الفئة بعد.",
+    "viewOtherTests": "عرض الاختبارات الأخرى"
+  },
+  "testsPage": {
+    "title": "جميع الاختبارات",
+    "searchPlaceholder": "البحث عن اختبارات...",
+    "allCategories": "جميع الفئات",
+    "popular": "شائع",
+    "new": "جديد",
+    "tagFilter": "تصفية حسب الوسم",
+    "tags": "الوسوم",
+    "popularTags": "الوسوم الشائعة",
+    "reset": "إعادة تعيين",
+    "noSearchResults": "لا توجد نتائج لـ \"{query}\".",
+    "noResults": "لا توجد اختبارات تطابق معاييرك."
+  },
+  "physical": {
+    "pageTitle": "الاختبارات الجسدية",
+    "pageDescription": "اختبر قدراتك الجسدية والإدراكية!",
+    "info": {
+      "title": "معلومات",
+      "tip1": "الاختبارات الجسدية تعمل على الكمبيوتر والجوال.",
+      "tip2": "للحصول على نتائج دقيقة، اختبر في بيئة هادئة.",
+      "tip3": "قد تكون اختبارات النقر أسهل باللمس من الماوس.",
+      "tip4": "النتائج للمتعة فقط!"
+    },
+    "tests": {
+      "reaction-speed": { "title": "اختبار وقت رد الفعل", "description": "انقر بأسرع ما يمكن عندما يتحول إلى الأخضر! ما هو وقت رد فعلك؟", "duration": "دقيقة واحدة" },
+      "click-speed": { "title": "اختبار سرعة النقر", "description": "كم سريعاً يمكنك النقر في 10 ثواني؟", "duration": "10 ثواني" },
+      "color-blind": { "title": "اختبار رؤية الألوان", "description": "ابحث عن اللون المختلف! اختبر قدرتك على تمييز الألوان.", "duration": "دقيقتان" },
+      "memory-test": { "title": "اختبار الذاكرة قصيرة المدى", "description": "تذكر التسلسل وكرره! تحدَّ حدود ذاكرتك.", "duration": "3 دقائق" },
+      "eye-tracking": { "title": "تمارين العين", "description": "تمارين العين لعيون صحية! خفف من إجهاد العين.", "duration": "دقيقتان" },
+      "typing-speed": { "title": "اختبار سرعة الكتابة", "description": "كم سريعاً يمكنك الكتابة في 60 ثانية؟ قس سرعتك!", "duration": "دقيقة واحدة" },
+      "number-memory": { "title": "اختبار ذاكرة الأرقام", "description": "تذكر أرقاماً أطول! تحدَّ حدود ذاكرتك.", "duration": "غير محدود" },
+      "aim-trainer": { "title": "مدرب التصويب", "description": "انقر على الأهداف بسرعة ودقة!", "duration": "دقيقتان" },
+      "hearing-test": { "title": "اختبار السمع", "description": "اختبر قدرتك على سماع ترددات مختلفة!", "duration": "3 دقائق" },
+      "stroop-test": { "title": "اختبار ستروب", "description": "طابق اللون وليس الكلمة! اختبر قدرة معالجة دماغك.", "duration": "دقيقتان" },
+      "time-perception": { "title": "اختبار إدراك الوقت", "description": "قدّر الوقت بدقة بدون ساعة! قس ساعتك الداخلية.", "duration": "3 دقائق" },
+      "peripheral-vision": { "title": "اختبار الرؤية المحيطية", "description": "اكتشف الأشياء التي تظهر على حافة الشاشة!", "duration": "دقيقتان" },
+      "pattern-recognition": { "title": "اختبار التعرف على الأنماط", "description": "ابحث عن اللون المختلف! قس قدرتك على التعرف على الأنماط.", "duration": "دقيقتان" },
+      "steady-hand": { "title": "اختبار ثبات اليد", "description": "تنقل عبر مسارات ضيقة بالماوس! قس ثبات يدك.", "duration": "دقيقتان" },
+      "multitasking": { "title": "اختبار تعدد المهام", "description": "حل مسائل رياضية أثناء النقر! قس قدرتك على تعدد المهام.", "duration": "دقيقتان" },
+      "rhythm-test": { "title": "اختبار الإيقاع", "description": "انقر على الإيقاع! قس حسك الموسيقي.", "duration": "دقيقتان" },
+      "color-sequence": { "title": "اختبار ذاكرة الألوان", "description": "لعبة سايمون! تذكر وكرر تسلسل الألوان.", "duration": "غير محدود" },
+      "word-memory": { "title": "اختبار ذاكرة الكلمات", "description": "تذكر واكتب جميع الكلمات! قس ذاكرتك اللفظية.", "duration": "3 دقائق" },
+      "direction-sense": { "title": "اختبار الإحساس بالاتجاه", "description": "ابحث عن الاتجاه الصحيح بعد الدوران! قس إحساسك بالاتجاه.", "duration": "دقيقتان" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "ألعاب وبطاقات",
+    "pageDescription": "ألعاب ممتعة للعب مع الأصدقاء!",
+    "backHome": "الرئيسية",
+    "games": "ألعاب",
+    "startGame": "ابدأ اللعبة",
+    "start": "ابدأ",
+    "moreComingSoon": "المزيد من الألعاب قادمة قريباً!",
+    "gameList": {
+      "worldcup": { "title": "كأس العالم للنوع المثالي", "description": "رامين، حلويات، كلاب والمزيد! اكتشف تفضيلاتك" },
+      "balance": { "title": "لعبة التوازن", "description": "لو اضطررت لاختيار واحد؟ حب، عمل، مواقف متطرفة!" },
+      "cards": { "title": "بطاقات المحادثة", "description": "مواضيع لكسر الجليد! للمواعيد، الحفلات، الأزواج." },
+      "random-menu": { "title": "ماذا نأكل اليوم؟", "description": "لا تستطيع القرار؟ اختيار قائمة عشوائي!" },
+      "number-picker": { "title": "اختيار عشوائي", "description": "أرقام، ترتيب، سحوبات عادلة!" },
+      "team-divider": { "title": "مقسم الفرق", "description": "أدخل عدد الأشخاص والفرق للتقسيم العادل!" },
+      "penalty-picker": { "title": "سحب العقوبات", "description": "من الخفيف للصعب! اسحب عقوبات ممتعة" },
+      "role-picker": { "title": "سحب الأدوار", "description": "مافيا، جاسوس، مستذئب! عيّن أدوار اللعبة عشوائياً" },
+      "would-you-rather": { "title": "هذا أو ذاك", "description": "لو اضطررت للاختيار؟ ناقش مع الأصدقاء!" },
+      "ice-breaker": { "title": "كاسر الجليد", "description": "عجلة أسئلة سحرية لكسر الجليد!" },
+      "couple-quiz": { "title": "اختبار الأزواج", "description": "كم تعرف شريكك؟ اختبار التوافق!" }
+    }
+  },
+  "dailyPage": {
+    "daily": "يومي",
+    "greetingMorning": "صباح الخير!",
+    "greetingAfternoon": "مساء الخير!",
+    "greetingEvening": "مساء الخير!",
+    "todayColor": "لون اليوم",
+    "todayNumber": "رقم اليوم",
+    "luckyNumberMeaning": "رقمك المحظوظ",
+    "todayContent": "محتوى اليوم",
+    "dailyFortune": "حظ اليوم",
+    "dailyFortuneDesc": "حظ اليوم بناءً على تاريخ ميلادك",
+    "dailyTarot": "تاروت اليوم",
+    "dailyTarotDesc": "بطاقة تاروت لبدء يومك",
+    "todayCondition": "حالة اليوم",
+    "todayConditionDesc": "فحص سريع من 3 أسئلة",
+    "recommendedTests": "الاختبارات الموصى بها اليوم",
+    "backHome": "العودة للرئيسية",
+    "tests": {
+      "stressLevel": { "title": "مستوى التوتر", "desc": "تحقق من التوتر اليوم" },
+      "socialBattery": { "title": "البطارية الاجتماعية", "desc": "مستوى الطاقة اليوم" },
+      "burnoutLevel": { "title": "مستوى الإرهاق", "desc": "كيف حالي؟" },
+      "mentalStrength": { "title": "القوة الذهنية", "desc": "فحص ذهني اليوم" }
+    },
+    "colors": {
+      "red": { "name": "أحمر", "meaning": "يوم مليء بالشغف والطاقة" },
+      "orange": { "name": "برتقالي", "meaning": "يوم من الإبداع والاجتماعية" },
+      "yellow": { "name": "أصفر", "meaning": "يوم مليء بالطاقة المشرقة والحظ" },
+      "green": { "name": "أخضر", "meaning": "يوم من الاستقرار والنمو" },
+      "blue": { "name": "أزرق", "meaning": "يوم هادئ ومركز" },
+      "purple": { "name": "بنفسجي", "meaning": "يوم مليء بالحدس والإلهام" },
+      "pink": { "name": "وردي", "meaning": "يوم مليء بالحب والسعادة" },
+      "mint": { "name": "نعناعي", "meaning": "يوم للبدايات الجديدة" },
+      "gold": { "name": "ذهبي", "meaning": "يوم من الوفرة والنجاح" },
+      "silver": { "name": "فضي", "meaning": "يوم هادئ وحكيم" }
+    }
+  }
+}

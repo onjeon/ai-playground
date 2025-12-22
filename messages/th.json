@@ -1,0 +1,522 @@
+{
+  "common": {
+    "siteName": "AI Playground",
+    "siteDescription": "ค้นพบตัวตนของคุณด้วยแบบทดสอบจิตวิทยา แบบทดสอบบุคลิกภาพ MBTI และอื่นๆ ที่ขับเคลื่อนด้วย AI",
+    "loading": "กำลังโหลด...",
+    "error": "เกิดข้อผิดพลาด",
+    "notFound": "ไม่พบหน้านี้",
+    "back": "ย้อนกลับ",
+    "home": "หน้าแรก",
+    "share": "แชร์",
+    "copy": "คัดลอก",
+    "copied": "คัดลอกแล้ว!",
+    "retry": "ลองอีกครั้ง",
+    "start": "เริ่ม",
+    "result": "ผลลัพธ์",
+    "next": "ถัดไป",
+    "prev": "ก่อนหน้า",
+    "submit": "ส่ง",
+    "close": "ปิด",
+    "more": "เพิ่มเติม",
+    "all": "ทั้งหมด",
+    "free": "ฟรี",
+    "participants": "ผู้เข้าร่วม",
+    "minutes": "นาที",
+    "questions": "คำถาม",
+    "viewAll": "ดูทั้งหมด",
+    "dailyUpdate": "อัปเดตทุกวัน",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "หน้าแรก",
+    "tests": "แบบทดสอบทั้งหมด",
+    "categories": "หมวดหมู่",
+    "fortune": "ดวง",
+    "games": "เกม",
+    "physical": "ทดสอบร่างกาย",
+    "daily": "รายวัน"
+  },
+  "categories": {
+    "personality": "บุคลิกภาพ",
+    "psychology": "จิตวิทยา",
+    "relationship": "ความสัมพันธ์",
+    "career": "อาชีพ",
+    "fun": "สนุก/บันเทิง",
+    "iq": "IQ/สมอง"
+  },
+  "home": {
+    "heroTitle": "ถึงเวลาค้นพบตัวตนของคุณ,",
+    "heroHighlight": "AI Playground",
+    "heroDescription": "แบบทดสอบจิตวิทยา วิเคราะห์บุคลิกภาพ MBTI และอื่นๆ!\nค้นพบตัวตนที่แท้จริงของคุณด้วยแบบทดสอบที่ขับเคลื่อนด้วย AI",
+    "aiBased": "ขับเคลื่อนด้วย AI",
+    "startTest": "เริ่มทดสอบบุคลิกภาพ",
+    "viewAll": "ดูแบบทดสอบทั้งหมด",
+    "stats": {
+      "participants": "ผู้เข้าร่วม",
+      "participantsCount": "500K+",
+      "tests": "แบบทดสอบ",
+      "shares": "การแชร์",
+      "sharesCount": "20K+"
+    },
+    "sections": {
+      "popular": "แบบทดสอบยอดนิยม",
+      "new": "แบบทดสอบใหม่",
+      "todayPicks": "แนะนำวันนี้",
+      "daily": "รายวัน",
+      "dailyHub": "ศูนย์รวมรายวัน",
+      "physicalGames": "ทดสอบร่างกายและเกม",
+      "category": "หมวดหมู่",
+      "fortune": "ดวงและราศี"
+    },
+    "quickButtons": {
+      "popular": "ยอดนิยม",
+      "new": "ใหม่",
+      "tarot": "ไพ่ทาโรต์",
+      "fortune": "ดวงประจำวัน"
+    },
+    "daily": {
+      "todayFortune": "ดวงประจำวัน",
+      "fortuneDesc": "ตามวันเกิดของคุณ",
+      "condition": "เช็คสภาพ",
+      "conditionDesc": "เช็คด่วน 3 คำถาม",
+      "luckyColor": "สีนำโชค",
+      "luckyColorDesc": "สีและเลขประจำวัน"
+    },
+    "fortune": {
+      "title": "ดวงและราศี",
+      "description": "ไพ่ทาโรต์ ดวงประจำวัน ความเข้ากัน ราศี",
+      "tarot": "ไพ่ทาโรต์",
+      "dailyFortune": "ดวงประจำวัน",
+      "compatibility": "ความเข้ากัน",
+      "saju": "ราศี"
+    },
+    "physical": {
+      "title": "ทดสอบร่างกาย",
+      "description": "เวลาตอบสนอง ความเร็วคลิก ความจำ",
+      "reaction": "ปฏิกิริยา",
+      "click": "ความเร็วคลิก",
+      "color": "การมองเห็นสี",
+      "memory": "ความจำ"
+    },
+    "games": {
+      "title": "เกมและการ์ด",
+      "description": "เกมสมดุล การ์ดสนทนา",
+      "balance": "เกมสมดุล",
+      "cards": "การ์ดสนทนา"
+    },
+    "cta": {
+      "title": "ต้องการแบบทดสอบเพิ่มเติม?",
+      "description": "{count} แบบทดสอบรอคุณอยู่!",
+      "viewAll": "ดูแบบทดสอบทั้งหมด",
+      "funTests": "แบบทดสอบสนุกๆ"
+    }
+  },
+  "sidebar": {
+    "categories": "หมวดหมู่",
+    "allTests": "แบบทดสอบทั้งหมด",
+    "daily": "รายวัน",
+    "dailyHub": "ศูนย์รวมรายวัน",
+    "condition": "เช็คสภาพ",
+    "fortune": "ดวง",
+    "physicalGames": "ทดสอบร่างกายและเกม",
+    "physical": "ทดสอบร่างกาย",
+    "games": "เกม",
+    "quickLinks": "ลิงก์ด่วน",
+    "popularTests": "แบบทดสอบยอดนิยม",
+    "newTests": "แบบทดสอบใหม่"
+  },
+  "test": {
+    "startTest": "เริ่มทดสอบ",
+    "questionCount": "{count} คำถาม",
+    "estimatedTime": "ประมาณ {minutes} นาที",
+    "participants": "{count} คนเข้าร่วม",
+    "loading": "กำลังเตรียมแบบทดสอบ...",
+    "loadError": "ไม่สามารถโหลดแบบทดสอบได้",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "ดูผลลัพธ์",
+    "shareResult": "แชร์ผลลัพธ์",
+    "retryTest": "ทดสอบอีกครั้ง",
+    "otherTests": "แบบทดสอบอื่น",
+    "resultTitle": "ผลลัพธ์ของคุณคือ...",
+    "tags": "แท็ก",
+    "backHome": "หน้าแรก",
+    "questionInfo": "{count} คำถาม · {time} นาที",
+    "participation": "{count} คนเข้าร่วม",
+    "questions": "คำถาม",
+    "questionsCount": "{count} ข้อ",
+    "testGuide": "คำแนะนำ",
+    "guideNoAnswer": "ไม่มีคำตอบที่ถูกหรือผิด กรุณาตอบอย่างจริงใจ",
+    "guideInstantResult": "ดูผลลัพธ์ได้ทันทีหลังทำแบบทดสอบเสร็จ",
+    "guideShare": "แชร์และเปรียบเทียบผลลัพธ์กับเพื่อน!",
+    "addFavorite": "เพิ่มในรายการโปรด",
+    "removeFavorite": "ลบจากรายการโปรด",
+    "share": "แชร์",
+    "previous": "ก่อนหน้า",
+    "next": "ถัดไป",
+    "noResponseData": "ไม่มีข้อมูลคำตอบ",
+    "cannotLoadTest": "ไม่สามารถโหลดข้อมูลแบบทดสอบได้",
+    "cannotFindQuestions": "ไม่พบคำถาม",
+    "errorLoadingQuestions": "เกิดข้อผิดพลาดในการโหลดคำถาม",
+    "analyzing": "กำลังวิเคราะห์ผลลัพธ์...",
+    "cannotCalculate": "ไม่สามารถคำนวณผลลัพธ์ได้",
+    "errorLoadingResult": "เกิดข้อผิดพลาดในการโหลดผลลัพธ์",
+    "cannotLoadResult": "ไม่สามารถโหลดผลลัพธ์ได้",
+    "retryTestAgain": "กรุณาทำแบบทดสอบอีกครั้ง",
+    "goBack": "กลับ",
+    "jumpToQuestion": "ข้ามไปคำถาม",
+    "yourResult": "ผลลัพธ์ของคุณคือ",
+    "screenshotShare": "จับภาพหน้าจอแชร์ให้เพื่อน!",
+    "myResultIs": "ผลลัพธ์ {testTitle} ของฉันคือ {emoji} {title}!",
+    "analysisResult": "ผลการวิเคราะห์",
+    "mainTraits": "ลักษณะเด่น",
+    "strengths": "จุดแข็ง",
+    "cautions": "ข้อควรระวัง",
+    "advice": "คำแนะนำ",
+    "goodMatch": "ประเภทที่เข้ากันได้ดี",
+    "cautionMatch": "ประเภทที่ต้องระวัง"
+  },
+  "share": {
+    "title": "แชร์",
+    "kakao": "KakaoTalk",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "คัดลอกลิงก์",
+    "linkCopied": "คัดลอกลิงก์แล้ว!",
+    "nativeShare": "แชร์"
+  },
+  "footer": {
+    "terms": "ข้อกำหนดการใช้งาน",
+    "privacy": "นโยบายความเป็นส่วนตัว",
+    "contact": "ติดต่อ",
+    "copyright": "© {year} AI Playground สงวนลิขสิทธิ์"
+  },
+  "error": {
+    "404": {
+      "title": "ไม่พบหน้านี้",
+      "description": "หน้าที่คุณร้องขอไม่มีอยู่หรือถูกย้ายแล้ว",
+      "backHome": "กลับหน้าแรก"
+    },
+    "500": {
+      "title": "เซิร์ฟเวอร์ผิดพลาด",
+      "description": "เกิดข้อผิดพลาดชั่วคราว กรุณาลองอีกครั้งภายหลัง",
+      "retry": "ลองอีกครั้ง"
+    }
+  },
+  "meta": {
+    "siteName": "AI Playground",
+    "categoryNotFound": "ไม่พบหมวดหมู่",
+    "categoryTitle": "{category} - {count} แบบทดสอบ | AI Playground",
+    "categoryDescription": "สนุกกับ {count} แบบทดสอบฟรีในหมวดหมู่ {category}!"
+  },
+  "categoryPage": {
+    "totalTests": "ทั้งหมด {count} แบบทดสอบ",
+    "noTests": "ยังไม่มีแบบทดสอบในหมวดหมู่นี้",
+    "viewOtherTests": "ดูแบบทดสอบอื่นๆ"
+  },
+  "testsPage": {
+    "title": "แบบทดสอบทั้งหมด",
+    "searchPlaceholder": "ค้นหาแบบทดสอบ...",
+    "allCategories": "ทุกหมวดหมู่",
+    "popular": "ยอดนิยม",
+    "new": "ใหม่",
+    "tagFilter": "ตัวกรองแท็ก",
+    "tags": "แท็ก",
+    "popularTags": "แท็กยอดนิยม",
+    "reset": "รีเซ็ต",
+    "noSearchResults": "ไม่พบผลลัพธ์สำหรับ \"{query}\"",
+    "noResults": "ไม่มีแบบทดสอบที่ตรงกับเงื่อนไข"
+  },
+  "physical": {
+    "pageTitle": "ทดสอบร่างกาย",
+    "pageDescription": "ทดสอบความสามารถทางกายและการรับรู้ของคุณ!",
+    "info": {
+      "title": "คำแนะนำ",
+      "tip1": "ทดสอบร่างกายสามารถเล่นได้ทั้งบน PC และมือถือ",
+      "tip2": "เพื่อผลลัพธ์ที่แม่นยำ กรุณาทดสอบในสภาพแวดล้อมที่เงียบ",
+      "tip3": "การทดสอบคลิกอาจได้เปรียบกว่าเมื่อใช้ระบบสัมผัส",
+      "tip4": "ผลลัพธ์เป็นเพียงความบันเทิง!"
+    },
+    "tests": {
+      "reaction-speed": { "title": "ทดสอบความเร็วปฏิกิริยา", "description": "คลิกให้เร็วที่สุดเมื่อเปลี่ยนเป็นสีเขียว! ความเร็วปฏิกิริยาของคุณเป็นอย่างไร?", "duration": "1 นาที" },
+      "click-speed": { "title": "ทดสอบความเร็วคลิก", "description": "คุณคลิกได้เร็วแค่ไหนใน 10 วินาที?", "duration": "10 วินาที" },
+      "color-blind": { "title": "ทดสอบการมองเห็นสี", "description": "หาสีที่แตกต่าง! ทดสอบความสามารถในการแยกแยะสี", "duration": "2 นาที" },
+      "memory-test": { "title": "ทดสอบความจำระยะสั้น", "description": "จำลำดับและทำซ้ำ! ท้าทายขีดจำกัดความจำของคุณ", "duration": "3 นาที" },
+      "eye-tracking": { "title": "บริหารดวงตา", "description": "ยืดเหยียดดวงตาเพื่อสุขภาพ! ผ่อนคลายความเมื่อยล้าของดวงตา", "duration": "2 นาที" },
+      "typing-speed": { "title": "ทดสอบความเร็วพิมพ์", "description": "คุณพิมพ์ได้เร็วแค่ไหนใน 60 วินาที? วัด WPM ของคุณ!", "duration": "1 นาที" },
+      "number-memory": { "title": "ทดสอบความจำตัวเลข", "description": "จำตัวเลขที่ยาวขึ้นเรื่อยๆ! ท้าทายขีดจำกัดความจำของคุณ", "duration": "ไม่จำกัด" },
+      "aim-trainer": { "title": "ฝึกเล็ง", "description": "คลิกเป้าหมายอย่างรวดเร็วและแม่นยำ!", "duration": "2 นาที" },
+      "hearing-test": { "title": "ทดสอบการได้ยิน", "description": "ทดสอบว่าคุณได้ยินเสียงความถี่ต่างๆ ได้หรือไม่!", "duration": "3 นาที" },
+      "stroop-test": { "title": "ทดสอบสตรูป", "description": "จับคู่สีไม่ใช่คำ! ทดสอบความสามารถในการประมวลผลของสมอง", "duration": "2 นาที" },
+      "time-perception": { "title": "ทดสอบการรับรู้เวลา", "description": "ประมาณเวลาให้แม่นยำโดยไม่ดูนาฬิกา! วัดนาฬิกาภายในของคุณ", "duration": "3 นาที" },
+      "peripheral-vision": { "title": "ทดสอบการมองเห็นรอบข้าง", "description": "ตรวจจับวัตถุที่ปรากฏที่ขอบหน้าจอ!", "duration": "2 นาที" },
+      "pattern-recognition": { "title": "ทดสอบการจดจำรูปแบบ", "description": "หาสีที่แตกต่างหนึ่งสี! วัดความสามารถในการจดจำรูปแบบ", "duration": "2 นาที" },
+      "steady-hand": { "title": "ทดสอบมือนิ่ง", "description": "นำทางผ่านทางแคบด้วยเมาส์! วัดความมั่นคงของมือ", "duration": "2 นาที" },
+      "multitasking": { "title": "ทดสอบการทำงานหลายอย่าง", "description": "แก้โจทย์คณิตศาสตร์ขณะคลิก! วัดความสามารถในการทำงานหลายอย่าง", "duration": "2 นาที" },
+      "rhythm-test": { "title": "ทดสอบจังหวะ", "description": "แตะตามจังหวะ! วัดความรู้สึกจังหวะของคุณ", "duration": "2 นาที" },
+      "color-sequence": { "title": "ทดสอบความจำสี", "description": "เกมไซมอน! จำและทำซ้ำลำดับสี", "duration": "ไม่จำกัด" },
+      "word-memory": { "title": "ทดสอบความจำคำ", "description": "จำและพิมพ์คำทั้งหมด! วัดความจำทางภาษา", "duration": "3 นาที" },
+      "direction-sense": { "title": "ทดสอบการรับรู้ทิศทาง", "description": "หาทิศทางที่ถูกต้องหลังหมุน! วัดการรับรู้ทิศทางของคุณ", "duration": "2 นาที" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "เกมและการ์ด",
+    "pageDescription": "เกมสนุกๆ สำหรับเล่นกับเพื่อน!",
+    "backHome": "กลับหน้าแรก",
+    "games": "เกม",
+    "startGame": "เริ่มเกม",
+    "start": "เริ่ม",
+    "moreComingSoon": "เกมอื่นๆ กำลังจะมาเร็วๆ นี้!",
+    "gameList": {
+      "worldcup": { "title": "เวิลด์คัพในอุดมคติ", "description": "ราเมน ขนมหวาน สุนัข และอื่นๆ! ค้นหาความชอบของคุณ" },
+      "balance": { "title": "เกมสมดุล", "description": "ถ้าต้องเลือกอย่างเดียว? ความรัก การงาน สถานการณ์สุดขีด!" },
+      "cards": { "title": "การ์ดสนทนา", "description": "หัวข้อสนทนาทลายความเงียบ! สำหรับเดท ปาร์ตี้ คู่รัก" },
+      "random-menu": { "title": "วันนี้กินอะไรดี?", "description": "ตัดสินใจไม่ได้ว่าจะกินอะไร? สุ่มเมนูให้!" },
+      "number-picker": { "title": "สุ่มเลือก", "description": "สุ่มตัวเลข ตัดสินลำดับ จับฉลาก!" },
+      "team-divider": { "title": "แบ่งทีม", "description": "ใส่จำนวนคนและทีมเพื่อแบ่งอย่างยุติธรรม!" },
+      "penalty-picker": { "title": "สุ่มโทษ", "description": "จากเบาถึงหนัก! สุ่มโทษสนุกๆ" },
+      "role-picker": { "title": "สุ่มบทบาท", "description": "มาเฟีย สายลับ มนุษย์หมาป่า! สุ่มบทบาทในเกม" },
+      "would-you-rather": { "title": "อันนี้ vs อันนั้น", "description": "ถ้าต้องเลือก? ถกเถียงกับเพื่อน!" },
+      "ice-breaker": { "title": "ทลายน้ำแข็ง", "description": "วงล้อคำถามวิเศษทลายความเงียบ!" },
+      "couple-quiz": { "title": "ควิซคู่รัก", "description": "คุณรู้จักคนรักดีแค่ไหน? ทดสอบความเข้ากันของคู่รัก!" }
+    }
+  },
+  "dailyPage": {
+    "daily": "รายวัน",
+    "greetingMorning": "สวัสดีตอนเช้า!",
+    "greetingAfternoon": "สวัสดีตอนบ่าย!",
+    "greetingEvening": "สวัสดีตอนเย็น!",
+    "todayColor": "สีประจำวัน",
+    "todayNumber": "เลขประจำวัน",
+    "luckyNumberMeaning": "ตัวเลขนำโชค",
+    "todayContent": "เนื้อหาวันนี้",
+    "dailyFortune": "ดวงประจำวัน",
+    "dailyFortuneDesc": "ดวงวันนี้ตามวันเกิด",
+    "dailyTarot": "ไพ่ทาโรต์ประจำวัน",
+    "dailyTarotDesc": "ไพ่ทาโรต์เริ่มต้นวัน",
+    "todayCondition": "สภาพวันนี้",
+    "todayConditionDesc": "เช็คสภาพด่วน 3 ข้อ",
+    "recommendedTests": "แบบทดสอบแนะนำวันนี้",
+    "backHome": "กลับหน้าแรก",
+    "tests": {
+      "stressLevel": { "title": "ระดับความเครียด", "desc": "เช็คความเครียดวันนี้" },
+      "socialBattery": { "title": "แบตเตอรี่สังคม", "desc": "ระดับพลังงานวันนี้" },
+      "burnoutLevel": { "title": "ระดับเหนื่อยล้า", "desc": "สภาพฉันตอนนี้เป็นไง?" },
+      "mentalStrength": { "title": "ความแข็งแกร่งจิตใจ", "desc": "เช็คจิตใจวันนี้" }
+    },
+    "colors": {
+      "red": { "name": "แดง", "meaning": "วันที่เต็มไปด้วยความหลงใหลและพลังงาน" },
+      "orange": { "name": "ส้ม", "meaning": "วันแห่งความคิดสร้างสรรค์และความเป็นกันเอง" },
+      "yellow": { "name": "เหลือง", "meaning": "วันที่เต็มไปด้วยพลังงานสดใสและโชคดี" },
+      "green": { "name": "เขียว", "meaning": "วันแห่งความมั่นคงและการเติบโต" },
+      "blue": { "name": "น้ำเงิน", "meaning": "วันที่สงบและมีสมาธิ" },
+      "purple": { "name": "ม่วง", "meaning": "วันที่เต็มไปด้วยสัญชาตญาณและแรงบันดาลใจ" },
+      "pink": { "name": "ชมพู", "meaning": "วันที่เต็มไปด้วยความรักและความสุข" },
+      "mint": { "name": "มิ้นท์", "meaning": "วันแห่งการเริ่มต้นใหม่" },
+      "gold": { "name": "ทอง", "meaning": "วันแห่งความอุดมสมบูรณ์และความสำเร็จ" },
+      "silver": { "name": "เงิน", "meaning": "วันที่สงบและมีปัญญา" }
+    }
+  },
+  "fortunePage": {
+    "pageTitle": "ดูดวง & โหราศาสตร์",
+    "pageSubtitle": "จากประเพณีตะวันออกสู่โหราศาสตร์ตะวันตก",
+    "backHome": "กลับหน้าแรก",
+    "category": "ดูดวง/โหราศาสตร์",
+    "newYear": "ดวงปีใหม่ 2025",
+    "allServices": "บริการดูดวง",
+    "candidates": "ตัวเลือก",
+    "participated": "คนเข้าร่วม",
+    "services": {
+      "fortune-2025": {
+        "title": "ดวงปีใหม่ 2025",
+        "description": "ดวงปีมะเส็ง ดวงรายเดือน วิเคราะห์ทุกด้าน"
+      },
+      "tojeong": {
+        "title": "โทจองบีกยอล",
+        "description": "การทำนายแบบดั้งเดิมจากสมัยโชซอน"
+      },
+      "zodiac-fortune": {
+        "title": "ดวงราศี",
+        "description": "ดวง 12 ราศีปี 2025 ตามโหราศาสตร์ตะวันตก"
+      },
+      "compatibility": {
+        "title": "ดูดวงคู่",
+        "description": "วิเคราะห์ความเข้ากันด้วยนักษัตร+ราศี"
+      },
+      "tarot": {
+        "title": "ไพ่ทาโรต์",
+        "description": "ดูดวงวันนี้และอนาคตด้วยไพ่ทาโรต์"
+      },
+      "daily-fortune": {
+        "title": "ดวงวันนี้",
+        "description": "ดวงประจำวันตามวันเกิด"
+      },
+      "dream": {
+        "title": "ทำนายฝัน",
+        "description": "ตีความสัญลักษณ์ในฝันแบบตะวันออก"
+      },
+      "name-analysis": {
+        "title": "วิเคราะห์ชื่อ",
+        "description": "วิเคราะห์เลขชื่อตามหลักตัวเลขศาสตร์"
+      },
+      "face-reading": {
+        "title": "อ่านใบหน้า",
+        "description": "วิเคราะห์ใบหน้าตามหลักโหงวเฮ้ง"
+      }
+    },
+    "tarot": {
+      "pageTitle": "ไพ่ทาโรต์",
+      "selectType": "เลือกประเภทการอ่าน",
+      "timeline": {
+        "title": "อดีต-ปัจจุบัน-อนาคต",
+        "description": "อ่านไพ่ 3 ใบ"
+      },
+      "daily": {
+        "title": "ไพ่วันนี้",
+        "description": "ไพ่หนึ่งใบสำหรับวันนี้"
+      },
+      "choice": {
+        "title": "ใช่หรือไม่",
+        "description": "รับคำตอบสำหรับคำถามของคุณ"
+      },
+      "relationship": {
+        "title": "ดวงความสัมพันธ์",
+        "description": "ความเข้าใจในความสัมพันธ์"
+      },
+      "positions": {
+        "past": "อดีต",
+        "present": "ปัจจุบัน",
+        "future": "อนาคต"
+      },
+      "positionDesc": {
+        "past": "ภูมิหลังและสาเหตุของสถานการณ์",
+        "present": "สถานการณ์ปัจจุบันของคุณ",
+        "future": "ความเป็นไปได้ข้างหน้า"
+      },
+      "readingTypes": {
+        "general": "ดวงทั่วไป",
+        "love": "ความรัก/ความสัมพันธ์",
+        "career": "การงาน/อาชีพ"
+      },
+      "upright": "หงาย",
+      "reversed": "คว่ำ",
+      "advice": "คำแนะนำ",
+      "drawCards": "จั่วไพ่",
+      "newReading": "จั่วใหม่",
+      "interpretation": "การตีความ"
+    },
+    "zodiac": {
+      "selectSign": "เลือกราศีของคุณ",
+      "luckyScore": "คะแนนโชค",
+      "keywords": "คำสำคัญ",
+      "overview": "ภาพรวม",
+      "categories": {
+        "career": "การงาน",
+        "wealth": "การเงิน",
+        "love": "ความรัก",
+        "health": "สุขภาพ",
+        "study": "การศึกษา"
+      },
+      "monthly": "ดวงรายเดือน",
+      "lucky": {
+        "title": "องค์ประกอบโชค",
+        "numbers": "เลขนำโชค",
+        "colors": "สีนำโชค",
+        "day": "วันนำโชค",
+        "direction": "ทิศนำโชค"
+      },
+      "advice": {
+        "do": "สิ่งที่ควรทำปีนี้",
+        "dont": "สิ่งที่ควรหลีกเลี่ยงปีนี้"
+      }
+    },
+    "daily": {
+      "enterBirthdate": "กรอกวันเกิดของคุณ",
+      "year": "ปี",
+      "month": "เดือน",
+      "day": "วัน",
+      "getResult": "ดูดวง",
+      "overall": "ภาพรวม",
+      "categories": {
+        "love": "ความรัก",
+        "work": "การงาน",
+        "money": "การเงิน",
+        "health": "สุขภาพ"
+      },
+      "lucky": {
+        "color": "สีนำโชค",
+        "number": "เลขนำโชค",
+        "direction": "ทิศนำโชค",
+        "time": "เวลานำโชค"
+      },
+      "warning": "ข้อควรระวัง",
+      "advice": "คำแนะนำ"
+    },
+    "compatibility": {
+      "person1": "คนที่ 1",
+      "person2": "คนที่ 2",
+      "birthdate": "วันเกิด",
+      "checkCompatibility": "ดูความเข้ากัน",
+      "score": "คะแนนความเข้ากัน",
+      "analysis": "การวิเคราะห์",
+      "strengths": "จุดแข็ง",
+      "challenges": "ความท้าทาย",
+      "advice": "คำแนะนำ"
+    },
+    "dream": {
+      "pageTitle": "ทำนายฝัน",
+      "searchPlaceholder": "ฝันเห็นอะไร?",
+      "categories": {
+        "animal": "สัตว์",
+        "nature": "ธรรมชาติ",
+        "people": "คน",
+        "object": "สิ่งของ",
+        "action": "การกระทำ",
+        "place": "สถานที่"
+      },
+      "meaning": "ความหมาย",
+      "luckyNumber": "เลขนำโชค"
+    },
+    "nameAnalysis": {
+      "pageTitle": "วิเคราะห์ชื่อ",
+      "lastName": "นามสกุล",
+      "firstName": "ชื่อ",
+      "analyze": "วิเคราะห์",
+      "totalStrokes": "ขีดรวม",
+      "groundLuck": "ดวงดิน",
+      "humanLuck": "ดวงคน",
+      "outerLuck": "ดวงนอก",
+      "heavenLuck": "ดวงสวรรค์",
+      "overall": "วิเคราะห์รวม"
+    },
+    "faceReading": {
+      "pageTitle": "อ่านใบหน้า",
+      "uploadPhoto": "อัปโหลดรูป",
+      "takePhoto": "ถ่ายรูป",
+      "analyzing": "กำลังวิเคราะห์...",
+      "features": {
+        "forehead": "หน้าผาก",
+        "eyes": "ตา",
+        "nose": "จมูก",
+        "mouth": "ปาก",
+        "chin": "คาง"
+      },
+      "overall": "วิเคราะห์รวม"
+    }
+  },
+  "worldcup": {
+    "pageTitle": "เวิลด์คัพในอุดมคติ",
+    "pageDescription": "ค้นหาความชอบของคุณ!",
+    "backToGames": "กลับไปเกม",
+    "candidates": "ตัวเลือก",
+    "participated": "คนเข้าร่วม",
+    "round": "รอบ {round}",
+    "final": "รอบชิง",
+    "winner": "ชนะ!",
+    "yourChoice": "ตัวเลือกของคุณคือ",
+    "playAgain": "เล่นอีกครั้ง",
+    "share": "แชร์ผลลัพธ์"
+  }
+}

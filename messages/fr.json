@@ -1,0 +1,322 @@
+{
+  "common": {
+    "siteName": "AI Playground",
+    "siteDescription": "Découvrez-vous grâce à des tests de psychologie, de personnalité, MBTI et plus encore, propulsés par l'IA.",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "notFound": "Page non trouvée",
+    "back": "Retour",
+    "home": "Accueil",
+    "share": "Partager",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "retry": "Réessayer",
+    "start": "Commencer",
+    "result": "Résultat",
+    "next": "Suivant",
+    "prev": "Précédent",
+    "submit": "Envoyer",
+    "close": "Fermer",
+    "more": "Plus",
+    "all": "Tous",
+    "free": "Gratuit",
+    "participants": "participants",
+    "minutes": "min",
+    "questions": "questions",
+    "viewAll": "Voir tout",
+    "dailyUpdate": "Mis à jour quotidiennement",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "Accueil",
+    "tests": "Tous les Tests",
+    "categories": "Catégories",
+    "fortune": "Horoscope",
+    "games": "Jeux",
+    "physical": "Physiques",
+    "daily": "Quotidien"
+  },
+  "categories": {
+    "personality": "Personnalité",
+    "psychology": "Psychologie",
+    "relationship": "Relations",
+    "career": "Carrière",
+    "fun": "Fun/Divertissement",
+    "iq": "QI/Cerveau"
+  },
+  "home": {
+    "heroTitle": "Il est temps de vous découvrir,",
+    "heroHighlight": "AI Playground",
+    "heroDescription": "Tests de psychologie, analyse de personnalité, MBTI et plus encore !\nDécouvrez qui vous êtes vraiment avec des tests propulsés par l'IA.",
+    "aiBased": "Propulsé par l'IA",
+    "startTest": "Commencer le Test de Personnalité",
+    "viewAll": "Voir Tous les Tests",
+    "stats": {
+      "participants": "Participants",
+      "participantsCount": "500K+",
+      "tests": "Tests",
+      "shares": "Partages",
+      "sharesCount": "20K+"
+    },
+    "sections": {
+      "popular": "Tests Populaires",
+      "new": "Nouveaux Tests",
+      "todayPicks": "Sélection du Jour",
+      "daily": "Quotidien",
+      "dailyHub": "Hub Quotidien",
+      "physicalGames": "Physiques et Jeux",
+      "category": "Catégories",
+      "fortune": "Horoscope et Voyance"
+    },
+    "quickButtons": {
+      "popular": "Populaires",
+      "new": "Nouveaux",
+      "tarot": "Tarot",
+      "fortune": "Horoscope du Jour"
+    },
+    "daily": {
+      "todayFortune": "Horoscope du Jour",
+      "fortuneDesc": "Basé sur votre anniversaire",
+      "condition": "Bilan d'État",
+      "conditionDesc": "Vérification rapide en 3 questions",
+      "luckyColor": "Couleur Porte-Bonheur",
+      "luckyColorDesc": "Couleur et numéro du jour"
+    },
+    "fortune": {
+      "title": "Horoscope et Voyance",
+      "description": "Tarot, horoscope quotidien, compatibilité, horoscope",
+      "tarot": "Tarot",
+      "dailyFortune": "Horoscope du Jour",
+      "compatibility": "Compatibilité",
+      "saju": "Horoscope"
+    },
+    "physical": {
+      "title": "Tests Physiques",
+      "description": "Temps de réaction, vitesse de clic, mémoire",
+      "reaction": "Réaction",
+      "click": "Vitesse de Clic",
+      "color": "Vision des Couleurs",
+      "memory": "Mémoire"
+    },
+    "games": {
+      "title": "Jeux et Cartes",
+      "description": "Jeu d'équilibre, cartes de conversation",
+      "balance": "Jeu d'Équilibre",
+      "cards": "Cartes de Conversation"
+    },
+    "cta": {
+      "title": "Vous cherchez plus de tests ?",
+      "description": "{count} tests vous attendent !",
+      "viewAll": "Voir Tous les Tests",
+      "funTests": "Tests Amusants"
+    }
+  },
+  "sidebar": {
+    "categories": "Catégories",
+    "allTests": "Tous les Tests",
+    "daily": "Quotidien",
+    "dailyHub": "Hub Quotidien",
+    "condition": "Bilan d'État",
+    "fortune": "Horoscope",
+    "physicalGames": "Physiques et Jeux",
+    "physical": "Tests Physiques",
+    "games": "Jeux",
+    "quickLinks": "Liens Rapides",
+    "popularTests": "Tests Populaires",
+    "newTests": "Nouveaux Tests"
+  },
+  "test": {
+    "startTest": "Commencer le Test",
+    "questionCount": "{count} questions",
+    "estimatedTime": "Environ {minutes} min",
+    "participants": "{count} participants",
+    "loading": "Préparation du test...",
+    "loadError": "Échec du chargement du test",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "Voir le Résultat",
+    "shareResult": "Partager le Résultat",
+    "retryTest": "Réessayer",
+    "otherTests": "Autres Tests",
+    "resultTitle": "Votre résultat est...",
+    "tags": "Tags",
+    "backHome": "Accueil",
+    "questionInfo": "{count} questions · {time} min",
+    "participation": "{count} participants",
+    "questions": "Questions",
+    "questionsCount": "{count}",
+    "testGuide": "Guide du test",
+    "guideNoAnswer": "Il n'y a pas de mauvaises réponses. Répondez honnêtement.",
+    "guideInstantResult": "Les résultats sont disponibles immédiatement après le test.",
+    "guideShare": "Partagez et comparez vos résultats avec vos amis !",
+    "addFavorite": "Ajouter aux favoris",
+    "removeFavorite": "Retirer des favoris",
+    "share": "Partager",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "noResponseData": "Aucune donnée de réponse.",
+    "cannotLoadTest": "Impossible de charger les données du test.",
+    "cannotFindQuestions": "Questions introuvables.",
+    "errorLoadingQuestions": "Erreur lors du chargement des questions.",
+    "analyzing": "Analyse des résultats...",
+    "cannotCalculate": "Impossible de calculer les résultats.",
+    "errorLoadingResult": "Erreur lors du chargement des résultats.",
+    "cannotLoadResult": "Impossible de charger les résultats",
+    "retryTestAgain": "Veuillez réessayer le test.",
+    "goBack": "Retour",
+    "jumpToQuestion": "Aller à la question",
+    "yourResult": "Votre résultat est",
+    "screenshotShare": "Faites une capture d'écran et partagez avec vos amis !",
+    "myResultIs": "Mon résultat {testTitle} est {emoji} {title} !",
+    "analysisResult": "Résultat de l'analyse",
+    "mainTraits": "Traits principaux",
+    "strengths": "Points forts",
+    "cautions": "Points d'attention",
+    "advice": "Conseil",
+    "goodMatch": "Bonne compatibilité",
+    "cautionMatch": "Compatibilité difficile"
+  },
+  "share": {
+    "title": "Partager",
+    "kakao": "KakaoTalk",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "Copier le Lien",
+    "linkCopied": "Lien copié !",
+    "nativeShare": "Partager"
+  },
+  "footer": {
+    "terms": "Conditions d'Utilisation",
+    "privacy": "Politique de Confidentialité",
+    "contact": "Contact",
+    "copyright": "© {year} AI Playground. Tous droits réservés."
+  },
+  "error": {
+    "404": {
+      "title": "Page non trouvée",
+      "description": "La page demandée n'existe pas ou a été déplacée.",
+      "backHome": "Retour à l'Accueil"
+    },
+    "500": {
+      "title": "Erreur Serveur",
+      "description": "Une erreur temporaire s'est produite. Veuillez réessayer plus tard.",
+      "retry": "Réessayer"
+    }
+  },
+  "meta": {
+    "siteName": "AI Playground",
+    "categoryNotFound": "Catégorie non trouvée",
+    "categoryTitle": "{category} - {count} Tests | AI Playground",
+    "categoryDescription": "Profitez de {count} tests gratuits dans la catégorie {category} !"
+  },
+  "categoryPage": {
+    "totalTests": "{count} tests",
+    "noTests": "Pas encore de tests dans cette catégorie.",
+    "viewOtherTests": "Voir d'autres tests"
+  },
+  "testsPage": {
+    "title": "Tous les Tests",
+    "searchPlaceholder": "Rechercher des tests...",
+    "allCategories": "Toutes les Catégories",
+    "popular": "Populaire",
+    "new": "Nouveau",
+    "tagFilter": "Filtre par tag",
+    "tags": "Tags",
+    "popularTags": "Tags populaires",
+    "reset": "Réinitialiser",
+    "noSearchResults": "Aucun résultat pour \"{query}\".",
+    "noResults": "Aucun test ne correspond à vos critères."
+  },
+  "physical": {
+    "pageTitle": "Tests Physiques",
+    "pageDescription": "Testez vos capacités physiques et cognitives !",
+    "info": {
+      "title": "Info",
+      "tip1": "Les tests physiques fonctionnent sur PC et mobile.",
+      "tip2": "Pour des résultats précis, testez dans un environnement calme.",
+      "tip3": "Les tests de clic peuvent être plus faciles avec le tactile qu'avec la souris.",
+      "tip4": "Les résultats sont juste pour le plaisir !"
+    },
+    "tests": {
+      "reaction-speed": { "title": "Test de Temps de Réaction", "description": "Cliquez aussi vite que possible quand ça devient vert ! Quel est votre temps de réaction ?", "duration": "1 min" },
+      "click-speed": { "title": "Test de Vitesse de Clic", "description": "Combien de clics pouvez-vous faire en 10 secondes ?", "duration": "10 sec" },
+      "color-blind": { "title": "Test de Vision des Couleurs", "description": "Trouvez la couleur différente ! Testez votre capacité de discrimination des couleurs.", "duration": "2 min" },
+      "memory-test": { "title": "Test de Mémoire à Court Terme", "description": "Mémorisez la séquence et répétez ! Défiez vos limites de mémoire.", "duration": "3 min" },
+      "eye-tracking": { "title": "Exercice Oculaire", "description": "Étirement des yeux pour des yeux sains ! Soulagez la fatigue oculaire.", "duration": "2 min" },
+      "typing-speed": { "title": "Test de Vitesse de Frappe", "description": "Combien pouvez-vous taper en 60 secondes ? Mesurez vos MPM !", "duration": "1 min" },
+      "number-memory": { "title": "Test de Mémoire des Nombres", "description": "Mémorisez des nombres de plus en plus longs ! Défiez vos limites de mémoire.", "duration": "Illimité" },
+      "aim-trainer": { "title": "Entraîneur de Visée", "description": "Cliquez sur les cibles rapidement et précisément !", "duration": "2 min" },
+      "hearing-test": { "title": "Test Auditif", "description": "Testez si vous pouvez entendre différentes fréquences !", "duration": "3 min" },
+      "stroop-test": { "title": "Test de Stroop", "description": "Associez la couleur, pas le mot ! Testez la capacité de traitement de votre cerveau.", "duration": "2 min" },
+      "time-perception": { "title": "Test de Perception du Temps", "description": "Estimez le temps précisément sans horloge ! Mesurez votre horloge interne.", "duration": "3 min" },
+      "peripheral-vision": { "title": "Test de Vision Périphérique", "description": "Détectez les objets apparaissant au bord de l'écran !", "duration": "2 min" },
+      "pattern-recognition": { "title": "Test de Reconnaissance des Motifs", "description": "Trouvez la couleur différente ! Mesurez votre capacité de reconnaissance des motifs.", "duration": "2 min" },
+      "steady-hand": { "title": "Test de Main Stable", "description": "Naviguez dans des chemins étroits avec votre souris ! Mesurez la stabilité de votre main.", "duration": "2 min" },
+      "multitasking": { "title": "Test de Multitâche", "description": "Résolvez des problèmes de maths tout en cliquant ! Mesurez votre capacité de multitâche.", "duration": "2 min" },
+      "rhythm-test": { "title": "Test de Rythme", "description": "Tapez au rythme ! Mesurez votre sens du rythme.", "duration": "2 min" },
+      "color-sequence": { "title": "Test de Mémoire des Couleurs", "description": "Jeu Simon ! Mémorisez et répétez la séquence de couleurs.", "duration": "Illimité" },
+      "word-memory": { "title": "Test de Mémoire des Mots", "description": "Mémorisez et tapez tous les mots ! Mesurez votre mémoire verbale.", "duration": "3 min" },
+      "direction-sense": { "title": "Test du Sens de l'Orientation", "description": "Trouvez la bonne direction après rotation ! Mesurez votre sens de l'orientation.", "duration": "2 min" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "Jeux & Cartes",
+    "pageDescription": "Des jeux amusants à jouer entre amis !",
+    "backHome": "Accueil",
+    "games": "Jeux",
+    "startGame": "Commencer le jeu",
+    "start": "Commencer",
+    "moreComingSoon": "Plus de jeux arrivent bientôt !",
+    "gameList": {
+      "worldcup": { "title": "Coupe du Monde du Type Idéal", "description": "Ramen, desserts, chiens et plus ! Trouvez vos préférences" },
+      "balance": { "title": "Jeu d'Équilibre", "description": "Si vous deviez choisir un seul ? Amour, travail, situations extrêmes !" },
+      "cards": { "title": "Cartes de Conversation", "description": "Sujets de conversation brise-glace ! Pour rendez-vous, fêtes, couples." },
+      "random-menu": { "title": "Que manger aujourd'hui ?", "description": "Vous ne pouvez pas décider ? Choix de menu aléatoire !" },
+      "number-picker": { "title": "Tirage Aléatoire", "description": "Choix de numéros, ordre, tirages équitables !" },
+      "team-divider": { "title": "Diviseur d'Équipe", "description": "Entrez le nombre de personnes et d'équipes pour une division équitable !" },
+      "penalty-picker": { "title": "Tirage de Pénalités", "description": "De léger à hardcore ! Tirez des pénalités amusantes" },
+      "role-picker": { "title": "Tirage de Rôles", "description": "Mafia, Espion, Loup-garou ! Attribuez des rôles aléatoirement" },
+      "would-you-rather": { "title": "Ceci vs Cela", "description": "Si vous deviez choisir ? Débattez avec vos amis !" },
+      "ice-breaker": { "title": "Brise-Glace", "description": "Roulette de questions magique pour briser la glace !" },
+      "couple-quiz": { "title": "Quiz Couple", "description": "Connaissez-vous bien votre partenaire ? Test de compatibilité !" }
+    }
+  },
+  "dailyPage": {
+    "daily": "Quotidien",
+    "greetingMorning": "Bonjour !",
+    "greetingAfternoon": "Bon après-midi !",
+    "greetingEvening": "Bonsoir !",
+    "todayColor": "Couleur du jour",
+    "todayNumber": "Nombre du jour",
+    "luckyNumberMeaning": "Votre nombre porte-bonheur",
+    "todayContent": "Contenu du jour",
+    "dailyFortune": "Horoscope du jour",
+    "dailyFortuneDesc": "L'horoscope du jour basé sur votre anniversaire",
+    "dailyTarot": "Tarot du jour",
+    "dailyTarotDesc": "Une carte de tarot pour commencer votre journée",
+    "todayCondition": "Condition du jour",
+    "todayConditionDesc": "Vérification rapide en 3 questions",
+    "recommendedTests": "Tests recommandés aujourd'hui",
+    "backHome": "Retour à l'accueil",
+    "tests": {
+      "stressLevel": { "title": "Niveau de stress", "desc": "Vérifiez le stress aujourd'hui" },
+      "socialBattery": { "title": "Batterie sociale", "desc": "Niveau d'énergie du jour" },
+      "burnoutLevel": { "title": "Niveau d'épuisement", "desc": "Comment je vais ?" },
+      "mentalStrength": { "title": "Force mentale", "desc": "Check mental du jour" }
+    },
+    "colors": {
+      "red": { "name": "Rouge", "meaning": "Une journée pleine de passion et d'énergie" },
+      "orange": { "name": "Orange", "meaning": "Une journée de créativité et de sociabilité" },
+      "yellow": { "name": "Jaune", "meaning": "Une journée pleine d'énergie vive et de chance" },
+      "green": { "name": "Vert", "meaning": "Une journée de stabilité et de croissance" },
+      "blue": { "name": "Bleu", "meaning": "Une journée paisible et concentrée" },
+      "purple": { "name": "Violet", "meaning": "Une journée pleine d'intuition et d'inspiration" },
+      "pink": { "name": "Rose", "meaning": "Une journée pleine d'amour et de bonheur" },
+      "mint": { "name": "Menthe", "meaning": "Une journée de nouveaux départs" },
+      "gold": { "name": "Or", "meaning": "Une journée d'abondance et de succès" },
+      "silver": { "name": "Argent", "meaning": "Une journée calme et sage" }
+    }
+  }
+}

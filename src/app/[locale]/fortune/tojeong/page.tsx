@@ -2,15 +2,17 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Calendar, Star, Sparkles, ChevronRight, Gift, BookOpen } from 'lucide-react';
+import { Calendar, Star, Sparkles, ChevronRight, BookOpen } from 'lucide-react';
 
 export default function TojeongPage() {
   const router = useRouter();
   const [birthDate, setBirthDate] = useState({ year: '', month: '', day: '' });
   const [isValid, setIsValid] = useState(false);
 
-  const handleInputChange = (field: 'year' | 'month' | 'day', value: string) => {
-    const newBirthDate = { ...birthDate, [field]: value };
+  const handleInputChange = (field: 'year' | 'month' | 'day', value: string, maxLength: number) => {
+    // 숫자만 허용
+    const numericValue = value.replace(/[^0-9]/g, '').slice(0, maxLength);
+    const newBirthDate = { ...birthDate, [field]: numericValue };
     setBirthDate(newBirthDate);
     
     const year = parseInt(newBirthDate.year);
@@ -106,51 +108,44 @@ export default function TojeongPage() {
             <div className="flex gap-3 justify-center">
               <div className="flex-1 max-w-[100px]">
                 <input
-                  type="number"
-                  placeholder="년도"
+                  type="tel"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  placeholder="1990"
                   value={birthDate.year}
-                  onChange={(e) => handleInputChange('year', e.target.value)}
+                  onChange={(e) => handleInputChange('year', e.target.value, 4)}
                   className="w-full px-3 py-3 bg-slate-800/80 border border-amber-500/30 rounded-xl text-white text-center focus:outline-none focus:border-amber-400 transition-colors"
-                  min="1940"
-                  max="2024"
+                  maxLength={4}
                 />
                 <div className="text-amber-300/50 text-xs text-center mt-1">YYYY</div>
               </div>
               <div className="flex-1 max-w-[80px]">
                 <input
-                  type="number"
-                  placeholder="월"
+                  type="tel"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  placeholder="01"
                   value={birthDate.month}
-                  onChange={(e) => handleInputChange('month', e.target.value)}
+                  onChange={(e) => handleInputChange('month', e.target.value, 2)}
                   className="w-full px-3 py-3 bg-slate-800/80 border border-amber-500/30 rounded-xl text-white text-center focus:outline-none focus:border-amber-400 transition-colors"
-                  min="1"
-                  max="12"
+                  maxLength={2}
                 />
                 <div className="text-amber-300/50 text-xs text-center mt-1">MM</div>
               </div>
               <div className="flex-1 max-w-[80px]">
                 <input
-                  type="number"
-                  placeholder="일"
+                  type="tel"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  placeholder="01"
                   value={birthDate.day}
-                  onChange={(e) => handleInputChange('day', e.target.value)}
+                  onChange={(e) => handleInputChange('day', e.target.value, 2)}
                   className="w-full px-3 py-3 bg-slate-800/80 border border-amber-500/30 rounded-xl text-white text-center focus:outline-none focus:border-amber-400 transition-colors"
-                  min="1"
-                  max="31"
+                  maxLength={2}
                 />
                 <div className="text-amber-300/50 text-xs text-center mt-1">DD</div>
               </div>
             </div>
-          </div>
-
-          {/* 가격 */}
-          <div className="text-center mb-6">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 to-orange-500/20 px-6 py-3 rounded-2xl border border-amber-500/30">
-              <Gift className="w-5 h-5 text-amber-400" />
-              <span className="text-amber-300 font-bold text-xl">₩900</span>
-              <span className="text-amber-300/60 text-sm line-through">₩2,000</span>
-            </div>
-            <p className="text-amber-300/60 text-xs mt-2">신년 특별가 · 한정 기간</p>
           </div>
 
           {/* 시작 버튼 */}

@@ -2,6 +2,7 @@
 
 import { ReactNode } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Check, AlertCircle, Heart, Star, Sparkles } from 'lucide-react';
 import ShareButtons from '@/components/ShareButtons';
 import { BaseTestResult } from '@/lib/testLoader';
@@ -131,6 +132,7 @@ export default function TestResultRenderer({
   testTitle,
   testTags = [],
 }: TestResultRendererProps) {
+  const t = useTranslations('test');
   const gradientClass = getGradientClass(result);
   const customGradient = result.colorCode 
     ? `linear-gradient(135deg, ${result.colorCode}, ${result.colorCode}90, ${result.colorCode}60)`
@@ -150,7 +152,7 @@ export default function TestResultRenderer({
   const advice = getStringField(result, 'advice', 'tip', 'recommendation');
 
   // 공유 텍스트 생성
-  const shareText = `나의 ${testTitle} 결과는 ${result.emoji} ${result.title}!`;
+  const shareText = t('myResultIs', { testTitle, emoji: result.emoji, title: result.title });
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -161,7 +163,7 @@ export default function TestResultRenderer({
           className={`p-8 text-center text-white ${gradientClass}`}
           style={customGradient ? { background: customGradient } : undefined}
         >
-          <p className="text-white/80 mb-2">당신의 결과는</p>
+          <p className="text-white/80 mb-2">{t('yourResult')}</p>
           <div className="text-8xl mb-4">{result.emoji}</div>
           <h1 className="text-3xl font-bold mb-2">{result.title}</h1>
           {subtitle && <p className="text-xl text-white/90">{subtitle}</p>}
@@ -177,7 +179,7 @@ export default function TestResultRenderer({
         {/* Viral Share Section */}
         <div className="px-6 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 border-b border-gray-100 dark:border-gray-700">
           <p className="text-center text-sm text-gray-600 dark:text-gray-300 mb-3">
-            결과 스크린샷 찍어서 친구에게 공유해보세요!
+            {t('screenshotShare')}
           </p>
           <div className="bg-white dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm">
             <p className="text-lg font-bold text-gray-900 dark:text-white">
@@ -185,7 +187,7 @@ export default function TestResultRenderer({
             </p>
             {testTags.length > 0 && (
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                #{testTags.slice(0, 3).join(' #')} #AI놀이터
+                #{testTags.slice(0, 3).join(' #')} #AIPlayground
               </p>
             )}
           </div>
@@ -195,14 +197,14 @@ export default function TestResultRenderer({
         <div className="p-6 md:p-8 space-y-8">
           {/* Description */}
           <div>
-            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">분석 결과</h2>
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{t('analysisResult')}</h2>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{result.description}</p>
           </div>
 
           {/* Traits */}
           {traits.length > 0 && (
             <div>
-              <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">주요 특성</h2>
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{t('mainTraits')}</h2>
               <TagList items={traits} />
             </div>
           )}
@@ -211,12 +213,12 @@ export default function TestResultRenderer({
           {(strengths.length > 0 || weaknesses.length > 0) && (
             <div className="grid md:grid-cols-2 gap-4">
               {strengths.length > 0 && (
-                <SectionCard title="강점" icon={<Star className="w-4 h-4 text-blue-500" />} bgClass="bg-blue-50 dark:bg-blue-900/30">
+                <SectionCard title={t('strengths')} icon={<Star className="w-4 h-4 text-blue-500" />} bgClass="bg-blue-50 dark:bg-blue-900/30">
                   <CheckList items={strengths} colorClass="text-blue-700 dark:text-blue-300" />
                 </SectionCard>
               )}
               {weaknesses.length > 0 && (
-                <SectionCard title="주의할 점" icon={<AlertCircle className="w-4 h-4 text-amber-500" />} bgClass="bg-amber-50 dark:bg-amber-900/30">
+                <SectionCard title={t('cautions')} icon={<AlertCircle className="w-4 h-4 text-amber-500" />} bgClass="bg-amber-50 dark:bg-amber-900/30">
                   <CheckList items={weaknesses} icon={<AlertCircle className="w-3 h-3" />} colorClass="text-amber-700 dark:text-amber-300" />
                 </SectionCard>
               )}
@@ -225,7 +227,7 @@ export default function TestResultRenderer({
 
           {/* Tips / Advice */}
           {(tips.length > 0 || advice) && (
-            <SectionCard title="조언" icon={<Sparkles className="w-4 h-4 text-purple-500" />} bgClass="bg-purple-50 dark:bg-purple-900/30">
+            <SectionCard title={t('advice')} icon={<Sparkles className="w-4 h-4 text-purple-500" />} bgClass="bg-purple-50 dark:bg-purple-900/30">
               {advice && <p className="text-sm text-purple-700 dark:text-purple-300 mb-2">{advice}</p>}
               {tips.length > 0 && <CheckList items={tips} colorClass="text-purple-700 dark:text-purple-300" />}
             </SectionCard>
@@ -235,12 +237,12 @@ export default function TestResultRenderer({
           {(compatibility.length > 0 || incompatibility.length > 0) && (
             <div className="grid md:grid-cols-2 gap-4">
               {compatibility.length > 0 && (
-                <SectionCard title="잘 맞는 유형" icon={<Heart className="w-4 h-4 text-green-500" />} bgClass="bg-green-50 dark:bg-green-900/30">
+                <SectionCard title={t('goodMatch')} icon={<Heart className="w-4 h-4 text-green-500" />} bgClass="bg-green-50 dark:bg-green-900/30">
                   <TagList items={compatibility} colorClass="bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300" />
                 </SectionCard>
               )}
               {incompatibility.length > 0 && (
-                <SectionCard title="주의할 유형" icon={<AlertCircle className="w-4 h-4 text-red-500" />} bgClass="bg-red-50 dark:bg-red-900/30">
+                <SectionCard title={t('cautionMatch')} icon={<AlertCircle className="w-4 h-4 text-red-500" />} bgClass="bg-red-50 dark:bg-red-900/30">
                   <TagList items={incompatibility} colorClass="bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300" />
                 </SectionCard>
               )}
@@ -261,13 +263,13 @@ export default function TestResultRenderer({
               href={`/test/${slug}/play`}
               className="flex-1 px-6 py-3 bg-indigo-600 text-white text-center font-semibold rounded-xl hover:bg-indigo-700 transition-colors"
             >
-              다시 테스트하기
+              {t('retryTest')}
             </Link>
             <Link
               href="/tests"
               className="flex-1 px-6 py-3 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-center font-semibold rounded-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
             >
-              다른 테스트 보기
+              {t('otherTests')}
             </Link>
           </div>
         </div>

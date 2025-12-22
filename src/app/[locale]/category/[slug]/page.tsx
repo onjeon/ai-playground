@@ -3,10 +3,16 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Brain, Heart, Users, Briefcase, Sparkles, Lightbulb, ArrowLeft, ChevronRight } from 'lucide-react';
 import { TestGrid } from '@/components/test';
-import { categories, getTestsByCategory, getCategoryBySlug } from '@/lib/data';
+import { 
+  getCategoriesForLocale, 
+  getCategoryBySlugForLocale, 
+  getTestsByCategoryForLocale 
+} from '@/lib/data-loader';
+import { locales } from '@/i18n/config';
+import { getTranslations } from 'next-intl/server';
 
 interface Props {
-  params: { slug: string };
+  params: { slug: string; locale: string };
 }
 
 const baseUrl = 'https://ai-playground.vercel.app';
@@ -30,61 +36,81 @@ const categoryGradients: Record<string, string> = {
   iq: 'from-violet-500 via-purple-500 to-indigo-500',
 };
 
-// 빌드 시 모든 카테고리 페이지를 정적 생성
+// 빌드 시 모든 로케일의 카테고리 페이지를 정적 생성
 export async function generateStaticParams() {
-  return categories.map((category) => ({
-    slug: category.slug,
-  }));
+  const params: { locale: string; slug: string }[] = [];
+  
+  for (const locale of locales) {
+    const categories = getCategoriesForLocale(locale);
+    for (const category of categories) {
+      params.push({
+        locale,
+        slug: category.slug,
+      });
+    }
+  }
+  
+  return params;
 }
 
 // 동적 메타데이터 생성
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const category = getCategoryBySlug(params.slug);
+  const { locale, slug } = params;
+  const t = await getTranslations({ locale, namespace: 'categories' });
+  const tMeta = await getTranslations({ locale, namespace: 'meta' });
+  
+  const category = getCategoryBySlugForLocale(locale, slug);
+  const categoryTests = getTestsByCategoryForLocale(locale, slug);
   
   if (!category) {
     return {
-      title: '카테고리를 찾을 수 없습니다 | AI 놀이터',
+      title: tMeta('categoryNotFound'),
     };
   }
 
-  const categoryTests = getTestsByCategory(params.slug);
-  const seoTitle = `${category.name} - ${categoryTests.length}개 테스트 | AI 놀이터`;
-  const seoDescription = `${category.description} ${categoryTests.length}개의 무료 테스트를 즐겨보세요!`;
+  const categoryName = t(category.slug);
+  const seoTitle = tMeta('categoryTitle', { category: categoryName, count: categoryTests.length });
+  const seoDescription = tMeta('categoryDescription', { category: categoryName, count: categoryTests.length });
 
   return {
     title: seoTitle,
     description: seoDescription,
     keywords: [
-      category.name,
-      'AI 테스트',
-      '심리테스트',
-      '무료 테스트',
-      ...categoryTests.slice(0, 5).map(t => t.title),
+      categoryName,
+      'AI',
+      ...categoryTests.slice(0, 5).map(test => test.title),
     ],
     openGraph: {
       title: seoTitle,
       description: seoDescription,
       type: 'website',
-      locale: 'ko_KR',
-      siteName: 'AI 놀이터',
-      url: `${baseUrl}/category/${category.slug}`,
+      locale: locale.replace('-', '_'),
+      siteName: tMeta('siteName'),
+      url: `${baseUrl}/${locale}/category/${category.slug}`,
     },
     alternates: {
-      canonical: `${baseUrl}/category/${category.slug}`,
+      canonical: `${baseUrl}/${locale}/category/${category.slug}`,
     },
   };
 }
 
-export default function CategoryPage({ params }: Props) {
-  const category = getCategoryBySlug(params.slug);
-  const categoryTests = getTestsByCategory(params.slug);
+export default async function CategoryPage({ params }: Props) {
+  const { locale, slug } = params;
+  const t = await getTranslations({ locale, namespace: 'categories' });
+  const tCommon = await getTranslations({ locale, namespace: 'common' });
+  const tCategory = await getTranslations({ locale, namespace: 'categoryPage' });
+  
+  const category = getCategoryBySlugForLocale(locale, slug);
+  const categoryTests = getTestsByCategoryForLocale(locale, slug);
+  const categories = getCategoriesForLocale(locale);
   
   if (!category) {
     notFound();
   }
 
   const Icon = iconMap[category.icon] || Brain;
-  const gradient = categoryGradients[params.slug] || 'from-indigo-500 via-purple-500 to-pink-500';
+  const gradient = categoryGradients[slug] || 'from-indigo-500 via-purple-500 to-pink-500';
+  const categoryName = t(category.slug);
 
   return (
     <div className="space-y-8">
@@ -99,9 +125,9 @@ export default function CategoryPage({ params }: Props) {
         <div className="relative z-10">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-white/70 text-sm mb-6">
-            <Link href="/" className="hover:text-white transition-colors">홈</Link>
+            <Link href="/" className="hover:text-white transition-colors">{tCommon('home')}</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-white">{category.name}</span>
+            <span className="text-white">{categoryName}</span>
           </div>
 
           <div className="flex items-center gap-4 mb-4">
@@ -109,14 +135,14 @@ export default function CategoryPage({ params }: Props) {
               <Icon className="w-8 h-8" />
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold">{category.name}</h1>
+              <h1 className="text-3xl md:text-4xl font-bold">{categoryName}</h1>
               <p className="text-white/80 mt-1">{category.description}</p>
             </div>
           </div>
 
           <div className="flex items-center gap-4 mt-6">
             <div className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm">
-              총 {categoryTests.length}개 테스트
+              {tCategory('totalTests', { count: categoryTests.length })}
             </div>
           </div>
         </div>
@@ -126,7 +152,7 @@ export default function CategoryPage({ params }: Props) {
       <section className="grid grid-cols-3 sm:grid-cols-6 gap-2">
         {categories.map((cat) => {
           const CatIcon = iconMap[cat.icon] || Brain;
-          const isActive = cat.slug === params.slug;
+          const isActive = cat.slug === slug;
           return (
             <Link
               key={cat.id}
@@ -138,7 +164,7 @@ export default function CategoryPage({ params }: Props) {
               }`}
             >
               <CatIcon className="w-4 h-4" />
-              <span className="truncate">{cat.name}</span>
+              <span className="truncate">{t(cat.slug)}</span>
             </Link>
           );
         })}
@@ -148,7 +174,7 @@ export default function CategoryPage({ params }: Props) {
       <section>
         <TestGrid 
           tests={categoryTests} 
-          emptyMessage="이 카테고리에는 아직 테스트가 없습니다."
+          emptyMessage={tCategory('noTests')}
           showAds={true}
           adInterval={8}
         />
@@ -161,7 +187,7 @@ export default function CategoryPage({ params }: Props) {
           className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          다른 테스트 보기
+          {tCategory('viewOtherTests')}
         </Link>
       </section>
     </div>

@@ -3,6 +3,7 @@
 import { useParams, useSearchParams } from 'next/navigation';
 import { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { loadTestModule, calculateTestResult, BaseTestResult } from '@/lib/testLoader';
 import { getTestBySlug } from '@/lib/data';
 import TestResultRenderer from '@/components/test/TestResultRenderer';
@@ -10,18 +11,19 @@ import TestResultRenderer from '@/components/test/TestResultRenderer';
 function TestResultContent() {
   const params = useParams();
   const searchParams = useSearchParams();
+  const t = useTranslations('test');
   const slug = params.slug as string;
   const test = getTestBySlug(slug);
 
   const [result, setResult] = useState<BaseTestResult | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [errorKey, setErrorKey] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadResult() {
       const answersParam = searchParams.get('answers');
       if (!answersParam) {
-        setError('응답 데이터가 없습니다.');
+        setErrorKey('noResponseData');
         setLoading(false);
         return;
       }
@@ -32,7 +34,7 @@ function TestResultContent() {
         // 테스트 모듈 동적 로드
         const module = await loadTestModule(slug);
         if (!module) {
-          setError('테스트 데이터를 불러올 수 없습니다.');
+          setErrorKey('cannotLoadTest');
           setLoading(false);
           return;
         }
@@ -40,7 +42,7 @@ function TestResultContent() {
         // 결과 계산
         const calculatedResult = calculateTestResult(module, slug, answers);
         if (!calculatedResult) {
-          setError('결과를 계산할 수 없습니다.');
+          setErrorKey('cannotCalculate');
           setLoading(false);
           return;
         }
@@ -58,7 +60,7 @@ function TestResultContent() {
         }
       } catch (err) {
         console.error('Error loading test result:', err);
-        setError('결과를 불러오는 중 오류가 발생했습니다.');
+        setErrorKey('errorLoadingResult');
         setLoading(false);
       }
     }
@@ -71,24 +73,24 @@ function TestResultContent() {
     return (
       <div className="max-w-2xl mx-auto text-center py-20">
         <div className="text-6xl mb-4 animate-bounce">🔮</div>
-        <p className="text-gray-600 dark:text-gray-300">결과를 분석하는 중...</p>
+        <p className="text-gray-600 dark:text-gray-300">{t('analyzing')}</p>
       </div>
     );
   }
 
   // 에러 또는 데이터 없음
-  if (error || !test || !result) {
+  if (errorKey || !test || !result) {
     return (
       <div className="max-w-2xl mx-auto text-center py-20">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          {error || '결과를 불러올 수 없습니다'}
+          {errorKey ? t(errorKey) : t('cannotLoadResult')}
         </h1>
-        <p className="text-gray-500 dark:text-gray-400 mb-6">테스트를 다시 진행해주세요.</p>
+        <p className="text-gray-500 dark:text-gray-400 mb-6">{t('retryTestAgain')}</p>
         <Link
           href={`/test/${slug}`}
           className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors inline-block"
         >
-          테스트 다시하기
+          {t('retryTest')}
         </Link>
       </div>
     );
@@ -104,14 +106,19 @@ function TestResultContent() {
   );
 }
 
+function LoadingFallback() {
+  const t = useTranslations('test');
+  return (
+    <div className="max-w-2xl mx-auto text-center py-20">
+      <div className="text-6xl mb-4 animate-bounce">🔮</div>
+      <p className="text-gray-600 dark:text-gray-300">{t('analyzing')}</p>
+    </div>
+  );
+}
+
 export default function TestResultPage() {
   return (
-    <Suspense fallback={
-      <div className="max-w-2xl mx-auto text-center py-20">
-        <div className="text-6xl mb-4 animate-bounce">🔮</div>
-        <p className="text-gray-600 dark:text-gray-300">결과를 불러오는 중...</p>
-      </div>
-    }>
+    <Suspense fallback={<LoadingFallback />}>
       <TestResultContent />
     </Suspense>
   );

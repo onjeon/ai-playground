@@ -32,7 +32,7 @@ export const categories: Category[] = [
   },
   {
     id: 'fun',
-    name: '재미/운세',
+    name: '재미/엔터',
     slug: 'fun',
     icon: 'Sparkles',
     description: '가볍게 즐기는 재미있는 테스트',
@@ -928,21 +928,6 @@ export const tests: Test[] = [
 
     tags: ['바이럴', '연애', '이별', '심리'],
     createdAt: '2024-06-18',
-  },
-  {
-    id: 'people-pleaser',
-    title: '피플플리저 테스트',
-    slug: 'people-pleaser',
-    description: '나는 남의 눈치를 얼마나 볼까요? 피플플리저 성향을 체크하고 건강한 경계를 세우는 방법을 알아보세요.',
-    shortDescription: '눈치 보기 성향 체크',
-    categoryId: 'psychology',
-    thumbnailUrl: '/images/tests/people-pleaser.png',
-    questionCount: 12,
-    estimatedTime: 3,
-    participantCount: 42150,
-
-    tags: ['바이럴', '심리'],
-    createdAt: '2024-06-20',
   },
   {
     id: 'personality-duality',
@@ -3125,7 +3110,7 @@ export const tests: Test[] = [
     createdAt: '2024-11-27',
   },
 
-  // 프리미엄 테스트
+  // 운세/사주 서비스
   {
     id: 'fortune-2025',
     title: '2025 신년운세',
@@ -3138,7 +3123,7 @@ export const tests: Test[] = [
     estimatedTime: 1,
     participantCount: 32450,
 
-    tags: ['운세', '신년', '띠', '2025', '프리미엄', '인기'],
+    tags: ['운세', '신년', '띠', '2025', '인기'],
     createdAt: '2024-11-27',
   },
   {
@@ -3153,7 +3138,7 @@ export const tests: Test[] = [
     estimatedTime: 1,
     participantCount: 28920,
 
-    tags: ['운세', '신년', '별자리', '2025', '프리미엄', '점성술'],
+    tags: ['운세', '신년', '별자리', '2025', '점성술'],
     createdAt: '2024-11-27',
   },
   {
@@ -3168,7 +3153,7 @@ export const tests: Test[] = [
     estimatedTime: 1,
     participantCount: 24680,
 
-    tags: ['궁합', '연애', '띠', '별자리', '프리미엄', '커플'],
+    tags: ['궁합', '연애', '띠', '별자리', '커플'],
     createdAt: '2024-11-27',
   },
   {
@@ -3183,7 +3168,7 @@ export const tests: Test[] = [
     estimatedTime: 1,
     participantCount: 21350,
 
-    tags: ['이름', '성명학', '획수', '오행', '프리미엄', '운세'],
+    tags: ['이름', '성명학', '획수', '오행', '운세'],
     createdAt: '2024-11-27',
   },
   {
@@ -3198,15 +3183,15 @@ export const tests: Test[] = [
     estimatedTime: 1,
     participantCount: 45230,
 
-    tags: ['오늘', '운세', '일일', '매일', '프리미엄', '총운'],
+    tags: ['오늘', '운세', '일일', '매일', '총운'],
     createdAt: '2024-11-27',
   },
-  // 타로 카드 프리미엄 서비스
+  // 타로 카드 서비스
   {
     id: 'tarot-daily',
     title: '데일리 타로',
     slug: 'tarot-daily',
-    description: '매일 새롭게 뽑는 오늘의 타로! 총운, 연애운, 금전운 중 원하는 운세를 타로 카드로 확인하세요. 하루에 한 번 무료로 즐길 수 있습니다.',
+    description: '매일 새롭게 뽑는 오늘의 타로! 총운, 연애운, 금전운 중 원하는 운세를 타로 카드로 확인하세요.',
     shortDescription: '🎴 오늘의 타로 카드 뽑기',
     categoryId: 'fun',
     thumbnailUrl: '/images/tests/tarot-daily.png',
@@ -3214,7 +3199,7 @@ export const tests: Test[] = [
     estimatedTime: 1,
     participantCount: 38920,
 
-    tags: ['타로', '운세', '무료', '일일'],
+    tags: ['타로', '운세', '일일'],
     createdAt: '2024-11-27',
   },
   {
@@ -3229,7 +3214,7 @@ export const tests: Test[] = [
     estimatedTime: 2,
     participantCount: 24680,
 
-    tags: ['타로', '운세', '프리미엄', '3카드'],
+    tags: ['타로', '운세', '3카드'],
     createdAt: '2024-11-27',
   },
   {
@@ -3244,7 +3229,7 @@ export const tests: Test[] = [
     estimatedTime: 2,
     participantCount: 21350,
 
-    tags: ['타로', '연애', '관계', '프리미엄', '4카드'],
+    tags: ['타로', '연애', '관계', '4카드'],
     createdAt: '2024-11-27',
   },
   {
@@ -3259,7 +3244,7 @@ export const tests: Test[] = [
     estimatedTime: 2,
     participantCount: 18920,
 
-    tags: ['타로', '선택', '결정', '프리미엄', '3카드'],
+    tags: ['타로', '선택', '결정', '3카드'],
     createdAt: '2024-11-27',
   },
   {
@@ -3274,7 +3259,7 @@ export const tests: Test[] = [
     estimatedTime: 1,
     participantCount: 15680,
 
-    tags: ['운세', '토정비결', '전통', '2025', '프리미엄', '신년'],
+    tags: ['운세', '토정비결', '전통', '2025', '신년'],
     createdAt: '2024-11-27',
   },
   {
@@ -3289,7 +3274,7 @@ export const tests: Test[] = [
     estimatedTime: 2,
     participantCount: 12450,
 
-    tags: ['꿈', '해몽', '운세', '무료'],
+    tags: ['꿈', '해몽', '운세'],
     createdAt: '2024-11-27',
   },
   {
@@ -3304,7 +3289,7 @@ export const tests: Test[] = [
     estimatedTime: 3,
     participantCount: 9870,
 
-    tags: ['관상', '운세', '무료', '전통'],
+    tags: ['관상', '운세', '전통'],
     createdAt: '2024-11-27',
   },
   // 추가 테스트 (Batch 22 - 신규 등록)

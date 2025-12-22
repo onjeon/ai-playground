@@ -1,0 +1,322 @@
+{
+  "common": {
+    "siteName": "AI Playground",
+    "siteDescription": "AI-संचालित मनोविज्ञान परीक्षण, व्यक्तित्व परीक्षण, MBTI और अधिक के साथ खुद को खोजें।",
+    "loading": "लोड हो रहा है...",
+    "error": "एक त्रुटि हुई",
+    "notFound": "पेज नहीं मिला",
+    "back": "वापस जाएं",
+    "home": "होम",
+    "share": "शेयर करें",
+    "copy": "कॉपी करें",
+    "copied": "कॉपी हो गया!",
+    "retry": "फिर से कोशिश करें",
+    "start": "शुरू करें",
+    "result": "परिणाम",
+    "next": "अगला",
+    "prev": "पिछला",
+    "submit": "जमा करें",
+    "close": "बंद करें",
+    "more": "और देखें",
+    "all": "सभी",
+    "free": "मुफ्त",
+    "participants": "प्रतिभागी",
+    "minutes": "मिनट",
+    "questions": "सवाल",
+    "viewAll": "सभी देखें",
+    "dailyUpdate": "रोज़ अपडेट होता है",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "होम",
+    "tests": "सभी टेस्ट",
+    "categories": "श्रेणियां",
+    "fortune": "भाग्य",
+    "games": "गेम्स",
+    "physical": "शारीरिक",
+    "daily": "दैनिक"
+  },
+  "categories": {
+    "personality": "व्यक्तित्व",
+    "psychology": "मनोविज्ञान",
+    "relationship": "रिश्ते",
+    "career": "करियर",
+    "fun": "मज़ेदार/मनोरंजन",
+    "iq": "IQ/दिमाग"
+  },
+  "home": {
+    "heroTitle": "खुद को खोजने का समय,",
+    "heroHighlight": "AI Playground",
+    "heroDescription": "मनोविज्ञान परीक्षण, व्यक्तित्व विश्लेषण, MBTI और बहुत कुछ!\nAI-संचालित परीक्षणों से असली खुद को खोजें।",
+    "aiBased": "AI-संचालित",
+    "startTest": "व्यक्तित्व परीक्षण शुरू करें",
+    "viewAll": "सभी टेस्ट देखें",
+    "stats": {
+      "participants": "प्रतिभागी",
+      "participantsCount": "500K+",
+      "tests": "टेस्ट",
+      "shares": "शेयर",
+      "sharesCount": "20K+"
+    },
+    "sections": {
+      "popular": "लोकप्रिय टेस्ट",
+      "new": "नए टेस्ट",
+      "todayPicks": "आज की पसंद",
+      "daily": "दैनिक",
+      "dailyHub": "दैनिक हब",
+      "physicalGames": "शारीरिक और गेम्स",
+      "category": "श्रेणियां",
+      "fortune": "भाग्य और राशिफल"
+    },
+    "quickButtons": {
+      "popular": "लोकप्रिय",
+      "new": "नया",
+      "tarot": "टैरो",
+      "fortune": "आज का भाग्य"
+    },
+    "daily": {
+      "todayFortune": "आज का भाग्य",
+      "fortuneDesc": "आपके जन्मदिन के आधार पर",
+      "condition": "स्थिति जांच",
+      "conditionDesc": "तीन सवालों की त्वरित जांच",
+      "luckyColor": "भाग्यशाली रंग",
+      "luckyColorDesc": "आज का रंग और नंबर"
+    },
+    "fortune": {
+      "title": "भाग्य और राशिफल",
+      "description": "टैरो, दैनिक भाग्य, अनुकूलता, राशिफल",
+      "tarot": "टैरो",
+      "dailyFortune": "दैनिक भाग्य",
+      "compatibility": "अनुकूलता",
+      "saju": "राशिफल"
+    },
+    "physical": {
+      "title": "शारीरिक परीक्षण",
+      "description": "प्रतिक्रिया समय, क्लिक गति, याददाश्त",
+      "reaction": "प्रतिक्रिया",
+      "click": "क्लिक गति",
+      "color": "रंग दृष्टि",
+      "memory": "याददाश्त"
+    },
+    "games": {
+      "title": "गेम्स और कार्ड्स",
+      "description": "बैलेंस गेम, बातचीत कार्ड्स",
+      "balance": "बैलेंस गेम",
+      "cards": "बातचीत कार्ड्स"
+    },
+    "cta": {
+      "title": "और टेस्ट खोज रहे हैं?",
+      "description": "{count} टेस्ट आपका इंतज़ार कर रहे हैं!",
+      "viewAll": "सभी टेस्ट देखें",
+      "funTests": "मज़ेदार टेस्ट"
+    }
+  },
+  "sidebar": {
+    "categories": "श्रेणियां",
+    "allTests": "सभी टेस्ट",
+    "daily": "दैनिक",
+    "dailyHub": "दैनिक हब",
+    "condition": "स्थिति जांच",
+    "fortune": "भाग्य",
+    "physicalGames": "शारीरिक और गेम्स",
+    "physical": "शारीरिक परीक्षण",
+    "games": "गेम्स",
+    "quickLinks": "त्वरित लिंक",
+    "popularTests": "लोकप्रिय टेस्ट",
+    "newTests": "नए टेस्ट"
+  },
+  "test": {
+    "startTest": "टेस्ट शुरू करें",
+    "questionCount": "{count} सवाल",
+    "estimatedTime": "लगभग {minutes} मिनट",
+    "participants": "{count} प्रतिभागी",
+    "loading": "टेस्ट तैयार हो रहा है...",
+    "loadError": "टेस्ट लोड करने में विफल",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "परिणाम देखें",
+    "shareResult": "परिणाम शेयर करें",
+    "retryTest": "फिर से कोशिश करें",
+    "otherTests": "अन्य टेस्ट",
+    "resultTitle": "आपका परिणाम है...",
+    "tags": "टैग",
+    "backHome": "होम",
+    "questionInfo": "{count} सवाल · {time} मिनट",
+    "participation": "{count} प्रतिभागी",
+    "questions": "सवाल",
+    "questionsCount": "{count}",
+    "testGuide": "टेस्ट गाइड",
+    "guideNoAnswer": "कोई गलत जवाब नहीं है। ईमानदारी से जवाब दें।",
+    "guideInstantResult": "टेस्ट के तुरंत बाद परिणाम उपलब्ध हैं।",
+    "guideShare": "दोस्तों के साथ अपने परिणाम साझा करें और तुलना करें!",
+    "addFavorite": "पसंदीदा में जोड़ें",
+    "removeFavorite": "पसंदीदा से हटाएं",
+    "share": "शेयर करें",
+    "previous": "पिछला",
+    "next": "अगला",
+    "noResponseData": "कोई जवाब डेटा नहीं।",
+    "cannotLoadTest": "टेस्ट डेटा लोड नहीं हो सकता।",
+    "cannotFindQuestions": "सवाल नहीं मिले।",
+    "errorLoadingQuestions": "सवाल लोड करने में त्रुटि।",
+    "analyzing": "परिणाम विश्लेषण हो रहा है...",
+    "cannotCalculate": "परिणाम गणना नहीं हो सकती।",
+    "errorLoadingResult": "परिणाम लोड करने में त्रुटि।",
+    "cannotLoadResult": "परिणाम लोड नहीं हो सकते",
+    "retryTestAgain": "कृपया टेस्ट फिर से करें।",
+    "goBack": "वापस जाएं",
+    "jumpToQuestion": "सवाल पर जाएं",
+    "yourResult": "आपका परिणाम है",
+    "screenshotShare": "स्क्रीनशॉट लें और दोस्तों के साथ शेयर करें!",
+    "myResultIs": "मेरा {testTitle} परिणाम {emoji} {title} है!",
+    "analysisResult": "विश्लेषण परिणाम",
+    "mainTraits": "मुख्य विशेषताएं",
+    "strengths": "ताकत",
+    "cautions": "सावधानियां",
+    "advice": "सलाह",
+    "goodMatch": "अच्छी संगतता",
+    "cautionMatch": "चुनौतीपूर्ण संगतता"
+  },
+  "share": {
+    "title": "शेयर करें",
+    "kakao": "KakaoTalk",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "लिंक कॉपी करें",
+    "linkCopied": "लिंक कॉपी हो गया!",
+    "nativeShare": "शेयर करें"
+  },
+  "footer": {
+    "terms": "सेवा की शर्तें",
+    "privacy": "गोपनीयता नीति",
+    "contact": "संपर्क करें",
+    "copyright": "© {year} AI Playground. सर्वाधिकार सुरक्षित।"
+  },
+  "error": {
+    "404": {
+      "title": "पेज नहीं मिला",
+      "description": "आपके द्वारा अनुरोधित पेज मौजूद नहीं है या स्थानांतरित कर दिया गया है।",
+      "backHome": "होम पर जाएं"
+    },
+    "500": {
+      "title": "सर्वर त्रुटि",
+      "description": "एक अस्थायी त्रुटि हुई। कृपया बाद में पुनः प्रयास करें।",
+      "retry": "फिर से कोशिश करें"
+    }
+  },
+  "meta": {
+    "siteName": "AI Playground",
+    "categoryNotFound": "श्रेणी नहीं मिली",
+    "categoryTitle": "{category} - {count} टेस्ट | AI Playground",
+    "categoryDescription": "{category} श्रेणी में {count} मुफ्त टेस्ट का आनंद लें!"
+  },
+  "categoryPage": {
+    "totalTests": "{count} टेस्ट",
+    "noTests": "इस श्रेणी में अभी तक कोई टेस्ट नहीं है।",
+    "viewOtherTests": "अन्य टेस्ट देखें"
+  },
+  "testsPage": {
+    "title": "सभी टेस्ट",
+    "searchPlaceholder": "टेस्ट खोजें...",
+    "allCategories": "सभी श्रेणियाँ",
+    "popular": "लोकप्रिय",
+    "new": "नया",
+    "tagFilter": "टैग फ़िल्टर",
+    "tags": "टैग",
+    "popularTags": "लोकप्रिय टैग",
+    "reset": "रीसेट करें",
+    "noSearchResults": "\"{query}\" के लिए कोई परिणाम नहीं।",
+    "noResults": "आपके मानदंडों से मेल खाने वाला कोई टेस्ट नहीं है।"
+  },
+  "physical": {
+    "pageTitle": "शारीरिक परीक्षण",
+    "pageDescription": "अपनी शारीरिक और संज्ञानात्मक क्षमताओं का परीक्षण करें!",
+    "info": {
+      "title": "जानकारी",
+      "tip1": "शारीरिक परीक्षण PC और मोबाइल दोनों पर काम करते हैं।",
+      "tip2": "सटीक परिणामों के लिए शांत वातावरण में परीक्षण करें।",
+      "tip3": "क्लिक परीक्षण माउस की तुलना में टच से आसान हो सकते हैं।",
+      "tip4": "परिणाम केवल मनोरंजन के लिए हैं!"
+    },
+    "tests": {
+      "reaction-speed": { "title": "प्रतिक्रिया समय परीक्षण", "description": "हरा होने पर जितनी जल्दी हो सके क्लिक करें! आपका प्रतिक्रिया समय क्या है?", "duration": "1 मिनट" },
+      "click-speed": { "title": "क्लिक गति परीक्षण", "description": "10 सेकंड में कितनी तेज़ी से क्लिक कर सकते हैं?", "duration": "10 सेकंड" },
+      "color-blind": { "title": "रंग दृष्टि परीक्षण", "description": "अलग रंग खोजें! अपनी रंग पहचान क्षमता का परीक्षण करें।", "duration": "2 मिनट" },
+      "memory-test": { "title": "अल्पकालिक स्मृति परीक्षण", "description": "क्रम याद करें और दोहराएं! अपनी याददाश्त की सीमाओं को चुनौती दें।", "duration": "3 मिनट" },
+      "eye-tracking": { "title": "आंख व्यायाम", "description": "स्वस्थ आंखों के लिए आंखों का स्ट्रेचिंग! आंखों की थकान दूर करें।", "duration": "2 मिनट" },
+      "typing-speed": { "title": "टाइपिंग गति परीक्षण", "description": "60 सेकंड में कितनी तेज़ी से टाइप कर सकते हैं? अपना WPM मापें!", "duration": "1 मिनट" },
+      "number-memory": { "title": "संख्या स्मृति परीक्षण", "description": "लंबे होते नंबर याद रखें! अपनी याददाश्त की सीमाओं को चुनौती दें।", "duration": "असीमित" },
+      "aim-trainer": { "title": "निशाना प्रशिक्षक", "description": "लक्ष्यों पर जल्दी और सटीक रूप से क्लिक करें!", "duration": "2 मिनट" },
+      "hearing-test": { "title": "श्रवण परीक्षण", "description": "परीक्षण करें कि क्या आप विभिन्न आवृत्तियां सुन सकते हैं!", "duration": "3 मिनट" },
+      "stroop-test": { "title": "स्ट्रूप परीक्षण", "description": "शब्द नहीं, रंग मिलाएं! अपने मस्तिष्क की प्रसंस्करण क्षमता का परीक्षण करें।", "duration": "2 मिनट" },
+      "time-perception": { "title": "समय धारणा परीक्षण", "description": "बिना घड़ी के सटीक समय का अनुमान लगाएं! अपनी आंतरिक घड़ी मापें।", "duration": "3 मिनट" },
+      "peripheral-vision": { "title": "परिधीय दृष्टि परीक्षण", "description": "स्क्रीन के किनारे पर दिखाई देने वाली वस्तुओं का पता लगाएं!", "duration": "2 मिनट" },
+      "pattern-recognition": { "title": "पैटर्न पहचान परीक्षण", "description": "एक अलग रंग खोजें! अपनी पैटर्न पहचान क्षमता मापें।", "duration": "2 मिनट" },
+      "steady-hand": { "title": "स्थिर हाथ परीक्षण", "description": "माउस से संकीर्ण रास्तों से गुज़रें! अपने हाथ की स्थिरता मापें।", "duration": "2 मिनट" },
+      "multitasking": { "title": "मल्टीटास्किंग परीक्षण", "description": "क्लिक करते हुए गणित की समस्याएं हल करें! अपनी मल्टीटास्किंग क्षमता मापें।", "duration": "2 मिनट" },
+      "rhythm-test": { "title": "लय परीक्षण", "description": "ताल पर टैप करें! अपनी लय की भावना मापें।", "duration": "2 मिनट" },
+      "color-sequence": { "title": "रंग स्मृति परीक्षण", "description": "साइमन गेम! रंग क्रम याद करें और दोहराएं।", "duration": "असीमित" },
+      "word-memory": { "title": "शब्द स्मृति परीक्षण", "description": "सभी शब्द याद करें और टाइप करें! अपनी मौखिक स्मृति मापें।", "duration": "3 मिनट" },
+      "direction-sense": { "title": "दिशा ज्ञान परीक्षण", "description": "घूमने के बाद सही दिशा खोजें! अपनी दिशा की भावना मापें।", "duration": "2 मिनट" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "गेम्स और कार्ड्स",
+    "pageDescription": "दोस्तों के साथ खेलने के लिए मज़ेदार गेम्स!",
+    "backHome": "होम",
+    "games": "गेम्स",
+    "startGame": "गेम शुरू करें",
+    "start": "शुरू करें",
+    "moreComingSoon": "और गेम्स जल्द आ रहे हैं!",
+    "gameList": {
+      "worldcup": { "title": "आदर्श प्रकार विश्व कप", "description": "रामेन, मिठाई, कुत्ते और बहुत कुछ! अपनी पसंद खोजें" },
+      "balance": { "title": "बैलेंस गेम", "description": "अगर एक चुनना पड़े? प्यार, काम, चरम स्थितियां!" },
+      "cards": { "title": "बातचीत कार्ड्स", "description": "बर्फ तोड़ने के लिए विषय! डेट, पार्टी, जोड़ों के लिए।" },
+      "random-menu": { "title": "आज क्या खाएं?", "description": "फैसला नहीं कर पा रहे? रैंडम मेनू चुनाव!" },
+      "number-picker": { "title": "रैंडम चुनाव", "description": "नंबर, क्रम, निष्पक्ष ड्रा!" },
+      "team-divider": { "title": "टीम विभाजक", "description": "निष्पक्ष विभाजन के लिए लोगों और टीमों की संख्या दर्ज करें!" },
+      "penalty-picker": { "title": "सज़ा चुनाव", "description": "हल्के से कठोर तक! मज़ेदार सज़ा निकालें" },
+      "role-picker": { "title": "भूमिका चुनाव", "description": "माफिया, जासूस, वेयरवुल्फ! रैंडम गेम रोल असाइन करें" },
+      "would-you-rather": { "title": "यह बनाम वह", "description": "अगर चुनना पड़े? दोस्तों से बहस करें!" },
+      "ice-breaker": { "title": "आइस ब्रेकर", "description": "बर्फ तोड़ने के लिए जादुई सवाल रूलेट!" },
+      "couple-quiz": { "title": "कपल क्विज़", "description": "अपने साथी को कितना जानते हैं? संगतता परीक्षण!" }
+    }
+  },
+  "dailyPage": {
+    "daily": "दैनिक",
+    "greetingMorning": "सुप्रभात!",
+    "greetingAfternoon": "शुभ दोपहर!",
+    "greetingEvening": "शुभ संध्या!",
+    "todayColor": "आज का रंग",
+    "todayNumber": "आज का नंबर",
+    "luckyNumberMeaning": "आपका भाग्यशाली नंबर",
+    "todayContent": "आज की सामग्री",
+    "dailyFortune": "आज का भाग्य",
+    "dailyFortuneDesc": "आपके जन्मदिन पर आधारित आज का भाग्य",
+    "dailyTarot": "आज का टैरो",
+    "dailyTarotDesc": "अपने दिन की शुरुआत के लिए एक टैरो कार्ड",
+    "todayCondition": "आज की स्थिति",
+    "todayConditionDesc": "तीन सवालों की त्वरित जांच",
+    "recommendedTests": "आज के लिए अनुशंसित परीक्षण",
+    "backHome": "होम पर वापस जाएं",
+    "tests": {
+      "stressLevel": { "title": "तनाव का स्तर", "desc": "आज तनाव की जांच करें" },
+      "socialBattery": { "title": "सामाजिक बैटरी", "desc": "आज का ऊर्जा स्तर" },
+      "burnoutLevel": { "title": "बर्नआउट स्तर", "desc": "मैं कैसा हूं?" },
+      "mentalStrength": { "title": "मानसिक शक्ति", "desc": "आज का मानसिक चेक" }
+    },
+    "colors": {
+      "red": { "name": "लाल", "meaning": "जुनून और ऊर्जा से भरा दिन" },
+      "orange": { "name": "नारंगी", "meaning": "रचनात्मकता और सामाजिकता का दिन" },
+      "yellow": { "name": "पीला", "meaning": "उज्ज्वल ऊर्जा और भाग्य से भरा दिन" },
+      "green": { "name": "हरा", "meaning": "स्थिरता और विकास का दिन" },
+      "blue": { "name": "नीला", "meaning": "शांत और केंद्रित दिन" },
+      "purple": { "name": "बैंगनी", "meaning": "अंतर्ज्ञान और प्रेरणा से भरा दिन" },
+      "pink": { "name": "गुलाबी", "meaning": "प्यार और खुशी से भरा दिन" },
+      "mint": { "name": "मिंट", "meaning": "नई शुरुआत का दिन" },
+      "gold": { "name": "सुनहरा", "meaning": "प्रचुरता और सफलता का दिन" },
+      "silver": { "name": "चांदी", "meaning": "शांत और बुद्धिमान दिन" }
+    }
+  }
+}

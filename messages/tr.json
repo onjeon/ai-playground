@@ -1,0 +1,322 @@
+{
+  "common": {
+    "siteName": "AI Playground",
+    "siteDescription": "Yapay zeka destekli psikoloji testleri, kişilik testleri, MBTI ve daha fazlasıyla kendinizi keşfedin.",
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "notFound": "Sayfa bulunamadı",
+    "back": "Geri dön",
+    "home": "Ana Sayfa",
+    "share": "Paylaş",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı!",
+    "retry": "Tekrar dene",
+    "start": "Başla",
+    "result": "Sonuç",
+    "next": "İleri",
+    "prev": "Geri",
+    "submit": "Gönder",
+    "close": "Kapat",
+    "more": "Daha fazla",
+    "all": "Tümü",
+    "free": "Ücretsiz",
+    "participants": "katılımcı",
+    "minutes": "dk",
+    "questions": "soru",
+    "viewAll": "Tümünü gör",
+    "dailyUpdate": "Her gün güncellenir",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "tests": "Tüm Testler",
+    "categories": "Kategoriler",
+    "fortune": "Fal",
+    "games": "Oyunlar",
+    "physical": "Fiziksel",
+    "daily": "Günlük"
+  },
+  "categories": {
+    "personality": "Kişilik",
+    "psychology": "Psikoloji",
+    "relationship": "İlişki",
+    "career": "Kariyer",
+    "fun": "Eğlence/Eğlendirici",
+    "iq": "IQ/Beyin"
+  },
+  "home": {
+    "heroTitle": "Kendini keşfetme zamanı,",
+    "heroHighlight": "AI Playground",
+    "heroDescription": "Psikoloji testleri, kişilik analizi, MBTI ve daha fazlası!\nYapay zeka destekli testlerle gerçek benliğini keşfet.",
+    "aiBased": "Yapay Zeka Destekli",
+    "startTest": "Kişilik Testine Başla",
+    "viewAll": "Tüm Testleri Gör",
+    "stats": {
+      "participants": "Katılımcı",
+      "participantsCount": "500K+",
+      "tests": "Test",
+      "shares": "Paylaşım",
+      "sharesCount": "20K+"
+    },
+    "sections": {
+      "popular": "Popüler Testler",
+      "new": "Yeni Testler",
+      "todayPicks": "Bugünün Seçimleri",
+      "daily": "Günlük",
+      "dailyHub": "Günlük Merkez",
+      "physicalGames": "Fiziksel ve Oyunlar",
+      "category": "Kategoriler",
+      "fortune": "Fal ve Burçlar"
+    },
+    "quickButtons": {
+      "popular": "Popüler",
+      "new": "Yeni",
+      "tarot": "Tarot",
+      "fortune": "Günlük Fal"
+    },
+    "daily": {
+      "todayFortune": "Günlük Fal",
+      "fortuneDesc": "Doğum gününüze göre",
+      "condition": "Durum Kontrolü",
+      "conditionDesc": "Hızlı 3 soruluk kontrol",
+      "luckyColor": "Şanslı Renk",
+      "luckyColorDesc": "Bugünün rengi ve sayısı"
+    },
+    "fortune": {
+      "title": "Fal ve Burçlar",
+      "description": "Tarot, günlük fal, uyumluluk, burç yorumu",
+      "tarot": "Tarot",
+      "dailyFortune": "Günlük Fal",
+      "compatibility": "Uyumluluk",
+      "saju": "Burç"
+    },
+    "physical": {
+      "title": "Fiziksel Testler",
+      "description": "Reaksiyon süresi, tıklama hızı, hafıza",
+      "reaction": "Reaksiyon",
+      "click": "Tıklama Hızı",
+      "color": "Renk Görüşü",
+      "memory": "Hafıza"
+    },
+    "games": {
+      "title": "Oyunlar ve Kartlar",
+      "description": "Denge oyunu, sohbet kartları",
+      "balance": "Denge Oyunu",
+      "cards": "Sohbet Kartları"
+    },
+    "cta": {
+      "title": "Daha fazla test mi arıyorsunuz?",
+      "description": "{count} test sizi bekliyor!",
+      "viewAll": "Tüm Testleri Gör",
+      "funTests": "Eğlenceli Testler"
+    }
+  },
+  "sidebar": {
+    "categories": "Kategoriler",
+    "allTests": "Tüm Testler",
+    "daily": "Günlük",
+    "dailyHub": "Günlük Merkez",
+    "condition": "Durum Kontrolü",
+    "fortune": "Fal",
+    "physicalGames": "Fiziksel ve Oyunlar",
+    "physical": "Fiziksel Testler",
+    "games": "Oyunlar",
+    "quickLinks": "Hızlı Bağlantılar",
+    "popularTests": "Popüler Testler",
+    "newTests": "Yeni Testler"
+  },
+  "test": {
+    "startTest": "Teste Başla",
+    "questionCount": "{count} soru",
+    "estimatedTime": "Yaklaşık {minutes} dk",
+    "participants": "{count} katılımcı",
+    "loading": "Test hazırlanıyor...",
+    "loadError": "Test yüklenemedi",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "Sonucu Gör",
+    "shareResult": "Sonucu Paylaş",
+    "retryTest": "Tekrar Dene",
+    "otherTests": "Diğer Testler",
+    "resultTitle": "Sonucunuz...",
+    "tags": "Etiketler",
+    "backHome": "Ana Sayfa",
+    "questionInfo": "{count} soru · {time} dk",
+    "participation": "{count} katılımcı",
+    "questions": "Sorular",
+    "questionsCount": "{count}",
+    "testGuide": "Test Rehberi",
+    "guideNoAnswer": "Yanlış cevap yoktur. Lütfen dürüstçe cevaplayın.",
+    "guideInstantResult": "Sonuçlar testten hemen sonra görülebilir.",
+    "guideShare": "Sonuçlarınızı arkadaşlarınızla paylaşın ve karşılaştırın!",
+    "addFavorite": "Favorilere ekle",
+    "removeFavorite": "Favorilerden çıkar",
+    "share": "Paylaş",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "noResponseData": "Yanıt verisi yok.",
+    "cannotLoadTest": "Test verileri yüklenemiyor.",
+    "cannotFindQuestions": "Sorular bulunamadı.",
+    "errorLoadingQuestions": "Sorular yüklenirken hata oluştu.",
+    "analyzing": "Sonuçlar analiz ediliyor...",
+    "cannotCalculate": "Sonuçlar hesaplanamıyor.",
+    "errorLoadingResult": "Sonuçlar yüklenirken hata oluştu.",
+    "cannotLoadResult": "Sonuçlar yüklenemiyor",
+    "retryTestAgain": "Lütfen testi tekrar deneyin.",
+    "goBack": "Geri",
+    "jumpToQuestion": "Soruya git",
+    "yourResult": "Sonucunuz",
+    "screenshotShare": "Ekran görüntüsü alıp arkadaşlarınızla paylaşın!",
+    "myResultIs": "{testTitle} sonucum {emoji} {title}!",
+    "analysisResult": "Analiz Sonucu",
+    "mainTraits": "Ana Özellikler",
+    "strengths": "Güçlü Yönler",
+    "cautions": "Dikkat Edilmesi Gerekenler",
+    "advice": "Tavsiye",
+    "goodMatch": "İyi Uyum",
+    "cautionMatch": "Zorlu Uyum"
+  },
+  "share": {
+    "title": "Paylaş",
+    "kakao": "KakaoTalk",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "Bağlantıyı Kopyala",
+    "linkCopied": "Bağlantı kopyalandı!",
+    "nativeShare": "Paylaş"
+  },
+  "footer": {
+    "terms": "Kullanım Şartları",
+    "privacy": "Gizlilik Politikası",
+    "contact": "İletişim",
+    "copyright": "© {year} AI Playground. Tüm hakları saklıdır."
+  },
+  "error": {
+    "404": {
+      "title": "Sayfa bulunamadı",
+      "description": "İstediğiniz sayfa mevcut değil veya taşınmış.",
+      "backHome": "Ana Sayfaya Git"
+    },
+    "500": {
+      "title": "Sunucu Hatası",
+      "description": "Geçici bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+      "retry": "Tekrar Dene"
+    }
+  },
+  "meta": {
+    "siteName": "AI Playground",
+    "categoryNotFound": "Kategori bulunamadı",
+    "categoryTitle": "{category} - {count} Test | AI Playground",
+    "categoryDescription": "{category} kategorisinde {count} ücretsiz testin keyfini çıkarın!"
+  },
+  "categoryPage": {
+    "totalTests": "{count} test",
+    "noTests": "Bu kategoride henüz test yok.",
+    "viewOtherTests": "Diğer testleri gör"
+  },
+  "testsPage": {
+    "title": "Tüm Testler",
+    "searchPlaceholder": "Test ara...",
+    "allCategories": "Tüm Kategoriler",
+    "popular": "Popüler",
+    "new": "Yeni",
+    "tagFilter": "Etiket Filtresi",
+    "tags": "Etiketler",
+    "popularTags": "Popüler Etiketler",
+    "reset": "Sıfırla",
+    "noSearchResults": "\"{query}\" için sonuç bulunamadı.",
+    "noResults": "Kriterlerinize uyan test bulunamadı."
+  },
+  "physical": {
+    "pageTitle": "Fiziksel Testler",
+    "pageDescription": "Fiziksel ve bilişsel yeteneklerinizi test edin!",
+    "info": {
+      "title": "Bilgi",
+      "tip1": "Fiziksel testler PC ve mobilde çalışır.",
+      "tip2": "Doğru sonuçlar için sessiz bir ortamda test yapın.",
+      "tip3": "Tıklama testleri fare yerine dokunmatik ile daha kolay olabilir.",
+      "tip4": "Sonuçlar sadece eğlence içindir!"
+    },
+    "tests": {
+      "reaction-speed": { "title": "Reaksiyon Süresi Testi", "description": "Yeşile döndüğünde mümkün olduğunca hızlı tıkla! Reaksiyon süreniz nedir?", "duration": "1 dk" },
+      "click-speed": { "title": "Tıklama Hızı Testi", "description": "10 saniyede ne kadar hızlı tıklayabilirsin?", "duration": "10 sn" },
+      "color-blind": { "title": "Renk Görüşü Testi", "description": "Farklı rengi bul! Renk ayırt etme yeteneğini test et.", "duration": "2 dk" },
+      "memory-test": { "title": "Kısa Süreli Hafıza Testi", "description": "Sırayı hatırla ve tekrarla! Hafıza sınırlarını zorla.", "duration": "3 dk" },
+      "eye-tracking": { "title": "Göz Egzersizi", "description": "Sağlıklı gözler için göz esnetmesi! Göz yorgunluğunu gider.", "duration": "2 dk" },
+      "typing-speed": { "title": "Yazma Hızı Testi", "description": "60 saniyede ne kadar hızlı yazabilirsin? DPM'nizi ölçün!", "duration": "1 dk" },
+      "number-memory": { "title": "Sayı Hafızası Testi", "description": "Giderek uzayan sayıları hatırla! Hafıza sınırlarını zorla.", "duration": "Sınırsız" },
+      "aim-trainer": { "title": "Nişan Antrenörü", "description": "Hedeflere hızlı ve doğru tıkla!", "duration": "2 dk" },
+      "hearing-test": { "title": "İşitme Testi", "description": "Çeşitli frekansları duyabildiğini test et!", "duration": "3 dk" },
+      "stroop-test": { "title": "Stroop Testi", "description": "Kelimeyi değil rengi eşleştir! Beyninin işleme kapasitesini test et.", "duration": "2 dk" },
+      "time-perception": { "title": "Zaman Algısı Testi", "description": "Saatsiz zamanı doğru tahmin et! İç saatini ölç.", "duration": "3 dk" },
+      "peripheral-vision": { "title": "Çevresel Görüş Testi", "description": "Ekranın kenarında beliren nesneleri algıla!", "duration": "2 dk" },
+      "pattern-recognition": { "title": "Örüntü Tanıma Testi", "description": "Farklı olan bir rengi bul! Örüntü tanıma yeteneğini ölç.", "duration": "2 dk" },
+      "steady-hand": { "title": "Sabit El Testi", "description": "Farenle dar yollardan geç! Elinin stabilitesini ölç.", "duration": "2 dk" },
+      "multitasking": { "title": "Çoklu Görev Testi", "description": "Tıklarken matematik problemleri çöz! Çoklu görev yeteneğini ölç.", "duration": "2 dk" },
+      "rhythm-test": { "title": "Ritim Testi", "description": "Ritme göre dokun! Ritim duygunu ölç.", "duration": "2 dk" },
+      "color-sequence": { "title": "Renk Hafızası Testi", "description": "Simon oyunu! Renk sırasını hatırla ve tekrarla.", "duration": "Sınırsız" },
+      "word-memory": { "title": "Kelime Hafızası Testi", "description": "Tüm kelimeleri hatırla ve yaz! Sözel hafızanı ölç.", "duration": "3 dk" },
+      "direction-sense": { "title": "Yön Duygusu Testi", "description": "Döndükten sonra doğru yönü bul! Yön duygunu ölç.", "duration": "2 dk" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "Oyunlar ve Kartlar",
+    "pageDescription": "Arkadaşlarla oynayacak eğlenceli oyunlar!",
+    "backHome": "Ana Sayfa",
+    "games": "Oyunlar",
+    "startGame": "Oyunu başlat",
+    "start": "Başla",
+    "moreComingSoon": "Daha fazla oyun yakında!",
+    "gameList": {
+      "worldcup": { "title": "İdeal Tip Dünya Kupası", "description": "Ramen, tatlılar, köpekler ve daha fazlası! Tercihlerini keşfet" },
+      "balance": { "title": "Denge Oyunu", "description": "Birini seçmek zorunda olsan? Aşk, iş, aşırı durumlar!" },
+      "cards": { "title": "Sohbet Kartları", "description": "Buzu kırmak için konular! Buluşmalar, partiler, çiftler için." },
+      "random-menu": { "title": "Bugün ne yiyelim?", "description": "Karar veremiyorsun? Rastgele menü seçici!" },
+      "number-picker": { "title": "Rastgele Seçim", "description": "Sayılar, sıralama, adil çekilişler!" },
+      "team-divider": { "title": "Takım Bölücü", "description": "Adil bölünme için kişi ve takım sayısını gir!" },
+      "penalty-picker": { "title": "Ceza Çekimi", "description": "Hafiften serte! Eğlenceli cezalar çek" },
+      "role-picker": { "title": "Rol Çekimi", "description": "Mafya, Casus, Kurt Adam! Rastgele oyun rolleri ata" },
+      "would-you-rather": { "title": "Bu mu O mu", "description": "Seçmek zorunda olsan? Arkadaşlarla tartış!" },
+      "ice-breaker": { "title": "Buz Kırıcı", "description": "Buzu kırmak için sihirli soru çarkı!" },
+      "couple-quiz": { "title": "Çift Quizi", "description": "Partnerini ne kadar iyi tanıyorsun? Uyumluluk testi!" }
+    }
+  },
+  "dailyPage": {
+    "daily": "Günlük",
+    "greetingMorning": "Günaydın!",
+    "greetingAfternoon": "İyi öğleden sonra!",
+    "greetingEvening": "İyi akşamlar!",
+    "todayColor": "Günün rengi",
+    "todayNumber": "Günün sayısı",
+    "luckyNumberMeaning": "Şanslı sayın",
+    "todayContent": "Günün içeriği",
+    "dailyFortune": "Günlük fal",
+    "dailyFortuneDesc": "Doğum gününe göre günün falı",
+    "dailyTarot": "Günlük tarot",
+    "dailyTarotDesc": "Gününüze başlamak için bir tarot kartı",
+    "todayCondition": "Günün kondisyonu",
+    "todayConditionDesc": "Hızlı 3 soruluk kontrol",
+    "recommendedTests": "Bugün için önerilen testler",
+    "backHome": "Ana sayfaya dön",
+    "tests": {
+      "stressLevel": { "title": "Stres seviyesi", "desc": "Bugünkü stresi kontrol et" },
+      "socialBattery": { "title": "Sosyal batarya", "desc": "Bugünkü enerji seviyesi" },
+      "burnoutLevel": { "title": "Tükenmişlik seviyesi", "desc": "Nasılım?" },
+      "mentalStrength": { "title": "Zihinsel güç", "desc": "Bugünkü mental kontrol" }
+    },
+    "colors": {
+      "red": { "name": "Kırmızı", "meaning": "Tutku ve enerji dolu bir gün" },
+      "orange": { "name": "Turuncu", "meaning": "Yaratıcılık ve sosyallik günü" },
+      "yellow": { "name": "Sarı", "meaning": "Parlak enerji ve şans dolu bir gün" },
+      "green": { "name": "Yeşil", "meaning": "İstikrar ve büyüme günü" },
+      "blue": { "name": "Mavi", "meaning": "Huzurlu ve odaklanmış bir gün" },
+      "purple": { "name": "Mor", "meaning": "Sezgi ve ilham dolu bir gün" },
+      "pink": { "name": "Pembe", "meaning": "Aşk ve mutluluk dolu bir gün" },
+      "mint": { "name": "Nane", "meaning": "Yeni başlangıçlar günü" },
+      "gold": { "name": "Altın", "meaning": "Bolluk ve başarı günü" },
+      "silver": { "name": "Gümüş", "meaning": "Sakin ve bilge bir gün" }
+    }
+  }
+}

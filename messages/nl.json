@@ -1,0 +1,322 @@
+{
+  "common": {
+    "siteName": "AI Playground",
+    "siteDescription": "Ontdek jezelf met AI-gestuurde psychologietests, persoonlijkheidstests, MBTI en meer.",
+    "loading": "Laden...",
+    "error": "Er is een fout opgetreden",
+    "notFound": "Pagina niet gevonden",
+    "back": "Ga terug",
+    "home": "Home",
+    "share": "Delen",
+    "copy": "Kopiëren",
+    "copied": "Gekopieerd!",
+    "retry": "Probeer opnieuw",
+    "start": "Start",
+    "result": "Resultaat",
+    "next": "Volgende",
+    "prev": "Vorige",
+    "submit": "Verzenden",
+    "close": "Sluiten",
+    "more": "Meer",
+    "all": "Alle",
+    "free": "Gratis",
+    "participants": "deelnemers",
+    "minutes": "min",
+    "questions": "vragen",
+    "viewAll": "Alles bekijken",
+    "dailyUpdate": "Dagelijks bijgewerkt",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "Home",
+    "tests": "Alle tests",
+    "categories": "Categorieën",
+    "fortune": "Voorspelling",
+    "games": "Spellen",
+    "physical": "Fysiek",
+    "daily": "Dagelijks"
+  },
+  "categories": {
+    "personality": "Persoonlijkheid",
+    "psychology": "Psychologie",
+    "relationship": "Relaties",
+    "career": "Carrière",
+    "fun": "Fun/Entertainment",
+    "iq": "IQ/Brein"
+  },
+  "home": {
+    "heroTitle": "Tijd om jezelf te ontdekken,",
+    "heroHighlight": "AI Playground",
+    "heroDescription": "Psychologietests, persoonlijkheidsanalyse, MBTI en meer!\nOntdek de echte jij met AI-gestuurde tests.",
+    "aiBased": "AI-gestuurd",
+    "startTest": "Start persoonlijkheidstest",
+    "viewAll": "Bekijk alle tests",
+    "stats": {
+      "participants": "Deelnemers",
+      "participantsCount": "500K+",
+      "tests": "Tests",
+      "shares": "Shares",
+      "sharesCount": "20K+"
+    },
+    "sections": {
+      "popular": "Populaire tests",
+      "new": "Nieuwe tests",
+      "todayPicks": "Tips van vandaag",
+      "daily": "Dagelijks",
+      "dailyHub": "Dagelijks centrum",
+      "physicalGames": "Fysiek en spellen",
+      "category": "Categorieën",
+      "fortune": "Voorspelling en horoscoop"
+    },
+    "quickButtons": {
+      "popular": "Populair",
+      "new": "Nieuw",
+      "tarot": "Tarot",
+      "fortune": "Dagelijkse voorspelling"
+    },
+    "daily": {
+      "todayFortune": "Dagelijkse voorspelling",
+      "fortuneDesc": "Op basis van je geboortedatum",
+      "condition": "Conditiecheck",
+      "conditionDesc": "Snelle check met 3 vragen",
+      "luckyColor": "Gelukskleur",
+      "luckyColorDesc": "Kleur en nummer van vandaag"
+    },
+    "fortune": {
+      "title": "Voorspelling en horoscoop",
+      "description": "Tarot, dagelijkse voorspelling, compatibiliteit, horoscoop",
+      "tarot": "Tarot",
+      "dailyFortune": "Dagelijkse voorspelling",
+      "compatibility": "Compatibiliteit",
+      "saju": "Horoscoop"
+    },
+    "physical": {
+      "title": "Fysieke tests",
+      "description": "Reactietijd, kliksnelheid, geheugen",
+      "reaction": "Reactie",
+      "click": "Kliksnelheid",
+      "color": "Kleurenzicht",
+      "memory": "Geheugen"
+    },
+    "games": {
+      "title": "Spellen en kaarten",
+      "description": "Balansspel, gesprekskaarten",
+      "balance": "Balansspel",
+      "cards": "Gesprekskaarten"
+    },
+    "cta": {
+      "title": "Op zoek naar meer tests?",
+      "description": "{count} tests wachten op je!",
+      "viewAll": "Bekijk alle tests",
+      "funTests": "Leuke tests"
+    }
+  },
+  "sidebar": {
+    "categories": "Categorieën",
+    "allTests": "Alle tests",
+    "daily": "Dagelijks",
+    "dailyHub": "Dagelijks centrum",
+    "condition": "Conditiecheck",
+    "fortune": "Voorspelling",
+    "physicalGames": "Fysiek en spellen",
+    "physical": "Fysieke tests",
+    "games": "Spellen",
+    "quickLinks": "Snelle links",
+    "popularTests": "Populaire tests",
+    "newTests": "Nieuwe tests"
+  },
+  "test": {
+    "startTest": "Start test",
+    "questionCount": "{count} vragen",
+    "estimatedTime": "Ongeveer {minutes} min",
+    "participants": "{count} deelnemers",
+    "loading": "Test wordt voorbereid...",
+    "loadError": "Test kon niet worden geladen",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "Bekijk resultaat",
+    "shareResult": "Deel resultaat",
+    "retryTest": "Probeer opnieuw",
+    "otherTests": "Andere tests",
+    "resultTitle": "Jouw resultaat is...",
+    "tags": "Tags",
+    "backHome": "Home",
+    "questionInfo": "{count} vragen · {time} min",
+    "participation": "{count} deelnemers",
+    "questions": "Vragen",
+    "questionsCount": "{count}",
+    "testGuide": "Test handleiding",
+    "guideNoAnswer": "Er zijn geen foute antwoorden. Beantwoord eerlijk.",
+    "guideInstantResult": "Resultaten zijn direct beschikbaar na de test.",
+    "guideShare": "Deel en vergelijk je resultaten met vrienden!",
+    "addFavorite": "Toevoegen aan favorieten",
+    "removeFavorite": "Verwijderen uit favorieten",
+    "share": "Delen",
+    "previous": "Vorige",
+    "next": "Volgende",
+    "noResponseData": "Geen antwoordgegevens.",
+    "cannotLoadTest": "Kan testgegevens niet laden.",
+    "cannotFindQuestions": "Vragen niet gevonden.",
+    "errorLoadingQuestions": "Fout bij laden van vragen.",
+    "analyzing": "Resultaten analyseren...",
+    "cannotCalculate": "Kan resultaten niet berekenen.",
+    "errorLoadingResult": "Fout bij laden van resultaten.",
+    "cannotLoadResult": "Kan resultaten niet laden",
+    "retryTestAgain": "Probeer de test opnieuw.",
+    "goBack": "Terug",
+    "jumpToQuestion": "Ga naar vraag",
+    "yourResult": "Jouw resultaat is",
+    "screenshotShare": "Maak een screenshot en deel met vrienden!",
+    "myResultIs": "Mijn {testTitle} resultaat is {emoji} {title}!",
+    "analysisResult": "Analyseresultaat",
+    "mainTraits": "Hoofdkenmerken",
+    "strengths": "Sterke punten",
+    "cautions": "Aandachtspunten",
+    "advice": "Advies",
+    "goodMatch": "Goede match",
+    "cautionMatch": "Uitdagende match"
+  },
+  "share": {
+    "title": "Delen",
+    "kakao": "KakaoTalk",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "Link kopiëren",
+    "linkCopied": "Link gekopieerd!",
+    "nativeShare": "Delen"
+  },
+  "footer": {
+    "terms": "Gebruiksvoorwaarden",
+    "privacy": "Privacybeleid",
+    "contact": "Contact",
+    "copyright": "© {year} AI Playground. Alle rechten voorbehouden."
+  },
+  "error": {
+    "404": {
+      "title": "Pagina niet gevonden",
+      "description": "De pagina die je hebt opgevraagd bestaat niet of is verplaatst.",
+      "backHome": "Ga naar Home"
+    },
+    "500": {
+      "title": "Serverfout",
+      "description": "Er is een tijdelijke fout opgetreden. Probeer het later opnieuw.",
+      "retry": "Probeer opnieuw"
+    }
+  },
+  "meta": {
+    "siteName": "AI Playground",
+    "categoryNotFound": "Categorie niet gevonden",
+    "categoryTitle": "{category} - {count} Tests | AI Playground",
+    "categoryDescription": "Geniet van {count} gratis tests in de categorie {category}!"
+  },
+  "categoryPage": {
+    "totalTests": "{count} tests",
+    "noTests": "Nog geen tests in deze categorie.",
+    "viewOtherTests": "Bekijk andere tests"
+  },
+  "testsPage": {
+    "title": "Alle Tests",
+    "searchPlaceholder": "Tests zoeken...",
+    "allCategories": "Alle Categorieën",
+    "popular": "Populair",
+    "new": "Nieuw",
+    "tagFilter": "Tag filter",
+    "tags": "Tags",
+    "popularTags": "Populaire tags",
+    "reset": "Resetten",
+    "noSearchResults": "Geen resultaten voor \"{query}\".",
+    "noResults": "Geen tests komen overeen met uw criteria."
+  },
+  "physical": {
+    "pageTitle": "Fysieke Tests",
+    "pageDescription": "Test je fysieke en cognitieve vaardigheden!",
+    "info": {
+      "title": "Info",
+      "tip1": "Fysieke tests werken op PC en mobiel.",
+      "tip2": "Voor nauwkeurige resultaten, test in een rustige omgeving.",
+      "tip3": "Kliktests kunnen makkelijker zijn met touch dan met muis.",
+      "tip4": "Resultaten zijn alleen voor de lol!"
+    },
+    "tests": {
+      "reaction-speed": { "title": "Reactietijd Test", "description": "Klik zo snel mogelijk als het groen wordt! Wat is jouw reactietijd?", "duration": "1 min" },
+      "click-speed": { "title": "Kliksnelheid Test", "description": "Hoe snel kun je klikken in 10 seconden?", "duration": "10 sec" },
+      "color-blind": { "title": "Kleurenzicht Test", "description": "Vind de andere kleur! Test je kleuronderscheidingsvermogen.", "duration": "2 min" },
+      "memory-test": { "title": "Korte Termijn Geheugen Test", "description": "Onthoud de volgorde en herhaal! Daag je geheugenlimieten uit.", "duration": "3 min" },
+      "eye-tracking": { "title": "Oogoefening", "description": "Oogstretching voor gezonde ogen! Verlicht je oogvermoeidheid.", "duration": "2 min" },
+      "typing-speed": { "title": "Typsnelheid Test", "description": "Hoe snel kun je typen in 60 seconden? Meet je WPM!", "duration": "1 min" },
+      "number-memory": { "title": "Cijfergeheugen Test", "description": "Onthoud steeds langere nummers! Daag je geheugenlimieten uit.", "duration": "Onbeperkt" },
+      "aim-trainer": { "title": "Mik Trainer", "description": "Klik snel en nauwkeurig op de doelen!", "duration": "2 min" },
+      "hearing-test": { "title": "Gehoor Test", "description": "Test of je verschillende frequenties kunt horen!", "duration": "3 min" },
+      "stroop-test": { "title": "Stroop Test", "description": "Match de kleur, niet het woord! Test je hersenverwerking.", "duration": "2 min" },
+      "time-perception": { "title": "Tijdsperceptie Test", "description": "Schat de tijd nauwkeurig zonder klok! Meet je interne klok.", "duration": "3 min" },
+      "peripheral-vision": { "title": "Perifeer Zicht Test", "description": "Detecteer objecten aan de rand van het scherm!", "duration": "2 min" },
+      "pattern-recognition": { "title": "Patroonherkenning Test", "description": "Vind de ene andere kleur! Meet je patroonherkenning.", "duration": "2 min" },
+      "steady-hand": { "title": "Vaste Hand Test", "description": "Navigeer door smalle paden met je muis! Meet de stabiliteit van je hand.", "duration": "2 min" },
+      "multitasking": { "title": "Multitasking Test", "description": "Los rekenproblemen op terwijl je klikt! Meet je multitasking vermogen.", "duration": "2 min" },
+      "rhythm-test": { "title": "Ritme Test", "description": "Tik op de maat! Meet je gevoel voor ritme.", "duration": "2 min" },
+      "color-sequence": { "title": "Kleurgeheugen Test", "description": "Simon spel! Onthoud en herhaal de kleurenvolgorde.", "duration": "Onbeperkt" },
+      "word-memory": { "title": "Woordgeheugen Test", "description": "Onthoud en typ alle woorden! Meet je verbale geheugen.", "duration": "3 min" },
+      "direction-sense": { "title": "Richtingsgevoel Test", "description": "Vind de juiste richting na rotatie! Meet je richtingsgevoel.", "duration": "2 min" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "Spellen & Kaarten",
+    "pageDescription": "Leuke spellen om met vrienden te spelen!",
+    "backHome": "Home",
+    "games": "Spellen",
+    "startGame": "Start spel",
+    "start": "Start",
+    "moreComingSoon": "Meer spellen komen eraan!",
+    "gameList": {
+      "worldcup": { "title": "Ideale Type Wereldkampioenschap", "description": "Ramen, desserts, honden en meer! Ontdek je voorkeuren" },
+      "balance": { "title": "Balansspel", "description": "Als je er maar één kon kiezen? Liefde, werk, extreme situaties!" },
+      "cards": { "title": "Gesprekskaarten", "description": "IJsbrekers gespreksonderwerpen! Voor dates, feestjes, koppels." },
+      "random-menu": { "title": "Wat eten we vandaag?", "description": "Kun je niet beslissen? Willekeurige menukeuze!" },
+      "number-picker": { "title": "Willekeurige Keuze", "description": "Nummers, volgorde, eerlijke trekkingen!" },
+      "team-divider": { "title": "Teamverdeler", "description": "Voer het aantal mensen en teams in voor eerlijke verdeling!" },
+      "penalty-picker": { "title": "Straf Trekking", "description": "Van licht tot hardcore! Trek leuke straffen" },
+      "role-picker": { "title": "Rol Trekking", "description": "Mafia, Spion, Weerwolf! Wijs willekeurig spelrollen toe" },
+      "would-you-rather": { "title": "Dit vs Dat", "description": "Als je moest kiezen? Discussieer met vrienden!" },
+      "ice-breaker": { "title": "IJsbreker", "description": "Magisch vragenroulette om het ijs te breken!" },
+      "couple-quiz": { "title": "Koppel Quiz", "description": "Ken je je partner goed? Compatibiliteitstest!" }
+    }
+  },
+  "dailyPage": {
+    "daily": "Dagelijks",
+    "greetingMorning": "Goedemorgen!",
+    "greetingAfternoon": "Goedemiddag!",
+    "greetingEvening": "Goedenavond!",
+    "todayColor": "Kleur van de dag",
+    "todayNumber": "Nummer van de dag",
+    "luckyNumberMeaning": "Jouw geluksnummer",
+    "todayContent": "Inhoud van de dag",
+    "dailyFortune": "Dagelijkse voorspelling",
+    "dailyFortuneDesc": "De voorspelling van de dag op basis van je geboortedatum",
+    "dailyTarot": "Dagelijkse tarot",
+    "dailyTarotDesc": "Een tarotkaart om je dag te beginnen",
+    "todayCondition": "Conditie van de dag",
+    "todayConditionDesc": "Snelle check met 3 vragen",
+    "recommendedTests": "Aanbevolen tests vandaag",
+    "backHome": "Terug naar home",
+    "tests": {
+      "stressLevel": { "title": "Stressniveau", "desc": "Check stress vandaag" },
+      "socialBattery": { "title": "Sociale batterij", "desc": "Energieniveau van vandaag" },
+      "burnoutLevel": { "title": "Burn-outniveau", "desc": "Hoe gaat het met mij?" },
+      "mentalStrength": { "title": "Mentale kracht", "desc": "Mentale check van vandaag" }
+    },
+    "colors": {
+      "red": { "name": "Rood", "meaning": "Een dag vol passie en energie" },
+      "orange": { "name": "Oranje", "meaning": "Een dag van creativiteit en gezelligheid" },
+      "yellow": { "name": "Geel", "meaning": "Een dag vol heldere energie en geluk" },
+      "green": { "name": "Groen", "meaning": "Een dag van stabiliteit en groei" },
+      "blue": { "name": "Blauw", "meaning": "Een rustige en gefocuste dag" },
+      "purple": { "name": "Paars", "meaning": "Een dag vol intuïtie en inspiratie" },
+      "pink": { "name": "Roze", "meaning": "Een dag vol liefde en geluk" },
+      "mint": { "name": "Mint", "meaning": "Een dag van nieuwe beginnen" },
+      "gold": { "name": "Goud", "meaning": "Een dag van overvloed en succes" },
+      "silver": { "name": "Zilver", "meaning": "Een kalme en wijze dag" }
+    }
+  }
+}

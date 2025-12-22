@@ -97,6 +97,7 @@ function NameAnalysisResult() {
   // 공유 함수
   const handleShare = async () => {
     const shareText = `📜 이름 풀이 결과\n\n이름: ${name}\n총획: ${numbers.total}획\n종합 등급: ${scoreGrade.emoji} ${scoreGrade.grade}\n오행: ${jungElement.name}\n\n나도 이름 풀이 보기`;
+    const fullText = shareText + '\n' + window.location.origin + '/fortune/name-analysis';
     
     if (navigator.share) {
       try {
@@ -105,12 +106,34 @@ function NameAnalysisResult() {
           text: shareText,
           url: window.location.href,
         });
+        return;
       } catch {
-        // 공유 취소
+        // fallback
       }
-    } else {
-      await navigator.clipboard.writeText(shareText + '\n' + window.location.origin + '/fortune/name-analysis');
+    }
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(fullText);
+        alert('클립보드에 복사되었습니다!');
+        return;
+      } catch {
+        // fallback
+      }
+    }
+    
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = fullText;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
       alert('클립보드에 복사되었습니다!');
+    } catch {
+      alert('공유 기능을 사용할 수 없습니다.');
     }
   };
 

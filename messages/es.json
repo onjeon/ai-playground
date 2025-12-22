@@ -1,0 +1,322 @@
+{
+  "common": {
+    "siteName": "AI Playground",
+    "siteDescription": "Descúbrete a ti mismo con tests de psicología, personalidad, MBTI y más, impulsados por IA.",
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "notFound": "Página no encontrada",
+    "back": "Volver",
+    "home": "Inicio",
+    "share": "Compartir",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "retry": "Intentar de nuevo",
+    "start": "Iniciar",
+    "result": "Resultado",
+    "next": "Siguiente",
+    "prev": "Anterior",
+    "submit": "Enviar",
+    "close": "Cerrar",
+    "more": "Más",
+    "all": "Todos",
+    "free": "Gratis",
+    "participants": "participantes",
+    "minutes": "min",
+    "questions": "preguntas",
+    "viewAll": "Ver todos",
+    "dailyUpdate": "Actualizado diariamente",
+    "count": "{count}"
+  },
+  "nav": {
+    "home": "Inicio",
+    "tests": "Todos los Tests",
+    "categories": "Categorías",
+    "fortune": "Fortuna",
+    "games": "Juegos",
+    "physical": "Físicos",
+    "daily": "Diario"
+  },
+  "categories": {
+    "personality": "Personalidad",
+    "psychology": "Psicología",
+    "relationship": "Relaciones",
+    "career": "Carrera",
+    "fun": "Diversión/Entretenimiento",
+    "iq": "CI/Cerebro"
+  },
+  "home": {
+    "heroTitle": "Es hora de descubrirte,",
+    "heroHighlight": "AI Playground",
+    "heroDescription": "¡Tests de psicología, análisis de personalidad, MBTI y más!\nDescubre quién eres realmente con tests impulsados por IA.",
+    "aiBased": "Impulsado por IA",
+    "startTest": "Iniciar Test de Personalidad",
+    "viewAll": "Ver Todos los Tests",
+    "stats": {
+      "participants": "Participantes",
+      "participantsCount": "500K+",
+      "tests": "Tests",
+      "shares": "Compartidos",
+      "sharesCount": "20K+"
+    },
+    "sections": {
+      "popular": "Tests Populares",
+      "new": "Tests Nuevos",
+      "todayPicks": "Selección del Día",
+      "daily": "Diario",
+      "dailyHub": "Hub Diario",
+      "physicalGames": "Físicos y Juegos",
+      "category": "Categorías",
+      "fortune": "Fortuna y Horóscopo"
+    },
+    "quickButtons": {
+      "popular": "Populares",
+      "new": "Nuevos",
+      "tarot": "Tarot",
+      "fortune": "Fortuna del Día"
+    },
+    "daily": {
+      "todayFortune": "Fortuna del Día",
+      "fortuneDesc": "Basado en tu cumpleaños",
+      "condition": "Chequeo de Estado",
+      "conditionDesc": "Chequeo rápido de 3 preguntas",
+      "luckyColor": "Color de la Suerte",
+      "luckyColorDesc": "Color y número de hoy"
+    },
+    "fortune": {
+      "title": "Fortuna y Horóscopo",
+      "description": "Tarot, fortuna diaria, compatibilidad, horóscopo",
+      "tarot": "Tarot",
+      "dailyFortune": "Fortuna del Día",
+      "compatibility": "Compatibilidad",
+      "saju": "Horóscopo"
+    },
+    "physical": {
+      "title": "Tests Físicos",
+      "description": "Tiempo de reacción, velocidad de clic, memoria",
+      "reaction": "Reacción",
+      "click": "Velocidad de Clic",
+      "color": "Visión del Color",
+      "memory": "Memoria"
+    },
+    "games": {
+      "title": "Juegos y Cartas",
+      "description": "Juego de equilibrio, cartas de conversación",
+      "balance": "Juego de Equilibrio",
+      "cards": "Cartas de Conversación"
+    },
+    "cta": {
+      "title": "¿Buscas más tests?",
+      "description": "¡{count} tests te están esperando!",
+      "viewAll": "Ver Todos los Tests",
+      "funTests": "Tests Divertidos"
+    }
+  },
+  "sidebar": {
+    "categories": "Categorías",
+    "allTests": "Todos los Tests",
+    "daily": "Diario",
+    "dailyHub": "Hub Diario",
+    "condition": "Chequeo de Estado",
+    "fortune": "Fortuna",
+    "physicalGames": "Físicos y Juegos",
+    "physical": "Tests Físicos",
+    "games": "Juegos",
+    "quickLinks": "Enlaces Rápidos",
+    "popularTests": "Tests Populares",
+    "newTests": "Tests Nuevos"
+  },
+  "test": {
+    "startTest": "Iniciar Test",
+    "questionCount": "{count} preguntas",
+    "estimatedTime": "Aproximadamente {minutes} min",
+    "participants": "{count} participantes",
+    "loading": "Preparando test...",
+    "loadError": "Error al cargar el test",
+    "questionProgress": "{current} / {total}",
+    "viewResult": "Ver Resultado",
+    "shareResult": "Compartir Resultado",
+    "retryTest": "Intentar de Nuevo",
+    "otherTests": "Otros Tests",
+    "resultTitle": "Tu resultado es...",
+    "tags": "Etiquetas",
+    "backHome": "Inicio",
+    "questionInfo": "{count} preguntas · {time} min",
+    "participation": "{count} participantes",
+    "questions": "Preguntas",
+    "questionsCount": "{count}",
+    "testGuide": "Guía del test",
+    "guideNoAnswer": "No hay respuestas incorrectas. Por favor responde con honestidad.",
+    "guideInstantResult": "Los resultados están disponibles inmediatamente después del test.",
+    "guideShare": "¡Comparte y compara tus resultados con amigos!",
+    "addFavorite": "Añadir a favoritos",
+    "removeFavorite": "Quitar de favoritos",
+    "share": "Compartir",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "noResponseData": "No hay datos de respuesta.",
+    "cannotLoadTest": "No se pueden cargar los datos del test.",
+    "cannotFindQuestions": "No se encontraron preguntas.",
+    "errorLoadingQuestions": "Error al cargar las preguntas.",
+    "analyzing": "Analizando resultados...",
+    "cannotCalculate": "No se pueden calcular los resultados.",
+    "errorLoadingResult": "Error al cargar los resultados.",
+    "cannotLoadResult": "No se pueden cargar los resultados",
+    "retryTestAgain": "Por favor intenta el test de nuevo.",
+    "goBack": "Volver",
+    "jumpToQuestion": "Ir a la pregunta",
+    "yourResult": "Tu resultado es",
+    "screenshotShare": "¡Haz una captura de pantalla y comparte con amigos!",
+    "myResultIs": "¡Mi resultado de {testTitle} es {emoji} {title}!",
+    "analysisResult": "Resultado del análisis",
+    "mainTraits": "Rasgos principales",
+    "strengths": "Fortalezas",
+    "cautions": "Precauciones",
+    "advice": "Consejo",
+    "goodMatch": "Buena compatibilidad",
+    "cautionMatch": "Compatibilidad difícil"
+  },
+  "share": {
+    "title": "Compartir",
+    "kakao": "KakaoTalk",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "line": "LINE",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "copyLink": "Copiar Enlace",
+    "linkCopied": "¡Enlace copiado!",
+    "nativeShare": "Compartir"
+  },
+  "footer": {
+    "terms": "Términos de Servicio",
+    "privacy": "Política de Privacidad",
+    "contact": "Contacto",
+    "copyright": "© {year} AI Playground. Todos los derechos reservados."
+  },
+  "error": {
+    "404": {
+      "title": "Página no encontrada",
+      "description": "La página solicitada no existe o ha sido movida.",
+      "backHome": "Ir al Inicio"
+    },
+    "500": {
+      "title": "Error del Servidor",
+      "description": "Ocurrió un error temporal. Por favor, inténtalo de nuevo más tarde.",
+      "retry": "Intentar de Nuevo"
+    }
+  },
+  "meta": {
+    "siteName": "AI Playground",
+    "categoryNotFound": "Categoría no encontrada",
+    "categoryTitle": "{category} - {count} Tests | AI Playground",
+    "categoryDescription": "¡Disfruta de {count} tests gratuitos en la categoría {category}!"
+  },
+  "categoryPage": {
+    "totalTests": "{count} tests",
+    "noTests": "Aún no hay tests en esta categoría.",
+    "viewOtherTests": "Ver otros tests"
+  },
+  "testsPage": {
+    "title": "Todos los Tests",
+    "searchPlaceholder": "Buscar tests...",
+    "allCategories": "Todas las Categorías",
+    "popular": "Popular",
+    "new": "Nuevo",
+    "tagFilter": "Filtro por etiqueta",
+    "tags": "Etiquetas",
+    "popularTags": "Etiquetas populares",
+    "reset": "Restablecer",
+    "noSearchResults": "No hay resultados para \"{query}\".",
+    "noResults": "Ningún test coincide con tus criterios."
+  },
+  "physical": {
+    "pageTitle": "Tests Físicos",
+    "pageDescription": "¡Pon a prueba tus habilidades físicas y cognitivas!",
+    "info": {
+      "title": "Info",
+      "tip1": "Los tests físicos funcionan en PC y móvil.",
+      "tip2": "Para resultados precisos, realiza el test en un ambiente tranquilo.",
+      "tip3": "Los tests de clic pueden ser más fáciles con táctil que con ratón.",
+      "tip4": "¡Los resultados son solo para divertirse!"
+    },
+    "tests": {
+      "reaction-speed": { "title": "Test de Tiempo de Reacción", "description": "¡Haz clic lo más rápido posible cuando se ponga verde! ¿Cuál es tu tiempo de reacción?", "duration": "1 min" },
+      "click-speed": { "title": "Test de Velocidad de Clic", "description": "¿Qué tan rápido puedes hacer clic en 10 segundos?", "duration": "10 seg" },
+      "color-blind": { "title": "Test de Visión de Colores", "description": "¡Encuentra el color diferente! Prueba tu capacidad de discriminación de colores.", "duration": "2 min" },
+      "memory-test": { "title": "Test de Memoria a Corto Plazo", "description": "¡Recuerda la secuencia y repítela! Desafía tus límites de memoria.", "duration": "3 min" },
+      "eye-tracking": { "title": "Ejercicio Ocular", "description": "¡Estiramiento de ojos para ojos sanos! Alivia la fatiga ocular.", "duration": "2 min" },
+      "typing-speed": { "title": "Test de Velocidad de Escritura", "description": "¿Qué tan rápido puedes escribir en 60 segundos? ¡Mide tus PPM!", "duration": "1 min" },
+      "number-memory": { "title": "Test de Memoria de Números", "description": "¡Recuerda números cada vez más largos! Desafía tus límites de memoria.", "duration": "Ilimitado" },
+      "aim-trainer": { "title": "Entrenador de Puntería", "description": "¡Haz clic en los objetivos rápida y precisamente!", "duration": "2 min" },
+      "hearing-test": { "title": "Test de Audición", "description": "¡Prueba si puedes escuchar varias frecuencias!", "duration": "3 min" },
+      "stroop-test": { "title": "Test de Stroop", "description": "¡Empareja el color, no la palabra! Prueba la capacidad de procesamiento de tu cerebro.", "duration": "2 min" },
+      "time-perception": { "title": "Test de Percepción del Tiempo", "description": "¡Estima el tiempo con precisión sin reloj! Mide tu reloj interno.", "duration": "3 min" },
+      "peripheral-vision": { "title": "Test de Visión Periférica", "description": "¡Detecta objetos que aparecen en el borde de la pantalla!", "duration": "2 min" },
+      "pattern-recognition": { "title": "Test de Reconocimiento de Patrones", "description": "¡Encuentra el color diferente! Mide tu capacidad de reconocimiento de patrones.", "duration": "2 min" },
+      "steady-hand": { "title": "Test de Mano Firme", "description": "¡Navega por caminos estrechos con tu ratón! Mide la estabilidad de tu mano.", "duration": "2 min" },
+      "multitasking": { "title": "Test de Multitarea", "description": "¡Resuelve problemas matemáticos mientras haces clic! Mide tu capacidad de multitarea.", "duration": "2 min" },
+      "rhythm-test": { "title": "Test de Ritmo", "description": "¡Toca al ritmo! Mide tu sentido del ritmo.", "duration": "2 min" },
+      "color-sequence": { "title": "Test de Memoria de Colores", "description": "¡Juego Simon! Recuerda y repite la secuencia de colores.", "duration": "Ilimitado" },
+      "word-memory": { "title": "Test de Memoria de Palabras", "description": "¡Recuerda y escribe todas las palabras! Mide tu memoria verbal.", "duration": "3 min" },
+      "direction-sense": { "title": "Test de Sentido de la Dirección", "description": "¡Encuentra la dirección correcta después de rotar! Mide tu sentido de la dirección.", "duration": "2 min" }
+    }
+  },
+  "gamesPage": {
+    "pageTitle": "Juegos y Cartas",
+    "pageDescription": "¡Juegos divertidos para disfrutar con amigos!",
+    "backHome": "Inicio",
+    "games": "Juegos",
+    "startGame": "Iniciar juego",
+    "start": "Iniciar",
+    "moreComingSoon": "¡Más juegos próximamente!",
+    "gameList": {
+      "worldcup": { "title": "Copa Mundial del Tipo Ideal", "description": "¡Ramen, postres, perros y más! Descubre tus preferencias" },
+      "balance": { "title": "Juego de Equilibrio", "description": "¿Si tuvieras que elegir uno? ¡Amor, trabajo, situaciones extremas!" },
+      "cards": { "title": "Cartas de Conversación", "description": "¡Temas para romper el hielo! Para citas, fiestas, parejas." },
+      "random-menu": { "title": "¿Qué comer hoy?", "description": "¿No puedes decidir? ¡Selector de menú aleatorio!" },
+      "number-picker": { "title": "Selector Aleatorio", "description": "¡Números, orden, sorteos justos!" },
+      "team-divider": { "title": "Divisor de Equipos", "description": "¡Ingresa el número de personas y equipos para división justa!" },
+      "penalty-picker": { "title": "Selector de Penalizaciones", "description": "¡De ligero a extremo! Saca penalizaciones divertidas" },
+      "role-picker": { "title": "Selector de Roles", "description": "¡Mafia, Espía, Hombre Lobo! Asigna roles aleatoriamente" },
+      "would-you-rather": { "title": "Esto vs Aquello", "description": "¿Si tuvieras que elegir? ¡Debate con amigos!" },
+      "ice-breaker": { "title": "Rompehielos", "description": "¡Ruleta mágica de preguntas para romper el hielo!" },
+      "couple-quiz": { "title": "Quiz de Pareja", "description": "¿Conoces bien a tu pareja? ¡Test de compatibilidad!" }
+    }
+  },
+  "dailyPage": {
+    "daily": "Diario",
+    "greetingMorning": "¡Buenos días!",
+    "greetingAfternoon": "¡Buenas tardes!",
+    "greetingEvening": "¡Buenas noches!",
+    "todayColor": "Color del día",
+    "todayNumber": "Número del día",
+    "luckyNumberMeaning": "Tu número de la suerte",
+    "todayContent": "Contenido del día",
+    "dailyFortune": "Fortuna del día",
+    "dailyFortuneDesc": "La fortuna del día basada en tu cumpleaños",
+    "dailyTarot": "Tarot del día",
+    "dailyTarotDesc": "Una carta de tarot para comenzar tu día",
+    "todayCondition": "Condición del día",
+    "todayConditionDesc": "Chequeo rápido de 3 preguntas",
+    "recommendedTests": "Tests recomendados hoy",
+    "backHome": "Volver al inicio",
+    "tests": {
+      "stressLevel": { "title": "Nivel de estrés", "desc": "Revisa el estrés hoy" },
+      "socialBattery": { "title": "Batería social", "desc": "Nivel de energía de hoy" },
+      "burnoutLevel": { "title": "Nivel de agotamiento", "desc": "¿Cómo estoy?" },
+      "mentalStrength": { "title": "Fuerza mental", "desc": "Chequeo mental de hoy" }
+    },
+    "colors": {
+      "red": { "name": "Rojo", "meaning": "Un día lleno de pasión y energía" },
+      "orange": { "name": "Naranja", "meaning": "Un día de creatividad y sociabilidad" },
+      "yellow": { "name": "Amarillo", "meaning": "Un día lleno de energía brillante y suerte" },
+      "green": { "name": "Verde", "meaning": "Un día de estabilidad y crecimiento" },
+      "blue": { "name": "Azul", "meaning": "Un día tranquilo y enfocado" },
+      "purple": { "name": "Púrpura", "meaning": "Un día lleno de intuición e inspiración" },
+      "pink": { "name": "Rosa", "meaning": "Un día lleno de amor y felicidad" },
+      "mint": { "name": "Menta", "meaning": "Un día de nuevos comienzos" },
+      "gold": { "name": "Oro", "meaning": "Un día de abundancia y éxito" },
+      "silver": { "name": "Plata", "meaning": "Un día tranquilo y sabio" }
+    }
+  }
+}

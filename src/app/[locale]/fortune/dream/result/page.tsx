@@ -57,6 +57,7 @@ function DreamResultContent() {
   const handleShare = async () => {
     const keywordNames = result.selectedKeywords.map(k => k.name).join(', ');
     const shareText = `꿈해몽 결과\n\n꿈에 나온 것: ${keywordNames}\n결과: ${fortuneInfo.text}\n\n나도 꿈해몽 해보기`;
+    const fullText = shareText + '\n' + window.location.origin + '/fortune/dream';
     
     if (navigator.share) {
       try {
@@ -65,12 +66,34 @@ function DreamResultContent() {
           text: shareText,
           url: window.location.origin + '/fortune/dream',
         });
-      } catch (err) {
-        console.log('Share cancelled');
+        return;
+      } catch {
+        // fallback to clipboard
       }
-    } else {
-      navigator.clipboard.writeText(shareText + '\n' + window.location.origin + '/fortune/dream');
+    }
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(fullText);
+        alert('링크가 복사되었습니다!');
+        return;
+      } catch {
+        // fallback
+      }
+    }
+    
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = fullText;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
       alert('링크가 복사되었습니다!');
+    } catch {
+      alert('공유 기능을 사용할 수 없습니다.');
     }
   };
 
