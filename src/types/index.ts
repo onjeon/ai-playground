@@ -72,3 +72,38 @@ export interface TestSession {
   startedAt: string;
   completedAt?: string;
 }
+
+// 테스트 데이터 타입 (tests-* 폴더의 index.ts용)
+export interface TestDataQuestion {
+  id: number;
+  question: string;
+  options: {
+    text: string;
+    type: string;
+    [key: string]: unknown;
+  }[];
+}
+
+export interface TestDataResult {
+  type: string;
+  title: string;
+  emoji: string;
+  description: string;
+  traits?: string[];
+  strengths?: string[];
+  weaknesses?: string[];
+  tips?: string[];
+  [key: string]: unknown;
+}
+
+export interface TestData {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  emoji: string;
+  color?: string;
+  duration?: string;
+  questions: TestDataQuestion[];
+  results: Record<string, TestDataResult>;
+}

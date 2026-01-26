@@ -1,4 +1,4 @@
-// 지원 언어 목록 및 설정
+// 전체 지원 가능 언어 목록
 export const locales = [
   'ko',      // 한국어 (기본)
   'ja',      // 일본어
@@ -20,6 +20,15 @@ export const locales = [
   'pl',      // 폴란드어
   'nl',      // 네덜란드어
 ] as const;
+
+// 현재 활성화된 로케일 (순차 배포용)
+// TODO: 테스트 검증 완료된 국가를 여기에 추가
+export const enabledLocales: readonly Locale[] = [
+  'ko',      // 한국어 - 검증 완료
+  // 'ja',   // 일본어 - 검증 대기
+  // 'zh-TW', // 중국어 번체 - 검증 대기
+  // ... 나머지는 검증 후 추가
+];
 
 export type Locale = (typeof locales)[number];
 

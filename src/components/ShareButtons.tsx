@@ -103,7 +103,7 @@ export default function ShareButtons({ title, description, url, hashtags = [] }:
       content: {
         title: title,
         description: description,
-        // imageUrl: 'https://ai-playground.vercel.app/og-image.png', // TODO: 이미지 추가 후 활성화
+        imageUrl: 'https://ai-playground.vercel.app/api/og?title=' + encodeURIComponent(title) + '&style=result',
         link: {
           mobileWebUrl: shareUrl,
           webUrl: shareUrl,

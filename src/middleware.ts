@@ -1,17 +1,17 @@
 import createMiddleware from 'next-intl/middleware';
-import { locales, defaultLocale, languageMapping, type Locale } from '@/i18n/config';
+import { locales, defaultLocale, languageMapping, enabledLocales, type Locale } from '@/i18n/config';
 import { NextRequest, NextResponse } from 'next/server';
 
-// next-intl 미들웨어 생성
+// next-intl 미들웨어 생성 (활성화된 로케일만)
 const intlMiddleware = createMiddleware({
-  locales,
+  locales: enabledLocales as unknown as typeof locales,
   defaultLocale,
   localePrefix: 'as-needed', // 기본 언어(ko)는 URL에서 생략
 });
 
 export default function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  
+
   // API 라우트, 정적 파일, _next 등은 건너뛰기
   if (
     pathname.startsWith('/api') ||
@@ -22,12 +22,21 @@ export default function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // URL에 이미 locale이 있는지 확인
-  const pathnameHasLocale = locales.some(
+  // URL에서 locale 추출
+  const pathnameLocale = locales.find(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  if (pathnameHasLocale) {
+  // 비활성화된 로케일로 접근 시 기본 로케일로 리다이렉트
+  if (pathnameLocale && !enabledLocales.includes(pathnameLocale)) {
+    const pathWithoutLocale = pathname.replace(`/${pathnameLocale}`, '') || '/';
+    const newUrl = new URL(pathWithoutLocale, request.url);
+    newUrl.search = request.nextUrl.search;
+    return NextResponse.redirect(newUrl);
+  }
+
+  // 활성화된 로케일이 URL에 있으면 처리
+  if (pathnameLocale && enabledLocales.includes(pathnameLocale)) {
     return intlMiddleware(request);
   }
 
@@ -48,18 +57,18 @@ export default function middleware(request: NextRequest) {
       })
       .sort((a, b) => b.priority - a.priority);
 
-    // 지원하는 언어 찾기
+    // 활성화된 언어 중에서 찾기
     for (const lang of languages) {
       const mapped = languageMapping[lang.code];
-      if (mapped) {
+      if (mapped && enabledLocales.includes(mapped)) {
         detectedLocale = mapped;
         break;
       }
-      
+
       // 언어 코드의 기본 부분만으로 시도 (예: "ko-KR" -> "ko")
       const baseLang = lang.code.split('-')[0];
       const baseMapped = languageMapping[baseLang];
-      if (baseMapped) {
+      if (baseMapped && enabledLocales.includes(baseMapped)) {
         detectedLocale = baseMapped;
         break;
       }
@@ -71,10 +80,10 @@ export default function middleware(request: NextRequest) {
     return intlMiddleware(request);
   }
 
-  // 다른 언어면 해당 locale prefix로 리다이렉트
+  // 다른 활성화된 언어면 해당 locale prefix로 리다이렉트
   const newUrl = new URL(`/${detectedLocale}${pathname}`, request.url);
   newUrl.search = request.nextUrl.search;
-  
+
   return NextResponse.redirect(newUrl);
 }
 

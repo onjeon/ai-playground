@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Check, AlertCircle, Heart, Star, Sparkles } from 'lucide-react';
-import ShareButtons from '@/components/ShareButtons';
+import GlobalShareButtons from '@/components/GlobalShareButtons';
 import { BaseTestResult } from '@/lib/testLoader';
 
 interface TestResultRendererProps {
@@ -155,20 +155,20 @@ export default function TestResultRenderer({
   const shareText = t('myResultIs', { testTitle, emoji: result.emoji, title: result.title });
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="content-container">
       {/* Result Card */}
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
-        {/* Hero Section */}
+        {/* Hero Section - Mobile optimized with larger emoji */}
         <div 
-          className={`p-8 text-center text-white ${gradientClass}`}
+          className={`p-6 md:p-8 text-center text-white ${gradientClass}`}
           style={customGradient ? { background: customGradient } : undefined}
         >
-          <p className="text-white/80 mb-2">{t('yourResult')}</p>
-          <div className="text-8xl mb-4">{result.emoji}</div>
-          <h1 className="text-3xl font-bold mb-2">{result.title}</h1>
-          {subtitle && <p className="text-xl text-white/90">{subtitle}</p>}
+          <p className="text-white/80 text-sm md:text-base mb-2">{t('yourResult')}</p>
+          <div className="text-7xl md:text-8xl mb-3 md:mb-4">{result.emoji}</div>
+          <h1 className="text-2xl md:text-3xl font-bold mb-2 leading-tight">{result.title}</h1>
+          {subtitle && <p className="text-lg md:text-xl text-white/90">{subtitle}</p>}
           {percentage !== null && (
-            <div className="mt-4">
+            <div className="mt-3 md:mt-4">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full">
                 <span className="text-lg font-bold">{percentage}%</span>
               </div>
@@ -176,13 +176,13 @@ export default function TestResultRenderer({
           )}
         </div>
 
-        {/* Viral Share Section */}
-        <div className="px-6 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 border-b border-gray-100 dark:border-gray-700">
-          <p className="text-center text-sm text-gray-600 dark:text-gray-300 mb-3">
+        {/* Viral Share Section - Mobile friendly screenshot area */}
+        <div className="px-4 md:px-6 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 border-b border-gray-100 dark:border-gray-700">
+          <p className="text-center text-xs md:text-sm text-gray-600 dark:text-gray-300 mb-3">
             {t('screenshotShare')}
           </p>
           <div className="bg-white dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm">
-            <p className="text-lg font-bold text-gray-900 dark:text-white">
+            <p className="text-base md:text-lg font-bold text-gray-900 dark:text-white leading-relaxed">
               {shareText}
             </p>
             {testTags.length > 0 && (
@@ -193,12 +193,12 @@ export default function TestResultRenderer({
           </div>
         </div>
 
-        {/* Content */}
-        <div className="p-6 md:p-8 space-y-8">
+        {/* Content - Mobile optimized spacing */}
+        <div className="p-5 md:p-8 space-y-6 md:space-y-8">
           {/* Description */}
           <div>
-            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{t('analysisResult')}</h2>
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{result.description}</p>
+            <h2 className="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-2 md:mb-3">{t('analysisResult')}</h2>
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">{result.description}</p>
           </div>
 
           {/* Traits */}
@@ -251,23 +251,25 @@ export default function TestResultRenderer({
 
           {/* Share Buttons */}
           <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-            <ShareButtons 
+            <GlobalShareButtons
               title={`${result.emoji} ${result.title}`}
               description={`${testTitle}: ${result.description.slice(0, 100)}...`}
+              hashtags={testTags}
+              imageUrl={`https://ai-playground.vercel.app/api/og?title=${encodeURIComponent(result.title)}&emoji=${encodeURIComponent(result.emoji)}&style=result`}
             />
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3">
+          {/* Action Buttons - Full width on mobile with larger touch targets */}
+          <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <Link
               href={`/test/${slug}/play`}
-              className="flex-1 px-6 py-3 bg-indigo-600 text-white text-center font-semibold rounded-xl hover:bg-indigo-700 transition-colors"
+              className="flex-1 primary-action-btn bg-indigo-600 text-white hover:bg-indigo-700 active:bg-indigo-800 no-select"
             >
               {t('retryTest')}
             </Link>
             <Link
               href="/tests"
-              className="flex-1 px-6 py-3 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-center font-semibold rounded-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              className="flex-1 primary-action-btn bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 active:bg-gray-300 dark:active:bg-gray-500 no-select"
             >
               {t('otherTests')}
             </Link>

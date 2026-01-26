@@ -5,7 +5,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { useTranslations } from 'next-intl';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { getTestBySlug } from '@/lib/data';
-import { loadTestModule, getTestQuestions } from '@/lib/testLoader';
+import { loadTestModule, getTestQuestions, calculateTestResult } from '@/lib/testLoader';
 
 // 공통 질문 타입
 interface QuestionOption {
@@ -62,6 +62,7 @@ function TestPlayContent() {
   const [answers, setAnswers] = useState<number[]>([]);
   const [loading, setLoading] = useState(true);
   const [errorKey, setErrorKey] = useState<string | null>(null);
+  const [testModule, setTestModule] = useState<Awaited<ReturnType<typeof loadTestModule>> | null>(null);
 
   // 질문 로드
   useEffect(() => {
@@ -73,6 +74,8 @@ function TestPlayContent() {
           setLoading(false);
           return;
         }
+
+        setTestModule(module);
 
         const rawQuestions = getTestQuestions(module);
         if (!rawQuestions || rawQuestions.length === 0) {
@@ -150,15 +153,30 @@ function TestPlayContent() {
       return;
     }
 
+    // 결과 미리 계산하여 OG 메타데이터용 파라미터 생성
+    let resultParams = '';
+    if (testModule) {
+      try {
+        const result = calculateTestResult(testModule, slug, answers);
+        if (result) {
+          const emoji = encodeURIComponent(result.emoji || '🎯');
+          const title = encodeURIComponent(result.title || '');
+          resultParams = `&emoji=${emoji}&title=${title}`;
+        }
+      } catch (err) {
+        console.error('Error pre-calculating result:', err);
+      }
+    }
+
     // 결과 페이지로 이동
     const answersString = answers.join(',');
-    router.push(`/test/${slug}/result?answers=${answersString}`);
+    router.push(`/test/${slug}/result?answers=${answersString}${resultParams}`);
   };
 
   // 로딩 중
   if (loading) {
     return (
-      <div className="max-w-2xl mx-auto text-center py-20">
+      <div className="content-container text-center py-16 md:py-20">
         <div className="text-6xl mb-4 animate-bounce">📝</div>
         <p className="text-gray-600 dark:text-gray-300">{t('loading')}</p>
       </div>
@@ -168,13 +186,13 @@ function TestPlayContent() {
   // 에러
   if (errorKey || !test || questions.length === 0) {
     return (
-      <div className="max-w-2xl mx-auto text-center py-20">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+      <div className="content-container text-center py-16 md:py-20">
+        <h1 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">
           {errorKey ? t(errorKey) : t('cannotLoadTest')}
         </h1>
         <button
           onClick={() => router.back()}
-          className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+          className="primary-action-btn bg-indigo-600 text-white hover:bg-indigo-700 no-select inline-flex"
         >
           {t('goBack')}
         </button>
@@ -188,19 +206,19 @@ function TestPlayContent() {
   const allAnswered = answers.every(a => a !== -1);
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="content-container">
       {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <span className="text-sm text-gray-500 dark:text-gray-400">
+      <div className="mb-6 md:mb-8">
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-sm text-gray-500 dark:text-gray-400 truncate max-w-[60%]">
             {test.title}
           </span>
-          <span className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
+          <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400">
             {currentIndex + 1} / {questions.length}
           </span>
         </div>
-        {/* Progress Bar */}
-        <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+        {/* Progress Bar - slightly taller on mobile for visibility */}
+        <div className="w-full h-2.5 md:h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
           <div
             className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-300"
             style={{ width: `${progress}%` }}
@@ -209,53 +227,51 @@ function TestPlayContent() {
       </div>
 
       {/* Question Card */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-6 md:p-8 mb-6">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-6 leading-relaxed">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 p-5 md:p-8 mb-6">
+        <h2 className="text-lg md:text-2xl font-bold text-gray-900 dark:text-white mb-5 md:mb-6 leading-relaxed">
           {currentQuestion.question}
         </h2>
 
-        {/* Options */}
+        {/* Options - Mobile optimized with larger touch targets */}
         <div className="space-y-3">
           {currentQuestion.options.map((option, index) => (
             <button
               key={index}
               onClick={() => handleAnswer(index)}
-              className={`w-full p-4 text-left rounded-xl border-2 transition-all duration-200 ${
+              className={`test-option-btn no-select ${
                 answers[currentIndex] === index
                   ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300'
-                  : 'border-gray-200 dark:border-gray-600 hover:border-indigo-300 dark:hover:border-indigo-500 bg-white dark:bg-gray-800'
+                  : 'border-gray-200 dark:border-gray-600 hover:border-indigo-300 dark:hover:border-indigo-500 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300'
               }`}
             >
-              <span className="text-sm md:text-base text-gray-700 dark:text-gray-300">
-                {option.text}
-              </span>
+              {option.text}
             </button>
           ))}
         </div>
       </div>
 
-      {/* Navigation */}
-      <div className="flex items-center justify-between">
+      {/* Navigation - Larger touch targets on mobile */}
+      <div className="flex items-center justify-between gap-2">
         <button
           onClick={handlePrevious}
           disabled={currentIndex === 0}
-          className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-colors ${
+          className={`nav-btn no-select ${
             currentIndex === 0
               ? 'text-gray-400 cursor-not-allowed'
-              : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+              : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 active:bg-gray-200 dark:active:bg-gray-600'
           }`}
         >
-          <ArrowLeft className="w-4 h-4" />
-          {t('previous')}
+          <ArrowLeft className="w-5 h-5" />
+          <span className="hidden sm:inline">{t('previous')}</span>
         </button>
 
         {isLastQuestion ? (
           <button
             onClick={handleSubmit}
             disabled={!allAnswered}
-            className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-colors ${
+            className={`primary-action-btn no-select ${
               allAnswered
-                ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:opacity-90'
+                ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:opacity-90 active:opacity-80'
                 : 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
             }`}
           >
@@ -265,27 +281,27 @@ function TestPlayContent() {
           <button
             onClick={handleNext}
             disabled={answers[currentIndex] === -1}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-colors ${
+            className={`nav-btn no-select ${
               answers[currentIndex] === -1
                 ? 'text-gray-400 cursor-not-allowed'
-                : 'text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30'
+                : 'text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 active:bg-indigo-100 dark:active:bg-indigo-900/50'
             }`}
           >
-            {t('next')}
-            <ArrowRight className="w-4 h-4" />
+            <span className="hidden sm:inline">{t('next')}</span>
+            <ArrowRight className="w-5 h-5" />
           </button>
         )}
       </div>
 
-      {/* Quick Jump (for answered questions) */}
-      <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+      {/* Quick Jump - Horizontal scroll on mobile, wrap on desktop */}
+      <div className="mt-6 md:mt-8 pt-5 md:pt-6 border-t border-gray-200 dark:border-gray-700">
         <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">{t('jumpToQuestion')}</p>
-        <div className="flex flex-wrap gap-2">
+        <div className="quick-jump-scroll md:flex-wrap">
           {questions.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-8 h-8 rounded-full text-xs font-medium transition-colors ${
+              className={`quick-jump-btn no-select transition-colors ${
                 index === currentIndex
                   ? 'bg-indigo-500 text-white'
                   : answers[index] !== -1
@@ -305,7 +321,7 @@ function TestPlayContent() {
 function LoadingFallback() {
   const t = useTranslations('test');
   return (
-    <div className="max-w-2xl mx-auto text-center py-20">
+    <div className="content-container text-center py-16 md:py-20">
       <div className="text-6xl mb-4 animate-bounce">📝</div>
       <p className="text-gray-600 dark:text-gray-300">{t('loading')}</p>
     </div>

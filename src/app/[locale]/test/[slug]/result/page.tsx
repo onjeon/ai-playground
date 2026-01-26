@@ -1,125 +1,75 @@
-'use client';
+import { Metadata } from 'next';
+import { getTestBySlugForLocale } from '@/lib/data-loader';
+import { getTranslations } from 'next-intl/server';
+import TestResultClient from './TestResultClient';
 
-import { useParams, useSearchParams } from 'next/navigation';
-import { useEffect, useState, Suspense } from 'react';
-import Link from 'next/link';
-import { useTranslations } from 'next-intl';
-import { loadTestModule, calculateTestResult, BaseTestResult } from '@/lib/testLoader';
-import { getTestBySlug } from '@/lib/data';
-import TestResultRenderer from '@/components/test/TestResultRenderer';
+const baseUrl = 'https://ai-playground.vercel.app';
 
-function TestResultContent() {
-  const params = useParams();
-  const searchParams = useSearchParams();
-  const t = useTranslations('test');
-  const slug = params.slug as string;
-  const test = getTestBySlug(slug);
-
-  const [result, setResult] = useState<BaseTestResult | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [errorKey, setErrorKey] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function loadResult() {
-      const answersParam = searchParams.get('answers');
-      if (!answersParam) {
-        setErrorKey('noResponseData');
-        setLoading(false);
-        return;
-      }
-
-      try {
-        const answers = answersParam.split(',').map(Number);
-        
-        // 테스트 모듈 동적 로드
-        const module = await loadTestModule(slug);
-        if (!module) {
-          setErrorKey('cannotLoadTest');
-          setLoading(false);
-          return;
-        }
-
-        // 결과 계산
-        const calculatedResult = calculateTestResult(module, slug, answers);
-        if (!calculatedResult) {
-          setErrorKey('cannotCalculate');
-          setLoading(false);
-          return;
-        }
-
-        setResult(calculatedResult);
-        setLoading(false);
-
-        // 세션 스토리지 정리
-        sessionStorage.removeItem(`test-${slug}-answers`);
-
-        // 참여자 수 증가 (localStorage 기반)
-        const key = `test-${slug}-participated`;
-        if (!localStorage.getItem(key)) {
-          localStorage.setItem(key, 'true');
-        }
-      } catch (err) {
-        console.error('Error loading test result:', err);
-        setErrorKey('errorLoadingResult');
-        setLoading(false);
-      }
-    }
-
-    loadResult();
-  }, [searchParams, slug]);
-
-  // 로딩 중
-  if (loading) {
-    return (
-      <div className="max-w-2xl mx-auto text-center py-20">
-        <div className="text-6xl mb-4 animate-bounce">🔮</div>
-        <p className="text-gray-600 dark:text-gray-300">{t('analyzing')}</p>
-      </div>
-    );
-  }
-
-  // 에러 또는 데이터 없음
-  if (errorKey || !test || !result) {
-    return (
-      <div className="max-w-2xl mx-auto text-center py-20">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          {errorKey ? t(errorKey) : t('cannotLoadResult')}
-        </h1>
-        <p className="text-gray-500 dark:text-gray-400 mb-6">{t('retryTestAgain')}</p>
-        <Link
-          href={`/test/${slug}`}
-          className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors inline-block"
-        >
-          {t('retryTest')}
-        </Link>
-      </div>
-    );
-  }
-
-  return (
-    <TestResultRenderer
-      result={result}
-      slug={slug}
-      testTitle={test.title}
-      testTags={test.tags}
-    />
-  );
+interface Props {
+  params: { slug: string; locale: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-function LoadingFallback() {
-  const t = useTranslations('test');
-  return (
-    <div className="max-w-2xl mx-auto text-center py-20">
-      <div className="text-6xl mb-4 animate-bounce">🔮</div>
-      <p className="text-gray-600 dark:text-gray-300">{t('analyzing')}</p>
-    </div>
-  );
+// 동적 메타데이터 생성 (OG 이미지 포함)
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
+  const { locale, slug } = params;
+  const test = getTestBySlugForLocale(locale, slug);
+  const tMeta = await getTranslations({ locale, namespace: 'meta' });
+  const tTest = await getTranslations({ locale, namespace: 'test' });
+
+  if (!test) {
+    return {
+      title: tMeta('testNotFound'),
+    };
+  }
+
+  // URL에서 결과 정보 추출 (play 페이지에서 전달)
+  const resultEmoji = typeof searchParams.emoji === 'string'
+    ? decodeURIComponent(searchParams.emoji)
+    : '🎯';
+  const resultTitle = typeof searchParams.title === 'string'
+    ? decodeURIComponent(searchParams.title)
+    : tTest('yourResult');
+
+  // SEO 최적화된 타이틀과 설명
+  const seoTitle = `${resultEmoji} ${resultTitle} | ${test.title}`;
+  const seoDescription = `${test.title} - ${tTest('myResultIs', { testTitle: test.title, emoji: resultEmoji, title: resultTitle })}`;
+
+  // 결과 페이지용 OG 이미지 URL 생성
+  const ogImageUrl = `${baseUrl}/api/og?title=${encodeURIComponent(resultTitle)}&emoji=${encodeURIComponent(resultEmoji)}&style=result`;
+
+  return {
+    title: seoTitle,
+    description: seoDescription,
+    openGraph: {
+      title: `${resultEmoji} ${resultTitle}`,
+      description: seoDescription,
+      type: 'website',
+      locale: locale.replace('-', '_'),
+      siteName: tMeta('siteName'),
+      url: `${baseUrl}/${locale}/test/${slug}/result`,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: resultTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${resultEmoji} ${resultTitle}`,
+      description: seoDescription,
+      images: [ogImageUrl],
+    },
+    robots: {
+      index: false, // 결과 페이지는 인덱싱하지 않음
+      follow: true,
+    },
+  };
 }
 
-export default function TestResultPage() {
-  return (
-    <Suspense fallback={<LoadingFallback />}>
-      <TestResultContent />
-    </Suspense>
-  );
+export default function TestResultPage({ params }: Props) {
+  return <TestResultClient slug={params.slug} locale={params.locale} />;
 }
