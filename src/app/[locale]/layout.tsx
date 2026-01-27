@@ -97,6 +97,10 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} dir={isRtl ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <head>
+        {/* 테마 깜빡임 방지: React 렌더링 전에 dark 클래스 적용 */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();
+        `}} />
         {/* 언어별 Google Fonts 로드 */}
         {getGoogleFontsUrl(locale as Locale) && (
           <>

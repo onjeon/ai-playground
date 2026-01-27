@@ -45,7 +45,7 @@ export default function Header() {
             onClick={toggleTheme}
             className="p-2 text-gray-500 dark:text-gray-400 rounded-lg active:bg-gray-100 dark:active:bg-gray-800 transition-colors"
           >
-            {mounted ? (theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />) : <div className="w-5 h-5" />}
+            {mounted ? (theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />) : <span className="inline-block w-5 h-5" />}
           </button>
           <button
             onClick={() => { setIsSearchOpen(!isSearchOpen); setIsMobileMenuOpen(false); }}
