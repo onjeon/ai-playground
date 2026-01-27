@@ -106,3 +106,151 @@ body {
   background-color: #c7d2fe;
   color: #312e81;
 }
+
+/* ===== MOBILE-FIRST OPTIMIZATIONS ===== */
+
+/* Safe area support for modern phones (notch, home indicator) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Minimum touch target size (44x44px recommended by Apple/Google) */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Large touch target for primary actions */
+.touch-target-lg {
+  min-height: 52px;
+}
+
+/* Prevent text selection on interactive elements (mobile UX) */
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth momentum scrolling for iOS */
+.scroll-smooth-ios {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep functionality (for horizontal scroll areas) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Quick jump navigation - horizontal scroll on mobile */
+.quick-jump-scroll {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 0.5rem;
+  margin-bottom: -0.5rem;
+}
+.quick-jump-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Content container - mobile first with desktop max-width */
+.content-container {
+  width: 100%;
+  max-width: 42rem; /* 672px - optimal reading width */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .content-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Test option button - mobile optimized */
+.test-option-btn {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-radius: 0.75rem;
+  border-width: 2px;
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 52px;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .test-option-btn {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Navigation button - larger touch targets on mobile */
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  min-height: 44px;
+  font-weight: 500;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .nav-btn {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Primary action button - prominent on mobile */
+.primary-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  min-height: 52px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Quick jump button - larger on mobile for touch */
+.quick-jump-btn {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .quick-jump-btn {
+    width: 2rem;
+    height: 2rem;
+  }
+}

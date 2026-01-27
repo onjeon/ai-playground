@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { 
-  Battery, 
-  BatteryFull, 
-  BatteryMedium, 
+import {
+  Battery,
+  BatteryFull,
+  BatteryMedium,
   BatteryLow,
   ArrowLeft,
   RefreshCw,
@@ -15,12 +15,11 @@ import {
   Zap
 } from 'lucide-react';
 
-// 질문 데이터
-const questions = [
+// 질문 풀 (매일 3개씩 랜덤 선택)
+const questionPool = [
   {
-    id: 1,
-    question: '오늘 아침에 일어났을 때 기분이 어땠나요?',
     emoji: '🌅',
+    question: '오늘 아침에 일어났을 때 기분이 어땠나요?',
     options: [
       { text: '개운하고 상쾌했어요', score: 4 },
       { text: '그냥 평소랑 비슷해요', score: 3 },
@@ -29,9 +28,8 @@ const questions = [
     ]
   },
   {
-    id: 2,
-    question: '지금 뭔가 하고 싶은 에너지가 있나요?',
     emoji: '⚡',
+    question: '지금 뭔가 하고 싶은 에너지가 있나요?',
     options: [
       { text: '네, 뭐든 할 수 있을 것 같아요!', score: 4 },
       { text: '적당히 있어요', score: 3 },
@@ -40,25 +38,133 @@ const questions = [
     ]
   },
   {
-    id: 3,
-    question: '오늘 사람들을 만날 때 기분이 어떨 것 같아요?',
     emoji: '👥',
+    question: '오늘 사람들을 만날 때 기분이 어떨 것 같아요?',
     options: [
       { text: '반갑고 즐거울 것 같아요', score: 4 },
       { text: '괜찮을 것 같아요', score: 3 },
       { text: '조금 부담스러울 것 같아요', score: 2 },
       { text: '혼자 있고 싶어요', score: 1 },
     ]
-  }
+  },
+  {
+    emoji: '🍽️',
+    question: '오늘 식욕은 어떤가요?',
+    options: [
+      { text: '맛있는 거 먹고 싶어요!', score: 4 },
+      { text: '평소대로예요', score: 3 },
+      { text: '별로 먹고 싶지 않아요', score: 2 },
+      { text: '입맛이 없어요', score: 1 },
+    ]
+  },
+  {
+    emoji: '😴',
+    question: '어젯밤 잠은 잘 잤나요?',
+    options: [
+      { text: '푹 잤어요! 꿀잠이었어요', score: 4 },
+      { text: '보통이었어요', score: 3 },
+      { text: '좀 뒤척였어요', score: 2 },
+      { text: '거의 못 잤어요', score: 1 },
+    ]
+  },
+  {
+    emoji: '🎯',
+    question: '오늘 해야 할 일에 대한 의욕은 어떤가요?',
+    options: [
+      { text: '빨리 시작하고 싶어요!', score: 4 },
+      { text: '할 수 있을 것 같아요', score: 3 },
+      { text: '좀 미루고 싶어요', score: 2 },
+      { text: '아무것도 하기 싫어요', score: 1 },
+    ]
+  },
+  {
+    emoji: '🧘',
+    question: '지금 마음이 평온한가요?',
+    options: [
+      { text: '매우 평온해요', score: 4 },
+      { text: '대체로 괜찮아요', score: 3 },
+      { text: '약간 불안하거나 초조해요', score: 2 },
+      { text: '많이 답답하거나 짜증나요', score: 1 },
+    ]
+  },
+  {
+    emoji: '💪',
+    question: '몸 상태는 어떤가요?',
+    options: [
+      { text: '가볍고 건강해요!', score: 4 },
+      { text: '평소와 비슷해요', score: 3 },
+      { text: '좀 무겁거나 뻐근해요', score: 2 },
+      { text: '여기저기 아프거나 힘들어요', score: 1 },
+    ]
+  },
+  {
+    emoji: '🌤️',
+    question: '오늘 하루가 어떨 것 같은 예감이 드나요?',
+    options: [
+      { text: '좋은 일이 생길 것 같아요!', score: 4 },
+      { text: '평범한 하루일 것 같아요', score: 3 },
+      { text: '좀 힘든 하루가 될 것 같아요', score: 2 },
+      { text: '그냥 빨리 끝났으면 좋겠어요', score: 1 },
+    ]
+  },
+  {
+    emoji: '📱',
+    question: '지금 핸드폰을 보는 기분은 어때요?',
+    options: [
+      { text: '재밌는 거 찾아보고 싶어요', score: 4 },
+      { text: '습관적으로 보고 있어요', score: 3 },
+      { text: '알림이 부담스러워요', score: 2 },
+      { text: '다 무시하고 싶어요', score: 1 },
+    ]
+  },
+  {
+    emoji: '☕',
+    question: '지금 가장 하고 싶은 건 뭔가요?',
+    options: [
+      { text: '밖에 나가서 활동하고 싶어요', score: 4 },
+      { text: '카페에서 여유롭게 쉬고 싶어요', score: 3 },
+      { text: '집에서 조용히 있고 싶어요', score: 2 },
+      { text: '이불 속에서 안 나오고 싶어요', score: 1 },
+    ]
+  },
+  {
+    emoji: '🎵',
+    question: '지금 듣고 싶은 음악 스타일은?',
+    options: [
+      { text: '신나는 댄스/팝!', score: 4 },
+      { text: '편안한 어쿠스틱', score: 3 },
+      { text: '조용한 피아노/클래식', score: 2 },
+      { text: '아무것도 듣고 싶지 않아요', score: 1 },
+    ]
+  },
 ];
+
+// 날짜 기반 시드로 질문 3개 선택
+function getDailyQuestions() {
+  const today = new Date();
+  const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+
+  // Fisher-Yates 셔플 (시드 기반)
+  const indices = questionPool.map((_, i) => i);
+  let s = seed;
+  for (let i = indices.length - 1; i > 0; i--) {
+    s = (s * 16807 + 0) % 2147483647;
+    const j = s % (i + 1);
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+
+  return [
+    { id: 1, ...questionPool[indices[0]] },
+    { id: 2, ...questionPool[indices[1]] },
+    { id: 3, ...questionPool[indices[2]] },
+  ];
+}
 
 // 결과 데이터
 const results = [
   {
-    minScore: 10,
-    maxScore: 12,
-    level: '최고',
-    emoji: '🔥',
+    minScore: 10, maxScore: 12,
+    level: '최고', emoji: '🔥',
     color: 'from-green-400 to-emerald-500',
     batteryLevel: 100,
     title: '오늘 컨디션 최고!',
@@ -67,10 +173,8 @@ const results = [
     Icon: BatteryFull
   },
   {
-    minScore: 7,
-    maxScore: 9,
-    level: '양호',
-    emoji: '😊',
+    minScore: 7, maxScore: 9,
+    level: '양호', emoji: '😊',
     color: 'from-blue-400 to-cyan-500',
     batteryLevel: 70,
     title: '괜찮은 컨디션이에요',
@@ -79,10 +183,8 @@ const results = [
     Icon: BatteryMedium
   },
   {
-    minScore: 4,
-    maxScore: 6,
-    level: '보통',
-    emoji: '😐',
+    minScore: 4, maxScore: 6,
+    level: '보통', emoji: '😐',
     color: 'from-yellow-400 to-orange-500',
     batteryLevel: 40,
     title: '오늘은 좀 힘드네요',
@@ -91,10 +193,8 @@ const results = [
     Icon: BatteryLow
   },
   {
-    minScore: 3,
-    maxScore: 3,
-    level: '충전 필요',
-    emoji: '😴',
+    minScore: 3, maxScore: 3,
+    level: '충전 필요', emoji: '😴',
     color: 'from-red-400 to-rose-500',
     batteryLevel: 10,
     title: '오늘은 쉬어가는 날',
@@ -109,6 +209,7 @@ function getResult(score: number) {
 }
 
 export default function ConditionCheckPage() {
+  const questions = useMemo(() => getDailyQuestions(), []);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [showResult, setShowResult] = useState(false);
@@ -143,126 +244,104 @@ export default function ConditionCheckPage() {
     if (navigator.share) {
       try {
         await navigator.share(shareData);
-      } catch (err) {
-        console.log('Share cancelled');
+      } catch {
+        // Share cancelled
       }
     } else {
-      // Fallback: copy to clipboard
       navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
       alert('클립보드에 복사되었습니다!');
     }
   };
 
-  // 시간대별 아이콘
   const getTimeIcon = () => {
     const hour = new Date().getHours();
-    if (hour >= 6 && hour < 18) {
-      return <Sun className="w-5 h-5 text-amber-500" />;
-    }
+    if (hour >= 6 && hour < 18) return <Sun className="w-5 h-5 text-amber-500" />;
     return <Moon className="w-5 h-5 text-indigo-500" />;
   };
 
   if (showResult) {
     const ResultIcon = result.Icon;
-    
+
     return (
-      <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-teal-50 to-cyan-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
-        <div className="max-w-lg mx-auto px-4 py-8">
-          {/* 헤더 */}
-          <div className="flex items-center justify-between mb-8">
-            <Link href="/daily" className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-              <ArrowLeft className="w-5 h-5" />
-              <span>데일리</span>
+      <div className="py-4">
+        {/* 헤더 */}
+        <div className="flex items-center justify-between mb-6">
+          <Link href="/daily" className="flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400">
+            <ArrowLeft className="w-4 h-4" />
+            데일리
+          </Link>
+          {getTimeIcon()}
+        </div>
+
+        {/* 결과 카드 */}
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden">
+          <div className={`bg-gradient-to-r ${result.color} p-6 text-white text-center`}>
+            <div className="text-5xl mb-3">{result.emoji}</div>
+            <h1 className="text-xl font-bold mb-1">{result.title}</h1>
+            <div className="flex items-center justify-center gap-1.5">
+              <ResultIcon className="w-5 h-5" />
+              <span className="text-lg font-medium">배터리 {result.batteryLevel}%</span>
+            </div>
+          </div>
+
+          {/* 배터리 바 */}
+          <div className="px-4 py-4">
+            <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-5 overflow-hidden">
+              <div
+                className={`h-full bg-gradient-to-r ${result.color} transition-all duration-1000 rounded-full`}
+                style={{ width: `${result.batteryLevel}%` }}
+              />
+            </div>
+            <div className="flex justify-between text-[10px] text-gray-400 mt-1">
+              <span>0%</span>
+              <span>50%</span>
+              <span>100%</span>
+            </div>
+          </div>
+
+          <div className="px-4 pb-4">
+            <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">{result.description}</p>
+
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-3">
+              <h3 className="font-medium text-sm text-gray-900 dark:text-white mb-2 flex items-center gap-1.5">
+                <Zap className="w-4 h-4 text-amber-500" />
+                오늘의 추천
+              </h3>
+              <ul className="space-y-1.5">
+                {result.tips.map((tip, index) => (
+                  <li key={index} className="flex items-start gap-1.5 text-xs text-gray-600 dark:text-gray-400">
+                    <span className="text-emerald-500 mt-0.5">•</span>
+                    {tip}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="px-4 pb-4 flex gap-2">
+            <button onClick={handleRestart} className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm">
+              <RefreshCw className="w-4 h-4" />
+              다시하기
+            </button>
+            <button onClick={handleShare} className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-gradient-to-r ${result.color} text-white text-sm`}>
+              <Share2 className="w-4 h-4" />
+              공유하기
+            </button>
+          </div>
+        </div>
+
+        {/* 다른 테스트 추천 */}
+        <div className="mt-4">
+          <h2 className="font-medium text-sm text-gray-900 dark:text-white mb-3">관련 테스트</h2>
+          <div className="grid grid-cols-2 gap-2">
+            <Link href="/test/stress-level" className="bg-white dark:bg-gray-800 rounded-xl p-3 border border-gray-100 dark:border-gray-700">
+              <div className="text-xl mb-1">😰</div>
+              <div className="font-medium text-gray-900 dark:text-white text-xs">스트레스 지수</div>
             </Link>
-            {getTimeIcon()}
-          </div>
-
-          {/* 결과 카드 */}
-          <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden">
-            {/* 배터리 그래픽 */}
-            <div className={`bg-gradient-to-r ${result.color} p-8 text-white text-center`}>
-              <div className="text-6xl mb-4">{result.emoji}</div>
-              <h1 className="text-2xl font-bold mb-2">{result.title}</h1>
-              <div className="flex items-center justify-center gap-2">
-                <ResultIcon className="w-6 h-6" />
-                <span className="text-xl font-medium">배터리 {result.batteryLevel}%</span>
-              </div>
-            </div>
-
-            {/* 배터리 바 */}
-            <div className="px-8 py-6">
-              <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-6 overflow-hidden">
-                <div 
-                  className={`h-full bg-gradient-to-r ${result.color} transition-all duration-1000 rounded-full`}
-                  style={{ width: `${result.batteryLevel}%` }}
-                />
-              </div>
-              <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
-                <span>0%</span>
-                <span>50%</span>
-                <span>100%</span>
-              </div>
-            </div>
-
-            {/* 설명 */}
-            <div className="px-8 pb-6">
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
-                {result.description}
-              </p>
-
-              {/* 오늘의 팁 */}
-              <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-4">
-                <h3 className="font-medium text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-amber-500" />
-                  오늘의 추천
-                </h3>
-                <ul className="space-y-2">
-                  {result.tips.map((tip, index) => (
-                    <li key={index} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
-                      <span className="text-emerald-500 mt-0.5">•</span>
-                      {tip}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* 버튼들 */}
-            <div className="px-8 pb-8 flex gap-3">
-              <button
-                onClick={handleRestart}
-                className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-              >
-                <RefreshCw className="w-4 h-4" />
-                다시하기
-              </button>
-              <button
-                onClick={handleShare}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r ${result.color} text-white hover:opacity-90 transition-opacity`}
-              >
-                <Share2 className="w-4 h-4" />
-                공유하기
-              </button>
-            </div>
-          </div>
-
-          {/* 다른 테스트 추천 */}
-          <div className="mt-8">
-            <h2 className="font-medium text-gray-900 dark:text-white mb-4">관련 테스트</h2>
-            <div className="grid grid-cols-2 gap-3">
-              <Link href="/tests/stress-level" className="block">
-                <div className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700 hover:border-emerald-300 dark:hover:border-emerald-600 transition-all">
-                  <div className="text-2xl mb-2">😰</div>
-                  <div className="font-medium text-gray-900 dark:text-white text-sm">스트레스 지수</div>
-                </div>
-              </Link>
-              <Link href="/tests/burnout-level" className="block">
-                <div className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700 hover:border-emerald-300 dark:hover:border-emerald-600 transition-all">
-                  <div className="text-2xl mb-2">🔥</div>
-                  <div className="font-medium text-gray-900 dark:text-white text-sm">번아웃 지수</div>
-                </div>
-              </Link>
-            </div>
+            <Link href="/test/burnout-level" className="bg-white dark:bg-gray-800 rounded-xl p-3 border border-gray-100 dark:border-gray-700">
+              <div className="text-xl mb-1">🔥</div>
+              <div className="font-medium text-gray-900 dark:text-white text-xs">번아웃 지수</div>
+            </Link>
           </div>
         </div>
       </div>
@@ -273,69 +352,65 @@ export default function ConditionCheckPage() {
   const progress = ((currentQuestion) / questions.length) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-teal-50 to-cyan-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
-      <div className="max-w-lg mx-auto px-4 py-8">
-        {/* 헤더 */}
-        <div className="flex items-center justify-between mb-8">
-          <Link href="/daily" className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-            <ArrowLeft className="w-5 h-5" />
-            <span>데일리</span>
-          </Link>
-          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-            <Battery className="w-4 h-4" />
-            <span>컨디션 체크</span>
-          </div>
+    <div className="py-4">
+      {/* 헤더 */}
+      <div className="flex items-center justify-between mb-6">
+        <Link href="/daily" className="flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400">
+          <ArrowLeft className="w-4 h-4" />
+          데일리
+        </Link>
+        <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+          <Battery className="w-3.5 h-3.5" />
+          컨디션 체크
         </div>
-
-        {/* 프로그레스 바 */}
-        <div className="mb-8">
-          <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400 mb-2">
-            <span>질문 {currentQuestion + 1} / {questions.length}</span>
-            <span>{Math.round(progress)}%</span>
-          </div>
-          <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-            <div 
-              className="bg-gradient-to-r from-emerald-400 to-teal-500 h-2 rounded-full transition-all duration-500"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-        </div>
-
-        {/* 질문 카드 */}
-        <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-8 mb-6">
-          <div className="text-center mb-8">
-            <div className="text-5xl mb-4">{question.emoji}</div>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-              {question.question}
-            </h2>
-          </div>
-
-          {/* 선택지 */}
-          <div className="space-y-3">
-            {question.options.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswer(option.score)}
-                className="w-full p-4 text-left rounded-xl border-2 border-gray-100 dark:border-gray-700 hover:border-emerald-400 dark:hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all group"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-sm font-medium text-gray-600 dark:text-gray-400 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-800 group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">
-                    {index + 1}
-                  </div>
-                  <span className="text-gray-700 dark:text-gray-300 font-medium">
-                    {option.text}
-                  </span>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* 힌트 */}
-        <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-          지금 느끼는 대로 솔직하게 선택해주세요
-        </p>
       </div>
+
+      {/* 프로그레스 바 */}
+      <div className="mb-6">
+        <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-1.5">
+          <span>질문 {currentQuestion + 1} / {questions.length}</span>
+          <span>{Math.round(progress)}%</span>
+        </div>
+        <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+          <div
+            className="bg-gradient-to-r from-emerald-400 to-teal-500 h-2 rounded-full transition-all duration-500"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+      </div>
+
+      {/* 질문 카드 */}
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-5 mb-4">
+        <div className="text-center mb-6">
+          <div className="text-4xl mb-3">{question.emoji}</div>
+          <h2 className="text-base font-bold text-gray-900 dark:text-white leading-relaxed">
+            {question.question}
+          </h2>
+        </div>
+
+        <div className="space-y-2">
+          {question.options.map((option, index) => (
+            <button
+              key={index}
+              onClick={() => handleAnswer(option.score)}
+              className="w-full p-3 text-left rounded-xl border border-gray-100 dark:border-gray-700 active:border-emerald-400 dark:active:border-emerald-500 active:bg-emerald-50 dark:active:bg-emerald-900/20 transition-all"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-xs font-medium text-gray-600 dark:text-gray-400 shrink-0">
+                  {index + 1}
+                </div>
+                <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">
+                  {option.text}
+                </span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <p className="text-center text-xs text-gray-400">
+        지금 느끼는 대로 솔직하게 선택해주세요
+      </p>
     </div>
   );
 }
