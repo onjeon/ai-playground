@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Calendar, Sparkles, ChevronRight, Sun } from 'lucide-react';
 
@@ -8,12 +8,13 @@ export default function DailyFortunePage() {
   const router = useRouter();
   const [birthDate, setBirthDate] = useState({ year: '', month: '', day: '' });
   const [isValid, setIsValid] = useState(false);
+  const [todayFull, setTodayFull] = useState('');
 
-  // 오늘 날짜
-  const today = new Date();
-  const todayStr = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
-  const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
-  const todayFull = `${todayStr} (${weekdays[today.getDay()]})`;
+  useEffect(() => {
+    const today = new Date();
+    const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
+    setTodayFull(`${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일 (${weekdays[today.getDay()]})`);
+  }, []);
 
   const handleInputChange = (field: 'year' | 'month' | 'day', value: string, maxLength: number) => {
     // 숫자만 허용
