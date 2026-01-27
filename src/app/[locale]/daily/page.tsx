@@ -79,15 +79,14 @@ export default function DailyPage() {
   }, [t, locale]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-orange-50 to-rose-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
-      <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="space-y-6">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 dark:bg-amber-900/30 rounded-full mb-4">
             <Sun className="w-5 h-5 text-amber-500" />
             <span className="text-amber-700 dark:text-amber-300 font-medium">{t('daily')}</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
             {greeting}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 flex items-center justify-center gap-2">
@@ -97,7 +96,7 @@ export default function DailyPage() {
         </div>
 
         {/* Today's luck cards */}
-        <div className="grid grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-2 gap-3">
           {/* Lucky color */}
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
             <div className="flex items-center gap-2 mb-3">
@@ -135,7 +134,7 @@ export default function DailyPage() {
         </div>
 
         {/* Daily content */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-amber-500" />
             {t('todayContent')}
@@ -143,14 +142,14 @@ export default function DailyPage() {
 
           {/* Daily fortune */}
           <Link href="/fortune/daily-fortune" className="block group">
-            <div className="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl p-6 text-white transition-all hover:scale-[1.02] hover:shadow-xl">
+            <div className="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl p-4 text-white transition-all hover:scale-[1.02] hover:shadow-xl">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-3xl">
+                  <div className="w-11 h-11 bg-white/20 rounded-lg flex items-center justify-center text-2xl">
                     🔮
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-1">{t('dailyFortune')}</h3>
+                    <h3 className="text-base font-bold mb-0.5">{t('dailyFortune')}</h3>
                     <p className="text-purple-100 text-sm">{t('dailyFortuneDesc')}</p>
                   </div>
                 </div>
@@ -161,14 +160,14 @@ export default function DailyPage() {
 
           {/* Daily tarot */}
           <Link href="/fortune/tarot/daily" className="block group">
-            <div className="bg-gradient-to-r from-violet-500 to-purple-600 rounded-2xl p-6 text-white transition-all hover:scale-[1.02] hover:shadow-xl">
+            <div className="bg-gradient-to-r from-violet-500 to-purple-600 rounded-2xl p-4 text-white transition-all hover:scale-[1.02] hover:shadow-xl">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-3xl">
+                  <div className="w-11 h-11 bg-white/20 rounded-lg flex items-center justify-center text-2xl">
                     🃏
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-1">{t('dailyTarot')}</h3>
+                    <h3 className="text-base font-bold mb-0.5">{t('dailyTarot')}</h3>
                     <p className="text-violet-100 text-sm">{t('dailyTarotDesc')}</p>
                   </div>
                 </div>
@@ -179,14 +178,14 @@ export default function DailyPage() {
 
           {/* Condition check */}
           <Link href="/daily/condition" className="block group">
-            <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl p-6 text-white transition-all hover:scale-[1.02] hover:shadow-xl">
+            <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl p-4 text-white transition-all hover:scale-[1.02] hover:shadow-xl">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-3xl">
+                  <div className="w-11 h-11 bg-white/20 rounded-lg flex items-center justify-center text-2xl">
                     <Battery className="w-8 h-8" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-1">{t('todayCondition')}</h3>
+                    <h3 className="text-base font-bold mb-0.5">{t('todayCondition')}</h3>
                     <p className="text-emerald-100 text-sm">{t('todayConditionDesc')}</p>
                   </div>
                 </div>
@@ -197,8 +196,8 @@ export default function DailyPage() {
         </div>
 
         {/* Recommended tests */}
-        <div className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-4">
+        <div>
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-3">
             <Zap className="w-5 h-5 text-orange-500" />
             {t('recommendedTests')}
           </h2>
@@ -235,12 +234,11 @@ export default function DailyPage() {
         </div>
 
         {/* Footer link */}
-        <div className="mt-8 text-center">
+        <div className="text-center">
           <Link href="/" className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-sm">
             ← {t('backHome')}
           </Link>
         </div>
-      </div>
     </div>
   );
 }

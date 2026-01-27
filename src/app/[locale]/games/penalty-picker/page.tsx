@@ -80,7 +80,7 @@ export default function PenaltyPickerPage() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [spinningPenalty, setSpinningPenalty] = useState<Penalty | null>(null);
   const [history, setHistory] = useState<Penalty[]>([]);
-  
+
   // Custom penalties
   const [customPenalties, setCustomPenalties] = useState<string[]>([]);
   const [newPenalty, setNewPenalty] = useState('');
@@ -103,9 +103,9 @@ export default function PenaltyPickerPage() {
 
   const spinPenalty = useCallback(() => {
     if (!selectedCategory) return;
-    
+
     let availablePenalties: Penalty[];
-    
+
     if (selectedCategory === 'custom') {
       if (customPenalties.length === 0) return;
       availablePenalties = customPenalties.map((text, index) => ({
@@ -149,25 +149,19 @@ export default function PenaltyPickerPage() {
   const currentCategory = categories.find(c => c.id === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      {/* Header */}
-      <div className="bg-gray-800 border-b border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/games" className="text-gray-400 hover:text-white transition-colors">
-            ← 게임 목록
-          </Link>
-          <h1 className="text-lg font-bold text-white">벌칙 뽑기</h1>
-          <div className="w-20"></div>
-        </div>
-      </div>
+    <div className="space-y-6">
+      {/* Back link */}
+      <Link href="/games" className="text-gray-500 dark:text-gray-400 hover:text-indigo-500 text-sm inline-block">
+        ← 게임 목록
+      </Link>
 
       {/* Category Selection */}
       {!selectedCategory && (
-        <div className="max-w-2xl mx-auto px-4 py-8">
-          <div className="text-center mb-8">
+        <>
+          <div className="text-center">
             <div className="text-6xl mb-4">🎰</div>
-            <h2 className="text-2xl font-bold text-white mb-4">벌칙 뽑기</h2>
-            <p className="text-gray-400">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">벌칙 뽑기</h2>
+            <p className="text-gray-500 dark:text-gray-400">
               강도를 선택하세요! 각오는 되셨나요? 😈
             </p>
           </div>
@@ -192,13 +186,13 @@ export default function PenaltyPickerPage() {
 
           {/* History */}
           {history.length > 0 && (
-            <div className="mt-8 bg-gray-800 rounded-xl p-4">
-              <p className="text-gray-400 text-sm mb-3">최근 벌칙 기록</p>
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">최근 벌칙 기록</p>
               <div className="space-y-2">
                 {history.map((penalty, index) => (
                   <div
                     key={index}
-                    className="bg-gray-700/50 px-4 py-2 rounded-lg text-sm text-gray-300"
+                    className="bg-white dark:bg-gray-700/50 px-4 py-2 rounded-lg text-sm text-gray-700 dark:text-gray-300"
                   >
                     {penalty.emoji} {penalty.text}
                   </div>
@@ -206,27 +200,27 @@ export default function PenaltyPickerPage() {
               </div>
             </div>
           )}
-        </div>
+        </>
       )}
 
       {/* Custom Penalties Setup */}
       {selectedCategory === 'custom' && !selectedPenalty && !isSpinning && (
-        <div className="max-w-2xl mx-auto px-4 py-8">
+        <>
           <button
             onClick={resetGame}
-            className="text-gray-400 hover:text-white mb-6 text-sm"
+            className="text-gray-500 dark:text-gray-400 hover:text-indigo-500 text-sm"
           >
             ← 카테고리 선택으로
           </button>
 
-          <div className="text-center mb-8">
+          <div className="text-center">
             <div className="text-5xl mb-2">✏️</div>
-            <h2 className="text-xl font-bold text-white">커스텀 벌칙</h2>
-            <p className="text-gray-400 text-sm">직접 벌칙을 입력하세요!</p>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">커스텀 벌칙</h2>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">직접 벌칙을 입력하세요!</p>
           </div>
 
           {/* Add Penalty */}
-          <div className="bg-gray-800 rounded-2xl p-6 mb-6">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -234,11 +228,11 @@ export default function PenaltyPickerPage() {
                 onChange={(e) => setNewPenalty(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && addCustomPenalty()}
                 placeholder="벌칙 입력..."
-                className="flex-1 bg-gray-700 text-white px-4 py-3 rounded-xl"
+                className="flex-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600"
               />
               <button
                 onClick={addCustomPenalty}
-                className="px-6 bg-purple-500 hover:bg-purple-400 text-white font-bold rounded-xl transition-colors"
+                className="px-6 bg-indigo-500 hover:bg-indigo-400 text-white font-bold rounded-xl transition-colors"
               >
                 추가
               </button>
@@ -247,18 +241,18 @@ export default function PenaltyPickerPage() {
 
           {/* Penalty List */}
           {customPenalties.length > 0 && (
-            <div className="bg-gray-800 rounded-2xl p-6 mb-6">
-              <p className="text-gray-400 text-sm mb-3">등록된 벌칙 ({customPenalties.length}개)</p>
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6">
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">등록된 벌칙 ({customPenalties.length}개)</p>
               <div className="space-y-2">
                 {customPenalties.map((penalty, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between bg-gray-700/50 px-4 py-3 rounded-xl"
+                    className="flex items-center justify-between bg-white dark:bg-gray-700/50 px-4 py-3 rounded-xl"
                   >
-                    <span className="text-white">🎯 {penalty}</span>
+                    <span className="text-gray-900 dark:text-white">🎯 {penalty}</span>
                     <button
                       onClick={() => removeCustomPenalty(index)}
-                      className="text-red-400 hover:text-red-300 text-sm"
+                      className="text-red-500 hover:text-red-400 text-sm"
                     >
                       삭제
                     </button>
@@ -272,40 +266,40 @@ export default function PenaltyPickerPage() {
           <button
             onClick={spinPenalty}
             disabled={customPenalties.length === 0}
-            className="w-full py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 disabled:from-gray-600 disabled:to-gray-600 text-white font-bold rounded-xl transition-all active:scale-[0.98] text-xl"
+            className="w-full py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 disabled:from-gray-300 disabled:to-gray-300 dark:disabled:from-gray-600 dark:disabled:to-gray-600 text-white font-bold rounded-xl transition-all active:scale-[0.98] text-xl"
           >
             {customPenalties.length === 0 ? '벌칙을 추가해주세요' : '🎰 벌칙 뽑기!'}
           </button>
-        </div>
+        </>
       )}
 
       {/* Spinning / Playing (Non-custom) */}
       {selectedCategory && selectedCategory !== 'custom' && !selectedPenalty && (
-        <div className="max-w-2xl mx-auto px-4 py-8">
+        <>
           <button
             onClick={resetGame}
-            className="text-gray-400 hover:text-white mb-6 text-sm"
+            className="text-gray-500 dark:text-gray-400 hover:text-indigo-500 text-sm"
           >
             ← 카테고리 선택으로
           </button>
 
-          <div className="text-center mb-8">
+          <div className="text-center">
             <div className="text-5xl mb-2">{currentCategory?.emoji}</div>
-            <h2 className="text-xl font-bold text-white">{currentCategory?.name} 벌칙</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">{currentCategory?.name} 벌칙</h2>
           </div>
 
           {/* Spinning Display */}
-          <div className={`bg-gradient-to-br ${currentCategory?.color.replace('from', 'from').replace('to', 'to')}/20 border border-white/10 rounded-3xl p-12 mb-6`}>
+          <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-12">
             <div className={`text-center ${isSpinning ? 'animate-pulse' : ''}`}>
               {spinningPenalty ? (
                 <>
                   <span className="text-6xl block mb-4">{spinningPenalty.emoji}</span>
-                  <p className="text-xl text-white font-bold">{spinningPenalty.text}</p>
+                  <p className="text-xl text-gray-900 dark:text-white font-bold">{spinningPenalty.text}</p>
                 </>
               ) : (
                 <>
                   <span className="text-6xl block mb-4">🎰</span>
-                  <p className="text-gray-500">버튼을 눌러 벌칙을 뽑으세요!</p>
+                  <p className="text-gray-500 dark:text-gray-400">버튼을 눌러 벌칙을 뽑으세요!</p>
                 </>
               )}
             </div>
@@ -315,38 +309,38 @@ export default function PenaltyPickerPage() {
           <button
             onClick={spinPenalty}
             disabled={isSpinning}
-            className={`w-full py-4 bg-gradient-to-r ${currentCategory?.color} hover:opacity-90 disabled:from-gray-600 disabled:to-gray-600 text-white font-bold rounded-xl transition-all active:scale-[0.98] text-xl`}
+            className={`w-full py-4 bg-gradient-to-r ${currentCategory?.color} hover:opacity-90 disabled:from-gray-300 disabled:to-gray-300 dark:disabled:from-gray-600 dark:disabled:to-gray-600 text-white font-bold rounded-xl transition-all active:scale-[0.98] text-xl`}
           >
             {isSpinning ? '🎰 뽑는 중...' : '🎰 벌칙 뽑기!'}
           </button>
-        </div>
+        </>
       )}
 
       {/* Result */}
       {selectedPenalty && currentCategory && (
-        <div className="max-w-2xl mx-auto px-4 py-8">
+        <>
           <button
             onClick={resetGame}
-            className="text-gray-400 hover:text-white mb-6 text-sm"
+            className="text-gray-500 dark:text-gray-400 hover:text-indigo-500 text-sm"
           >
             ← 카테고리 선택으로
           </button>
 
-          <div className="bg-gradient-to-br from-red-500/20 to-orange-500/20 border border-red-500/30 rounded-3xl p-8 text-center mb-6">
-            <p className="text-gray-400 mb-2">{currentCategory.emoji} {currentCategory.name} 벌칙</p>
+          <div className="bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/30 rounded-3xl p-8 text-center">
+            <p className="text-gray-500 dark:text-gray-400 mb-2">{currentCategory.emoji} {currentCategory.name} 벌칙</p>
             <div className="text-8xl mb-4">{selectedPenalty.emoji}</div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
               {selectedPenalty.text}
             </h2>
-            <p className="text-yellow-400 text-lg">
+            <p className="text-yellow-600 dark:text-yellow-400 text-lg">
               ⚠️ 각오하세요!
             </p>
           </div>
 
           {/* Share */}
-          <div className="text-center mb-6">
-            <p className="text-gray-400 text-sm mb-3">결과 공유하기</p>
-            <ShareButtons 
+          <div className="text-center">
+            <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">결과 공유하기</p>
+            <ShareButtons
               title={`벌칙 당첨! ${selectedPenalty.emoji}`}
               description={`${currentCategory.name} 벌칙: "${selectedPenalty.text}" 당첨됐어요! 😱`}
             />
@@ -362,12 +356,12 @@ export default function PenaltyPickerPage() {
             </button>
             <button
               onClick={resetGame}
-              className="flex-1 py-4 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-xl transition-colors"
+              className="flex-1 py-4 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-white font-bold rounded-xl transition-colors"
             >
               강도 변경
             </button>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

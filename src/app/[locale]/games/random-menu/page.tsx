@@ -117,24 +117,24 @@ const menus: Menu[] = [
 const getMealMenus = (mealTime: MealTime): Menu[] => {
   switch (mealTime) {
     case 'lunch':
-      return menus.filter(m => 
+      return menus.filter(m =>
         ['korean', 'chinese', 'japanese', 'western', 'fastfood'].includes(m.category)
       );
     case 'dinner':
-      return menus.filter(m => 
+      return menus.filter(m =>
         ['korean', 'chinese', 'japanese', 'western'].includes(m.category) ||
         m.tags.includes('고기') || m.tags.includes('특별한')
       );
     case 'snack':
-      return menus.filter(m => 
-        m.category === 'snack' || 
-        m.tags.includes('야식') || 
+      return menus.filter(m =>
+        m.category === 'snack' ||
+        m.tags.includes('야식') ||
         m.tags.includes('간식') ||
         m.tags.includes('술안주')
       );
     case 'drink':
-      return menus.filter(m => 
-        m.category === 'cafe' || 
+      return menus.filter(m =>
+        m.category === 'cafe' ||
         m.tags.includes('술안주') ||
         m.tags.includes('디저트')
       );
@@ -191,25 +191,19 @@ export default function RandomMenuPage() {
   const currentMealTime = mealTimes.find(m => m.id === selectedMealTime);
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      {/* Header */}
-      <div className="bg-gray-800 border-b border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/games" className="text-gray-400 hover:text-white transition-colors">
-            ← 게임 목록
-          </Link>
-          <h1 className="text-lg font-bold text-white">오늘 뭐 먹지?</h1>
-          <div className="w-20"></div>
-        </div>
-      </div>
+    <div className="space-y-6">
+      {/* Back link */}
+      <Link href="/games" className="text-gray-500 dark:text-gray-400 hover:text-indigo-500 text-sm inline-block">
+        ← 게임 목록
+      </Link>
 
       {/* Meal Time Selection */}
       {gameState === 'select' && (
-        <div className="max-w-2xl mx-auto px-4 py-8">
-          <div className="text-center mb-8">
+        <>
+          <div className="text-center">
             <div className="text-6xl mb-4">🍽️</div>
-            <h2 className="text-2xl font-bold text-white mb-4">오늘 뭐 먹지?</h2>
-            <p className="text-gray-400">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">오늘 뭐 먹지?</h2>
+            <p className="text-gray-500 dark:text-gray-400">
               메뉴 선택이 어려울 때! 랜덤으로 결정해드려요
             </p>
           </div>
@@ -234,13 +228,13 @@ export default function RandomMenuPage() {
 
           {/* History */}
           {history.length > 0 && (
-            <div className="mt-8 bg-gray-800 rounded-xl p-4">
-              <p className="text-gray-400 text-sm mb-3">최근 추천 기록</p>
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">최근 추천 기록</p>
               <div className="flex flex-wrap gap-2">
                 {history.map((menu, index) => (
                   <span
                     key={index}
-                    className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300"
+                    className="bg-white dark:bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300"
                   >
                     {menu.emoji} {menu.name}
                   </span>
@@ -248,47 +242,45 @@ export default function RandomMenuPage() {
               </div>
             </div>
           )}
-        </div>
+        </>
       )}
 
       {/* Spinning Animation */}
       {gameState === 'spinning' && currentMealTime && (
-        <div className="max-w-2xl mx-auto px-4 py-8">
-          <div className="text-center">
-            <p className="text-gray-400 mb-4">{currentMealTime.emoji} {currentMealTime.name} 메뉴 추천 중...</p>
-            
-            <div className="bg-gray-800 rounded-3xl p-12 mb-8">
-              <div className="animate-bounce">
-                <span className="text-8xl block mb-4">{spinningMenu?.emoji || '🎰'}</span>
-              </div>
-              <p className="text-2xl font-bold text-white animate-pulse">
-                {spinningMenu?.name || '두구두구...'}
-              </p>
-            </div>
+        <div className="text-center">
+          <p className="text-gray-500 dark:text-gray-400 mb-4">{currentMealTime.emoji} {currentMealTime.name} 메뉴 추천 중...</p>
 
-            <div className="flex justify-center gap-2">
-              <div className="w-3 h-3 bg-yellow-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-              <div className="w-3 h-3 bg-yellow-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-              <div className="w-3 h-3 bg-yellow-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-3xl p-12">
+            <div className="animate-bounce">
+              <span className="text-8xl block mb-4">{spinningMenu?.emoji || '🎰'}</span>
             </div>
+            <p className="text-2xl font-bold text-gray-900 dark:text-white animate-pulse">
+              {spinningMenu?.name || '두구두구...'}
+            </p>
+          </div>
+
+          <div className="flex justify-center gap-2 mt-4">
+            <div className="w-3 h-3 bg-yellow-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+            <div className="w-3 h-3 bg-yellow-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+            <div className="w-3 h-3 bg-yellow-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
           </div>
         </div>
       )}
 
       {/* Result */}
       {gameState === 'result' && selectedMenu && currentMealTime && (
-        <div className="max-w-2xl mx-auto px-4 py-8">
-          <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-3xl p-8 text-center mb-6">
-            <p className="text-gray-400 mb-2">{currentMealTime.emoji} {currentMealTime.name} 추천</p>
+        <>
+          <div className="bg-yellow-50 dark:bg-yellow-500/10 border border-yellow-200 dark:border-yellow-500/30 rounded-3xl p-8 text-center">
+            <p className="text-gray-500 dark:text-gray-400 mb-2">{currentMealTime.emoji} {currentMealTime.name} 추천</p>
             <div className="text-8xl mb-4">{selectedMenu.emoji}</div>
-            <h2 className="text-3xl font-bold text-white mb-4">{selectedMenu.name}</h2>
-            
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{selectedMenu.name}</h2>
+
             {/* Tags */}
             <div className="flex flex-wrap justify-center gap-2 mb-6">
               {selectedMenu.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="bg-gray-700/50 px-3 py-1 rounded-full text-sm text-gray-300"
+                  className="bg-white dark:bg-gray-700/50 px-3 py-1 rounded-full text-sm text-gray-600 dark:text-gray-300"
                 >
                   #{tag}
                 </span>
@@ -296,17 +288,17 @@ export default function RandomMenuPage() {
             </div>
 
             {/* Fun message */}
-            <div className="bg-gray-800/50 rounded-xl p-4 mb-4">
-              <p className="text-gray-300">
+            <div className="bg-white/70 dark:bg-gray-800/50 rounded-xl p-4">
+              <p className="text-gray-700 dark:text-gray-300">
                 {getRandomMessage(selectedMenu)}
               </p>
             </div>
           </div>
 
           {/* Share */}
-          <div className="text-center mb-6">
-            <p className="text-gray-400 text-sm mb-3">친구에게 공유하기</p>
-            <ShareButtons 
+          <div className="text-center">
+            <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">친구에게 공유하기</p>
+            <ShareButtons
               title={`오늘 ${currentMealTime.name}은 ${selectedMenu.name}!`}
               description={`${selectedMenu.emoji} 메뉴 고민 끝! AI 놀이터의 랜덤 메뉴 추천으로 ${selectedMenu.name}(으)로 결정했어요!`}
             />
@@ -322,25 +314,25 @@ export default function RandomMenuPage() {
             </button>
             <button
               onClick={resetGame}
-              className="flex-1 py-4 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-xl transition-colors"
+              className="flex-1 py-4 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-white font-bold rounded-xl transition-colors"
             >
               시간대 변경
             </button>
           </div>
 
           {/* Quick reroll for different categories */}
-          <div className="mt-4 grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-2">
             {mealTimes.filter(m => m.id !== selectedMealTime).map((meal) => (
               <button
                 key={meal.id}
                 onClick={() => spinRoulette(meal.id)}
-                className="py-3 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-xl text-sm transition-colors"
+                className="py-3 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-xl text-sm transition-colors"
               >
                 {meal.emoji} {meal.name}
               </button>
             ))}
           </div>
-        </div>
+        </>
       )}
     </div>
   );

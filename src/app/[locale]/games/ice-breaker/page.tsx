@@ -21,7 +21,7 @@ const questions: Question[] = [
   { text: '지금 핸드폰 배경화면은 뭔가요?', category: '가벼운', emoji: '📱' },
   { text: '가장 좋아하는 계절은?', category: '가벼운', emoji: '🌸' },
   { text: '가장 최근에 들은 노래는?', category: '가벼운', emoji: '🎵' },
-  
+
   // 재미있는
   { text: '초능력이 생긴다면 어떤 능력?', category: '재미있는', emoji: '✨' },
   { text: '복권에 당첨되면 제일 먼저 할 일은?', category: '재미있는', emoji: '💰' },
@@ -33,7 +33,7 @@ const questions: Question[] = [
   { text: '마지막 식사로 먹고 싶은 음식은?', category: '재미있는', emoji: '🍱' },
   { text: '유명해진다면 어떤 분야로?', category: '재미있는', emoji: '🏆' },
   { text: '100년 후에도 살아있다면?', category: '재미있는', emoji: '🚀' },
-  
+
   // 친해지기
   { text: '첫인상과 실제 성격이 다르다고 느낀 적?', category: '친해지기', emoji: '🎭' },
   { text: '가장 자신 있는 장점은?', category: '친해지기', emoji: '💪' },
@@ -45,7 +45,7 @@ const questions: Question[] = [
   { text: '최근 가장 열심히 하고 있는 일은?', category: '친해지기', emoji: '🔥' },
   { text: '어릴 때 꿈은 뭐였어요?', category: '친해지기', emoji: '👶' },
   { text: '좌우명이나 자주 하는 말은?', category: '친해지기', emoji: '💬' },
-  
+
   // 심화
   { text: '후회하는 선택이 있다면?', category: '심화', emoji: '😔' },
   { text: '가장 두려운 것은?', category: '심화', emoji: '😰' },
@@ -57,7 +57,7 @@ const questions: Question[] = [
   { text: '가장 힘들었던 시기는?', category: '심화', emoji: '💔' },
   { text: '성공의 기준은 뭐라고 생각해요?', category: '심화', emoji: '🎯' },
   { text: '용서가 어려웠던 경험이 있다면?', category: '심화', emoji: '🕊️' },
-  
+
   // 도전
   { text: '즉석에서 노래 한 소절 불러주세요!', category: '도전', emoji: '🎤' },
   { text: '지금 기분을 몸짓으로 표현해주세요!', category: '도전', emoji: '💃' },
@@ -101,17 +101,17 @@ export default function IceBreakerPage() {
   const [questionCount, setQuestionCount] = useState(0);
 
   const getFilteredQuestions = useCallback(() => {
-    return selectedCategory === '전체' 
-      ? questions 
+    return selectedCategory === '전체'
+      ? questions
       : questions.filter(q => q.category === selectedCategory);
   }, [selectedCategory]);
 
   const spinRoulette = useCallback(() => {
     if (isSpinning) return;
-    
+
     setIsSpinning(true);
     setQuestionCount(prev => prev + 1);
-    
+
     const filtered = getFilteredQuestions();
     let availableIndices = filtered
       .map((_, idx) => idx)
@@ -150,113 +150,99 @@ export default function IceBreakerPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      {/* Header */}
-      <div className="bg-gray-800 border-b border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/games" className="text-gray-400 hover:text-white transition-colors">
-            ← 게임 목록
-          </Link>
-          <h1 className="text-lg font-bold text-white">아이스브레이킹</h1>
-          <div className="w-20"></div>
-        </div>
+    <div className="space-y-6">
+      {/* Title */}
+      <div className="text-center">
+        <div className="text-7xl mb-4">🎰</div>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">아이스브레이킹 룰렛</h2>
+        <p className="text-gray-600 dark:text-gray-400">
+          어색한 분위기를 깨는 마법의 질문!
+        </p>
       </div>
 
-      {/* Content */}
-      <div className="max-w-2xl mx-auto px-4 py-8">
-        {/* Title */}
-        <div className="text-center mb-8">
-          <div className="text-7xl mb-4">🎰</div>
-          <h2 className="text-3xl font-bold text-white mb-2">아이스브레이킹 룰렛</h2>
-          <p className="text-gray-400">
-            어색한 분위기를 깨는 마법의 질문!
-          </p>
+      {/* Category Selection */}
+      <div>
+        <h3 className="text-gray-900 dark:text-white font-semibold mb-3 text-center">카테고리 선택</h3>
+        <div className="grid grid-cols-3 gap-2 mb-4">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => changeCategory(category)}
+              className={`px-3 py-2 rounded-lg font-medium transition-all text-sm ${
+                selectedCategory === category
+                  ? `bg-gradient-to-r ${categoryColors[category]} text-white`
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
         </div>
+        <p className="text-gray-500 text-center text-sm">
+          {categoryDescriptions[selectedCategory]}
+        </p>
+      </div>
 
-        {/* Category Selection */}
-        <div className="mb-8">
-          <h3 className="text-white font-semibold mb-3 text-center">카테고리 선택</h3>
-          <div className="grid grid-cols-3 gap-2 mb-4">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => changeCategory(category)}
-                className={`px-3 py-2 rounded-lg font-medium transition-all text-sm ${
-                  selectedCategory === category
-                    ? `bg-gradient-to-r ${categoryColors[category]} text-white`
-                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-          <p className="text-gray-500 text-center text-sm">
-            {categoryDescriptions[selectedCategory]}
-          </p>
-        </div>
-
-        {/* Question Display */}
-        <div className={`bg-gradient-to-br ${currentQuestion ? categoryColors[currentQuestion.category as Category] : 'from-gray-700 to-gray-800'} rounded-2xl p-8 mb-6 transition-all duration-300 min-h-[200px] flex flex-col items-center justify-center ${isSpinning ? 'animate-pulse' : ''}`}>
-          {currentQuestion ? (
-            <>
-              <div className="text-6xl mb-4">{currentQuestion.emoji}</div>
-              <p className="text-white text-xl font-medium text-center mb-4">
-                {currentQuestion.text}
-              </p>
-              <span className="bg-white/20 text-white text-sm px-3 py-1 rounded-full">
-                {currentQuestion.category}
-              </span>
-            </>
-          ) : (
-            <>
-              <div className="text-6xl mb-4 opacity-50">🎲</div>
-              <p className="text-gray-400 text-lg">
-                버튼을 눌러 질문을 뽑아보세요!
-              </p>
-            </>
-          )}
-        </div>
-
-        {/* Spin Button */}
-        <button
-          onClick={spinRoulette}
-          disabled={isSpinning}
-          className={`w-full py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xl font-bold rounded-xl transition-all ${
-            isSpinning 
-              ? 'opacity-50 cursor-not-allowed animate-bounce' 
-              : 'hover:opacity-90 hover:scale-[1.02]'
-          }`}
-        >
-          {isSpinning ? '🎰 돌아가는 중...' : currentQuestion ? '🎲 다음 질문!' : '🎲 질문 뽑기!'}
-        </button>
-
-        {/* Stats */}
-        {questionCount > 0 && (
-          <div className="mt-6 flex justify-center gap-8">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">{questionCount}</div>
-              <div className="text-gray-400 text-sm">뽑은 질문</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-400">
-                {getFilteredQuestions().length - usedQuestions.size}
-              </div>
-              <div className="text-gray-400 text-sm">남은 질문</div>
-            </div>
-          </div>
+      {/* Question Display */}
+      <div className={`bg-gradient-to-br ${currentQuestion ? categoryColors[currentQuestion.category as Category] : 'from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800'} rounded-2xl p-8 transition-all duration-300 min-h-[200px] flex flex-col items-center justify-center ${isSpinning ? 'animate-pulse' : ''}`}>
+        {currentQuestion ? (
+          <>
+            <div className="text-6xl mb-4">{currentQuestion.emoji}</div>
+            <p className="text-white text-xl font-medium text-center mb-4">
+              {currentQuestion.text}
+            </p>
+            <span className="bg-white/20 text-white text-sm px-3 py-1 rounded-full">
+              {currentQuestion.category}
+            </span>
+          </>
+        ) : (
+          <>
+            <div className="text-6xl mb-4 opacity-50">🎲</div>
+            <p className="text-gray-500 dark:text-gray-400 text-lg">
+              버튼을 눌러 질문을 뽑아보세요!
+            </p>
+          </>
         )}
+      </div>
 
-        {/* Tips */}
-        <div className="mt-8 bg-gray-800 rounded-xl p-6">
-          <h3 className="text-white font-semibold mb-3">💡 활용 팁</h3>
-          <ul className="space-y-2 text-gray-400 text-sm">
-            <li>• 처음엔 &apos;가벼운&apos; 카테고리로 시작하세요!</li>
-            <li>• 분위기가 풀리면 &apos;친해지기&apos;나 &apos;심화&apos;로!</li>
-            <li>• &apos;도전&apos; 카테고리는 즉석 미션이에요!</li>
-            <li>• 모든 사람이 돌아가며 답하면 더 재밌어요!</li>
-          </ul>
+      {/* Spin Button */}
+      <button
+        onClick={spinRoulette}
+        disabled={isSpinning}
+        className={`w-full py-4 bg-indigo-500 hover:bg-indigo-600 text-white text-xl font-bold rounded-xl transition-all ${
+          isSpinning
+            ? 'opacity-50 cursor-not-allowed animate-bounce'
+            : 'hover:scale-[1.02]'
+        }`}
+      >
+        {isSpinning ? '🎰 돌아가는 중...' : currentQuestion ? '🎲 다음 질문!' : '🎲 질문 뽑기!'}
+      </button>
+
+      {/* Stats */}
+      {questionCount > 0 && (
+        <div className="flex justify-center gap-8">
+          <div className="text-center">
+            <div className="text-2xl font-bold text-gray-900 dark:text-white">{questionCount}</div>
+            <div className="text-gray-600 dark:text-gray-400 text-sm">뽑은 질문</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-green-500">
+              {getFilteredQuestions().length - usedQuestions.size}
+            </div>
+            <div className="text-gray-600 dark:text-gray-400 text-sm">남은 질문</div>
+          </div>
         </div>
+      )}
+
+      {/* Tips */}
+      <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 border border-gray-100 dark:border-gray-700">
+        <h3 className="text-gray-900 dark:text-white font-semibold mb-3">💡 활용 팁</h3>
+        <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+          <li>• 처음엔 &apos;가벼운&apos; 카테고리로 시작하세요!</li>
+          <li>• 분위기가 풀리면 &apos;친해지기&apos;나 &apos;심화&apos;로!</li>
+          <li>• &apos;도전&apos; 카테고리는 즉석 미션이에요!</li>
+          <li>• 모든 사람이 돌아가며 답하면 더 재밌어요!</li>
+        </ul>
       </div>
     </div>
   );

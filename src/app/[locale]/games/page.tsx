@@ -27,74 +27,45 @@ export default function GamesPage() {
   const t = useTranslations('gamesPage');
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      {/* Header */}
-      <div className="bg-gray-800 border-b border-gray-700">
-        <div className="max-w-4xl mx-auto px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between">
-          <Link href="/" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
-            ← {t('backHome')}
-          </Link>
-          <h1 className="text-base sm:text-lg font-bold text-white">{t('games')}</h1>
-          <div className="w-12 sm:w-16"></div>
-        </div>
+    <div className="space-y-6">
+      {/* Hero */}
+      <div className="text-center">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+          🎲 {t('pageTitle')}
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 text-sm">
+          {t('pageDescription')}
+        </p>
       </div>
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-3 sm:px-4 py-5 sm:py-8">
-        {/* Hero */}
-        <div className="text-center mb-6 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">
-            🎲 {t('pageTitle')}
-          </h2>
-          <p className="text-gray-400 text-sm sm:text-lg">
-            {t('pageDescription')}
-          </p>
-        </div>
-
-        {/* Game Cards - Grid on mobile */}
-        <div className="grid grid-cols-2 sm:grid-cols-1 gap-2 sm:gap-6">
-          {gameConfigs.map((game) => (
-            <Link
-              key={game.slug}
-              href={`/games/${game.slug}`}
-              className="group block"
-            >
-              {/* Mobile: Compact card */}
-              <div className={`sm:hidden bg-gradient-to-br ${game.color} rounded-xl p-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl h-full`}>
-                <div className="flex flex-col">
-                  <span className="text-2xl mb-2">{game.emoji}</span>
-                  <h3 className="text-sm font-bold text-white mb-1 line-clamp-1">{t(`gameList.${game.slug}.title`)}</h3>
-                  <p className="text-white/80 text-xs line-clamp-2 flex-1">{t(`gameList.${game.slug}.description`)}</p>
-                  <div className="mt-2 flex items-center text-white/60 text-xs group-hover:text-white transition-colors">
-                    <span>{t('start')}</span>
-                    <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                  </div>
+      {/* Game Cards */}
+      <div className="grid grid-cols-2 gap-2">
+        {gameConfigs.map((game) => (
+          <Link
+            key={game.slug}
+            href={`/games/${game.slug}`}
+            className="group block"
+          >
+            <div className={`bg-gradient-to-br ${game.color} rounded-xl p-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl h-full`}>
+              <div className="flex flex-col">
+                <span className="text-2xl mb-2">{game.emoji}</span>
+                <h3 className="text-sm font-bold text-white mb-1 line-clamp-1">{t(`gameList.${game.slug}.title`)}</h3>
+                <p className="text-white/80 text-xs line-clamp-2 flex-1">{t(`gameList.${game.slug}.description`)}</p>
+                <div className="mt-2 flex items-center text-white/60 text-xs group-hover:text-white transition-colors">
+                  <span>{t('start')}</span>
+                  <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </div>
-              {/* Desktop: Full card */}
-              <div className={`hidden sm:block bg-gradient-to-br ${game.color} rounded-2xl p-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl`}>
-                <div className="flex items-start gap-6">
-                  <span className="text-6xl">{game.emoji}</span>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">{t(`gameList.${game.slug}.title`)}</h3>
-                    <p className="text-white/80">{t(`gameList.${game.slug}.description`)}</p>
-                    <div className="mt-4 flex items-center text-white/60 group-hover:text-white transition-colors">
-                      <span>{t('startGame')}</span>
-                      <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+            </div>
+          </Link>
+        ))}
+      </div>
 
-        {/* More Coming Soon */}
-        <div className="mt-6 sm:mt-8 bg-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center">
-          <p className="text-gray-400 text-sm sm:text-base">
-            🚧 {t('moreComingSoon')}
-          </p>
-        </div>
+      {/* More Coming Soon */}
+      <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 border border-gray-100 dark:border-gray-700 text-center">
+        <p className="text-gray-600 dark:text-gray-400 text-sm">
+          🚧 {t('moreComingSoon')}
+        </p>
       </div>
     </div>
   );

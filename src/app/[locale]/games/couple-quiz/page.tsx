@@ -19,7 +19,7 @@ const questions: Question[] = [
   { text: '상대방의 MBTI는?', category: '기본', forWhom: 'both' },
   { text: '상대방의 혈액형은?', category: '기본', forWhom: 'both' },
   { text: '상대방이 자주 쓰는 말버릇은?', category: '기본', forWhom: 'both' },
-  
+
   // 취향
   { text: '상대방이 가장 좋아하는 영화 장르는?', category: '취향', forWhom: 'both' },
   { text: '상대방이 가장 좋아하는 노래/가수는?', category: '취향', forWhom: 'both' },
@@ -29,7 +29,7 @@ const questions: Question[] = [
   { text: '상대방이 스트레스 받을 때 하는 행동은?', category: '취향', forWhom: 'both' },
   { text: '상대방이 가장 좋아하는 계절은?', category: '취향', forWhom: 'both' },
   { text: '상대방이 주말에 하고 싶어하는 것은?', category: '취향', forWhom: 'both' },
-  
+
   // 연애
   { text: '처음 만난 날짜와 장소는?', category: '연애', forWhom: 'both' },
   { text: '상대방이 먼저 고백했나? 아니면 내가?', category: '연애', forWhom: 'both' },
@@ -39,7 +39,7 @@ const questions: Question[] = [
   { text: '상대방의 첫인상은?', category: '연애', forWhom: 'both' },
   { text: '우리의 기념일은 총 몇 개?', category: '연애', forWhom: 'both' },
   { text: '상대방이 주로 사용하는 애칭은?', category: '연애', forWhom: 'both' },
-  
+
   // 심화
   { text: '상대방이 요즘 가장 고민하는 것은?', category: '심화', forWhom: 'both' },
   { text: '상대방의 버킷리스트 1위는?', category: '심화', forWhom: 'both' },
@@ -49,7 +49,7 @@ const questions: Question[] = [
   { text: '상대방이 가장 행복해하는 순간은?', category: '심화', forWhom: 'both' },
   { text: '상대방이 바꾸고 싶어하는 습관은?', category: '심화', forWhom: 'both' },
   { text: '상대방의 5년 후 목표는?', category: '심화', forWhom: 'both' },
-  
+
   // 빈칸 채우기
   { text: '상대방은 ___ 할 때 가장 매력적이다', category: '빈칸', forWhom: 'both' },
   { text: '상대방의 최애 간식은 ___이다', category: '빈칸', forWhom: 'both' },
@@ -94,8 +94,8 @@ export default function CoupleQuizPage() {
   const [questionCount, setQuestionCount] = useState(0);
 
   const getFilteredQuestions = useCallback(() => {
-    return selectedCategory === '전체' 
-      ? questions 
+    return selectedCategory === '전체'
+      ? questions
       : questions.filter(q => q.category === selectedCategory);
   }, [selectedCategory]);
 
@@ -161,160 +161,146 @@ export default function CoupleQuizPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      {/* Header */}
-      <div className="bg-gray-800 border-b border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/games" className="text-gray-400 hover:text-white transition-colors">
-            ← 게임 목록
-          </Link>
-          <h1 className="text-lg font-bold text-white">커플 테스트</h1>
-          <div className="w-20"></div>
-        </div>
-      </div>
+    <div className="space-y-6">
+      {!gameStarted ? (
+        <>
+          {/* Intro */}
+          <div className="text-center">
+            <div className="text-7xl mb-4">💑</div>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">커플 궁합 테스트</h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-2">
+              상대방에 대해 얼마나 알고 있나요?
+            </p>
+            <p className="text-gray-500 text-sm">
+              서로 번갈아가며 질문에 답하고 점수를 매겨보세요!
+            </p>
+          </div>
 
-      {/* Content */}
-      <div className="max-w-2xl mx-auto px-4 py-8">
-        {!gameStarted ? (
-          <>
-            {/* Intro */}
-            <div className="text-center mb-8">
-              <div className="text-7xl mb-4">💑</div>
-              <h2 className="text-3xl font-bold text-white mb-4">커플 궁합 테스트</h2>
-              <p className="text-gray-400 text-lg mb-2">
-                상대방에 대해 얼마나 알고 있나요?
-              </p>
-              <p className="text-gray-500 text-sm">
-                서로 번갈아가며 질문에 답하고 점수를 매겨보세요!
-              </p>
+          {/* Category Selection */}
+          <div>
+            <h3 className="text-gray-900 dark:text-white font-semibold mb-3 text-center">카테고리 선택</h3>
+            <div className="grid grid-cols-3 gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => changeCategory(category)}
+                  className={`px-3 py-3 rounded-lg font-medium transition-all text-sm ${
+                    selectedCategory === category
+                      ? `bg-gradient-to-r ${categoryColors[category]} text-white`
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                  }`}
+                >
+                  <span className="mr-1">{categoryEmojis[category]}</span>
+                  {category}
+                </button>
+              ))}
             </div>
+          </div>
 
-            {/* Category Selection */}
-            <div className="mb-8">
-              <h3 className="text-white font-semibold mb-3 text-center">카테고리 선택</h3>
-              <div className="grid grid-cols-3 gap-2">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => changeCategory(category)}
-                    className={`px-3 py-3 rounded-lg font-medium transition-all text-sm ${
-                      selectedCategory === category
-                        ? `bg-gradient-to-r ${categoryColors[category]} text-white`
-                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                    }`}
-                  >
-                    <span className="mr-1">{categoryEmojis[category]}</span>
-                    {category}
-                  </button>
-                ))}
+          {/* Instructions */}
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 border border-gray-100 dark:border-gray-700">
+            <h3 className="text-gray-900 dark:text-white font-semibold mb-3">📖 게임 방법</h3>
+            <ol className="space-y-2 text-gray-600 dark:text-gray-400 text-sm list-decimal list-inside">
+              <li>두 사람이 번갈아가며 문제를 풉니다</li>
+              <li>질문이 나오면 상대방에 대해 답해보세요</li>
+              <li>&quot;정답 확인&quot;을 눌러 상대방이 맞는지 확인!</li>
+              <li>맞으면 1점, 틀리면 0점!</li>
+              <li>누가 상대방을 더 잘 아는지 겨뤄보세요 💕</li>
+            </ol>
+          </div>
+
+          {/* Start Button */}
+          <button
+            onClick={startGame}
+            className="w-full py-4 bg-indigo-500 hover:bg-indigo-600 text-white text-xl font-bold rounded-xl transition-colors"
+          >
+            💕 게임 시작!
+          </button>
+        </>
+      ) : (
+        <>
+          {/* Score Board */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className={`p-4 rounded-xl text-center ${currentPlayer === 'A' ? 'bg-indigo-50 dark:bg-indigo-900/30 border-2 border-indigo-400' : 'bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700'}`}>
+              <div className="text-2xl mb-1">👤</div>
+              <div className="text-gray-900 dark:text-white font-semibold">Player A</div>
+              <div className="text-3xl font-bold text-blue-500">{scores.A}</div>
+            </div>
+            <div className={`p-4 rounded-xl text-center ${currentPlayer === 'B' ? 'bg-indigo-50 dark:bg-indigo-900/30 border-2 border-indigo-400' : 'bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700'}`}>
+              <div className="text-2xl mb-1">👤</div>
+              <div className="text-gray-900 dark:text-white font-semibold">Player B</div>
+              <div className="text-3xl font-bold text-pink-500">{scores.B}</div>
+            </div>
+          </div>
+
+          {/* Current Turn */}
+          <div className="text-center">
+            <span className={`inline-block px-4 py-2 rounded-full text-white font-semibold ${
+              currentPlayer === 'A' ? 'bg-blue-500' : 'bg-pink-500'
+            }`}>
+              🎯 Player {currentPlayer}의 차례!
+            </span>
+            <div className="text-gray-500 text-sm mt-2">
+              {questionCount}번째 질문
+            </div>
+          </div>
+
+          {/* Question Card */}
+          {currentQuestion && (
+            <div className={`bg-gradient-to-br ${categoryColors[currentQuestion.category as Category]} rounded-2xl p-6`}>
+              <div className="text-center">
+                <span className="inline-block bg-white/20 text-white text-sm px-3 py-1 rounded-full mb-4">
+                  {categoryEmojis[currentQuestion.category as Category]} {currentQuestion.category}
+                </span>
+                <p className="text-white text-xl font-medium">
+                  {currentQuestion.text}
+                </p>
               </div>
             </div>
+          )}
 
-            {/* Instructions */}
-            <div className="bg-gray-800 rounded-xl p-6 mb-6">
-              <h3 className="text-white font-semibold mb-3">📖 게임 방법</h3>
-              <ol className="space-y-2 text-gray-400 text-sm list-decimal list-inside">
-                <li>두 사람이 번갈아가며 문제를 풉니다</li>
-                <li>질문이 나오면 상대방에 대해 답해보세요</li>
-                <li>&quot;정답 확인&quot;을 눌러 상대방이 맞는지 확인!</li>
-                <li>맞으면 1점, 틀리면 0점!</li>
-                <li>누가 상대방을 더 잘 아는지 겨뤄보세요 💕</li>
-              </ol>
-            </div>
-
-            {/* Start Button */}
+          {/* Action Buttons */}
+          {!showAnswer ? (
             <button
-              onClick={startGame}
-              className="w-full py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xl font-bold rounded-xl hover:opacity-90 transition-opacity"
+              onClick={revealAnswer}
+              className="w-full py-4 bg-indigo-500 hover:bg-indigo-600 text-white text-lg font-bold rounded-xl transition-colors"
             >
-              💕 게임 시작!
+              🔍 정답 확인하기
             </button>
-          </>
-        ) : (
-          <>
-            {/* Score Board */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className={`p-4 rounded-xl text-center ${currentPlayer === 'A' ? 'bg-blue-500/20 border-2 border-blue-500' : 'bg-gray-800'}`}>
-                <div className="text-2xl mb-1">👤</div>
-                <div className="text-white font-semibold">Player A</div>
-                <div className="text-3xl font-bold text-blue-400">{scores.A}</div>
+          ) : (
+            <div className="space-y-4">
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center border border-gray-100 dark:border-gray-700">
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">상대방의 대답이 맞았나요?</p>
+                <p className="text-gray-900 dark:text-white">
+                  Player {currentPlayer === 'A' ? 'B' : 'A'}가 확인해주세요!
+                </p>
               </div>
-              <div className={`p-4 rounded-xl text-center ${currentPlayer === 'B' ? 'bg-pink-500/20 border-2 border-pink-500' : 'bg-gray-800'}`}>
-                <div className="text-2xl mb-1">👤</div>
-                <div className="text-white font-semibold">Player B</div>
-                <div className="text-3xl font-bold text-pink-400">{scores.B}</div>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => handleScore(true)}
+                  className="flex-1 py-4 bg-green-500 text-white text-lg font-bold rounded-xl hover:bg-green-600 transition-colors"
+                >
+                  ⭕ 정답!
+                </button>
+                <button
+                  onClick={() => handleScore(false)}
+                  className="flex-1 py-4 bg-red-500 text-white text-lg font-bold rounded-xl hover:bg-red-600 transition-colors"
+                >
+                  ❌ 오답!
+                </button>
               </div>
             </div>
+          )}
 
-            {/* Current Turn */}
-            <div className="text-center mb-4">
-              <span className={`inline-block px-4 py-2 rounded-full text-white font-semibold ${
-                currentPlayer === 'A' ? 'bg-blue-500' : 'bg-pink-500'
-              }`}>
-                🎯 Player {currentPlayer}의 차례!
-              </span>
-              <div className="text-gray-500 text-sm mt-2">
-                {questionCount}번째 질문
-              </div>
-            </div>
-
-            {/* Question Card */}
-            {currentQuestion && (
-              <div className={`bg-gradient-to-br ${categoryColors[currentQuestion.category as Category]} rounded-2xl p-8 mb-6`}>
-                <div className="text-center">
-                  <span className="inline-block bg-white/20 text-white text-sm px-3 py-1 rounded-full mb-4">
-                    {categoryEmojis[currentQuestion.category as Category]} {currentQuestion.category}
-                  </span>
-                  <p className="text-white text-xl font-medium">
-                    {currentQuestion.text}
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* Action Buttons */}
-            {!showAnswer ? (
-              <button
-                onClick={revealAnswer}
-                className="w-full py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-lg font-bold rounded-xl hover:opacity-90 transition-opacity"
-              >
-                🔍 정답 확인하기
-              </button>
-            ) : (
-              <div className="space-y-4">
-                <div className="bg-gray-800 rounded-xl p-4 text-center">
-                  <p className="text-gray-400 text-sm mb-2">상대방의 대답이 맞았나요?</p>
-                  <p className="text-white">
-                    Player {currentPlayer === 'A' ? 'B' : 'A'}가 확인해주세요!
-                  </p>
-                </div>
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => handleScore(true)}
-                    className="flex-1 py-4 bg-green-500 text-white text-lg font-bold rounded-xl hover:bg-green-600 transition-colors"
-                  >
-                    ⭕ 정답!
-                  </button>
-                  <button
-                    onClick={() => handleScore(false)}
-                    className="flex-1 py-4 bg-red-500 text-white text-lg font-bold rounded-xl hover:bg-red-600 transition-colors"
-                  >
-                    ❌ 오답!
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* Reset Button */}
-            <button
-              onClick={resetGame}
-              className="w-full mt-4 py-3 bg-gray-700 text-gray-300 font-medium rounded-xl hover:bg-gray-600 transition-colors"
-            >
-              🔄 처음부터
-            </button>
-          </>
-        )}
-      </div>
+          {/* Reset Button */}
+          <button
+            onClick={resetGame}
+            className="w-full py-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          >
+            🔄 처음부터
+          </button>
+        </>
+      )}
     </div>
   );
 }

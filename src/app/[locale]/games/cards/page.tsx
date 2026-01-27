@@ -125,7 +125,7 @@ export default function ConversationCardsPage() {
       const j = Math.floor(Math.random() * (i + 1));
       [categoryCards[i], categoryCards[j]] = [categoryCards[j], categoryCards[i]];
     }
-    
+
     setSelectedCategory(category);
     setShuffledCards(categoryCards);
     setCurrentIndex(0);
@@ -171,35 +171,24 @@ export default function ConversationCardsPage() {
   const currentCategory = categories.find(c => c.id === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      {/* Header */}
-      <div className="bg-gray-800 border-b border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-gray-400 hover:text-white transition-colors">
-            ← 홈으로
-          </Link>
-          <h1 className="text-lg font-bold text-white">대화 카드</h1>
-          <div className="w-16"></div>
-        </div>
-      </div>
-
+    <div className="space-y-6">
       {/* Category Selection */}
       {gameState === 'select' && (
-        <div className="max-w-2xl mx-auto px-4 py-8">
-          <div className="text-center mb-8">
+        <div>
+          <div className="text-center mb-6">
             <div className="text-6xl mb-4">🃏</div>
-            <h2 className="text-2xl font-bold text-white mb-4">대화 카드</h2>
-            <p className="text-gray-400">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">대화 카드</h2>
+            <p className="text-gray-600 dark:text-gray-400">
               어색한 분위기를 깨는 대화 주제 카드! 카테고리를 선택하세요.
             </p>
           </div>
 
-          <div className="grid gap-4">
+          <div className="grid gap-3">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => startGame(category.id)}
-                className={`bg-gradient-to-r ${category.color} p-6 rounded-2xl text-left transition-all hover:scale-[1.02] hover:shadow-xl`}
+                className={`bg-gradient-to-r ${category.color} p-4 rounded-2xl text-left transition-all hover:scale-[1.02] hover:shadow-xl`}
               >
                 <div className="flex items-center gap-4">
                   <span className="text-4xl">{category.emoji}</span>
@@ -213,9 +202,9 @@ export default function ConversationCardsPage() {
             ))}
           </div>
 
-          <div className="mt-8 bg-gray-800 rounded-xl p-6">
-            <h3 className="text-lg font-bold text-white mb-3">💡 사용법</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
+          <div className="mt-6 bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 border border-gray-100 dark:border-gray-700">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">💡 사용법</h3>
+            <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
               <li>• 카드를 탭/클릭하면 질문이 나타납니다</li>
               <li>• 좌우 버튼으로 다른 질문으로 이동하세요</li>
               <li>• 대화가 끊기면 새 카드를 뽑아보세요!</li>
@@ -226,29 +215,29 @@ export default function ConversationCardsPage() {
 
       {/* Playing */}
       {gameState === 'playing' && currentCategory && (
-        <div className="max-w-md mx-auto px-4 py-8 flex flex-col items-center min-h-[calc(100vh-64px)]">
+        <div className="flex flex-col items-center">
           {/* Category Info */}
           <div className="text-center mb-6">
             <span className="text-3xl">{currentCategory.emoji}</span>
-            <h2 className="text-xl font-bold text-white">{currentCategory.name}</h2>
-            <p className="text-gray-400 text-sm">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">{currentCategory.name}</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
               {currentIndex + 1} / {shuffledCards.length}
             </p>
           </div>
 
           {/* Card */}
-          <div 
+          <div
             className="w-full aspect-[3/4] max-w-sm cursor-pointer perspective-1000 mb-8"
             onClick={() => setIsFlipped(!isFlipped)}
           >
-            <div 
+            <div
               className={`relative w-full h-full transition-transform duration-500 transform-style-preserve-3d ${
                 isFlipped ? 'rotate-y-180' : ''
               }`}
               style={{ transformStyle: 'preserve-3d' }}
             >
               {/* Front (back of card) */}
-              <div 
+              <div
                 className={`absolute w-full h-full rounded-3xl bg-gradient-to-br ${currentCategory.color} flex items-center justify-center shadow-2xl backface-hidden`}
                 style={{ backfaceVisibility: 'hidden' }}
               >
@@ -257,9 +246,9 @@ export default function ConversationCardsPage() {
                   <p className="text-white/80 mt-4 text-lg">탭하여 질문 보기</p>
                 </div>
               </div>
-              
+
               {/* Back (question) */}
-              <div 
+              <div
                 className="absolute w-full h-full rounded-3xl bg-white flex items-center justify-center p-8 shadow-2xl"
                 style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
               >
@@ -277,8 +266,8 @@ export default function ConversationCardsPage() {
               disabled={currentIndex === 0}
               className={`flex-1 py-3 rounded-xl font-bold transition-colors ${
                 currentIndex === 0
-                  ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
-                  : 'bg-gray-700 hover:bg-gray-600 text-white'
+                  ? 'bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-500 cursor-not-allowed'
+                  : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
               }`}
             >
               ← 이전
@@ -288,8 +277,8 @@ export default function ConversationCardsPage() {
               disabled={currentIndex === shuffledCards.length - 1}
               className={`flex-1 py-3 rounded-xl font-bold transition-colors ${
                 currentIndex === shuffledCards.length - 1
-                  ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
-                  : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  ? 'bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-500 cursor-not-allowed'
+                  : 'bg-indigo-500 hover:bg-indigo-600 text-white'
               }`}
             >
               다음 →
@@ -300,13 +289,13 @@ export default function ConversationCardsPage() {
           <div className="flex gap-3 w-full max-w-sm">
             <button
               onClick={shuffleAgain}
-              className="flex-1 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-bold transition-colors"
+              className="flex-1 py-3 bg-indigo-500 hover:bg-indigo-600 text-white rounded-xl font-bold transition-colors"
             >
               🔀 셔플
             </button>
             <button
               onClick={resetGame}
-              className="flex-1 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-xl font-bold transition-colors"
+              className="flex-1 py-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-bold transition-colors"
             >
               카테고리 변경
             </button>

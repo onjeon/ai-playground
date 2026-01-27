@@ -19,7 +19,7 @@ const questions: Question[] = [
   { optionA: '100년 전으로 가서 살기', optionB: '100년 후로 가서 살기', category: '일상' },
   { optionA: '투명인간 되기', optionB: '하늘을 날 수 있게 되기', category: '일상' },
   { optionA: '생각을 읽을 수 있는 능력', optionB: '미래를 볼 수 있는 능력', category: '일상' },
-  
+
   // 연애
   { optionA: '첫사랑과 재회하기', optionB: '완벽한 새로운 인연 만나기', category: '연애' },
   { optionA: '연인이 너무 질투하는 것', optionB: '연인이 전혀 관심 없는 것', category: '연애' },
@@ -29,7 +29,7 @@ const questions: Question[] = [
   { optionA: '연애 초반의 설렘이 영원히 지속', optionB: '오래된 연인의 편안함이 바로 시작', category: '연애' },
   { optionA: '장거리 연애 3년', optionB: '동거 후 헤어짐', category: '연애' },
   { optionA: '연인이 모든 것을 솔직하게 말하기', optionB: '가끔 선의의 거짓말 하기', category: '연애' },
-  
+
   // 직장/돈
   { optionA: '연봉 3배, 하지만 주 6일 근무', optionB: '현재 연봉, 주 4일 근무', category: '직장' },
   { optionA: '상사가 무능하지만 친절한 것', optionB: '상사가 유능하지만 까칠한 것', category: '직장' },
@@ -39,7 +39,7 @@ const questions: Question[] = [
   { optionA: '월급 500만원 평생 직장', optionB: '불안정하지만 억대 연봉 가능성', category: '직장' },
   { optionA: '10억 당첨되고 친구 잃기', optionB: '가난하지만 친구들과 함께하기', category: '직장' },
   { optionA: '창업해서 망하기', optionB: '평생 직장인으로 살기', category: '직장' },
-  
+
   // 극한
   { optionA: '외딴섬에서 혼자 1년 살기', optionB: '10명과 좁은 방에서 1달 살기', category: '극한' },
   { optionA: '평생 같은 음식만 먹기', optionB: '평생 같은 옷만 입기', category: '극한' },
@@ -49,7 +49,7 @@ const questions: Question[] = [
   { optionA: '죽기 전 1년을 알기', optionB: '모르고 살기', category: '극한' },
   { optionA: '과거의 나에게 편지 보내기', optionB: '미래의 나에게서 편지 받기', category: '극한' },
   { optionA: '기억은 있지만 감정이 없는 것', optionB: '감정은 있지만 기억이 없는 것', category: '극한' },
-  
+
   // 재미
   { optionA: '평생 노래방에서만 노래하기', optionB: '평생 샤워할 때만 노래하기', category: '재미' },
   { optionA: '항상 5분 일찍 도착하기', optionB: '항상 5분 늦게 도착하기', category: '재미' },
@@ -83,8 +83,8 @@ export default function WouldYouRatherPage() {
   const [usedQuestions, setUsedQuestions] = useState<Set<number>>(new Set());
 
   const getFilteredQuestions = useCallback(() => {
-    return selectedCategory === '전체' 
-      ? questions 
+    return selectedCategory === '전체'
+      ? questions
       : questions.filter(q => q.category === selectedCategory);
   }, [selectedCategory]);
 
@@ -114,7 +114,7 @@ export default function WouldYouRatherPage() {
 
   const selectOption = (option: 'A' | 'B') => {
     if (selectedOption) return;
-    
+
     setSelectedOption(option);
     setShowResult(true);
     setStats(prev => ({
@@ -139,195 +139,181 @@ export default function WouldYouRatherPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      {/* Header */}
-      <div className="bg-gray-800 border-b border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/games" className="text-gray-400 hover:text-white transition-colors">
-            ← 게임 목록
-          </Link>
-          <h1 className="text-lg font-bold text-white">이것 vs 저것</h1>
-          <div className="w-20"></div>
-        </div>
-      </div>
+    <div className="space-y-6">
+      {!currentQuestion ? (
+        <>
+          {/* Intro */}
+          <div className="text-center">
+            <div className="text-7xl mb-4">🤔</div>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">이것 vs 저것</h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-2">
+              둘 중 하나만 선택해야 한다면?
+            </p>
+            <p className="text-gray-500 text-sm">
+              친구들과 함께 선택하고 토론해보세요!
+            </p>
+          </div>
 
-      {/* Content */}
-      <div className="max-w-2xl mx-auto px-4 py-8">
-        {!currentQuestion ? (
-          <>
-            {/* Intro */}
-            <div className="text-center mb-8">
-              <div className="text-7xl mb-4">🤔</div>
-              <h2 className="text-3xl font-bold text-white mb-4">이것 vs 저것</h2>
-              <p className="text-gray-400 text-lg mb-2">
-                둘 중 하나만 선택해야 한다면?
-              </p>
-              <p className="text-gray-500">
-                친구들과 함께 선택하고 토론해보세요!
-              </p>
+          {/* Category Selection */}
+          <div>
+            <h3 className="text-gray-900 dark:text-white font-semibold mb-3 text-center">카테고리 선택</h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => changeCategory(category)}
+                  className={`px-4 py-2 rounded-full font-medium transition-all ${
+                    selectedCategory === category
+                      ? `bg-gradient-to-r ${categoryColors[category]} text-white`
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
             </div>
+          </div>
 
-            {/* Category Selection */}
-            <div className="mb-8">
-              <h3 className="text-white font-semibold mb-3 text-center">카테고리 선택</h3>
-              <div className="flex flex-wrap justify-center gap-2">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => changeCategory(category)}
-                    className={`px-4 py-2 rounded-full font-medium transition-all ${
-                      selectedCategory === category
-                        ? `bg-gradient-to-r ${categoryColors[category]} text-white`
-                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
+          {/* Start Button */}
+          <button
+            onClick={startGame}
+            className="w-full py-4 bg-indigo-500 hover:bg-indigo-600 text-white text-xl font-bold rounded-xl transition-colors"
+          >
+            게임 시작!
+          </button>
+
+          {/* Stats */}
+          {stats.totalPlayed > 0 && (
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 text-center border border-gray-100 dark:border-gray-700">
+              <h3 className="text-gray-900 dark:text-white font-semibold mb-4">내 통계</h3>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-2xl font-bold text-gray-900 dark:text-white">{stats.totalPlayed}</div>
+                  <div className="text-gray-600 dark:text-gray-400 text-sm">총 선택</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-blue-500">{stats.optionA}</div>
+                  <div className="text-gray-600 dark:text-gray-400 text-sm">A 선택</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-pink-500">{stats.optionB}</div>
+                  <div className="text-gray-600 dark:text-gray-400 text-sm">B 선택</div>
+                </div>
               </div>
             </div>
+          )}
+        </>
+      ) : (
+        <>
+          {/* Question Card */}
+          <div className="text-center">
+            <span className={`inline-block px-3 py-1 bg-gradient-to-r ${categoryColors[currentQuestion.category as Category]} text-white text-sm rounded-full mb-4`}>
+              {currentQuestion.category}
+            </span>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              둘 중 하나만 선택하세요!
+            </h2>
+          </div>
 
-            {/* Start Button */}
+          {/* Options */}
+          <div className="space-y-4">
+            {/* Option A */}
             <button
-              onClick={startGame}
-              className={`w-full py-4 bg-gradient-to-r ${categoryColors[selectedCategory]} text-white text-xl font-bold rounded-xl hover:opacity-90 transition-opacity`}
+              onClick={() => selectOption('A')}
+              disabled={!!selectedOption}
+              className={`w-full p-6 rounded-xl transition-all duration-300 text-left ${
+                selectedOption === 'A'
+                  ? 'bg-blue-500 text-white scale-105'
+                  : selectedOption === 'B'
+                  ? 'bg-gray-100 dark:bg-gray-800 text-gray-400 opacity-50'
+                  : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-500 border-2 border-gray-200 dark:border-gray-700'
+              }`}
             >
-              게임 시작!
+              <div className="flex items-center gap-4">
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl ${
+                  selectedOption === 'A' ? 'bg-white text-blue-500' : 'bg-blue-500 text-white'
+                }`}>
+                  A
+                </div>
+                <div className="flex-1">
+                  <p className="text-lg font-medium">{currentQuestion.optionA}</p>
+                </div>
+                {selectedOption === 'A' && (
+                  <span className="text-2xl">✓</span>
+                )}
+              </div>
             </button>
 
-            {/* Stats */}
-            {stats.totalPlayed > 0 && (
-              <div className="mt-8 bg-gray-800 rounded-xl p-6 text-center">
-                <h3 className="text-white font-semibold mb-4">내 통계</h3>
-                <div className="grid grid-cols-3 gap-4">
-                  <div>
-                    <div className="text-2xl font-bold text-white">{stats.totalPlayed}</div>
-                    <div className="text-gray-400 text-sm">총 선택</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-blue-400">{stats.optionA}</div>
-                    <div className="text-gray-400 text-sm">A 선택</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-pink-400">{stats.optionB}</div>
-                    <div className="text-gray-400 text-sm">B 선택</div>
-                  </div>
-                </div>
+            {/* VS */}
+            <div className="flex items-center justify-center">
+              <div className="bg-indigo-500 text-white font-bold text-xl w-12 h-12 rounded-full flex items-center justify-center">
+                VS
               </div>
-            )}
-          </>
-        ) : (
-          <>
-            {/* Question Card */}
-            <div className="text-center mb-6">
-              <span className={`inline-block px-3 py-1 bg-gradient-to-r ${categoryColors[currentQuestion.category as Category]} text-white text-sm rounded-full mb-4`}>
-                {currentQuestion.category}
-              </span>
-              <h2 className="text-2xl font-bold text-white mb-2">
-                둘 중 하나만 선택하세요!
-              </h2>
             </div>
 
-            {/* Options */}
+            {/* Option B */}
+            <button
+              onClick={() => selectOption('B')}
+              disabled={!!selectedOption}
+              className={`w-full p-6 rounded-xl transition-all duration-300 text-left ${
+                selectedOption === 'B'
+                  ? 'bg-pink-500 text-white scale-105'
+                  : selectedOption === 'A'
+                  ? 'bg-gray-100 dark:bg-gray-800 text-gray-400 opacity-50'
+                  : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:border-pink-500 border-2 border-gray-200 dark:border-gray-700'
+              }`}
+            >
+              <div className="flex items-center gap-4">
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl ${
+                  selectedOption === 'B' ? 'bg-white text-pink-500' : 'bg-pink-500 text-white'
+                }`}>
+                  B
+                </div>
+                <div className="flex-1">
+                  <p className="text-lg font-medium">{currentQuestion.optionB}</p>
+                </div>
+                {selectedOption === 'B' && (
+                  <span className="text-2xl">✓</span>
+                )}
+              </div>
+            </button>
+          </div>
+
+          {/* Result / Next */}
+          {showResult && (
             <div className="space-y-4">
-              {/* Option A */}
-              <button
-                onClick={() => selectOption('A')}
-                disabled={!!selectedOption}
-                className={`w-full p-6 rounded-xl transition-all duration-300 text-left ${
-                  selectedOption === 'A'
-                    ? 'bg-blue-500 text-white scale-105'
-                    : selectedOption === 'B'
-                    ? 'bg-gray-700 text-gray-400 opacity-50'
-                    : 'bg-gray-800 text-white hover:bg-blue-500/20 hover:border-blue-500 border-2 border-gray-700'
-                }`}
-              >
-                <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl ${
-                    selectedOption === 'A' ? 'bg-white text-blue-500' : 'bg-blue-500 text-white'
-                  }`}>
-                    A
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-lg font-medium">{currentQuestion.optionA}</p>
-                  </div>
-                  {selectedOption === 'A' && (
-                    <span className="text-2xl">✓</span>
-                  )}
-                </div>
-              </button>
-
-              {/* VS */}
-              <div className="flex items-center justify-center">
-                <div className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 px-6 py-2 rounded-full">
-                  <span className="text-yellow-400 font-bold text-xl">VS</span>
-                </div>
+              <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-4 text-center border border-indigo-200 dark:border-indigo-500/30">
+                <p className="text-gray-600 dark:text-gray-400 mb-2">당신의 선택</p>
+                <p className="text-xl font-bold text-gray-900 dark:text-white">
+                  {selectedOption === 'A' ? currentQuestion.optionA : currentQuestion.optionB}
+                </p>
+                <p className="text-gray-500 text-sm mt-2">
+                  친구들과 결과를 비교해보세요!
+                </p>
               </div>
 
-              {/* Option B */}
-              <button
-                onClick={() => selectOption('B')}
-                disabled={!!selectedOption}
-                className={`w-full p-6 rounded-xl transition-all duration-300 text-left ${
-                  selectedOption === 'B'
-                    ? 'bg-pink-500 text-white scale-105'
-                    : selectedOption === 'A'
-                    ? 'bg-gray-700 text-gray-400 opacity-50'
-                    : 'bg-gray-800 text-white hover:bg-pink-500/20 hover:border-pink-500 border-2 border-gray-700'
-                }`}
-              >
-                <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl ${
-                    selectedOption === 'B' ? 'bg-white text-pink-500' : 'bg-pink-500 text-white'
-                  }`}>
-                    B
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-lg font-medium">{currentQuestion.optionB}</p>
-                  </div>
-                  {selectedOption === 'B' && (
-                    <span className="text-2xl">✓</span>
-                  )}
-                </div>
-              </button>
+              <div className="flex gap-3">
+                <button
+                  onClick={nextQuestion}
+                  className="flex-1 py-4 bg-indigo-500 hover:bg-indigo-600 text-white font-bold rounded-xl transition-colors"
+                >
+                  다음 질문 →
+                </button>
+                <button
+                  onClick={() => {
+                    setCurrentQuestion(null);
+                    setSelectedOption(null);
+                    setShowResult(false);
+                  }}
+                  className="px-6 py-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-bold rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                >
+                  처음으로
+                </button>
+              </div>
             </div>
-
-            {/* Result / Next */}
-            {showResult && (
-              <div className="mt-8 space-y-4">
-                <div className="bg-gray-800 rounded-xl p-6 text-center">
-                  <p className="text-gray-400 mb-2">당신의 선택</p>
-                  <p className="text-xl font-bold text-white">
-                    {selectedOption === 'A' ? currentQuestion.optionA : currentQuestion.optionB}
-                  </p>
-                  <p className="text-gray-500 text-sm mt-2">
-                    친구들과 결과를 비교해보세요!
-                  </p>
-                </div>
-
-                <div className="flex gap-3">
-                  <button
-                    onClick={nextQuestion}
-                    className="flex-1 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-bold rounded-xl hover:opacity-90 transition-opacity"
-                  >
-                    다음 질문 →
-                  </button>
-                  <button
-                    onClick={() => {
-                      setCurrentQuestion(null);
-                      setSelectedOption(null);
-                      setShowResult(false);
-                    }}
-                    className="px-6 py-4 bg-gray-700 text-white font-bold rounded-xl hover:bg-gray-600 transition-colors"
-                  >
-                    처음으로
-                  </button>
-                </div>
-              </div>
-            )}
-          </>
-        )}
-      </div>
+          )}
+        </>
+      )}
     </div>
   );
 }

@@ -123,25 +123,14 @@ export default function BalanceGamePage() {
   const currentCategory = categories.find(c => c.id === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      {/* Header */}
-      <div className="bg-gray-800 border-b border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-gray-400 hover:text-white transition-colors">
-            ← 홈으로
-          </Link>
-          <h1 className="text-lg font-bold text-white">밸런스 게임</h1>
-          <div className="w-16"></div>
-        </div>
-      </div>
-
+    <div className="space-y-6">
       {/* Category Selection */}
       {gameState === 'select' && (
-        <div className="max-w-2xl mx-auto px-4 py-8">
-          <div className="text-center mb-8">
+        <div>
+          <div className="text-center mb-6">
             <div className="text-6xl mb-4">⚖️</div>
-            <h2 className="text-2xl font-bold text-white mb-4">밸런스 게임</h2>
-            <p className="text-gray-400">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">밸런스 게임</h2>
+            <p className="text-gray-600 dark:text-gray-400">
               둘 중 하나만 골라야 한다면? 카테고리를 선택하세요!
             </p>
           </div>
@@ -168,14 +157,14 @@ export default function BalanceGamePage() {
 
       {/* Playing */}
       {gameState === 'playing' && currentCategory && (
-        <div className="max-w-2xl mx-auto px-4 py-8">
+        <div>
           {/* Progress */}
           <div className="mb-6">
-            <div className="flex justify-between text-sm text-gray-400 mb-2">
+            <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
               <span>{currentCategory.emoji} {currentCategory.name}</span>
               <span>{currentIndex + 1} / {currentQuestions.length}</span>
             </div>
-            <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+            <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
               <div 
                 className={`h-full bg-gradient-to-r ${currentCategory.color} transition-all duration-300`}
                 style={{ width: `${((currentIndex + 1) / currentQuestions.length) * 100}%` }}
@@ -185,8 +174,8 @@ export default function BalanceGamePage() {
 
           {/* Question */}
           <div className="mb-8">
-            <p className="text-center text-gray-400 text-lg mb-2">둘 중 하나만 골라야 한다면?</p>
-            <p className="text-center text-white text-xl font-bold">VS</p>
+            <p className="text-center text-gray-600 dark:text-gray-400 text-lg mb-2">둘 중 하나만 골라야 한다면?</p>
+            <p className="text-center text-gray-900 dark:text-white text-xl font-bold">VS</p>
           </div>
 
           {/* Options */}
@@ -199,7 +188,7 @@ export default function BalanceGamePage() {
               {currentQuestions[currentIndex]?.optionA}
             </button>
             
-            <div className="text-center text-gray-500 font-bold">VS</div>
+            <div className="flex items-center justify-center"><div className="bg-indigo-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">VS</div></div>
             
             <button
               onClick={() => handleChoice('B')}
@@ -214,11 +203,11 @@ export default function BalanceGamePage() {
 
       {/* Finished */}
       {gameState === 'finished' && currentCategory && (
-        <div className="max-w-2xl mx-auto px-4 py-8">
-          <div className="bg-gray-800 rounded-2xl p-8 text-center mb-6">
+        <div>
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center mb-6 border border-gray-100 dark:border-gray-700">
             <div className="text-6xl mb-4">🎮</div>
-            <h2 className="text-2xl font-bold text-white mb-2">게임 완료!</h2>
-            <p className="text-gray-400 mb-6">{currentCategory.emoji} {currentCategory.name} 클리어!</p>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">게임 완료!</h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">{currentCategory.emoji} {currentCategory.name} 클리어!</p>
             
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4 mb-6">
@@ -235,17 +224,17 @@ export default function BalanceGamePage() {
             {/* Show Answers Toggle */}
             <button
               onClick={() => setShowStats(!showStats)}
-              className="text-gray-400 hover:text-white text-sm mb-4"
+              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white text-sm mb-4"
             >
               {showStats ? '답변 숨기기 ▲' : '내 답변 보기 ▼'}
             </button>
 
             {showStats && (
-              <div className="bg-gray-700/50 rounded-xl p-4 text-left max-h-60 overflow-y-auto mb-4">
+              <div className="bg-gray-100 dark:bg-gray-700/50 rounded-xl p-4 text-left max-h-60 overflow-y-auto mb-4">
                 {answers.map((answer, index) => {
                   const q = currentQuestions.find(q => q.id === answer.questionId);
                   return (
-                    <div key={index} className="py-2 border-b border-gray-600 last:border-0">
+                    <div key={index} className="py-2 border-b border-gray-200 dark:border-gray-600 last:border-0">
                       <p className="text-gray-500 text-xs">Q{index + 1}</p>
                       <p className={`text-sm ${answer.choice === 'A' ? 'text-blue-400' : 'text-rose-400'}`}>
                         {answer.choice === 'A' ? q?.optionA : q?.optionB}
@@ -259,7 +248,7 @@ export default function BalanceGamePage() {
 
           {/* Share */}
           <div className="text-center mb-6">
-            <p className="text-gray-400 text-sm mb-3">결과 공유하기</p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">결과 공유하기</p>
             <ShareButtons 
               title={`밸런스 게임 (${currentCategory.name}) 완료!`}
               description={`${currentCategory.emoji} ${currentCategory.name} 밸런스 게임에서 A를 ${stats.aCount}번, B를 ${stats.bCount}번 선택했어요!`}
@@ -270,13 +259,13 @@ export default function BalanceGamePage() {
           <div className="flex gap-3">
             <button
               onClick={() => startGame(selectedCategory!)}
-              className="flex-1 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors"
+              className="flex-1 py-4 bg-indigo-500 hover:bg-indigo-600 text-white font-bold rounded-xl transition-colors"
             >
               다시 하기
             </button>
             <button
               onClick={resetGame}
-              className="flex-1 py-4 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-xl transition-colors"
+              className="flex-1 py-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-bold rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             >
               다른 카테고리
             </button>
