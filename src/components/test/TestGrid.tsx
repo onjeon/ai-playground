@@ -56,9 +56,9 @@ export default function TestGrid({
   return (
     <div>
       {title && (
-        <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">{title}</h2>
+        <h2 className="text-base font-bold text-gray-900 dark:text-white mb-3">{title}</h2>
       )}
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-4">
+      <div className="grid grid-cols-2 gap-2">
         {tests.map((test) => (
           <TestCard key={test.id} test={test} />
         ))}

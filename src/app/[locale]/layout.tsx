@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
+
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { headers } from 'next/headers';
 import '../globals.css';
-import { Header, Sidebar, Footer } from '@/components/layout';
+import { Header, Footer } from '@/components/layout';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { locales, rtlLocales, defaultLocale, type Locale } from '@/i18n/config';
 import { getLocaleFontClass, getGoogleFontsUrl, getLocaleFontFamily } from '@/lib/fonts';
@@ -159,21 +159,16 @@ export default async function LocaleLayout({ children, params }: Props) {
           }}
         />
       </head>
-      <body className={`${getLocaleFontClass(locale as Locale)} bg-gray-50 dark:bg-gray-900 min-h-screen flex flex-col transition-colors`}>
+      <body className={`${getLocaleFontClass(locale as Locale)} bg-gray-100 dark:bg-gray-950 min-h-screen transition-colors`}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
-            <Header />
-            <div className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6">
-              <div className="flex gap-8">
-                <Suspense fallback={<div className="hidden lg:block w-64 shrink-0" />}>
-                  <Sidebar />
-                </Suspense>
-                <main className="flex-1 min-w-0">
-                  {children}
-                </main>
-              </div>
+            <div className="max-w-lg mx-auto w-full min-h-screen flex flex-col bg-white dark:bg-gray-900 shadow-sm">
+              <Header />
+              <main className="flex-1 px-4 py-4">
+                {children}
+              </main>
+              <Footer />
             </div>
-            <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

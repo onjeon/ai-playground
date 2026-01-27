@@ -293,27 +293,17 @@ function TestPlayContent() {
         )}
       </div>
 
-      {/* Quick Jump - Horizontal scroll on mobile, wrap on desktop */}
-      <div className="mt-6 md:mt-8 pt-5 md:pt-6 border-t border-gray-200 dark:border-gray-700">
-        <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">{t('jumpToQuestion')}</p>
-        <div className="quick-jump-scroll md:flex-wrap">
-          {questions.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`quick-jump-btn no-select transition-colors ${
-                index === currentIndex
-                  ? 'bg-indigo-500 text-white'
-                  : answers[index] !== -1
-                  ? 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400'
-                  : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400'
-              }`}
-            >
-              {index + 1}
-            </button>
-          ))}
+      {/* Submit button when all answered */}
+      {allAnswered && !isLastQuestion && (
+        <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+          <button
+            onClick={handleSubmit}
+            className="w-full py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl font-semibold text-sm"
+          >
+            {t('viewResult')}
+          </button>
         </div>
-      </div>
+      )}
     </div>
   );
 }

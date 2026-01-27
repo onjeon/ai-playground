@@ -56,8 +56,7 @@ export default function HomePage() {
   const tCommon = useTranslations('common');
   const tCategories = useTranslations('categories');
   const locale = useLocale();
-  
-  // 로케일별 데이터 가져오기
+
   const tests = getTestsForLocale(locale);
   const categories = getCategoriesForLocale(locale);
   const popularTests = getPopularTestsForLocale(locale, 8);
@@ -65,155 +64,129 @@ export default function HomePage() {
   const todaysPicks = getTodaysPicksForLocale(locale, 2);
 
   return (
-    <div className="space-y-6 sm:space-y-10">
+    <div className="space-y-5">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 rounded-xl p-4 text-white">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl" />
         </div>
-        
+
         <div className="relative z-10">
-          <div className="flex items-center gap-2 mb-3 sm:mb-4">
-            <span className="px-2.5 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="px-2 py-0.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium">
               {t('aiBased')}
             </span>
-            <span className="px-2.5 py-1 bg-yellow-400/90 text-yellow-900 rounded-full text-xs sm:text-sm font-medium">
+            <span className="px-2 py-0.5 bg-yellow-400/90 text-yellow-900 rounded-full text-xs font-medium">
               {tCommon('free')}
             </span>
           </div>
-          
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
+
+          <h1 className="text-xl font-bold mb-2 leading-tight">
             {t('heroTitle')}<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-pink-200">
               {t('heroHighlight')}
             </span>
           </h1>
-          
-          <p className="text-base sm:text-lg md:text-xl text-white/80 mb-4 sm:mb-6 max-w-2xl whitespace-pre-line">
+
+          <p className="text-sm text-white/80 mb-4 whitespace-pre-line leading-relaxed">
             {t('heroDescription')}
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-            <Link 
+
+          <div className="flex gap-2">
+            <Link
               href="/category/personality"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white text-indigo-600 rounded-full font-semibold hover:bg-white/90 transition-colors text-sm sm:text-base"
+              className="flex-1 text-center py-2 bg-white text-indigo-600 rounded-full font-semibold text-[13px]"
             >
-              <Brain className="w-4 h-4 shrink-0" />
-              <span className="truncate">{t('startTest')}</span>
+              {t('startTest')}
             </Link>
-            <Link 
+            <Link
               href="/tests"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white/20 backdrop-blur-sm rounded-full font-medium hover:bg-white/30 transition-colors text-sm sm:text-base"
+              className="flex-1 text-center py-2 bg-white/20 backdrop-blur-sm rounded-full font-medium text-[13px]"
             >
-              <Grid3X3 className="w-4 h-4 shrink-0" />
-              <span className="truncate">{t('viewAll')}</span>
+              {t('viewAll')}
             </Link>
           </div>
         </div>
 
-        <div className="relative z-10 mt-6 sm:mt-10 pt-5 sm:pt-8 border-t border-white/20">
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+        <div className="relative z-10 mt-5 pt-4 border-t border-white/20">
+          <div className="grid grid-cols-3 gap-2 text-center">
             <div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold">{t('stats.participantsCount')}</div>
-              <div className="text-xs sm:text-sm text-white/70 truncate">{t('stats.participants')}</div>
+              <div className="text-lg font-bold">{t('stats.participantsCount')}</div>
+              <div className="text-[11px] text-white/70">{t('stats.participants')}</div>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold">{tests.length}</div>
-              <div className="text-xs sm:text-sm text-white/70 truncate">{t('stats.tests')}</div>
+              <div className="text-lg font-bold">{tests.length}</div>
+              <div className="text-[11px] text-white/70">{t('stats.tests')}</div>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold">{t('stats.sharesCount')}</div>
-              <div className="text-xs sm:text-sm text-white/70 truncate">{t('stats.shares')}</div>
+              <div className="text-lg font-bold">{t('stats.sharesCount')}</div>
+              <div className="text-[11px] text-white/70">{t('stats.shares')}</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Filter Buttons - 2x2 그리드 */}
-      <section className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-        <Link
-          href="/tests?sort=popular"
-          className="flex items-center justify-center gap-1.5 px-3 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl text-sm font-medium hover:shadow-lg hover:scale-105 transition-all min-w-0"
-        >
-          <Flame className="w-4 h-4 shrink-0" />
-          <span className="truncate">{t('quickButtons.popular')}</span>
+      {/* Quick Filter Buttons */}
+      <section className="grid grid-cols-4 gap-1.5">
+        <Link href="/tests?sort=popular" className="flex flex-col items-center gap-1 px-2 py-2.5 bg-gradient-to-b from-orange-500 to-red-500 text-white rounded-xl text-[11px] font-medium">
+          <Flame className="w-4 h-4" />
+          <span>{t('quickButtons.popular')}</span>
         </Link>
-        <Link
-          href="/tests?sort=new"
-          className="flex items-center justify-center gap-1.5 px-3 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl text-sm font-medium hover:shadow-lg hover:scale-105 transition-all min-w-0"
-        >
-          <Sparkles className="w-4 h-4 shrink-0" />
-          <span className="truncate">{t('quickButtons.new')}</span>
+        <Link href="/tests?sort=new" className="flex flex-col items-center gap-1 px-2 py-2.5 bg-gradient-to-b from-green-500 to-emerald-500 text-white rounded-xl text-[11px] font-medium">
+          <Sparkles className="w-4 h-4" />
+          <span>{t('quickButtons.new')}</span>
         </Link>
-        <Link
-          href="/fortune/tarot"
-          className="flex items-center justify-center gap-1.5 px-3 py-3 bg-gradient-to-r from-purple-500 to-violet-500 text-white rounded-xl text-sm font-medium hover:shadow-lg hover:scale-105 transition-all min-w-0"
-        >
-          <Crown className="w-4 h-4 shrink-0" />
-          <span className="truncate">{t('quickButtons.tarot')}</span>
+        <Link href="/fortune/tarot" className="flex flex-col items-center gap-1 px-2 py-2.5 bg-gradient-to-b from-purple-500 to-violet-500 text-white rounded-xl text-[11px] font-medium">
+          <Crown className="w-4 h-4" />
+          <span>{t('quickButtons.tarot')}</span>
         </Link>
-        <Link
-          href="/fortune/daily-fortune"
-          className="flex items-center justify-center gap-1.5 px-3 py-3 bg-gradient-to-r from-amber-500 to-yellow-500 text-white rounded-xl text-sm font-medium hover:shadow-lg hover:scale-105 transition-all min-w-0"
-        >
-          <Gift className="w-4 h-4 shrink-0" />
-          <span className="truncate">{t('quickButtons.fortune')}</span>
+        <Link href="/fortune/daily-fortune" className="flex flex-col items-center gap-1 px-2 py-2.5 bg-gradient-to-b from-amber-500 to-yellow-500 text-white rounded-xl text-[11px] font-medium">
+          <Gift className="w-4 h-4" />
+          <span>{t('quickButtons.fortune')}</span>
         </Link>
       </section>
 
       {/* Daily Section */}
-      <section className="bg-gradient-to-r from-amber-50 via-orange-50 to-rose-50 dark:from-amber-900/20 dark:via-orange-900/20 dark:to-rose-900/20 rounded-xl sm:rounded-2xl p-4 sm:p-6">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <Sun className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500 shrink-0" />
-            <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white truncate">{t('sections.daily')}</h2>
+      <section className="bg-gradient-to-r from-amber-50 via-orange-50 to-rose-50 dark:from-amber-900/20 dark:via-orange-900/20 dark:to-rose-900/20 rounded-xl p-3.5">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-1.5">
+            <Sun className="w-5 h-5 text-amber-500" />
+            <h2 className="text-base font-bold text-gray-900 dark:text-white">{t('sections.daily')}</h2>
           </div>
-          <Link 
-            href="/daily" 
-            className="flex items-center gap-1 text-xs sm:text-sm text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors font-medium shrink-0"
-          >
-            <span className="hidden sm:inline">{tCommon('viewAll')}</span>
+          <Link href="/daily" className="text-amber-600 dark:text-amber-400">
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <Link href="/fortune/daily-fortune" className="group">
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-amber-100 dark:border-amber-800/50 hover:border-amber-300 dark:hover:border-amber-600 transition-all hover:shadow-md h-full">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center text-xl shrink-0">
-                  🔮
-                </div>
-                <div className="min-w-0">
-                  <div className="font-medium text-gray-900 dark:text-white text-sm truncate">{t('daily.todayFortune')}</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 truncate">{t('daily.fortuneDesc')}</div>
-                </div>
+        <div className="space-y-2">
+          <Link href="/fortune/daily-fortune" className="block bg-white dark:bg-gray-800 rounded-lg p-3 border border-amber-100 dark:border-amber-800/50">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center text-lg shrink-0">🔮</div>
+              <div className="min-w-0">
+                <div className="font-medium text-gray-900 dark:text-white text-sm">{t('daily.todayFortune')}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400 truncate">{t('daily.fortuneDesc')}</div>
               </div>
             </div>
           </Link>
-          <Link href="/daily/condition" className="group">
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-amber-100 dark:border-amber-800/50 hover:border-amber-300 dark:hover:border-amber-600 transition-all hover:shadow-md h-full">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center shrink-0">
-                  <Battery className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-                </div>
-                <div className="min-w-0">
-                  <div className="font-medium text-gray-900 dark:text-white text-sm truncate">{t('daily.condition')}</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 truncate">{t('daily.conditionDesc')}</div>
-                </div>
+          <Link href="/daily/condition" className="block bg-white dark:bg-gray-800 rounded-lg p-3 border border-amber-100 dark:border-amber-800/50">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center shrink-0">
+                <Battery className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+              </div>
+              <div className="min-w-0">
+                <div className="font-medium text-gray-900 dark:text-white text-sm">{t('daily.condition')}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400 truncate">{t('daily.conditionDesc')}</div>
               </div>
             </div>
           </Link>
-          <Link href="/daily" className="group">
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-4 border border-amber-100 dark:border-amber-800/50 hover:border-amber-300 dark:hover:border-amber-600 transition-all hover:shadow-md h-full">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-pink-100 dark:bg-pink-900/30 rounded-lg flex items-center justify-center shrink-0">
-                  <Palette className="w-5 h-5 text-pink-600 dark:text-pink-400" />
-                </div>
-                <div className="min-w-0">
-                  <div className="font-medium text-gray-900 dark:text-white text-sm truncate">{t('daily.luckyColor')}</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 truncate">{t('daily.luckyColorDesc')}</div>
-                </div>
+          <Link href="/daily" className="block bg-white dark:bg-gray-800 rounded-lg p-3 border border-amber-100 dark:border-amber-800/50">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 bg-pink-100 dark:bg-pink-900/30 rounded-lg flex items-center justify-center shrink-0">
+                <Palette className="w-4 h-4 text-pink-600 dark:text-pink-400" />
+              </div>
+              <div className="min-w-0">
+                <div className="font-medium text-gray-900 dark:text-white text-sm">{t('daily.luckyColor')}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400 truncate">{t('daily.luckyColorDesc')}</div>
               </div>
             </div>
           </Link>
@@ -222,124 +195,102 @@ export default function HomePage() {
 
       {/* Fortune Section */}
       <section>
-        <Link
-          href="/fortune"
-          className="group relative overflow-hidden bg-gradient-to-br from-purple-600 via-violet-600 to-indigo-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white transition-all hover:scale-[1.02] hover:shadow-xl block"
-        >
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-5 left-10 w-20 h-20 bg-white rounded-full blur-2xl" />
-            <div className="absolute bottom-5 right-10 w-24 h-24 bg-white rounded-full blur-2xl" />
-          </div>
+        <Link href="/fortune" className="block relative overflow-hidden bg-gradient-to-br from-purple-600 via-violet-600 to-indigo-600 rounded-xl p-4 text-white">
           <div className="relative z-10">
-            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-              <Moon className="w-6 h-6 sm:w-8 sm:h-8 shrink-0" />
+            <div className="flex items-center gap-2 mb-2">
+              <Moon className="w-6 h-6 shrink-0" />
               <div className="min-w-0">
-                <h3 className="text-base sm:text-xl font-bold truncate">{t('fortune.title')}</h3>
-                <p className="text-white/80 text-xs sm:text-sm truncate">{t('fortune.description')}</p>
+                <h3 className="text-base font-bold">{t('fortune.title')}</h3>
+                <p className="text-white/80 text-xs">{t('fortune.description')}</p>
               </div>
             </div>
-            <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              <span className="px-2 py-0.5 sm:py-1 bg-white/20 rounded-full text-[10px] sm:text-xs">{t('fortune.tarot')}</span>
-              <span className="px-2 py-0.5 sm:py-1 bg-white/20 rounded-full text-[10px] sm:text-xs">{t('fortune.dailyFortune')}</span>
-              <span className="px-2 py-0.5 sm:py-1 bg-white/20 rounded-full text-[10px] sm:text-xs">{t('fortune.compatibility')}</span>
-              <span className="px-2 py-0.5 sm:py-1 bg-white/20 rounded-full text-[10px] sm:text-xs">{t('fortune.saju')}</span>
+            <div className="flex flex-wrap gap-1.5">
+              <span className="px-2 py-0.5 bg-white/20 rounded-full text-[10px]">{t('fortune.tarot')}</span>
+              <span className="px-2 py-0.5 bg-white/20 rounded-full text-[10px]">{t('fortune.dailyFortune')}</span>
+              <span className="px-2 py-0.5 bg-white/20 rounded-full text-[10px]">{t('fortune.compatibility')}</span>
+              <span className="px-2 py-0.5 bg-white/20 rounded-full text-[10px]">{t('fortune.saju')}</span>
             </div>
           </div>
-          <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
         </Link>
       </section>
 
       {/* Category Buttons */}
       <section>
-        <div className="flex items-center justify-between mb-4 sm:mb-5">
-          <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">{t('sections.category')}</h2>
-        </div>
-        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-3">
+        <h2 className="text-base font-bold text-gray-900 dark:text-white mb-3">{t('sections.category')}</h2>
+        <div className="grid grid-cols-3 gap-2">
           {categories.map((category) => {
             const Icon = iconMap[category.icon] || Brain;
             const colors = categoryColors[category.slug] || categoryColors.personality;
             const testCount = tests.filter(t => t.categoryId === category.id).length;
-            
+
             return (
               <Link
                 key={category.id}
                 href={`/category/${category.slug}`}
-                className={`flex flex-col items-center gap-1 sm:gap-2 p-2.5 sm:p-4 rounded-xl sm:rounded-2xl border border-gray-100 dark:border-gray-700 ${colors.bg} ${colors.hover} transition-all hover:scale-105`}
+                className={`flex flex-col items-center gap-1 p-2.5 rounded-xl border border-gray-100 dark:border-gray-700 ${colors.bg} ${colors.hover} transition-all active:scale-95`}
               >
-                <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${colors.text} shrink-0`} />
-                <span className="font-medium text-gray-900 dark:text-white text-xs sm:text-sm text-center truncate w-full">{tCategories(category.slug)}</span>
-                <span className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">{testCount}</span>
+                <Icon className={`w-6 h-6 ${colors.text}`} />
+                <span className="font-medium text-gray-900 dark:text-white text-xs text-center truncate w-full">{tCategories(category.slug)}</span>
+                <span className="text-[10px] text-gray-500 dark:text-gray-400">{testCount}</span>
               </Link>
             );
           })}
         </div>
       </section>
 
-      {/* Physical & Games Section */}
+      {/* Physical & Games */}
       <section>
-        <div className="flex items-center justify-between mb-4 sm:mb-5">
-          <div className="flex items-center gap-2">
-            <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500 shrink-0" />
-            <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white truncate">{t('sections.physicalGames')}</h2>
-          </div>
+        <div className="flex items-center gap-1.5 mb-3">
+          <Zap className="w-5 h-5 text-yellow-500" />
+          <h2 className="text-base font-bold text-gray-900 dark:text-white">{t('sections.physicalGames')}</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-          <Link
-            href="/physical"
-            className="group relative overflow-hidden bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white transition-all hover:scale-[1.02] hover:shadow-xl"
-          >
+        <div className="space-y-2">
+          <Link href="/physical" className="block relative overflow-hidden bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl p-4 text-white">
             <div className="relative z-10">
-              <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                <Zap className="w-6 h-6 sm:w-8 sm:h-8 shrink-0" />
+              <div className="flex items-center gap-2 mb-2">
+                <Zap className="w-6 h-6 shrink-0" />
                 <div className="min-w-0">
-                  <h3 className="text-base sm:text-xl font-bold truncate">{t('physical.title')}</h3>
-                  <p className="text-white/80 text-xs sm:text-sm truncate">{t('physical.description')}</p>
+                  <h3 className="text-base font-bold">{t('physical.title')}</h3>
+                  <p className="text-white/80 text-xs">{t('physical.description')}</p>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <span className="px-2 py-0.5 sm:py-1 bg-white/20 rounded-full text-[10px] sm:text-xs">{t('physical.reaction')}</span>
-                <span className="px-2 py-0.5 sm:py-1 bg-white/20 rounded-full text-[10px] sm:text-xs">{t('physical.click')}</span>
-                <span className="px-2 py-0.5 sm:py-1 bg-white/20 rounded-full text-[10px] sm:text-xs">{t('physical.color')}</span>
-                <span className="px-2 py-0.5 sm:py-1 bg-white/20 rounded-full text-[10px] sm:text-xs">{t('physical.memory')}</span>
+              <div className="flex flex-wrap gap-1.5">
+                <span className="px-2 py-0.5 bg-white/20 rounded-full text-[10px]">{t('physical.reaction')}</span>
+                <span className="px-2 py-0.5 bg-white/20 rounded-full text-[10px]">{t('physical.click')}</span>
+                <span className="px-2 py-0.5 bg-white/20 rounded-full text-[10px]">{t('physical.color')}</span>
+                <span className="px-2 py-0.5 bg-white/20 rounded-full text-[10px]">{t('physical.memory')}</span>
               </div>
             </div>
-            <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           </Link>
-
-          <Link
-            href="/games"
-            className="group relative overflow-hidden bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white transition-all hover:scale-[1.02] hover:shadow-xl"
-          >
+          <Link href="/games" className="block relative overflow-hidden bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl p-4 text-white">
             <div className="relative z-10">
-              <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                <Gamepad2 className="w-6 h-6 sm:w-8 sm:h-8 shrink-0" />
+              <div className="flex items-center gap-2 mb-2">
+                <Gamepad2 className="w-6 h-6 shrink-0" />
                 <div className="min-w-0">
-                  <h3 className="text-base sm:text-xl font-bold truncate">{t('games.title')}</h3>
-                  <p className="text-white/80 text-xs sm:text-sm truncate">{t('games.description')}</p>
+                  <h3 className="text-base font-bold">{t('games.title')}</h3>
+                  <p className="text-white/80 text-xs">{t('games.description')}</p>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <span className="px-2 py-0.5 sm:py-1 bg-white/20 rounded-full text-[10px] sm:text-xs">{t('games.balance')}</span>
-                <span className="px-2 py-0.5 sm:py-1 bg-white/20 rounded-full text-[10px] sm:text-xs">{t('games.cards')}</span>
+              <div className="flex flex-wrap gap-1.5">
+                <span className="px-2 py-0.5 bg-white/20 rounded-full text-[10px]">{t('games.balance')}</span>
+                <span className="px-2 py-0.5 bg-white/20 rounded-full text-[10px]">{t('games.cards')}</span>
               </div>
             </div>
-            <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           </Link>
         </div>
       </section>
 
       {/* Popular Tests */}
       <section>
-        <div className="flex items-center justify-between mb-4 sm:mb-5">
-          <div className="flex items-center gap-2">
-            <Flame className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500 shrink-0" />
-            <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white truncate">{t('sections.popular')}</h2>
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-1.5">
+            <Flame className="w-5 h-5 text-orange-500" />
+            <h2 className="text-base font-bold text-gray-900 dark:text-white">{t('sections.popular')}</h2>
           </div>
-          <Link 
-            href="/tests" 
-            className="flex items-center gap-1 text-xs sm:text-sm text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors shrink-0"
-          >
-            <span className="hidden sm:inline">{tCommon('more')}</span>
+          <Link href="/tests" className="text-gray-400">
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
@@ -347,29 +298,25 @@ export default function HomePage() {
       </section>
 
       {/* Today's Picks */}
-      <section className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl sm:rounded-2xl p-4 sm:p-6">
-        <div className="flex items-center justify-between mb-4 sm:mb-5">
-          <div className="flex items-center gap-2">
-            <Shuffle className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-500 shrink-0" />
-            <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white truncate">{t('sections.todayPicks')}</h2>
+      <section className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl p-3.5">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-1.5">
+            <Shuffle className="w-5 h-5 text-indigo-500" />
+            <h2 className="text-base font-bold text-gray-900 dark:text-white">{t('sections.todayPicks')}</h2>
           </div>
-          <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 shrink-0">{tCommon('dailyUpdate')}</span>
+          <span className="text-xs text-gray-500 dark:text-gray-400">{tCommon('dailyUpdate')}</span>
         </div>
         <TestGrid tests={todaysPicks} />
       </section>
 
       {/* New Tests */}
       <section>
-        <div className="flex items-center justify-between mb-4 sm:mb-5">
-          <div className="flex items-center gap-2">
-            <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 shrink-0" />
-            <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white truncate">{t('sections.new')}</h2>
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-1.5">
+            <Clock className="w-5 h-5 text-green-500" />
+            <h2 className="text-base font-bold text-gray-900 dark:text-white">{t('sections.new')}</h2>
           </div>
-          <Link 
-            href="/tests" 
-            className="flex items-center gap-1 text-xs sm:text-sm text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors shrink-0"
-          >
-            <span className="hidden sm:inline">{tCommon('more')}</span>
+          <Link href="/tests" className="text-gray-400">
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
@@ -377,20 +324,14 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl sm:rounded-2xl p-5 sm:p-8 text-center text-white">
-        <h2 className="text-lg sm:text-2xl font-bold mb-1.5 sm:mb-2">{t('cta.title')}</h2>
-        <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6">{t('cta.description', { count: tests.length })}</p>
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center">
-          <Link
-            href="/tests"
-            className="px-5 py-2.5 sm:px-6 sm:py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg font-semibold transition-colors text-sm sm:text-base"
-          >
+      <section className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-5 text-center text-white">
+        <h2 className="text-base font-bold mb-1.5">{t('cta.title')}</h2>
+        <p className="text-sm text-gray-400 mb-4">{t('cta.description', { count: tests.length })}</p>
+        <div className="flex gap-2 justify-center">
+          <Link href="/tests" className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-lg font-semibold text-sm">
             {t('cta.viewAll')}
           </Link>
-          <Link
-            href="/category/fun"
-            className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/10 hover:bg-white/20 rounded-lg font-medium transition-colors text-sm sm:text-base"
-          >
+          <Link href="/category/fun" className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg font-medium text-sm">
             {t('cta.funTests')}
           </Link>
         </div>
