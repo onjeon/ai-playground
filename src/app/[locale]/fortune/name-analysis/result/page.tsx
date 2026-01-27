@@ -99,19 +99,6 @@ function NameAnalysisResult() {
     const shareText = `📜 이름 풀이 결과\n\n이름: ${name}\n총획: ${numbers.total}획\n종합 등급: ${scoreGrade.emoji} ${scoreGrade.grade}\n오행: ${jungElement.name}\n\n나도 이름 풀이 보기`;
     const fullText = shareText + '\n' + window.location.origin + '/fortune/name-analysis';
 
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: '이름 풀이 결과',
-          text: shareText,
-          url: window.location.href,
-        });
-        return;
-      } catch {
-        // fallback
-      }
-    }
-
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(fullText);

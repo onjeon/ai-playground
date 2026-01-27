@@ -34,19 +34,6 @@ function DailyFortuneResult() {
     const shareText = `☀️ 오늘의 운세 (${fortune.date})\n\n총운: ${fortune.overall.score}점\n연애: ${fortune.categories.love.score}점\n직장: ${fortune.categories.work.score}점\n금전: ${fortune.categories.money.score}점\n건강: ${fortune.categories.health.score}점\n\n행운의 색: ${fortune.lucky.color}\n행운의 숫자: ${fortune.lucky.number}\n\n나도 오늘의 운세 보기`;
     const fullText = shareText + '\n' + window.location.origin + '/fortune/daily-fortune';
 
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: '오늘의 운세',
-          text: shareText,
-          url: window.location.href,
-        });
-        return;
-      } catch {
-        // 공유 취소 또는 실패 시 클립보드로 fallback
-      }
-    }
-
     // 클립보드 복사
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {

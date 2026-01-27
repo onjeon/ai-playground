@@ -69,19 +69,6 @@ function TojeongResultContent() {
     const shareText = `2025 토정비결 결과\n\n${result.zodiac} (${birthYear}년생)\n괘: ${result.gwaeName}\n총운: ${result.overallRating}점\n\n나도 토정비결 보러가기`;
     const fullText = shareText + '\n' + window.location.origin + '/fortune/tojeong';
 
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: '2025 토정비결',
-          text: shareText,
-          url: window.location.origin + '/fortune/tojeong',
-        });
-        return;
-      } catch {
-        // fallback
-      }
-    }
-
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(fullText);

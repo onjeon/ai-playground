@@ -39,17 +39,11 @@ ${reading.overall}
 
 나도 타로 보기 👉`;
 
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: reading.title,
-          text: shareText,
-          url: window.location.origin + '/fortune/tarot'
-        });
-      } catch {}
-    } else {
+    try {
       await navigator.clipboard.writeText(shareText + ' ' + window.location.origin + '/fortune/tarot');
       alert('클립보드에 복사되었습니다!');
+    } catch {
+      alert('공유 기능을 사용할 수 없습니다.');
     }
   };
 

@@ -43,19 +43,6 @@ function ZodiacFortuneResult() {
     const shareText = `${constellationInfo.symbol} 2025 ${constellationInfo.name} 운세\n\n올해의 키워드: ${fortune.keywords.join(', ')}\n행운지수: ${'★'.repeat(fortune.luckyScore)}${'☆'.repeat(5 - fortune.luckyScore)}\n\n나도 별자리 운세 보기`;
     const fullText = shareText + '\n' + window.location.origin + '/fortune/zodiac-fortune';
 
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: `2025 ${constellationInfo.name} 운세`,
-          text: shareText,
-          url: window.location.href,
-        });
-        return;
-      } catch {
-        // fallback
-      }
-    }
-
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(fullText);

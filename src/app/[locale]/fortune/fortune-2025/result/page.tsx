@@ -51,19 +51,6 @@ function FortuneResultContent() {
     const shareText = `🐍 2025 신년운세 결과\n\n${zodiacInfo.emoji} ${zodiacInfo.name} (${birthYear}년생)\n올해의 키워드: ${fortune.keywords.join(', ')}\n\n나도 2025년 운세 보러가기 👇`;
     const fullText = shareText + '\n' + window.location.origin + '/fortune/fortune-2025';
 
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: '2025 신년운세',
-          text: shareText,
-          url: window.location.origin + '/fortune/fortune-2025',
-        });
-        return;
-      } catch {
-        // 공유 취소 또는 실패 시 클립보드로 fallback
-      }
-    }
-
     // 클립보드 복사 (HTTPS 또는 localhost에서만 작동)
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {

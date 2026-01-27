@@ -44,19 +44,6 @@ function CompatibilityResult() {
     const shareText = `💕 궁합 운세 결과\n\n${result.zodiac.person1.emoji}${result.zodiac.person1.name} + ${result.zodiac.person2.emoji}${result.zodiac.person2.name}\n${result.constellation.person1.symbol}${result.constellation.person1.name} + ${result.constellation.person2.symbol}${result.constellation.person2.name}\n\n종합 궁합: ${result.overall.score}점 ${getScoreEmoji(result.overall.score)}\n${result.overall.grade}\n\n나도 궁합 보기`;
     const fullText = shareText + '\n' + window.location.origin + '/fortune/compatibility';
 
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: '궁합 운세 결과',
-          text: shareText,
-          url: window.location.href,
-        });
-        return;
-      } catch {
-        // 공유 취소 또는 실패 시 클립보드로 fallback
-      }
-    }
-
     // 클립보드 복사 (HTTPS 또는 localhost에서만 작동)
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {

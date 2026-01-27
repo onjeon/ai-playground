@@ -59,19 +59,6 @@ function DreamResultContent() {
     const shareText = `꿈해몽 결과\n\n꿈에 나온 것: ${keywordNames}\n결과: ${fortuneInfo.text}\n\n나도 꿈해몽 해보기`;
     const fullText = shareText + '\n' + window.location.origin + '/fortune/dream';
 
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: '꿈해몽',
-          text: shareText,
-          url: window.location.origin + '/fortune/dream',
-        });
-        return;
-      } catch {
-        // fallback to clipboard
-      }
-    }
-
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(fullText);

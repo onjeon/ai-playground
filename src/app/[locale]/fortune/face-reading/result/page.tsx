@@ -28,19 +28,6 @@ function FaceReadingResultContent() {
     const shareText = `관상 분석 결과\n\n${result.overallType}\n성격: ${result.personality.slice(0, 2).join(', ')}\n\n나도 관상 분석 받기`;
     const fullText = shareText + '\n' + window.location.origin + '/fortune/face-reading';
 
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: '관상 분석',
-          text: shareText,
-          url: window.location.origin + '/fortune/face-reading',
-        });
-        return;
-      } catch {
-        // fallback
-      }
-    }
-
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(fullText);
