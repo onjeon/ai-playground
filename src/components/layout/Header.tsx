@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Search, Menu, X, Sun, Moon, Zap, Gamepad2 } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 
 export default function Header() {
@@ -11,10 +11,7 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [mounted, setMounted] = useState(false);
-  const { theme, toggleTheme } = useTheme();
-
-  useEffect(() => { setMounted(true); }, []);
+  const { toggleTheme } = useTheme();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,14 +38,13 @@ export default function Header() {
 
         {/* Right buttons */}
         <div className="flex items-center gap-0.5">
-          {mounted && (
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-gray-500 dark:text-gray-400 rounded-lg active:bg-gray-100 dark:active:bg-gray-800 transition-colors"
-            >
-              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
-          )}
+          <button
+            onClick={toggleTheme}
+            className="p-2 text-gray-500 dark:text-gray-400 rounded-lg active:bg-gray-100 dark:active:bg-gray-800 transition-colors"
+          >
+            <Sun className="w-5 h-5 hidden dark:block" />
+            <Moon className="w-5 h-5 block dark:hidden" />
+          </button>
           <button
             onClick={() => { setIsSearchOpen(!isSearchOpen); setIsMobileMenuOpen(false); }}
             className="p-2 text-gray-500 dark:text-gray-400 rounded-lg active:bg-gray-100 dark:active:bg-gray-800 transition-colors"
