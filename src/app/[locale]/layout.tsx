@@ -6,7 +6,6 @@ import { notFound } from 'next/navigation';
 import { headers } from 'next/headers';
 import '../globals.css';
 import { Header, Footer } from '@/components/layout';
-import { ThemeProvider } from '@/contexts/ThemeContext';
 import { locales, rtlLocales, defaultLocale, type Locale } from '@/i18n/config';
 import { getLocaleFontClass, getGoogleFontsUrl, getLocaleFontFamily } from '@/lib/fonts';
 
@@ -97,10 +96,6 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} dir={isRtl ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <head>
-        {/* 테마 깜빡임 방지: React 렌더링 전에 dark 클래스 적용 */}
-        <script
-          dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()` }}
-        />
         {/* 언어별 Google Fonts 로드 */}
         {getGoogleFontsUrl(locale as Locale) && (
           <>
@@ -163,17 +158,15 @@ export default async function LocaleLayout({ children, params }: Props) {
           }}
         />
       </head>
-      <body className={`${getLocaleFontClass(locale as Locale)} bg-gray-100 dark:bg-gray-950 min-h-screen transition-colors`}>
+      <body className={`${getLocaleFontClass(locale as Locale)} bg-gray-100 min-h-screen`}>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>
-            <div className="max-w-lg mx-auto w-full min-h-screen flex flex-col bg-white dark:bg-gray-900 shadow-sm">
-              <Header />
-              <main className="flex-1 px-4 py-4">
-                {children}
-              </main>
-              <Footer />
-            </div>
-          </ThemeProvider>
+          <div className="max-w-lg mx-auto w-full min-h-screen flex flex-col bg-white shadow-sm">
+            <Header />
+            <main className="flex-1 px-4 py-4">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
