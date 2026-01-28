@@ -12,32 +12,32 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// SSR-safe: 서버에서는 항상 'light', 클라이언트에서는 localStorage/시스템설정 확인
+function getInitialTheme(): Theme {
+  if (typeof window === 'undefined') return 'light';
+  const saved = localStorage.getItem('theme') as Theme;
+  if (saved) return saved;
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+  return 'light';
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>('light');
-  const [mounted, setMounted] = useState(false);
 
+  // 클라이언트에서만 실제 테마 로드
   useEffect(() => {
-    setMounted(true);
-    // 저장된 테마 또는 시스템 설정 확인
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme) {
-      setThemeState(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setThemeState('dark');
-    }
+    setThemeState(getInitialTheme());
   }, []);
 
+  // 테마 변경 시 DOM + localStorage 업데이트
   useEffect(() => {
-    if (!mounted) return;
-    
-    // HTML에 dark 클래스 적용
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
     localStorage.setItem('theme', theme);
-  }, [theme, mounted]);
+  }, [theme]);
 
   const toggleTheme = () => {
     setThemeState(prev => prev === 'light' ? 'dark' : 'light');
@@ -46,15 +46,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
   };
-
-  // 마운트 전에는 기본값 반환 (hydration 이슈 방지)
-  if (!mounted) {
-    return (
-      <ThemeContext.Provider value={{ theme: 'light', toggleTheme: () => {}, setTheme: () => {} }}>
-        {children}
-      </ThemeContext.Provider>
-    );
-  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
